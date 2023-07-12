@@ -71,24 +71,24 @@ function ActivityItem({
     );
   }
 
-  return (
-    <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
-      <span>the</span>
-      <span
-        className={clsx(
-          'text-accent-600 font-semibold',
-          'dark:text-accent-400'
-        )}
-      >
-        {contentTitle}
-      </span>
-      <span className={clsx('lowercase')}>
-        {contentType.replace('POST', 'BLOG POST')}
-      </span>
-      <span>was shared</span>
-      {type === 'TWITTER' && <span>to Twitter!</span>}
-    </div>
-  );
+  // return (
+  //   <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
+  //     <span>the</span>
+  //     <span
+  //       className={clsx(
+  //         'text-accent-600 font-semibold',
+  //         'dark:text-accent-400'
+  //       )}
+  //     >
+  //       {contentTitle}
+  //     </span>
+  //     <span className={clsx('lowercase')}>
+  //       {contentType.replace('POST', 'BLOG POST')}
+  //     </span>
+  //     <span>was shared</span>
+  //     {type === 'TWITTER' && <span>to Twitter!</span>}
+  //   </div>
+  // );
 }
 
 const animation = {

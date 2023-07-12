@@ -51,7 +51,7 @@ function ProjectsContents() {
                   browserTabs={[
                     {
                       icon: <GitHubIcon className="h-4 w-4" />,
-                      title: 'enjidev/tailwindcss-accent - GitHub',
+                      title: 'devsam/tailwindcss-accent - GitHub',
                       isActive: currentState === 'github',
                     },
                     {
@@ -63,7 +63,7 @@ function ProjectsContents() {
                 >
                   {currentState === 'github' && (
                     <GitHubWireframe
-                      author="enjidev"
+                      author="devSam"
                       license="MIT"
                       repository="tailwindcss-accent"
                       description="Adds accent colors for more dynamic and flexible color utilization."

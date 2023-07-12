@@ -28,7 +28,7 @@ function Logo({ active = false }: LogoProps) {
       </div>
       <div className={clsx('-mt-1 hidden text-xl', 'sm:block')}>
         <span className={clsx('text-slate-900', 'dark:text-slate-200')}>
-          dev
+          Dev
         </span>
         <span className={clsx('text-accent-600', 'dark:text-accent-500')}>
           Sam

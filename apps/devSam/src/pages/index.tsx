@@ -10,7 +10,7 @@ function Index() {
       <Head
         title="Sam Gomez · Front-End Developer"
         description="An online portfolio featuring a showcase of my projects and some thoughts as a Front-End Developer."
-        ogImage={`${getBaseUrl()}/assets/images/sam.png`}
+        ogImage={`${getBaseUrl()}apps/devSam/public/assets/superman.ico`}
         overrideTitle
       />
       <IndexContents />

@@ -8,7 +8,7 @@ import {
   ExternalLink,
   NoteIcon,
   ShareIcon,
-  TwitterIcon,
+  // TwitterIcon,
 } from '@/components/Icons';
 
 import useCurrentUrl from '@/hooks/useCurrentUrl';
@@ -93,9 +93,9 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
     }
   };
 
-  const handleTwitter = () => {
-    onItemClick('TWITTER');
-  };
+  // const handleTwitter = () => {
+  //   onItemClick('TWITTER');
+  // };
 
   return (
     <Menu>
@@ -131,7 +131,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                 Share this on
               </div>
               <Menu.Item>
-                {({ active }) => (
+                {/* {({ active }) => (
                   <ShareItemLink
                     active={active}
                     href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
@@ -143,7 +143,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                       <ExternalLink className={clsx('h-3 w-3')} />
                     </span>
                   </ShareItemLink>
-                )}
+                )} */}
               </Menu.Item>
               <div
                 className={clsx(

@@ -27,7 +27,7 @@ function Head({
     <NextHead>
       <title>{htmlTitle}</title>
       <meta name="description" content={description} />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/superman.ico" />
 
       {/* seo */}
       <link rel="canonical" href={currentUrl} />
@@ -39,13 +39,13 @@ function Head({
       <meta property="og:image:alt" content={`Image with "${title}" text.`} />
 
       {/* twitter card */}
-      <meta name="twitter:card" content="summary_large_image" />
+      {/* <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@enjidev" />
       <meta name="twitter:creator" content="@enjidev" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={`Image with "${title}" text.`} />
+      <meta name="twitter:image:alt" content={`Image with "${title}" text.`} /> */}
 
       {/* structured data */}
       {structuredData && (

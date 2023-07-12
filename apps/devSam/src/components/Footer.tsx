@@ -4,7 +4,8 @@ import Link from 'next/link';
 import {
   ExternalLink,
   GitHubIcon,
-  TwitterIcon,
+  LinkedInIcon,
+  // TwitterIcon,
 } from '@/components/Icons';
 
 import dayjs from '@/utils/dayjs';
@@ -124,7 +125,7 @@ constantly seeking challenges.
             aria-label="My Linkedin profile"
             title="My Lin profile"
           >
-            <TwitterIcon className={clsx('h-5 w-5')} />
+            <LinkedInIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
         <li>

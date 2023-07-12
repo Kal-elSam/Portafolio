@@ -47,7 +47,7 @@ model Share {
 }
 
 enum ShareType {
-  TWITTER
+  // TWITTER
   CLIPBOARD
   OTHERS
 }

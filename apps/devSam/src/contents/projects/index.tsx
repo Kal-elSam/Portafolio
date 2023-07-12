@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { GitHubIcon, NpmIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
 import SectionContent from '@/components/sections/SectionContent';
-import SectionTitle from '@/components/sections/SectionTitle';
+// import SectionTitle from '@/components/sections/SectionTitle';
 import AppWindow from '@/components/wireframes/AppWindow';
 import GitHubWireframe from '@/components/wireframes/GitHub';
 import NpmWireframe from '@/components/wireframes/Npm';
@@ -14,7 +14,7 @@ function ProjectsContents() {
 
   return (
     <>
-      <SectionTitle
+      {/* <SectionTitle
         title="The dynamic accent colors."
         caption="tailwindcss-accent"
         description="Add accent colors for dynamic, flexible color use in your Tailwind CSS project."
@@ -22,7 +22,7 @@ function ProjectsContents() {
           title: 'learn more',
           href: '/docs/tailwindcss-accent',
         }}
-      />
+      /> */}
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>
           <div className={clsx('hidden flex-1 flex-col gap-3 pt-8', 'lg:flex')}>

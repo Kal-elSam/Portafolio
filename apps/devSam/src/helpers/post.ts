@@ -94,9 +94,9 @@ export const getPostStructuredData = ({
     author: [
       {
         '@type': 'Person',
-        name: 'Enji Kusnadi',
+        name: 'Sam Gomez',
         jobTitle: 'Front-End Developer',
-        url: 'https://www.enji.dev/about',
+        url: 'https://portfolio-devsam.vercel.app/work/skills-and-tools',
       },
     ],
   });

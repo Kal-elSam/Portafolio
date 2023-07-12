@@ -1,11 +1,18 @@
+import {
+  faCss3Alt,
+  faGitAlt,
+  faGithub,
+  faHtml5,
+  faJira,
+  faJsSquare,
+  faReact,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
 
 import {
-  FigmaIcon,
-  FramerMotionIcon,
   NextJsIcon,
-  ReactIcon,
   TailwindCssIcon,
   TypeScriptIcon,
   VSCodeIcon,
@@ -40,13 +47,28 @@ function HeaderTechStack() {
         transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
         <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#E34F26]')}>
+            <FontAwesomeIcon icon={faHtml5} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#1572B6]')}>
+            <FontAwesomeIcon icon={faCss3Alt} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#F0DB4F]')}>
+            <FontAwesomeIcon icon={faJsSquare} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
             <TypeScriptIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#61DAFB]')}>
-            <ReactIcon className={clsx('h-6 w-6')} />
+            <FontAwesomeIcon icon={faReact} className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
@@ -54,11 +76,11 @@ function HeaderTechStack() {
             <TailwindCssIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#0055FF]')}>
-            <FramerMotionIcon className={clsx('h-6 w-6')} />
+        {/* <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#003B57]')}>
+            <FontAwesomeIcon icon={faDatabase} className={clsx('h-6 w-6')} />
           </div>
-        </m.li>
+        </m.li> */}
         <m.li variants={animation}>
           <div
             className={clsx(
@@ -77,8 +99,18 @@ function HeaderTechStack() {
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#F24E1E]')}>
-            <FigmaIcon className={clsx('h-6 w-6')} />
+          <div className={clsx('transition duration-200 hover:text-[#F34F29]')}>
+            <FontAwesomeIcon icon={faGitAlt} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#333]')}>
+            <FontAwesomeIcon icon={faGithub} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#0052CC]')}>
+            <FontAwesomeIcon icon={faJira} className={clsx('h-6 w-6')} />
           </div>
         </m.li>
       </m.ul>

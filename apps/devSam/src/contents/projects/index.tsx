@@ -30,7 +30,7 @@ function ProjectsContents() {
               <SectionButton
                 title="Available on GitHub"
                 icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Access powerful and flexible package on GitHub with MIT license."
+                description="Access powerful and flexible package on GitHub"
                 active={currentState === 'github'}
                 onClick={() => setCurrentState('github')}
               />
@@ -64,7 +64,7 @@ function ProjectsContents() {
                   {currentState === 'github' && (
                     <GitHubWireframe
                       author="devSam"
-                      license="MIT"
+                      // license="MIT"
                       repository="tailwindcss-accent"
                       description="Adds accent colors for more dynamic and flexible color utilization."
                     />
@@ -76,6 +76,17 @@ function ProjectsContents() {
                       isWithTypeScript
                     />
                   )}
+
+                  {/* Coming Soon Label */}
+                  <div className={clsx('absolute inset-0 flex items-center justify-center')}>
+                    <h1
+                      className={clsx(
+                        'text-9xl font-bold text-white transform -rotate-45 origin-center'
+                      )}
+                    >
+                      Coming Soon!
+                    </h1>
+                  </div>
                 </AppWindow>
               </div>
             </div>

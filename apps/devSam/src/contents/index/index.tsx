@@ -24,8 +24,8 @@ function FeaturedCardSection() {
               <SparklesIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Clean & Intuitive"
-          desc="Keep the UI clean with a modern touch without compromising UX."
+          title="Clean & Intuitive Code"
+          desc="Maintain clean and modern frontend code without compromising the UX"
         />
         <FeaturedCard
           icon={
@@ -39,7 +39,7 @@ function FeaturedCardSection() {
             </div>
           }
           title="Detail Oriented"
-          desc="Awareness to ease of access, UI consistency, and improved UX."
+          desc="Awareness of code efficiency, frontend consistency, and their impact on UX."
         />
         <FeaturedCard
           icon={

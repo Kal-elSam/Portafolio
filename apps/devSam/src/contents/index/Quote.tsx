@@ -20,7 +20,7 @@ function Quote() {
       />
       <span className={clsx('flex flex-col')}>
         <span className={clsx('leading-[1.15]')}>
-          <em>Beautiful</em>{' '}
+          <em>Clean Code</em>{' '}
         </span>
         <span
           className={clsx('flex items-center gap-2 leading-[1.15]', 'lg:gap-4')}
@@ -60,7 +60,7 @@ function Quote() {
           />
         </span>
         <span className={clsx('leading-[1.15]')}>
-          is a{' '}
+          is {' '}
           <strong
             className={clsx(
               'relative font-extrabold text-slate-600',
@@ -74,7 +74,7 @@ function Quote() {
                 'dark:bg-slate-800'
               )}
             />
-            must.
+            essential.
           </strong>
         </span>
       </span>

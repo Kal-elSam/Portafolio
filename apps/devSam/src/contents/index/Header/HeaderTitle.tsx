@@ -25,7 +25,7 @@ function HeaderTitle() {
         animate={animation.show}
         transition={{ delay: 0.1 }}
       >
-        hi!
+        HI!
         <m.div
           initial={{
             opacity: 0,
@@ -70,9 +70,9 @@ function HeaderTitle() {
         >
           I&apos;m{' '}
           <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Enji
+            Sam
           </strong>{' '}
-          Kusnadi,{' '}
+          Gomez,{' '}
         </m.span>
         <m.h1
           className={clsx(
@@ -87,14 +87,18 @@ function HeaderTitle() {
           <span className={clsx('lowercase')}>A</span>{' '}
           <strong
             className={clsx(
-              'font-bold lowercase text-slate-700',
+              'font-bold text-slate-700',
               'dark:text-slate-300'
             )}
           >
             Front-End Developer
           </strong>{' '}
-          who loves intuitive,{' '}
-          <span className={clsx('block')}>clean and modern UI design.</span>
+          passionate about agile methodologies,{' '}
+          <span className={clsx('block')}>
+            perpetual learner and tech curious
+            <br />
+            constantly seeking challenges.
+          </span>
         </m.h1>
       </span>
     </div>

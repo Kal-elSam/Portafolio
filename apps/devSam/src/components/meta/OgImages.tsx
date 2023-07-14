@@ -148,7 +148,7 @@ export function PostOgImage({
         <img
           width="48"
           height="48"
-          src="apps/devSam/public/assets/superman.ico"
+          src="apps/devSam/public/assets/super.ico"
           style={styles.authorAvatar}
         />
         <div style={styles.authorName}>@samdev</div>
@@ -214,7 +214,7 @@ export function PageOgImage({
         <img
           width="48"
           height="48"
-          src="apps/devSam/public/assets/superman.ico"
+          src="apps/devSam/public/assets/super.ico"
           style={styles.authorAvatar}
         />
         <div style={styles.authorName}>@enjidev</div>

@@ -54,6 +54,8 @@ function GitHubWireframe({
       <div className={clsx('mt-2')}>
         <p>{description}</p>
       </div>
+      {/* Contenido del proyecto */}
+      {/* Seccion de detalles principales */}
       <div className={clsx('mt-6 flex flex-col gap-3')}>
         <div className={clsx('flex items-center gap-2')}>
           <SkeletonSm />
@@ -76,6 +78,7 @@ function GitHubWireframe({
           </div>
         </div>
       </div>
+      {/* Seccion 2 */}
       <div className={clsx('mt-6 flex gap-2')}>
         <div
           className={clsx(
@@ -100,6 +103,7 @@ function GitHubWireframe({
           </div>
         </div>
       </div>
+      {/* Seccion 3 */}
       <div
         className={clsx(
           'border-divider-light mt-4 flex border-b',

@@ -9,7 +9,7 @@ function Error404() {
     <>
       <Head>
         <title>Page Not Found</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/super.ico" />
         <meta name="robots" content="noindex" />
       </Head>
       <Error404Contents />

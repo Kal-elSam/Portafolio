@@ -27,7 +27,7 @@ function Head({
     <NextHead>
       <title>{htmlTitle}</title>
       <meta name="description" content={description} />
-      <link rel="icon" href="/superman.ico" />
+      <link rel="icon" href="/super.ico" />
 
       {/* seo */}
       <link rel="canonical" href={currentUrl} />

@@ -94,7 +94,7 @@ function ProjectsContents() {
                   )} */}
 
                   {/* Coming Soon Label */}
-                  {/* <div className={clsx('absolute inset-0 flex items-center justify-center')}>
+                  <div className={clsx('absolute inset-0 flex items-center justify-center')}>
                     <h1
                       className={clsx(
                         'text-9xl font-bold text-white transform -rotate-45 origin-center'
@@ -102,7 +102,7 @@ function ProjectsContents() {
                     >
                       Coming Soon!
                     </h1>
-                  </div> */}
+                  </div>
                 </AppWindow>
               </div>
             </div>

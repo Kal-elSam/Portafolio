@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import { useState, useEffect } from 'react';
-import { Octokit } from '@octokit/rest';
+import { useState } from 'react';
 
 import { GitHubIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
@@ -9,7 +8,6 @@ import SectionContent from '@/components/sections/SectionContent';
 import AppWindow from '@/components/wireframes/AppWindow';
 import GitHubWireframe from '@/components/wireframes/GitHub';
 // import NpmWireframe from '@/components/wireframes/Npm';
-
 
 function ProjectsContents() {
   const [currentState, setCurrentState] = useState<'npm' | 'github'>('github');

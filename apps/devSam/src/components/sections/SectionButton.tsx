@@ -8,6 +8,7 @@ interface SectionButtonProps {
   icon?: ReactNode;
   active?: boolean;
   onClick?: () => void;
+  innerButtonUrl?: string;
 }
 
 export function SectionButton({
@@ -16,6 +17,7 @@ export function SectionButton({
   icon = null,
   active = false,
   onClick = () => {},
+  innerButtonUrl = '',
 }: SectionButtonProps) {
   return (
     <button
@@ -64,6 +66,14 @@ export function SectionButton({
           </span>
         )}
       </span>
+      {innerButtonUrl && (
+        <a
+          href={innerButtonUrl}
+          className="flex items-center px-2 py-1 rounded-md text-sm font-medium text-white bg-accent-600 hover:bg-accent-700"
+        >
+          Browse
+        </a>
+      )}
     </button>
   );
 }

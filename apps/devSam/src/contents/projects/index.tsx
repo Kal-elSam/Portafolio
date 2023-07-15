@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { GitHubIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
@@ -10,7 +10,27 @@ import GitHubWireframe from '@/components/wireframes/GitHub';
 // import NpmWireframe from '@/components/wireframes/Npm';
 
 function ProjectsContents() {
-  const [currentState, setCurrentState] = useState<'npm' | 'github'>('github');
+  const [currentState, setCurrentState] = useState<'0' | '1' | '2'>();
+  const [repos, setRepos] = useState([]);
+  const [selectedRepo, setSelectedRepo] = useState(null);
+
+  async function fetchRepos() {
+    try {
+      const response = await fetch(
+        'https://api.github.com/users/Kal-elSam/repos'
+      );
+      const data = await response.json();
+      setRepos(data);
+      setSelectedRepo(data[0]); // Establecer el primer repositorio como seleccionado inicialmente
+    } catch (error) {
+      console.error('Error fetching repos:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchRepos();
+  }, []);
+  
 
   return (
     <>
@@ -29,18 +49,38 @@ function ProjectsContents() {
             <div className={clsx('flex flex-col gap-3')}>
               {/* Listado de proyectos vertical */}
               <SectionButton
-                title="proyecto1"
+                title={repos[0]?.name}
                 icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Access powerful and flexible package on GitHub"
-                active={currentState === 'github'}
-                onClick={() => setCurrentState('github')}
+                // description={selectedRepo.full_name}
+                active={currentState === '0'}
+                onClick={() => {
+                  setCurrentState('0');
+                  setSelectedRepo(repos[0]); // Aquí seleccionas el primer repositorio de la lista (puedes ajustarlo según tus necesidades)
+                }}
+                innerButtonUrl={repos[0]?.svn_url}
+              />
+
+              <SectionButton
+                title={repos[1]?.name}
+                icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
+                // description="Install and use the package with ease thanks to its typed options."
+                active={currentState === '1'}
+                onClick={() => {
+                  setCurrentState('1');
+                  setSelectedRepo(repos[1]); // Aquí seleccionas el primer repositorio de la lista (puedes ajustarlo según tus necesidades)
+                }}
+                innerButtonUrl={repos[1]?.svn_url}
               />
               <SectionButton
-                title="proyecto2"
+                title={repos[2]?.name}
                 icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Install and use the package with ease thanks to its typed options."
-                active={currentState === 'npm'}
-                onClick={() => setCurrentState('npm')}
+                // description="Install and use the package with ease thanks to its typed options."
+                active={currentState === '2'}
+                onClick={() => {
+                  setCurrentState('2');
+                  setSelectedRepo(repos[2]);
+                }}
+                innerButtonUrl={repos[2]?.svn_url}
               />
             </div>
           </div>
@@ -49,49 +89,59 @@ function ProjectsContents() {
               <div className={clsx('w-full', 'lg:h-[400px] lg:w-[600px]')}>
                 <AppWindow
                   type="browser"
-                  browserTabs={[
+                  browserTabs={repos.length > 0 && [
                     // Pestanas de proyectos
                     {
                       icon: <GitHubIcon className="h-4 w-4" />,
-                      title: 'devsam/tailwindcss-accent - GitHub',
-                      isActive: currentState === 'github',
+                      title: `${selectedRepo?.owner.login}/${repos[0]?.name}`,
+                      isActive: currentState === '0',
                     },
                     {
                       icon: <GitHubIcon className="h-4 w-4" />,
-                      title: 'tailwindcss-accent - npm',
-                      isActive: currentState === 'npm',
+                      title: `${selectedRepo?.owner.login}/${repos[1]?.name}`,
+                      isActive: currentState === '1',
                     },
-                    // {
-                    //   icon: <NpmIcon className="h-4 w-4" />,
-                    //   title: 'tailwindcss-accent - npm',
-                    //   isActive: currentState === 'npm',
-                    // },
+                    {
+                      icon: <GitHubIcon className="h-4 w-4" />,
+                      title: `${selectedRepo?.owner.login}/${repos[2]?.name}`,
+                      isActive: currentState === '2',
+                    },
                   ]}
                 >
-                  {/* informacion principal de los proyectos */}
-                  {currentState === 'github' && (
+                  {/* informacion principal por cada repositorio */}
+                  {currentState === '0' && selectedRepo && (
                     <GitHubWireframe
-                      author="Kal-elSam"
-                      // license="MIT"
-                      repository="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
+                      name={selectedRepo.owner.login}
+                      language={selectedRepo.language}
+                      repository={selectedRepo.name}
+                      description={selectedRepo.description}
+                      createdAt={selectedRepo.created_at}
+                      updatedAt={selectedRepo.updated_at}
+                      topics={selectedRepo.topics}
                     />
                   )}
-                   {currentState === 'npm' && (
+                  {currentState === '1' && selectedRepo && (
                     <GitHubWireframe
-                      author="Kal-elSam"
-                      // license="MIT"
-                      repository="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
+                      name={selectedRepo.owner.login}
+                      language={selectedRepo.language}
+                      repository={selectedRepo.name}
+                      description={selectedRepo.description}
+                      createdAt={selectedRepo.created_at}
+                      updatedAt={selectedRepo.updated_at}
+                      topics={selectedRepo.topics}
                     />
                   )}
-                  {/* {currentState === 'npm' && (
-                    <NpmWireframe
-                      packageName="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
-                      isWithTypeScript
+                  {currentState === '2' && selectedRepo && (
+                    <GitHubWireframe
+                      name={selectedRepo.owner.login}
+                      language={selectedRepo.language}
+                      repository={selectedRepo.name}
+                      description={selectedRepo.description}
+                      createdAt={selectedRepo.created_at}
+                      updatedAt={selectedRepo.updated_at}
+                      topics={selectedRepo.topics}
                     />
-                  )} */}
+                  )}
 
                   {/* Coming Soon Label */}
                   <div className={clsx('absolute inset-0 flex items-center justify-center')}>

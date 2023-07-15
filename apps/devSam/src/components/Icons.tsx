@@ -660,4 +660,18 @@ export function LinkedInIcon(props: ComponentProps<'svg'>) {
     </svg>
   );
 }
+export function MDXIcon(props: ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      role="img"
+      fill="currentColor"
+      {...props}
+    >
+      <title>MDX Icon</title>
+      <path d="M12 0C5.365 0 0 5.365 0 12s5.365 12 12 12 12-5.365 12-12S18.635 0 12 0zm-3.548 17.395l-.488-1.7H7.982L9.892 7.605h1.37l1.953 6.09 1.76-6.09h1.348l1.913 6.177h.046l-.488 1.613h-3.04l-.432-1.7H14.34l-.543-1.815h-3.132l.022.073zm7.495-3.265c.914 0 1.584-.322 2.01-.964.396-.603.588-1.49.588-2.661V7.277c0-1.17-.196-2.064-.588-2.663-.426-.64-1.096-.962-2.01-.962H8.402v12.08h3.545zm-.196-5.47v-3.38H8.51v3.38h3.332z" />
+    </svg>
+  );
+}
 

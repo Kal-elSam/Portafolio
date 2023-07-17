@@ -28,7 +28,7 @@
     "@octokit/rest": "^20.0.1",
     "@prisma/client": "^4.8.1",
     "@types/react-lottie": "^1.2.6",
-    "@vercel/analytics": "^0.1.6",
+    "@vercel/analytics": "^1.0.0",
     "@vercel/og": "^0.0.22",
     "axios": "^1.2.2",
     "clsx": "^1.2.1",

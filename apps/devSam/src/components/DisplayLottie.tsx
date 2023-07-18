@@ -1,12 +1,11 @@
 import React from 'react';
-
 import Lottie from 'react-lottie';
 
 type Props = {
   animationPath: string;
 };
 
-const GreetingLottie = ({ animationPath }: Props) => {
+function GreetingLottie({ animationPath }: Props) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -19,6 +18,6 @@ const GreetingLottie = ({ animationPath }: Props) => {
       <Lottie options={defaultOptions} />
     </div>
   );
-};
+}
 
 export default GreetingLottie;

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState, useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 import { GitHubIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';

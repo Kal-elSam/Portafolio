@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import Lottie from 'react-lottie';
 import { useEffect, useState } from 'react';
+import Lottie from 'react-lottie';
 
 import SectionTitle from '@/components/sections/SectionTitle';
 
@@ -34,7 +34,7 @@ function PrettyOptimized() {
             options={{
               loop: true,
               autoplay: true,
-              animationData: animationData,
+              animationData,
             }}
             style={{ width: '100%', height: 'auto' }}
           />

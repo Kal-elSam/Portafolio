@@ -1,7 +1,7 @@
 import clsx from 'clsx';
+import { format, parseISO } from 'date-fns';
 
 import { SkeletonSm } from '@/components/wireframes/Skeletons';
-import { format, parseISO } from 'date-fns';
 
 interface GithubWireframeProps {
   name?: string;

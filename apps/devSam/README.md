@@ -17,46 +17,49 @@
 
 ## 💼 Professional Experience
 
-- **Junior Software Engineer** at *Grupo KC Insurance Agent* (May 2023 - Present)
-    - Development of applications using OOP, Tailwind CSS, React.js, C#, ASP.NET, SQL and JavaScript.
-    - Requirement analysis, design of efficient software architectures, and writing clean code following best practices.
-    - Ensuring software quality through extensive testing.
-    - Active contribution in meetings, proposal of solutions, and code and process documentation.
+- **Jr Frontend and Mobile Developer** at _Ensamble_ (May 2023 - Present)
+  - Development of applications using Flutter, Tailwind CSS, React.js, NextJs, ASP.NET, SQL and JavaScript.
+  - Requirement analysis, design of efficient software architectures, and writing clean code following best practices.
+  - Ensuring software quality through extensive testing.
+  - Active contribution in meetings, proposal of solutions, and code and process documentation.
+    contribution in meetings, proposal of solutions, and code and process documentation.
 
 ## 💼 Skills
 
-- **Languages**:
+-  **Languages**:
     
     ![HTML5](https://img.shields.io/badge/HTML5%20-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
     ![CSS3](https://img.shields.io/badge/CSS%20-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
     ![JavaScript](https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
     ![C#](https://img.shields.io/badge/C%23-%239A349A.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+    ![Dart](https://img.shields.io/badge/Dart-0175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 
 - **Front-End Development**:
 
     ![ReactJS](https://img.shields.io/badge/ReactJS%20-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+    ![Flutter](https://img.shields.io/badge/Flutter-02569B.svg?style=for-the-badge&logo=flutter&logoColor=white)
+    ![NextJs](https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=next-dot-js&logoColor=white)
 
 - **Back-End Development**:
 
-    ![ASP.NET](https://img.shields.io/badge/ASP.NET%20-%235C2D91.svg?style=for-the-badge&logo=.net&logoColor=white)
+  ![ASP.NET](https://img.shields.io/badge/ASP.NET%20-%235C2D91.svg?style=for-the-badge&logo=.net&logoColor=white)
 
 - **Databases**:
 
-    ![SQL](https://img.shields.io/badge/SQL%20-%2307405E.svg?style=for-the-badge&logo=sql&logoColor=white)
+  ![SQL](https://img.shields.io/badge/SQL%20-%2307405E.svg?style=for-the-badge&logo=sql&logoColor=white)
 
 - **Cloud Hosting**:
 
-    ![Github Pages](https://img.shields.io/badge/GitHub%20Pages-%23327FC7.svg?style=for-the-badge&logo=github&logoColor=white)
+  ![Github Pages](https://img.shields.io/badge/GitHub%20Pages-%23327FC7.svg?style=for-the-badge&logo=github&logoColor=white)
 
 - **Software and Tools**:
 
-    ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-    ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-    ![Google](https://img.shields.io/badge/google-%234285F4.svg?style=for-the-badge&logo=google&logoColor=white)
-    ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-    ![Jira](https://img.shields.io/badge/Jira-%230052CC.svg?style=for-the-badge&logo=jira&logoColor=white)
-    ![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7?style=for-the-badge&logo=azuredevops&logoColor=white)
-
+  ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+  ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+  ![Google](https://img.shields.io/badge/google-%234285F4.svg?style=for-the-badge&logo=google&logoColor=white)
+  ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+  ![Jira](https://img.shields.io/badge/Jira-%230052CC.svg?style=for-the-badge&logo=jira&logoColor=white)
+  ![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7?style=for-the-badge&logo=azuredevops&logoColor=white)
 
 ## 📈 Github Stats
 
@@ -64,7 +67,6 @@
 
 <a href="https://github.com/Kal-elSam/Kal-elSam">
   <img src="https://github-readme-stats.vercel.app/api?username=Kal-elSam&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&
-
 
 <div align="center">
 
@@ -94,6 +96,7 @@
 </ul>
 
 ---
+
 <br />
 
 <p align="center">
@@ -103,5 +106,3 @@
 <p align="center">
     <em>Just a Developer who loves to code 💻 ☕ 🍕 </em>
 </p>
-
-

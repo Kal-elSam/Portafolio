@@ -17,8 +17,8 @@
 
 ## 💼 Professional Experience
 
-- **Junior Software Engineer** at *Grupo KC Insurance Agent* (May 2023 - Present)
-    - Development of applications using OOP, Tailwind CSS, React.js, C#, ASP.NET, SQL and JavaScript.
+- **Jr Frontend and Mobile Developer** at *Ensamble* (May 2023 - Present)
+    - Development of applications using Flutter, Tailwind CSS, React.js, NextJs, ASP.NET, SQL and JavaScript.
     - Requirement analysis, design of efficient software architectures, and writing clean code following best practices.
     - Ensuring software quality through extensive testing.
     - Active contribution in meetings, proposal of solutions, and code and process documentation.
@@ -31,10 +31,13 @@
     ![CSS3](https://img.shields.io/badge/CSS%20-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
     ![JavaScript](https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
     ![C#](https://img.shields.io/badge/C%23-%239A349A.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+    ![Dart](https://img.shields.io/badge/Dart-0175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 
 - **Front-End Development**:
 
     ![ReactJS](https://img.shields.io/badge/ReactJS%20-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+    ![Flutter](https://img.shields.io/badge/Flutter-02569B.svg?style=for-the-badge&logo=flutter&logoColor=white)
+    ![NextJs](https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=next-dot-js&logoColor=white)
 
 - **Back-End Development**:
 

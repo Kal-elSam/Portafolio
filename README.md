@@ -23,7 +23,7 @@
     - Ensuring software quality through extensive testing.
     - Active contribution in meetings, proposal of solutions, and code and process documentation.
 
-## 💼 Skills
+## 💼 Skills 
 
 - **Languages**:
     

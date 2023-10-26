@@ -7,6 +7,7 @@ import SectionContent from '@/components/sections/SectionContent';
 // import SectionTitle from '@/components/sections/SectionTitle';
 import AppWindow from '@/components/wireframes/AppWindow';
 import GitHubWireframe from '@/components/wireframes/GitHub';
+
 // import NpmWireframe from '@/components/wireframes/Npm';
 
 function ProjectsContents() {

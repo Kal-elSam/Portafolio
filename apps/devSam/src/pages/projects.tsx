@@ -1,3 +1,4 @@
+import CompanyLogosBanner from '@/components/wireframes/CompanyLogosBanner';
 import WireframeSection from '@/components/wireframes/WireframeSection';
 
 import ProjectsContents from '@/contents/projects';
@@ -13,7 +14,9 @@ function Projects() {
       }}
       headerImage={<HeaderImage />}
     >
-      <WireframeSection />
+      <CompanyLogosBanner />
+      {/* <WireframeSection /> */}
+
       <ProjectsContents />
     </Page>
   );

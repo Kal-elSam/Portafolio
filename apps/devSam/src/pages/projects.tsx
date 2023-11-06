@@ -15,7 +15,7 @@ function Projects() {
       headerImage={<HeaderImage />}
     >
       <CompanyLogosBanner />
-      {/* <WireframeSection /> */}
+      <WireframeSection />
 
       <ProjectsContents />
     </Page>

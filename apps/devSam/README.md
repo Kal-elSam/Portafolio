@@ -11,7 +11,7 @@
 - Self-taught and passionate frontend developer.
 - With 4 years of experience in project management, including roles as Scrum Master, Product Owner, and Project Manager.
 - Master in Project Management and knowledge in agile methodologies like Scrum.
-- I have developed applications using OOP, Tailwind CSS, React.js, C#, ASP.NET, SQL and JavaScript.
+- I have developed applications using OOP, Tailwind CSS, React.js,Flutter, SQL and JavaScript.
 - You can see my personal work at [link](https://portfolio-devsam.vercel.app/)
 - Currently I am open to internship or job opportunities, here's [my resume](https://www.dropbox.com/s/rkef1qfp795ojvj/SamuelGomezDevResume.pdf?dl=0)
 

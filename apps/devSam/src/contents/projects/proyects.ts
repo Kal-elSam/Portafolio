@@ -21,6 +21,39 @@ const projectsData: ProjectType[] = [
     ],
   },
   {
+    projectName: 'Red Medica',
+    company: 'Ensamble',
+    iphoneScreenshots: [
+      '/assets/projects/ensamble/medica/inicio.jpeg',
+      '/assets/projects/ensamble/medica/categoria.jpeg',
+      '/assets/projects/ensamble/medica/home.jpeg',
+      '/assets/projects/ensamble/medica/home2.jpeg',
+      '/assets/projects/ensamble/medica/home3.jpeg',
+      '/assets/projects/ensamble/medica/mapa.jpeg',
+    ],
+  },
+  {
+    projectName: 'SegunNet',
+    company: 'Ensamble',
+    macScreenshots: [
+      '/assets/projects/ensamble/segunet/login.png',
+      '/assets/projects/ensamble/segunet/home.png',
+      '/assets/projects/ensamble/segunet/new.png',
+      '/assets/projects/ensamble/segunet/bitacora.png',
+    ],
+  },
+  {
+    projectName: 'Bi',
+    company: 'KC',
+    macScreenshots: [
+      '/assets/projects/kc/bi/login.png',
+      '/assets/projects/kc/bi/home.png',
+      '/assets/projects/kc/bi/h01.png',
+      '/assets/projects/kc/bi/mesa.png',
+      '/assets/projects/kc/bi/chart.png',
+    ],
+  },
+  {
     projectName: 'CRM',
     company: 'KC',
     macScreenshots: [
@@ -56,46 +89,6 @@ const projectsData: ProjectType[] = [
       '/assets/projects/lemu/4.png',
     ],
   },
-  // {
-  //   projectName: 'Atlas de la Biodiversidad',
-  //   company: 'LEMU',
-  //   iphoneScreenshots: [
-  //     '/assets/projects/lemu/1.png',
-  //     '/assets/projects/lemu/2.png',
-  //     '/assets/projects/lemu/3.png',
-  //     '/assets/projects/lemu/4.png',
-  //   ],
-  // },
-  // {
-  //   projectName: 'Atlas de la Biodiversidad',
-  //   company: 'LEMU',
-  //   iphoneScreenshots: [
-  //     '/assets/projects/lemu/1.png',
-  //     '/assets/projects/lemu/2.png',
-  //     '/assets/projects/lemu/3.png',
-  //     '/assets/projects/lemu/4.png',
-  //   ],
-  // },
-  // {
-  //   projectName: 'Atlas de la Biodiversidad',
-  //   company: 'LEMU',
-  //   iphoneScreenshots: [
-  //     '/assets/projects/lemu/1.png',
-  //     '/assets/projects/lemu/2.png',
-  //     '/assets/projects/lemu/3.png',
-  //     '/assets/projects/lemu/4.png',
-  //   ],
-  // },
-  // {
-  //   projectName: 'Atlas de la Biodiversidad',
-  //   company: 'LEMU',
-  //   iphoneScreenshots: [
-  //     '/assets/projects/lemu/1.png',
-  //     '/assets/projects/lemu/2.png',
-  //     '/assets/projects/lemu/3.png',
-  //     '/assets/projects/lemu/4.png',
-  //   ],
-  // },
 ];
 
 export default projectsData;

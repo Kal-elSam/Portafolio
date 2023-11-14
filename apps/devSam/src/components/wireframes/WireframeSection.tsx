@@ -1,8 +1,3 @@
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -75,27 +70,61 @@ function WireframeSection() {
                   setCurrentImageIndex(0);
                 }}
                 className={clsx(
-                  'min-w-[160px] flex-shrink-0 rounded-xl p-2 text-center text-sm transition-all duration-300 ease-in-out',
-                  'flex flex-col items-center', // para alinear verticalmente
+                  'flex h-[50px] w-[214px] items-center justify-start rounded-[4px] p-[10px]',
+                  'gap-[12px] text-sm transition-all duration-300 ease-in-out',
                   selectedProject.projectName === project.projectName
-                    ? 'bg-blue-900 text-white' // botón activo
-                    : 'bg-gray-200 text-gray-700', // botón inactivo
+                    ? 'text-white' // botón activo
+                    : 'text-gray-700', // botón inactivo
                   'hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'
                 )}
+                style={{
+                  background:
+                    'linear-gradient(0deg, #111A2C, #111A2C), linear-gradient(0deg, #35415D, #35415D)',
+                  border: '0.5px solid #35415D',
+                }}
               >
-                {/* Aquí puedes añadir un icono si es necesario */}
-                <span className="text-2xl font-black">
-                  {/* Icono aquí si es necesario */}
-                </span>
-                <span>{project.company}</span>
-                <span>{project.projectName}</span>
+                {/* Icono */}
+                <div
+                  style={{
+                    width: '30px',
+                    height: '30px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Image
+                    src={project.iconPath}
+                    alt={`Icono de ${project.projectName}`}
+                    width={30}
+                    height={30}
+                    objectFit="cover"
+                  />
+                </div>
+
+                {/* Texto */}
+                <div
+                  className="flex flex-col justify-center"
+                  style={{
+                    width: '140px',
+                    height: '15px',
+                    fontSize: '14px',
+                    fontWeight: '400',
+                    lineHeight: '15px',
+                    textAlign: 'left',
+                  }}
+                >
+                  <span>{project.projectName}</span>
+                </div>
               </button>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      <h2 className="my-4 text-center text-2xl font-bold text-gray-800">
+      <h2 className="my-4 pt-4 text-center text-2xl font-bold text-white">
         {selectedProject.company} - {selectedProject.projectName}
       </h2>
 
@@ -108,8 +137,8 @@ function WireframeSection() {
             }`}
             width={imageSize.width}
             height={imageSize.height}
-            objectFit="contain" // Esto asegurará que la imagen se mantenga dentro de sus dimensiones sin recortar
-            layout="intrinsic" // Esto permite que la imagen use las dimensiones definidas
+            objectFit="contain"
+            layout="intrinsic"
           />
         )}
 
@@ -118,18 +147,56 @@ function WireframeSection() {
             <button
               type="button"
               aria-label="Previous image"
-              className="bg-primary hover:bg-primary-dark absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-opacity-70 p-3 text-white shadow-lg transition duration-300 ease-in-out focus:outline-none"
+              className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full p-2 text-white shadow-lg transition duration-200 ease-out focus:outline-none"
               onClick={goToPrevious}
+              style={{
+                width: '40px', // Tamaño aumentado
+                height: '40px', // Tamaño aumentado
+                backgroundColor: '#6A7AB3',
+              }}
             >
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 18l-6-6 6-6"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
             <button
               type="button"
               aria-label="Next image"
-              className="bg-primary hover:bg-primary-dark absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-opacity-70 p-3 text-white shadow-lg transition duration-300 ease-in-out focus:outline-none"
+              className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full p-2 text-white shadow-lg transition duration-200 ease-out focus:outline-none"
               onClick={goToNext}
+              style={{
+                width: '40px', // Tamaño aumentado
+                height: '40px', // Tamaño aumentado
+                backgroundColor: '#6A7AB3',
+              }}
             >
-              <FontAwesomeIcon icon={faChevronRight} />
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 6l6 6-6 6"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           </>
         )}

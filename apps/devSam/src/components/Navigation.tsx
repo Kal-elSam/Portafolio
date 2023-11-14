@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
+import { GitHubIcon, HackerIcon,LinkedInIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
@@ -56,22 +56,22 @@ function Navbar() {
               <li>
                 <NavLink title="T.I.L" href="/today-i-learned" />
               </li>
-              <li className={clsx('lg:hidden')} data-accent="blue">
+              <li data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
-              <li className={clsx('hidden lg:block')} data-accent="blue">
+              <li className={clsx('hidden')} data-accent="blue">
                 <NavLinkExpanded title="Work" items={workLinks} />
               </li>
             </ul>
           </nav>
           <ul className={clsx('flex items-center')}>
-            {/* <li className={clsx('hidden', 'sm:block')}>
+            <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
-                href="https://twitter.com/enjidev"
-                icon={<TwitterIcon className={clsx('h-5 w-5')} />}
-                title="Twitter"
+                href="https://www.hackerrank.com/profile/samgomezs7"
+                icon={<HackerIcon className={clsx('h-5 w-5')} />}
+                title="HH"
               />
-            </li> */}
+            </li>
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
                 href="https://www.linkedin.com/in/samuel-gomez-serrano/"

@@ -2,10 +2,12 @@
 import Image from 'next/image';
 import React from 'react';
 
+import SectionContent from '@/components/sections/SectionContent';
 
 function CollaborativeCompaniesBanner(): JSX.Element {
   return (
-    <div className="bg-gray-800 py-12">
+    <SectionContent>
+    <div className="pt-8">
       <h2 className="text-center text-white text-3xl mb-8">Collaborative Companies</h2>
       <p className="text-center text-gray-300 mb-10">These are some of the distinguished companies we've had the pleasure to collaborate with.</p>
       <div className="flex justify-center space-x-12">
@@ -20,6 +22,7 @@ function CollaborativeCompaniesBanner(): JSX.Element {
         </div>
       </div>
     </div>
+    </SectionContent>
   );
 }
 

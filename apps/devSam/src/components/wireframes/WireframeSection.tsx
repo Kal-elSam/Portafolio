@@ -8,6 +8,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
+import SectionContent from '@/components/sections/SectionContent';
+
 import projectsData from '@/contents/projects/proyects';
 
 function WireframeSection() {
@@ -49,7 +51,8 @@ function WireframeSection() {
   };
 
   return (
-    <div className="container mx-auto my-10 px-4">
+    <SectionContent>
+    <div className=" mx-auto px-4 pt-8">
       <div className="my-4 flex justify-center">
         <Swiper
           spaceBetween={0} // 0 espacio entre slides
@@ -124,7 +127,7 @@ function WireframeSection() {
         </Swiper>
       </div>
 
-      <h2 className="my-4 pt-4 text-center text-2xl font-bold text-white">
+      <h2 className="my-4 pt-8 text-center text-2xl font-bold text-white">
         {selectedProject.company} - {selectedProject.projectName}
       </h2>
 
@@ -218,6 +221,7 @@ function WireframeSection() {
         ))}
       </div>
     </div>
+    </SectionContent>
   );
 }
 

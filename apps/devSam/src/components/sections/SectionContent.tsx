@@ -10,7 +10,7 @@ function SectionContent({ children }: PropsWithChildren) {
         'dark:border-divider-dark'
       )}
     >
-      <div className={clsx('content-wrapper pb-20')}>{children}</div>
+      <div className={clsx('content-wrapper pb-10')}>{children}</div>
     </div>
   );
 }

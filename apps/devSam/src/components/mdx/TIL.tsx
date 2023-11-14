@@ -6,6 +6,8 @@ import { formatDate } from '@/helpers/post';
 
 import type { PropsWithChildren, ReactElement } from 'react';
 
+
+
 export function Do({ children = null }: PropsWithChildren) {
   return (
     <div className={clsx('mdx-do', 'md:min-w-0 md:flex-1')}>
@@ -135,7 +137,7 @@ export function Items({
       <div className={clsx('hidden', 'md:block md:pb-24')}>
         <div
           className={clsx(
-            'mt-4 pt-1.5 md:sticky md:top-[86px]',
+            'mt-4 pt-1.5 md:sticky md:top-[86px] w-[80px]',
             'fm:relative fm:top-0'
           )}
         >

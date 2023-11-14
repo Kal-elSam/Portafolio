@@ -23,6 +23,17 @@ const projectsData: ProjectType[] = [
     ],
   },
   {
+    projectName: 'DashBoard Next14',
+    company: 'Personal',
+    iconPath: '/assets/superman.ico',
+    macScreenshots: [
+      '/assets/projects/personal/Admin Dashboard/dashboard.png',
+      '/assets/projects/personal/Admin Dashboard/login.png',
+      '/assets/projects/personal/Admin Dashboard/table.png',
+      '/assets/projects/personal/Admin Dashboard/form.png',
+    ],
+  },
+  {
     projectName: 'Admin Vacunas',
     company: 'Ensamble',
     iconPath: '/assets/empresas/ensamble-logo.png',

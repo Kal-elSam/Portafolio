@@ -5,7 +5,7 @@ import type { TPostFrontMatter, TPostOgImage } from '@/types';
 
 export const formatDate = (date: string) => {
   if (dayjs(date).isValid()) {
-    return dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
+    return dayjs(date, 'YYYY-MM-DD').format('MMM D, YYYY');
   }
 
   return date;

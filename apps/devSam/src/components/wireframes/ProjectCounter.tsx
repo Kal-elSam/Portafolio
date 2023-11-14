@@ -24,7 +24,7 @@ const ProjectCounter: React.FC = () => {
       <FlipNumbers
         play
         duration={0.3}
-        delay={0}
+        // delay={0}
         numbers={count.toString().padStart(3, '0')}
         height={100} // Ajusta el tamaño según sea necesario
         width={80} // Ajusta el tamaño según sea necesario

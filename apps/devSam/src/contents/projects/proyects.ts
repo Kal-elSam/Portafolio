@@ -119,6 +119,23 @@ const projectsData: ProjectType[] = [
       '/assets/projects/lemu/4.png',
     ],
   },
+  {
+    projectName: 'Maximus',
+    company: 'KC',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: [
+      '/assets/projects/kc/maximus/login.png',
+      '/assets/projects/kc/maximus/home.png',
+      '/assets/projects/kc/maximus/home1.png',
+      '/assets/projects/kc/maximus/home2.png',
+      '/assets/projects/kc/maximus/home3.png',
+      '/assets/projects/kc/maximus/home4.png',
+      '/assets/projects/kc/maximus/registro.png',
+      '/assets/projects/kc/maximus/registro1.png',
+      '/assets/projects/kc/maximus/registro2.png',
+      '/assets/projects/kc/maximus/modal.png',
+    ],
+  },
 ];
 
 export default projectsData;

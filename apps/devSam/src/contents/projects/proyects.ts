@@ -73,7 +73,6 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
       '/assets/projects/kc/bi/login.png',
-      '/assets/projects/kc/bi/home.png',
       '/assets/projects/kc/bi/h01.png',
       '/assets/projects/kc/bi/mesa.png',
       '/assets/projects/kc/bi/chart.png',
@@ -86,6 +85,9 @@ const projectsData: ProjectType[] = [
     macScreenshots: [
       '/assets/projects/kc/crm/crm-login.png',
       '/assets/projects/kc/crm/crm-home.png',
+      '/assets/projects/kc/crm/crm-notification.png',
+      '/assets/projects/kc/crm/crm-notification2.png',
+      '/assets/projects/kc/crm/crm-ratios.png',
       '/assets/projects/kc/crm/crm-cartera.png',
       '/assets/projects/kc/crm/crm-tickets.png',
     ],
@@ -125,6 +127,7 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
       '/assets/projects/kc/maximus/login.png',
+      '/assets/projects/kc/maximus/landing.png',
       '/assets/projects/kc/maximus/home.png',
       '/assets/projects/kc/maximus/home1.png',
       '/assets/projects/kc/maximus/home2.png',
@@ -132,8 +135,7 @@ const projectsData: ProjectType[] = [
       '/assets/projects/kc/maximus/home4.png',
       '/assets/projects/kc/maximus/registro.png',
       '/assets/projects/kc/maximus/registro1.png',
-      '/assets/projects/kc/maximus/registro2.png',
-      '/assets/projects/kc/maximus/modal.png',
+      '/assets/projects/kc/maximus/importar.png',
     ],
   },
 ];

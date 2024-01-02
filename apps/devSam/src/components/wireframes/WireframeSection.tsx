@@ -62,7 +62,7 @@ function WireframeSection() {
           centeredSlides={swiperSettings.centeredSlides}
           pagination={swiperSettings.pagination}
           modules={[Autoplay]}
-          autoplay={{ delay: 1000 }}
+          autoplay={{ delay: 3000 }}
         >
           {projectsData.map((project) => (
             <SwiperSlide key={project.projectName}>

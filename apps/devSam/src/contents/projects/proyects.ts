@@ -39,15 +39,13 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/ensamble-logo.png',
     macScreenshots: [
       '/assets/projects/ensamble/covid/home.png',
+      '/assets/projects/ensamble/covid/cards.png',
+      '/assets/projects/ensamble/covid/cards2.png',
       '/assets/projects/ensamble/covid/confirmacion.png',
       '/assets/projects/ensamble/covid/soporte.png',
       '/assets/projects/ensamble/covid/admin.png',
       '/assets/projects/ensamble/covid/tabla1.png',
       '/assets/projects/ensamble/covid/tabla2.png',
-    ],
-    iphoneScreenshots: [
-      '/assets/projects/ensamble/covid/cards.png',
-      '/assets/projects/ensamble/covid/cards2.png',
     ],
   },
   {

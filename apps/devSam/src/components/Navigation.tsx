@@ -53,9 +53,9 @@ function Navbar() {
               {/* <li>
                 <NavLink title="Blog" href="/blog" />
               </li> */}
-              <li>
+              {/* <li>
                 <NavLink title="T.I.L" href="/today-i-learned" />
-              </li>
+              </li> */}
               <li data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>

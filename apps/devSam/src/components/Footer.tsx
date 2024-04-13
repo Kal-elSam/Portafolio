@@ -183,7 +183,7 @@ function Footer() {
                     // { title: 'Studio', href: '/work/studio' },
                   ]}
                 />
-                <FooterGroup
+                {/* <FooterGroup
                   title="Learn"
                   links={[
                     // {
@@ -200,7 +200,7 @@ function Footer() {
                       label: 'new',
                     },
                   ]}
-                />
+                /> */}
               </div>
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup

@@ -84,7 +84,7 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={clsx('lowercase')}>A dedicated</span>{' '}
+          <span className={clsx('lowercase')}>A</span>{' '}
           <strong
             className={clsx(
               'font-bold text-slate-700',
@@ -95,7 +95,9 @@ function HeaderTitle() {
           </strong>{' '}
           with a strong passion for agile methodologies.{' '}
           <span className={clsx('block')}>
-          I am a perpetual learner and tech enthusiast, always on the lookout for new challenges and
+          I am a perpetual learner and tech enthusiast, 
+            <br />
+            always on the lookout for new challenges and 
             <br />
             opportunities to innovate.
           </span>

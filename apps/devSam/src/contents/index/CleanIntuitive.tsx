@@ -52,7 +52,7 @@ function CleanIntuitive() {
       <SectionTitle
        title="Modern & Minimalist."
        caption="Clean & Intuitive Code"
-       description="Maintain clean and modern frontend code without compromising the User Experience. A good frontend developer understands the importance of minimalist design and how it translates into effective UX."
+       description="I prioritize maintaining clean and modern frontend code, ensuring that it enhances the user experience without compromise. My focus is on delivering sleek, efficient interfaces that are both functional and visually appealing."
      />
       </header>
       <SectionContent>

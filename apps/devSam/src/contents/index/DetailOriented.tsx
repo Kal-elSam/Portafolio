@@ -26,7 +26,7 @@ function DetailOriented() {
       <SectionTitle
         title="Attention to Small Details in Code."
         caption="Detail Oriented"
-        description="Awareness of code efficiency, frontend consistency, and their impact on User Experience. A good frontend developer is meticulous about every line of code contributing to the overall effectiveness of the UI."
+        description="I possess a keen awareness of coding efficiency and frontend consistency, understanding their critical impact on the user experience. My approach involves meticulous attention to detail to ensure every element on the screen is perfectly placed and performs optimally."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

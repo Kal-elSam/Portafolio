@@ -25,7 +25,7 @@ function FeaturedCardSection() {
             </div>
           }
           title="Clean & Intuitive Code"
-          desc="Maintain clean and modern frontend code without compromising the UX"
+          desc="I strive for clean, modern front-end code that enhances user experience without compromise."
         />
         <FeaturedCard
           icon={
@@ -39,7 +39,7 @@ function FeaturedCardSection() {
             </div>
           }
           title="Detail Oriented"
-          desc="Awareness of code efficiency, frontend consistency, and their impact on UX."
+          desc="I focus on coding efficiency and consistent front-end design, optimizing user interaction and aesthetics."
         />
         <FeaturedCard
           icon={
@@ -53,7 +53,7 @@ function FeaturedCardSection() {
             </div>
           }
           title="Pretty & Optimized"
-          desc="Writing clean code is a top priority while keeping it as optimized as possible."
+          desc="My priority is clean, optimized code that balances performance with elegance."
         />
       </div>
     </div>

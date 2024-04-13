@@ -26,7 +26,7 @@ function PrettyOptimized() {
       <SectionTitle
         title="Comprehensible and Optimized Code"
         caption="Neat & Efficient"
-        description="For a frontend developer, writing clean, understandable code is a top priority, while ensuring it's as optimized as possible to maintain efficient User Experience."
+        description="For me, writing clean code isn't just a goal—it's a necessity. I strive to optimize every line of code not only to increase efficiency but also to maintain the highest standards of readability and functionality. My coding practices ensure that beauty and performance go hand in hand."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

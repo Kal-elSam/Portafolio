@@ -143,6 +143,7 @@ const projectsData: ProjectType[] = [
     macScreenshots: [
       '/assets/projects/kc/maximus/login.png',
       '/assets/projects/kc/maximus/landing.png',
+      '/assets/projects/kc/maximus/dashboard.png',
       '/assets/projects/kc/maximus/home.png',
       '/assets/projects/kc/maximus/home1.png',
       '/assets/projects/kc/maximus/home2.png',

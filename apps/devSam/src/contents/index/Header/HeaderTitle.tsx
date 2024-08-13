@@ -86,20 +86,15 @@ function HeaderTitle() {
         >
           <span className={clsx('lowercase')}>A</span>{' '}
           <strong
-            className={clsx(
-              'font-bold text-slate-700',
-              'dark:text-slate-300'
-            )}
+            className={clsx('font-bold text-slate-700', 'dark:text-slate-300')}
           >
             Front-End Developer
           </strong>{' '}
-          with a strong passion for agile methodologies.{' '}
+          focused on building scalable, maintainable web apps.{' '}
           <span className={clsx('block')}>
-          I am a perpetual learner and tech enthusiast, 
+            Passionate learner, always seeking
             <br />
-            always on the lookout for new challenges and 
-            <br />
-            opportunities to innovate.
+            new challenges and innovative solutions.
           </span>
         </m.h1>
       </span>

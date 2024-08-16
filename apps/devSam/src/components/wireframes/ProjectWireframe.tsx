@@ -46,7 +46,7 @@ function ProjectWireframe({
 
   return (
     <div
-      className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full relative"
+      className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-full w-full relative"
       onTouchStart={handleTouchStart}
     >
       <button
@@ -57,7 +57,7 @@ function ProjectWireframe({
       >
         <FaArrowLeft className="text-white" />
       </button>
-      <div className="relative h-full w-full">
+      <div className=" h-full w-full">
         <Image
           src={screenshots[currentImageIndex]}
           alt={`${projectName} screenshot ${currentImageIndex + 1}`}

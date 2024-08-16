@@ -18,7 +18,7 @@ function Projects() {
     >
       <ProjectCounter />
       <CompanyLogosBanner />
-      <WireframeSection />
+      {/* <WireframeSection /> */}
 
       <ProjectsContents />
     </Page>

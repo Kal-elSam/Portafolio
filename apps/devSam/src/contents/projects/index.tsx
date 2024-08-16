@@ -1,24 +1,79 @@
 import clsx from 'clsx';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { GitHubIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
 import SectionContent from '@/components/sections/SectionContent';
 // import SectionTitle from '@/components/sections/SectionTitle';
 import AppWindow from '@/components/wireframes/AppWindow';
+import CompanyWindow from '@/components/wireframes/CompanyWindow';
 import GitHubWireframe from '@/components/wireframes/GitHub';
+import ProjectWireframe from '@/components/wireframes/ProjectWireframe';
+
+import projectsData from './proyects';
 
 // import NpmWireframe from '@/components/wireframes/Npm';
 
+type ViewType = 'app' | 'browser';
+
 function ProjectsContents() {
-  const [currentState, setCurrentState] = useState(null);
-  const [repos, setRepos] = useState([]);
-  const [selectedRepo, setSelectedRepo] = useState(null);
+  const [currentState, setCurrentState] = useState<string | null>(null);
+  const [repos, setRepos] = useState<any[]>([]);
+  const [selectedRepo, setSelectedRepo] = useState<any | null>(null);
+
+  const [currentCompany, setCurrentCompany] = useState('KC');
+  const [selectedProject, setSelectedProject] = useState(
+    projectsData.find((project) => project.company === 'KC')
+  );
+  const [type, setType] = useState<ViewType>('browser');
+
+  // Filtra los proyectos según la compañía seleccionada
+  const filteredProjects = projectsData.filter(
+    (project) => project.company === currentCompany
+  );
+
+  const companies = [
+    { name: 'Personal', icon: <GitHubIcon className="h-4 w-4" /> },
+    { name: 'Ensamble', icon: <GitHubIcon className="h-4 w-4" /> },
+    { name: 'KC', icon: <GitHubIcon className="h-4 w-4" /> },
+    { name: 'LEMU', icon: <GitHubIcon className="h-4 w-4" /> },
+  ];
+
+  // Esta función maneja la selección de la compañía y selecciona el primer proyecto de esa compañía
+  const handleCompanySelection = (companyName: string) => {
+    setCurrentCompany(companyName);
+    const selectedCompanyProject = projectsData.find(
+      (project) => project.company === companyName
+    );
+    if (selectedCompanyProject) {
+      setSelectedProject(selectedCompanyProject);
+      if (
+        selectedCompanyProject.iphoneScreenshots &&
+        selectedCompanyProject.iphoneScreenshots.length > 0
+      ) {
+        setType('browser');
+      } else {
+        setType('browser');
+      }
+    }
+  };
+
+  // Esta función maneja la selección de un proyecto dentro de la compañía actual
+  const handleProjectSelection = (project) => {
+    setSelectedProject(project);
+    if (project.iphoneScreenshots && project.iphoneScreenshots.length > 0) {
+      setType('browser');
+    } else {
+      setType('browser');
+    }
+  };
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/Kal-elSam/repos');
+        const response = await fetch(
+          'https://api.github.com/users/Kal-elSam/repos'
+        );
         const data = await response.json();
         setRepos(data);
         setSelectedRepo(data[0]); // Set the first repo as initially selected
@@ -40,21 +95,27 @@ function ProjectsContents() {
     <SectionContent>
       <div className={clsx('flex', 'lg:gap-12')}>
         <div className={clsx('hidden flex-1 flex-col gap-3 pt-8', 'lg:flex')}>
-          {repos.map((repo, index) => (
+          {filteredProjects.map((project) => (
             <SectionButton
-              key={repo.id}
-              title={repo.name}
+              key={project.projectName}
+              title={project.projectName}
               icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-              active={currentState === index.toString()}
-              onClick={() => handleRepoSelection(repo, index)}
-              innerButtonUrl={repo.svn_url}
+              active={selectedProject?.projectName === project.projectName}
+              onClick={() => handleProjectSelection(project)}
             />
           ))}
         </div>
         <div className={clsx('w-full', 'lg:w-auto')}>
           <div className={clsx('-mt-[41px]')}>
-            <div className={clsx('w-full', 'lg:h-[400px] lg:w-[600px]')}>
-              <AppWindow
+            <div
+              className={clsx(
+                'w-full',
+                type === 'browser'
+                  ? 'lg:h-[500px] lg:w-[800px]'
+                  : 'lg:h-[644px] lg:w-[390px]'
+              )}
+            >
+              {/* <AppWindow
                 type="browser"
                 browserTabs={
                   repos.length > 0 &&
@@ -76,7 +137,25 @@ function ProjectsContents() {
                     topics={selectedRepo.topics}
                   />
                 )}
-              </AppWindow>
+              </AppWindow> */}
+
+              <CompanyWindow
+                type={type}
+                browserTabs={companies.map((company) => ({
+                  icon: company.icon,
+                  title: company.name,
+                  isActive: currentCompany === company.name,
+                  onSelect: () => handleCompanySelection(company.name),
+                }))}
+              >
+                {selectedProject && (
+                  <ProjectWireframe
+                    projectName={selectedProject.projectName}
+                    iphoneScreenshots={selectedProject.iphoneScreenshots}
+                    macScreenshots={selectedProject.macScreenshots}
+                  />
+                )}
+              </CompanyWindow>
             </div>
           </div>
         </div>

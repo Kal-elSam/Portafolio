@@ -50,9 +50,10 @@ function CleanIntuitive() {
     <>
       <header className={clsx('mb-8')}>
       <SectionTitle
-       title="Modern & Minimalist."
-       caption="Clean & Intuitive Code"
-       description="I prioritize maintaining clean and modern frontend code, ensuring that it enhances the user experience without compromise. My focus is on delivering sleek, efficient interfaces that are both functional and visually appealing."
+title="Modern Simplicity."
+caption="Clean & Intuitive Code"
+description="I specialize in crafting clean, modern frontend code that enhances the user experience with no compromises. My focus is on delivering sleek, efficient interfaces where functionality meets aesthetic appeal."
+
      />
       </header>
       <SectionContent>

@@ -41,6 +41,7 @@ function Toast({ title, message, t }: ToastProps) {
           type="button"
           className={clsx('flex items-center justify-center rounded-lg')}
           onClick={() => toast.remove(t.id)}
+          aria-label="Close notification" // Etiqueta accesible añadida
         >
           <XCircleIcon className={clsx('h-5 w-5')} />
         </button>

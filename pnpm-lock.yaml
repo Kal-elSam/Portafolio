@@ -27,7 +27,7 @@ importers:
       '@next/font': ^13.1.1
       '@next/mdx': ^13.1.1
       '@octokit/rest': ^20.0.1
-      '@prisma/client': ^4.8.1
+      '@prisma/client': ^4.16.2
       '@rumess/react-flip-countdown': ^1.2.6
       '@sekai-world/react-flip-countdown': ^1.3.0
       '@types/lodash': ^4.14.191

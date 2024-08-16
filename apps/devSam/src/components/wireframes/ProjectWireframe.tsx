@@ -30,11 +30,6 @@ function ProjectWireframe({
     );
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    const touchStartX = e.touches[0].clientX;
-    e.target.addEventListener('touchend', (ev: any) => handleTouchEnd(ev, touchStartX), { once: true });
-  };
-
   const handleTouchEnd = (e: TouchEvent, touchStartX: number) => {
     const touchEndX = e.changedTouches[0].clientX;
     if (touchStartX - touchEndX > 50) {
@@ -42,6 +37,11 @@ function ProjectWireframe({
     } else if (touchStartX - touchEndX < -50) {
       goToPreviousImage();
     }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touchStartX = e.touches[0].clientX;
+    e.target.addEventListener('touchend', (ev: any) => handleTouchEnd(ev, touchStartX), { once: true });
   };
 
   return (

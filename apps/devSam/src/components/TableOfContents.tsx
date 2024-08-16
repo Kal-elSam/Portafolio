@@ -29,11 +29,11 @@ function TableOfContentsLink({
   );
 }
 
-interface TableOfContensProps {
-  items: Array<TTableOfContentsItem>;
+interface TableOfContentsProps {
+  items?: Array<TTableOfContentsItem>; // Hacer que sea opcional
 }
 
-function TableOfContents({ items = [] }: TableOfContensProps) {
+function TableOfContents({ items = [] }: TableOfContentsProps) { // Proporciona un valor por defecto
   const isScrolled = useOnScroll(200);
   const { currentVisibles } = useScrollSpy();
 

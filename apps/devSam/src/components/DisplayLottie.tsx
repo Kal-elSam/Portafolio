@@ -28,6 +28,7 @@ function GreetingLottie({ animationPath }: Props) {
       tabIndex={0}
       onClick={handleClick}
       onKeyPress={handleKeyPress}
+      aria-label="Play animation" // Descripción textual del control
     >
       <Lottie options={defaultOptions} />
     </div>

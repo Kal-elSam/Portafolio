@@ -88,13 +88,13 @@ function HeaderTitle() {
           <strong
             className={clsx('font-bold text-slate-700', 'dark:text-slate-300')}
           >
-            Front-End Developer
+            Software Engineer
           </strong>{' '}
-          focused on building scalable, maintainable web apps.{' '}
+          focused on building scalable,{' '}
           <span className={clsx('block')}>
-            Passionate learner, always seeking
+          maintainable software solutions.
             <br />
-            new challenges and innovative solutions.
+            Passionate learner, always seeking new challenges and innovative solutions.
           </span>
         </m.h1>
       </span>

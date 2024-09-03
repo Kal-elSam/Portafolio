@@ -132,6 +132,11 @@ const projectsData: ProjectType[] = [
     iphoneScreenshots: [
       '/assets/projects/kc/eos/login.png',
       '/assets/projects/kc/eos/home.png',
+      '/assets/projects/kc/eos/home2.png',
+      '/assets/projects/kc/eos/bonos.png',
+      '/assets/projects/kc/eos/dashboard.png',
+      '/assets/projects/kc/eos/dash2.png',
+      '/assets/projects/kc/eos/dash3.png',
     ],
   },
   {
@@ -141,6 +146,9 @@ const projectsData: ProjectType[] = [
     macScreenshots: [
       '/assets/projects/kc/titan/login.png',
       '/assets/projects/kc/titan/home.png',
+      '/assets/projects/kc/titan/tickets.png',
+      '/assets/projects/kc/titan/new.png',
+      '/assets/projects/kc/titan/chat.png',
     ],
   },
   {

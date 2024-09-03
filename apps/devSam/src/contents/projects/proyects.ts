@@ -9,6 +9,23 @@ type ProjectType = {
 
 const projectsData: ProjectType[] = [
   {
+    projectName: 'Github Search',
+    company: 'Personal',
+    iconPath: '/assets/superman.ico',
+    macScreenshots: [
+      '/assets/projects/personal/github-search/home.png',
+      '/assets/projects/personal/github-search/users.png',
+      '/assets/projects/personal/github-search/users-search.png',
+      '/assets/projects/personal/github-search/repo.png',
+      '/assets/projects/personal/github-search/repo-search.png',
+      '/assets/projects/personal/github-search/mobile1.png',
+      '/assets/projects/personal/github-search/mobile2.png',
+      '/assets/projects/personal/github-search/mobile3.png',
+      '/assets/projects/personal/github-search/mobile4.png',
+    ],
+    
+  },
+  {
     projectName: 'Cinemapedia',
     company: 'Personal',
     iconPath: '/assets/superman.ico',
@@ -33,6 +50,7 @@ const projectsData: ProjectType[] = [
       '/assets/projects/personal/Admin Dashboard/form.png',
     ],
   },
+
   {
     projectName: 'Vacunas',
     company: 'Ensamble',

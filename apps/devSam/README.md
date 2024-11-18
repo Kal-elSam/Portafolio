@@ -13,7 +13,7 @@
 - Master in Project Management and knowledge in agile methodologies like Scrum.
 - I have developed applications using OOP, Tailwind CSS, React.js,Flutter, SQL and JavaScript.
 - You can see my personal work at [link](https://portfolio-devsam.vercel.app/)
-- Currently I am open to internship or job opportunities, here's [my resume](https://www.dropbox.com/s/rkef1qfp795ojvj/SamuelGomezDevResume.pdf?dl=0)
+- Currently I am open to internship or job opportunities, here's [my resume](https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=szsspq0y&dl=0)
 
 ## 💼 Professional Experience
 

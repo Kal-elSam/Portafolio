@@ -1,11 +1,10 @@
 import {
-  faCss3Alt,
   faGitAlt,
   faGithub,
-  faHtml5,
   faJira,
   faJsSquare,
-  faReact,
+  faPython,
+  faReact
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
@@ -17,6 +16,7 @@ import {
   TailwindCssIcon,
   TypeScriptIcon,
   VSCodeIcon,
+  SQLIcon
 } from '@/components/Icons';
 
 const animation = {
@@ -30,14 +30,23 @@ const animation = {
 function HeaderTechStack() {
   return (
     <div>
+      {/* Título Principal */}
       <m.p
-        className={clsx('mb-2.5 text-sm text-slate-600', 'dark:text-slate-400')}
-        initial={animation.hide}
-        animate={animation.show}
+        className={clsx(
+          'text-xl font-bold text-slate-800 mb-4',
+          'dark:text-slate-200'
+        )}
+        initial={{ x: -8, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.6 }}
       >
-        current favorite tech stack/tools:
+        Current Favorite Tech Stack/Tools
       </m.p>
+
+      {/* Languages */}
+      <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2 mt-6">
+        Languages:
+      </h3>
       <m.ul
         className={clsx(
           'flex items-center gap-3.5 text-slate-500',
@@ -47,16 +56,6 @@ function HeaderTechStack() {
         animate="show"
         transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#E34F26]')}>
-            <FontAwesomeIcon icon={faHtml5} className={clsx('h-6 w-6')} />
-          </div>
-        </m.li>
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#1572B6]')}>
-            <FontAwesomeIcon icon={faCss3Alt} className={clsx('h-6 w-6')} />
-          </div>
-        </m.li>
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#F0DB4F]')}>
             <FontAwesomeIcon icon={faJsSquare} className={clsx('h-6 w-6')} />
@@ -68,25 +67,30 @@ function HeaderTechStack() {
           </div>
         </m.li>
         <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#3776AB]')}>
+            <FontAwesomeIcon icon={faPython} className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+      </m.ul>
+
+      {/* Frameworks */}
+      <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2 mt-6">
+        Frameworks:
+      </h3>
+      <m.ul
+        className={clsx(
+          'flex items-center gap-3.5 text-slate-500',
+          'dark:text-slate-500'
+        )}
+        initial="hide"
+        animate="show"
+        transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
+      >
+        <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#61DAFB]')}>
             <FontAwesomeIcon icon={faReact} className={clsx('h-6 w-6')} />
           </div>
         </m.li>
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#02569B]')}>
-            <FlutterIcon className={clsx('h-6 w-6')} />
-          </div>
-        </m.li>
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#06B6D4]')}>
-            <TailwindCssIcon className={clsx('h-6 w-6')} />
-          </div>
-        </m.li>
-        {/* <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#003B57]')}>
-            <FontAwesomeIcon icon={faDatabase} className={clsx('h-6 w-6')} />
-          </div>
-        </m.li> */}
         <m.li variants={animation}>
           <div
             className={clsx(
@@ -97,8 +101,50 @@ function HeaderTechStack() {
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={clsx('h-3 w-[1px] bg-slate-300 dark:bg-slate-700')} />
+          <div className={clsx('transition duration-200 hover:text-[#000000]')}>
+            <FlutterIcon className={clsx('h-6 w-6')} />
+          </div>
         </m.li>
+      </m.ul>
+
+      {/* Technologies */}
+      <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2 mt-6">
+        Technologies:
+      </h3>
+      <m.ul
+        className={clsx(
+          'flex items-center gap-3.5 text-slate-500',
+          'dark:text-slate-500'
+        )}
+        initial="hide"
+        animate="show"
+        transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
+      >
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#336791]')}>
+            <SQLIcon className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#06B6D4]')}>
+            <TailwindCssIcon className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+      </m.ul>
+
+      {/* Tools */}
+      <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2 mt-6">
+        Tools:
+      </h3>
+      <m.ul
+        className={clsx(
+          'flex items-center gap-3.5 text-slate-500',
+          'dark:text-slate-500'
+        )}
+        initial="hide"
+        animate="show"
+        transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
+      >
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#007ACC]')}>
             <VSCodeIcon className={clsx('h-6 w-6')} />

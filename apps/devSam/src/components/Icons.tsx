@@ -703,3 +703,59 @@ export function FlutterIcon(props: ComponentProps<'svg'>) {
     </svg>
   );
 }
+
+export function GraphQLIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <title>GraphQL Icon</title>
+      <path d="M12 2C11.1 2 10.4 2.7 10.4 3.6L3.6 17.4C2.7 18.2 2.7 19.6 3.6 20.4C4.5 21.3 5.9 21.3 6.6 20.4L12 14.4L17.4 20.4C18.3 21.3 19.7 21.3 20.6 20.4C21.5 19.6 21.5 18.2 20.6 17.4L13.6 3.6C13.6 2.7 12.9 2 12 2ZM12 16.8L8.4 20.4L12 23.6L15.6 20.4L12 16.8Z" />
+    </svg>
+  );
+}
+export function PostgreSQLIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <title>PostgreSQL Icon</title>
+      <path d="M12 2C9.1 2 6.7 4.1 6.2 7L5 7.5C3.3 8.2 2 10.2 2 12.5C2 14.8 3.3 16.8 5 17.5L6.2 18C6.7 20.9 9.1 23 12 23C14.9 23 17.3 20.9 17.8 18L19 17.5C20.7 16.8 22 14.8 22 12.5C22 10.2 20.7 8.2 19 7.5L17.8 7C17.3 4.1 14.9 2 12 2ZM12 4C13.7 4 15 5.3 15 7C15 8.7 13.7 10 12 10C10.3 10 9 8.7 9 7C9 5.3 10.3 4 12 4Z" />
+    </svg>
+  );
+}
+
+export function ReactNativeIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <title>React Native Icon</title>
+      <circle cx="12" cy="12" r="3.2" />
+      <path d="M12 0C14.1 0 15.9 2.5 16.7 6C14.8 6 12.6 4.5 12 3C11.4 4.5 9.2 6 7.3 6C8.1 2.5 9.9 0 12 0ZM12 24C9.9 24 8.1 21.5 7.3 18C9.2 18 11.4 19.5 12 21C12.6 19.5 14.8 18 16.7 18C15.9 21.5 14.1 24 12 24ZM0 12C0 9.9 2.5 8.1 6 7.3C6 9.2 4.5 11.4 3 12C4.5 12.6 6 14.8 6 16.7C2.5 15.9 0 14.1 0 12ZM24 12C24 14.1 21.5 15.9 18 16.7C18 14.8 19.5 12.6 21 12C19.5 11.4 18 9.2 18 7.3C21.5 8.1 24 9.9 24 12Z" />
+    </svg>
+  );
+}
+
+export function SQLIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <title>SQL Icon</title>
+      <path d="M12 2C6.5 2 2 3.3 2 5V19C2 20.7 6.5 22 12 22C17.5 22 22 20.7 22 19V5C22 3.3 17.5 2 12 2ZM12 20C7.3 20 4 18.9 4 18V15.7C5.5 16.4 8.2 17 12 17C15.8 17 18.5 16.4 20 15.7V18C20 18.9 16.7 20 12 20ZM12 15C7.3 15 4 13.9 4 13V10.7C5.5 11.4 8.2 12 12 12C15.8 12 18.5 11.4 20 10.7V13C20 13.9 16.7 15 12 15ZM12 10C7.3 10 4 8.9 4 8V5.7C5.5 6.4 8.2 7 12 7C15.8 7 18.5 6.4 20 5.7V8C20 8.9 16.7 10 12 10Z" />
+    </svg>
+  );
+}

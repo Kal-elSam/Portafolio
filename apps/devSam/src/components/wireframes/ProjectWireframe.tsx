@@ -49,14 +49,14 @@ function ProjectWireframe({
       className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-full w-full relative"
       onTouchStart={handleTouchStart}
     >
-      <button
+      {/* <button
         type="button"
         className="absolute left-0 z-10 p-2 bg-black bg-opacity-50 rounded-full focus:outline-none sm:p-3"
         onClick={goToPreviousImage}
         aria-label="Previous Image"
       >
         <FaArrowLeft className="text-white" />
-      </button>
+      </button> */}
       <div className=" h-full w-full">
         <Image
           src={screenshots[currentImageIndex]}
@@ -66,14 +66,14 @@ function ProjectWireframe({
           className="rounded-lg shadow-md"
         />
       </div>
-      <button
+      {/* <button
         type="button"
         className="absolute right-0 z-10 p-2 bg-black bg-opacity-50 rounded-full focus:outline-none sm:p-3"
         onClick={goToNextImage}
         aria-label="Next Image"
       >
         <FaArrowRight className="text-white" />
-      </button>
+      </button> */}
     </div>
   );
 }

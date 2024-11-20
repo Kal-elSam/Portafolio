@@ -5,27 +5,19 @@ type ProjectType = {
   iphoneScreenshots?: string[] | null;
   macScreenshots?: string[] | null;
   iconPath?: string;
+  technologies?: string[];
 };
-
 
 const projectsData: ProjectType[] = [
   {
     projectName: 'Github Search',
     company: 'Personal',
     description: 'Github Search is a web application built with React, Next.js, and TypeScript, designed to interact with the GitHub API for searching users and repositories. This project showcases proficiency in API integration and state management, allowing users to search for GitHub profiles, view repository details, and navigate through search results efficiently. Github Search also demonstrates a strong focus on UI responsiveness and accessibility, ensuring a seamless user experience across different devices.',
-    iconPath: '/assets/superman.ico',
+    iconPath: '/public/assets/superman.ico',
     macScreenshots: [
       '/assets/projects/personal/github-search/home.png',
-      '/assets/projects/personal/github-search/users.png',
-      '/assets/projects/personal/github-search/users-search.png',
-      '/assets/projects/personal/github-search/repo.png',
-      '/assets/projects/personal/github-search/repo-search.png',
-      '/assets/projects/personal/github-search/mobile1.png',
-      '/assets/projects/personal/github-search/mobile2.png',
-      '/assets/projects/personal/github-search/mobile3.png',
-      '/assets/projects/personal/github-search/mobile4.png',
     ],
-    
+    technologies: ['React', 'Next.js', 'TypeScript', 'GitHub API'],
   },
   {
     projectName: 'Cinemapedia',
@@ -34,13 +26,8 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/superman.ico',
     iphoneScreenshots: [
       '/assets/projects/personal/cinemapedia/1.png',
-      '/assets/projects/personal/cinemapedia/2.png',
-      '/assets/projects/personal/cinemapedia/3.png',
-      '/assets/projects/personal/cinemapedia/4.png',
-      '/assets/projects/personal/cinemapedia/5.png',
-      '/assets/projects/personal/cinemapedia/6.png',
-
     ],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Dynamic Routing', 'Server-Side Rendering'],
   },
   {
     projectName: 'DashBoard Next14',
@@ -49,27 +36,18 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/superman.ico',
     macScreenshots: [
       '/assets/projects/personal/Admin Dashboard/dashboard.png',
-      '/assets/projects/personal/Admin Dashboard/login.png',
-      '/assets/projects/personal/Admin Dashboard/table.png',
-      '/assets/projects/personal/Admin Dashboard/form.png',
     ],
+    technologies: ['Next.js 14', 'React', 'TypeScript', 'Server-Side Rendering', 'State Management'],
   },
-
   {
     projectName: 'Vacunas',
     company: 'Ensamble',
     description:'Vacunas is a user-facing registration platform built with Next.js, React, and Tailwind CSS, designed to simplify the vaccination appointment process. Users can register for vaccines, select preferred locations, schedule dates, and add family members for group appointments. With form handling through Formik and Yup for validation, as well as smooth transitions enabled by Framer Motion, Vacunas offers a secure, responsive, and user-friendly experience. It also integrates with @vercel/postgres to manage data efficiently.',
     iconPath: '/assets/empresas/ensamble-logo.png',
     macScreenshots: [
-      '/assets/projects/ensamble/covid/home.png',
       '/assets/projects/ensamble/covid/cards.png',
-      '/assets/projects/ensamble/covid/cards2.png',
-      '/assets/projects/ensamble/covid/confirmacion.png',
-      '/assets/projects/ensamble/covid/soporte.png',
-      '/assets/projects/ensamble/covid/admin.png',
-      '/assets/projects/ensamble/covid/tabla1.png',
-      '/assets/projects/ensamble/covid/tabla2.png',
     ],
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Formik', 'Yup', 'Framer Motion', '@vercel/postgres'],
   },
   {
     projectName: 'Admin Vacunas',
@@ -77,10 +55,9 @@ const projectsData: ProjectType[] = [
     description:'Admin Vacunas is an administrative dashboard developed using Next.js, React, and NextUI, tailored to manage vaccination data across multiple locations. This platform allows administrators to monitor user registrations, manage dose allocation, and schedule appointments by site. It includes features for secure data handling, role-based access, and data export using xlsx. By leveraging Tailwind CSS for responsive design and next-auth for authentication, Admin Vacunas ensures a streamlined and secure workflow for managing high-volume vaccination logistics.',
     iconPath: '/assets/empresas/ensamble-logo.png',
     macScreenshots: [
-      '/assets/projects/ensamble/vacuna/login.png',
-      '/assets/projects/ensamble/vacuna/home1.png',
       '/assets/projects/ensamble/vacuna/modal.png',
     ],
+    technologies: ['Next.js', 'React', 'NextUI', 'Tailwind CSS', 'next-auth', 'xlsx'],
   },
   {
     projectName: 'Red Medica',
@@ -89,12 +66,8 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/ensamble-logo.png',
     iphoneScreenshots: [
       '/assets/projects/ensamble/medica/inicio.jpeg',
-      '/assets/projects/ensamble/medica/categoria.jpeg',
-      '/assets/projects/ensamble/medica/home.jpeg',
-      '/assets/projects/ensamble/medica/home2.jpeg',
-      '/assets/projects/ensamble/medica/home3.jpeg',
-      '/assets/projects/ensamble/medica/mapa.jpeg',
     ],
+    technologies: ['Flutter', 'Riverpod', 'Google Maps API', 'Flutter Map', 'Dio', 'Flutter Native Splash'],
   },
   {
     projectName: 'SegunNet',
@@ -102,11 +75,9 @@ const projectsData: ProjectType[] = [
     description:'SegunNet is a ticket management platform for customer support, built with React and Node.js. The app allows users to create, view, and manage support tickets in a centralized system. Designed with a responsive UI and efficient state management, SegunNet provides a seamless experience for tracking issues from creation to resolution. The backend, implemented in Node.js, ensures data consistency and reliability, supporting various ticket statuses and priority levels to streamline customer service workflows.',
     iconPath: '/assets/empresas/ensamble-logo.png',
     macScreenshots: [
-      '/assets/projects/ensamble/segunet/login.png',
       '/assets/projects/ensamble/segunet/home.png',
-      '/assets/projects/ensamble/segunet/new.png',
-      '/assets/projects/ensamble/segunet/bitacora.png',
     ],
+    technologies: ['React', 'Node.js'],
   },
   {
     projectName: 'Bi',
@@ -114,11 +85,9 @@ const projectsData: ProjectType[] = [
     description:'Bi is a business intelligence platform built with Next.js, React, and Tailwind CSS, designed to integrate seamlessly with Power BI for advanced data visualization. The platform allows users to generate interactive charts using echarts-for-react and export reports in PDF or Excel formats through jspdf and xlsx. With responsive design and efficient state management, Bi provides a streamlined experience for querying and analyzing critical business data. Authentication and secure access are handled using NextAuth, ensuring data confidentiality and reliability.',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
-      '/assets/projects/kc/bi/login.png',
-      '/assets/projects/kc/bi/h01.png',
-      '/assets/projects/kc/bi/mesa.png',
       '/assets/projects/kc/bi/chart.png',
     ],
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Power BI', 'echarts-for-react', 'jspdf', 'xlsx', 'NextAuth'],
   },
   {
     projectName: 'CRM',
@@ -126,14 +95,9 @@ const projectsData: ProjectType[] = [
     description:'This CRM platform is developed with React and a custom API to manage client relationships effectively. It offers features such as lead tracking, client communication, and data management in a streamlined interface. By implementing modular components and efficient state management, the CRM provides a smooth and responsive user experience. It supports role-based access and real-time notifications, making it a robust solution for sales and support teams to improve customer interactions.',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
-      '/assets/projects/kc/crm/crm-login.png',
-      '/assets/projects/kc/crm/crm-home.png',
       '/assets/projects/kc/crm/crm-notification.png',
-      '/assets/projects/kc/crm/crm-notification2.png',
-      '/assets/projects/kc/crm/crm-ratios.png',
-      '/assets/projects/kc/crm/crm-cartera.png',
-      '/assets/projects/kc/crm/crm-tickets.png',
     ],
+    technologies: ['React', 'Custom API'],
   },
   {
     projectName: 'EoS',
@@ -142,13 +106,8 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     iphoneScreenshots: [
       '/assets/projects/kc/eos/login.png',
-      '/assets/projects/kc/eos/home.png',
-      '/assets/projects/kc/eos/home2.png',
-      '/assets/projects/kc/eos/bonos.png',
-      '/assets/projects/kc/eos/dashboard.png',
-      '/assets/projects/kc/eos/dash2.png',
-      '/assets/projects/kc/eos/dash3.png',
     ],
+    technologies: ['Ionic Framework', 'Angular', 'Chart.js', 'ngx-socket-io'],
   },
   {
     projectName: 'Titan',
@@ -157,11 +116,8 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
       '/assets/projects/kc/titan/login.png',
-      '/assets/projects/kc/titan/home.png',
-      '/assets/projects/kc/titan/tickets.png',
-      '/assets/projects/kc/titan/new.png',
-      '/assets/projects/kc/titan/chat.png',
     ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'ApexCharts', 'Chakra UI', 'xlsx'],
   },
   {
     projectName: 'Atlas de la Biodiversidad',
@@ -170,10 +126,8 @@ const projectsData: ProjectType[] = [
     iconPath: '/assets/empresas/logo-lemu-2021.webp',
     iphoneScreenshots: [
       '/assets/projects/lemu/1.png',
-      '/assets/projects/lemu/2.png',
-      '/assets/projects/lemu/3.png',
-      '/assets/projects/lemu/4.png',
     ],
+    technologies: ['Flutter', 'Firebase', 'Google Maps API', 'Geolocation', 'Real-time Data'],
   },
   {
     projectName: 'Maximus',
@@ -181,18 +135,9 @@ const projectsData: ProjectType[] = [
     description:'Maximus is a data dashboard built with Next.js, React, and TypeScript, specifically designed for tracking and analyzing agent performance across different regions. The platform incorporates interactive charts and visualizations using react-chartjs-2 and ApexCharts, providing insights into key performance metrics and yearly goals. Maximus supports secure data export to Excel, role-based access, and real-time data updates, making it an essential tool for regional managers and promoters to monitor targets, optimize performance, and achieve strategic objectives.',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     macScreenshots: [
-      '/assets/projects/kc/maximus/login.png',
-      '/assets/projects/kc/maximus/landing.png',
       '/assets/projects/kc/maximus/dashboard.png',
-      '/assets/projects/kc/maximus/home.png',
-      '/assets/projects/kc/maximus/home1.png',
-      '/assets/projects/kc/maximus/home2.png',
-      '/assets/projects/kc/maximus/home3.png',
-      '/assets/projects/kc/maximus/home4.png',
-      '/assets/projects/kc/maximus/registro.png',
-      '/assets/projects/kc/maximus/registro1.png',
-      '/assets/projects/kc/maximus/importar.png',
     ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'react-chartjs-2', 'ApexCharts', 'xlsx'],
   },
 ];
 

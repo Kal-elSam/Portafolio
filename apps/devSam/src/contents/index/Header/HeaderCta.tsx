@@ -36,7 +36,7 @@ function ButtonResume() {
     <a
       target="_blank"
       rel="noreferrer nofollow"
-      href="https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=szsspq0y&dl=0"
+      href="https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=akq4dgsb&dl=0"
       className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
     >
       <DocumentIcon className={clsx('h-5 w-5')} />

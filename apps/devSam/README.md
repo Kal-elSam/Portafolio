@@ -1,7 +1,7 @@
 <h1 align="center"><b>Hello, I'm Sam Gomez!</b><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&color=%2300bfff&size=24&center=true&vCenter=true&width=600&height=50&lines=Full-Stack+Software+Engineer;Frontend+and+Mobile+Development+Specialist;Passionate+about+Tech+Innovation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&color=%2300bfff&size=24&center=true&vCenter=true&width=600&height=50&lines=Software+Engineer;Frontend+and+Mobile+Development+Specialist;Passionate+about+Tech+Innovation">
 </p>
 
 ## 💻 About Me
@@ -9,30 +9,31 @@
 <img align="right" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="250">
 
 - 🌟 **Senior Software Engineer** with over **4 years of experience** delivering scalable and efficient full-stack solutions.
-- 🚀 Proficient in **ReactJS**, **React Native**, **Node.js**, **Python**, and **Flutter**, specializing in crafting seamless user experiences across platforms.
+- 🚀 Proficient in **NextJS**, **React Native**, **Node.js**, **Python**, and **Flutter**, specializing in crafting seamless user experiences across platforms.
 - 💾 Skilled in database systems like **PostgreSQL**, **SQL**, and adept in implementing **GraphQL** and **RESTful APIs** for robust backend communication.
 - 🌐 Experienced in **Flask** for backend services, leveraging its simplicity and performance to create secure and scalable systems.
 - 🛠️ Passionate about leveraging **DevOps practices** (Docker, CI/CD) and cloud technologies (**AWS**, **Azure**) to drive innovation and improve workflows.
 - 🌐 Advocate for **agile methodologies**, using frameworks like Scrum to deliver projects efficiently and effectively.
 - 🎓 Educational background includes an **M.S. in Project Management** and a **B.S. in Mechanical Engineering**.
 - 📚 Currently expanding my expertise in **AI** and **Site Reliability Engineering (SRE)**.
-- 📁 Explore my personal projects on [my portfolio](https://portfolio-devsam.vercel.app/) or view [my resume](https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=szsspq0y&dl=0").
+- 📁 Explore my personal projects on [my portfolio](https://portfolio-devsam.vercel.app/) or view [my resume](https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=akq4dgsb&dl=0).
 
 ## 💼 Professional Experience
 
-- **Full-Stack Engineer at Ensamble Administrador de Riesgos y Sistemas, Mexico** (Sep 2022 - Present)  
-  - Developed and optimized frontend features using **ReactJS**, improving system scalability and efficiency by 30%.
+- **Software Engineer – Frontend Specialist, Remote for Ensamble Administrador de Riesgos y Sistemas, Mexico** (Sep 2022 - Present)  
+  - Developed and optimized frontend features using **NextJS**, improving system scalability and efficiency by 30%.
   - Extended platform capabilities through **React Native** and **Flutter** mobile applications, increasing user engagement by 20%.
   - Designed and implemented scalable backend APIs with **Node.js**, **Flask**, and **GraphQL**.
 
-- **Flutter Mobile Engineer, Remote for Lemu, Chile** (Apr 2022 - Sep 2022)  
+- **Product Owner & Mobile Engineer, Remote for Lemu, Chile** (Apr 2022 - Sep 2022)  
+  - Led feature prioritization and roadmap definition for cross-platform Flutter mobile applications, aligning technical solutions with user needs and business objectives.
   - Spearheaded the development of **Flutter** mobile applications, enhancing usability and user retention.
   - Integrated backend services using **GraphQL**, **RESTful APIs**, and **PostgreSQL**.
   - Streamlined mobile app releases by implementing **CI/CD pipelines**, reducing deployment time by 20%.
 
-- **Frontend Engineer at Grupo KC, Mexico** (Dec 2020 - Jul 2022)  
-  - Created responsive, high-performance web interfaces using **HTML**, **CSS**, **JavaScript**, and **ReactJS**.
-  - Increased team productivity by 15% through best practices and Scrum methodologies.
+- **Frontend Engineer, Remote for Grupo KC, Mexico** (Dec 2020 - Jul 2022)  
+  - Built dynamic, high-performance web interfaces using NextJS, TypeScript, and TailwindCSS, enhancing user experience and accessibility.
+  - Improved team efficiency by 15% through reusable components and adherence to Agile/Scrum practices.
 
 ## 🛠 Skills
 

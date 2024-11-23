@@ -2,11 +2,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
-import { GitHubIcon } from '../Icons';
+import { ExternalLink } from '../Icons';
+import { any } from 'zod';
 
 interface ProjectCardProps {
   projectName: string;
   description: string;
+  link: string;
   technologies: string[];
   iphoneScreenshots?: string[];
   macScreenshots?: string[];
@@ -15,6 +17,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = function ProjectCard({
   projectName,
   description,
+  link,
   technologies,
   iphoneScreenshots = [],
   macScreenshots = [],
@@ -58,12 +61,21 @@ const ProjectCard: React.FC<ProjectCardProps> = function ProjectCard({
             </span>
           ))}
         </div>
-
-        {/* Ícono de GitHub */}
-        {/* <div className="flex justify-end">
-          <GitHubIcon className="h-6 w-6 text-gray-400 transition duration-300 hover:text-teal-400" />
-        </div> */}
+        {/* Enlace al Proyecto */}
+        {link && (
+          <div>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-teal-500 hover:text-teal-400"
+            >
+              <ExternalLink className="h-5 w-5" aria-label={`External link to ${projectName}`} />
+            </a>
+          </div>
+        )}
       </div>
+
       {/* Contenedor de la imagen */}
       <div className="flex w-full items-center justify-center p-6 md:w-1/2">
         <div

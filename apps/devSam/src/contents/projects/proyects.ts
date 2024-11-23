@@ -6,6 +6,7 @@ type ProjectType = {
   macScreenshots?: string[] | null;
   iconPath?: string;
   technologies?: string[];
+  link?: string;
 };
 
 const projectsData: ProjectType[] = [
@@ -14,6 +15,7 @@ const projectsData: ProjectType[] = [
     company: 'Personal',
     description:
       'GitHub Search is a web application developed using React, Next.js, and TypeScript, designed to interact with the GitHub API for searching users and repositories. This project demonstrates proficiency in API integration and state management, allowing users to search for GitHub profiles, view repository details, and navigate through search results efficiently. Additionally, GitHub Search emphasizes UI responsiveness and accessibility, ensuring a seamless user experience across various devices.',
+      link: 'https://github-search-app-nu.vercel.app/',
     iconPath: '/public/assets/superman.ico',
     macScreenshots: ['/assets/projects/personal/github-search/home.png'],
     technologies: [
@@ -26,6 +28,27 @@ const projectsData: ProjectType[] = [
       'Framer Motion',
       'React Icons',
       'Tailwind CSS',
+    ],
+  },
+  {
+    projectName: 'CVA Church Page',
+    company: 'Personal',
+    description:
+    'CVA Church Page is a modern and responsive web application developed using Astro.js, TailwindCSS, and TypeScript. This project serves as an official platform for CVA church, providing information about the church, events, and ministries. It leverages SEO best practices and performance optimizations to ensure quick loading times and high visibility on search engines. The application includes features like RSS feeds, a sitemap, and analytics integration for effective content management and monitoring.',
+    link: 'https://cva-page.vercel.app/',
+    iconPath: '/public/assets/superman.ico',
+    macScreenshots: ['/assets/projects/personal/cva/home.png'],
+    technologies: [
+      'Astro.js',
+      'TailwindCSS',
+      'TypeScript',
+      '@astrojs/rss',
+      '@astrojs/sitemap',
+      '@astrolib/analytics',
+      '@astrolib/seo',
+      'Prettier',
+      'Lodash',
+      'Sharp'
     ],
   },
   {

@@ -131,6 +131,7 @@ function ProjectsContents() {
               <ProjectCard
                 projectName={selectedProject.projectName}
                 description={selectedProject.description || ''}
+                link={selectedProject.link}
                 technologies={selectedProject.technologies}
                 iphoneScreenshots={selectedProject.iphoneScreenshots}
                 macScreenshots={selectedProject.macScreenshots}

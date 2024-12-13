@@ -149,6 +149,24 @@ const projectsData: ProjectType[] = [
     technologies: ['React', 'Node.js'],
   },
   {
+    "projectName": "Batalla vs Thanos",
+    "company": "KC",
+    "description": "Batalla vs Thanos is a gamified platform developed for Grupo KC to motivate sales teams to achieve their bi-monthly sales goals through an epic battle-themed experience. Built with Next.js, React, and Tailwind CSS, the platform integrates SQL databases for robust data management, including custom tables, views, and stored procedures (SPs). API connections were implemented to ensure seamless data flow and real-time tracking. The application emphasizes responsive design and accessibility while leveraging Radix UI for interactive components and crypto-js for secure handling of sensitive information. Despite no data persistence for the competition, the platform delivers a visually appealing and efficient solution for monitoring team progress and results in a competitive and engaging environment.",
+    "iconPath": "/assets/empresas/grupo-kc-logo.jpeg",
+    "macScreenshots": [
+      "/assets/projects/kc/thanos/battle.png"
+    ],
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "crypto-js",
+      "clsx",
+      "lucide-react"
+    ]
+  },
+  {
     projectName: 'Bi',
     company: 'KC',
     description:

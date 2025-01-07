@@ -8,7 +8,7 @@
 
 <img align="right" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="250">
 
-- 🌟 **Senior Software Engineer** with over **4 years of experience** delivering scalable and efficient full-stack solutions.
+- 🌟 **Senior Software Engineer** with **5 years of experience** delivering scalable and efficient full-stack solutions.
 - 🚀 Proficient in **NextJS**, **React Native**, **Node.js**, **Python**, and **Flutter**, specializing in crafting seamless user experiences across platforms.
 - 💾 Skilled in database systems like **PostgreSQL**, **SQL**, and adept in implementing **GraphQL** and **RESTful APIs** for robust backend communication.
 - 🌐 Experienced in **Flask** for backend services, leveraging its simplicity and performance to create secure and scalable systems.

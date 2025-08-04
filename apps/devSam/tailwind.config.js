@@ -55,6 +55,7 @@ module.exports = {
       );
     },
     require('@headlessui/tailwindcss'),
+    require('@tailwindcss/line-clamp'),
     require('tailwindcss-accent')({
       colors: ['red', 'blue'],
       root: 'red',

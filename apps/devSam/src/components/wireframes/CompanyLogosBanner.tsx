@@ -44,6 +44,14 @@ function CollaborativeCompaniesBanner(): JSX.Element {
               objectFit="contain"
             />
           </div>
+          <div className="w-32 h-32 relative bg-white dark:bg-slate-800 p-4 rounded-md shadow-lg">
+            <Image
+              src="/assets/empresas/lumston_logo.jpeg"
+              alt="Lumston Logo"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
       </div>
     </SectionContent>

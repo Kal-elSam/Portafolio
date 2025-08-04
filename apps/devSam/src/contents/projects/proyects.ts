@@ -206,9 +206,9 @@ const projectsData: ProjectType[] = [
     projectName: 'Titan',
     company: 'KC',
     description:
-      'Titan is a modular platform developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 collaborators. The platform integrates an agent dashboard and a help desk module, offering tools for ticket management, performance tracking, and real-time collaboration. Built with Next.js, React, and TypeScript, Titan features advanced data visualization using ApexCharts, a responsive UI designed with Chakra UI, and efficient file handling with xlsx. This platform streamlines operations for insurance agents and support teams, enhancing productivity and collaboration.',
+      'Titan is a modular platform developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 collaborators. The platform integrates an agent dashboard and a help desk module, offering tools for ticket management, performance tracking, and real-time collaboration. Built with Next.js, React, and TypeScript, Titan features advanced data visualization using ApexCharts, a responsive UI designed with Chakra UI, and efficient file handling with xlsx. The project demonstrates advanced full-stack development competencies, enterprise software architecture, and creation of complex solutions for the financial/insurance sector with TypeScript type safety, Server Components optimization, robust authentication, and WCAG accessibility standards.',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    macScreenshots: ['/assets/projects/kc/titan/login.png'],
+    macScreenshots: ['/assets/projects/kc/titan/home.png'],
     technologies: [
       'Next.js',
       'React',
@@ -216,6 +216,29 @@ const projectsData: ProjectType[] = [
       'ApexCharts',
       'Chakra UI',
       'xlsx',
+    ],
+  },
+  {
+    projectName: 'Card Tu Agente',
+    company: 'KC',
+    description:
+      'Personal Agent Portal is a web application developed with Next.js 15, TypeScript and React 19 that serves as a personalized digital platform for insurance agents. Each agent has their own professional web page with integrated quotation and contact functionalities. Features include digital business cards with agent photos, contact information, social media and professional credentials, responsive design with Tailwind CSS and Shadcn UI components, integrated quotation system for different insurance types, multiple communication channels including WhatsApp, phone, email and social media, and global state management with Zustand for efficient application state handling and agent data persistence.',
+    link: 'https://www.tuagente.com.mx/search',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    iphoneScreenshots: ['/assets/projects/kc/cardAgente/card.png'],
+    technologies: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'Tailwind CSS',
+      'Shadcn UI',
+      'Radix UI',
+      'Zustand',
+      'React Hook Form',
+      'Zod',
+      'Lucide React',
+      'React Icons',
+      'pnpm'
     ],
   },
   {
@@ -249,6 +272,58 @@ const projectsData: ProjectType[] = [
       'xlsx',
     ],
   },
+  {
+    projectName: 'Volaris Analytics',
+    company: 'Lumston',
+    description:
+      'Business Intelligence platform developed for Volaris providing real-time data analysis and interactive dashboard management. Integrates Power BI for advanced visualizations, authentication system with AWS Cognito and Azure AD, granular role management, and dashboard categorization by business areas. The application offers a modern user experience with dark/light mode, real-time notifications, and responsive design.',
+    iconPath: '/assets/empresas/lumston_logo.jpeg',
+    macScreenshots: ['/assets/projects/lumston/volaris/volarislog.png'],
+    technologies: [
+      'React 18',
+      'TypeScript',
+      'Vite',
+      'Material-UI (MUI)',
+      'Tailwind CSS',
+      'Redux Toolkit',
+      'Power BI Client',
+      'AWS Cognito',
+      'Azure AD',
+      'Framer Motion',
+      'React Hook Form',
+      'Zod',
+      'i18next',
+      'Vitest',
+      'React Testing Library'
+    ],
+  },
+  {
+    projectName: 'Acolyte Health',
+    company: 'Lumston',
+    description:
+      'Advanced SaaS platform for interactive video marketing that enables companies to create, manage, and distribute personalized video campaigns with digital avatars and interactive content. Features include video campaign management, digital avatar integration with D-ID, interactive surveys, landing page builder, and advanced video studio with Remotion. The platform supports real-time chat capabilities, multi-tenant architecture, and provides immersive experiences for marketing, training, and corporate communication.',
+    iconPath: '/assets/empresas/lumston_logo.jpeg',
+    macScreenshots: ['/assets/projects/lumston/acolyte/acolytelog.png'],
+    technologies: [
+      'Next.js 15',
+      'React 18',
+      'TypeScript',
+      'Material-UI (MUI)',
+      'Ant Design',
+      'Tailwind CSS',
+      'TanStack React Query',
+      'React Hook Form',
+      'Zod',
+      'AWS Amplify',
+      'AWS Cognito',
+      'Remotion',
+      'D-ID Client SDK',
+      'React Konva',
+      'Jest',
+      'Styled Components',
+      'Emotion'
+    ],
+  }
 ];
 
 export default projectsData;

@@ -16,7 +16,7 @@
 - 🌐 Advocate for **agile methodologies**, using frameworks like Scrum to deliver projects efficiently and effectively.
 - 🎓 Educational background includes an **M.S. in Project Management** and a **B.S. in Mechanical Engineering**.
 - 📚 Currently expanding my expertise in **AI-powered interfaces** and **Developer Experience (DX)**.
-- 📁 Explore my personal projects on [my portfolio](https://portfolio-devsam.vercel.app/) or view [my resume](https://www.dropbox.com/scl/fi/fepzlvb178ultxf8uz75t/SamuelGomezDevResume.pdf?rlkey=u8wr5z865wj0ey641trh67o0k&st=akq4dgsb&dl=0).
+- 📁 Explore my personal projects on [my portfolio](https://portfolio-devsam.vercel.app/) or download [my resume](https://portfolio-devsam.vercel.app/assets/docs/SamuelGomezDevResume.pdf).
 
 ## 💼 Professional Experience
 

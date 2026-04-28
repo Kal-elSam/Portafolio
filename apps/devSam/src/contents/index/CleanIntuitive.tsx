@@ -49,12 +49,11 @@ function CleanIntuitive() {
   return (
     <>
       <header className={clsx('mb-8')}>
-      <SectionTitle
-title="Modern Simplicity."
-caption="Clean & Intuitive Code"
-description="I specialize in crafting clean, modern frontend code that enhances the user experience with no compromises. My focus is on delivering sleek, efficient interfaces where functionality meets aesthetic appeal."
-
-     />
+        <SectionTitle
+          title="Architecture That Scales."
+          caption="Frontend Systems"
+          description="I build modular frontend architectures with React, Next.js, and TypeScript, creating reusable UI systems that improve maintainability, team velocity, and long-term product scalability."
+        />
       </header>
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>

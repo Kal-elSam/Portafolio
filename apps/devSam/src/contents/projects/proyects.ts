@@ -2,6 +2,8 @@ type ProjectType = {
   projectName: string;
   company: string;
   description?: string;
+  role?: string;
+  impact?: string;
   iphoneScreenshots?: string[] | null;
   macScreenshots?: string[] | null;
   iconPath?: string;
@@ -11,12 +13,35 @@ type ProjectType = {
 
 const projectsData: ProjectType[] = [
   {
+    projectName: 'AI Lead Qualification Platform',
+    company: 'Kairo Systems',
+    role: 'Founder · Software Engineer · AI Systems',
+    impact:
+      'Built AI-powered workflows for lead qualification and scheduling, reducing response time by ~50% and improving lead-to-booking conversion by ~25%.',
+    description:
+      'Kairo Systems is my AI-driven product company focused on automating customer communication and operational workflows. I designed and implemented a full platform that connects LLM workflows with WhatsApp, Meta, and Google Calendar, using state-machine orchestration to keep asynchronous conversations consistent. The system includes internal dashboards, scheduling flows, and deployment infrastructure built for real production usage.',
+    link: 'https://www.kairosystems.dev/',
+    iconPath: '/assets/empresas/kairo-systems.png',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Node.js',
+      'PostgreSQL',
+      'LLM Function Calling',
+      'WhatsApp API',
+      'Meta API',
+      'Google Calendar API',
+      'Vercel',
+      'Railway',
+    ],
+  },
+  {
     projectName: 'GitHub Search',
     company: 'Personal',
     description:
       'GitHub Search is a web application developed using React, Next.js, and TypeScript, designed to interact with the GitHub API for searching users and repositories. This project demonstrates proficiency in API integration and state management, allowing users to search for GitHub profiles, view repository details, and navigate through search results efficiently. Additionally, GitHub Search emphasizes UI responsiveness and accessibility, ensuring a seamless user experience across various devices.',
-      link: 'https://github-search-app-nu.vercel.app/',
-    iconPath: '/public/assets/superman.ico',
+    link: 'https://github-search-app-nu.vercel.app/',
+    iconPath: '/assets/superman.ico',
     macScreenshots: ['/assets/projects/personal/github-search/home.png'],
     technologies: [
       'React',
@@ -34,9 +59,9 @@ const projectsData: ProjectType[] = [
     projectName: 'CVA Church Page',
     company: 'Personal',
     description:
-    'CVA Church Page is a modern and responsive web application developed using Astro.js, TailwindCSS, and TypeScript. This project serves as an official platform for CVA church, providing information about the church, events, and ministries. It leverages SEO best practices and performance optimizations to ensure quick loading times and high visibility on search engines. The application includes features like RSS feeds, a sitemap, and analytics integration for effective content management and monitoring.',
+      'CVA Church Page is a modern and responsive web application developed using Astro.js, TailwindCSS, and TypeScript. This project serves as an official platform for CVA church, providing information about the church, events, and ministries. It leverages SEO best practices and performance optimizations to ensure quick loading times and high visibility on search engines. The application includes features like RSS feeds, a sitemap, and analytics integration for effective content management and monitoring.',
     link: 'https://cva-page.vercel.app/',
-    iconPath: '/public/assets/superman.ico',
+    iconPath: '/assets/superman.ico',
     macScreenshots: ['/assets/projects/personal/cva/home.png'],
     technologies: [
       'Astro.js',
@@ -48,7 +73,7 @@ const projectsData: ProjectType[] = [
       '@astrolib/seo',
       'Prettier',
       'Lodash',
-      'Sharp'
+      'Sharp',
     ],
   },
   {
@@ -149,96 +174,230 @@ const projectsData: ProjectType[] = [
     technologies: ['React', 'Node.js'],
   },
   {
-    "projectName": "Batalla vs Thanos",
-    "company": "KC",
-    "description": "Batalla vs Thanos is a gamified platform developed for Grupo KC to motivate sales teams to achieve their bi-monthly sales goals through an epic battle-themed experience. Built with Next.js, React, and Tailwind CSS, the platform integrates SQL databases for robust data management, including custom tables, views, and stored procedures (SPs). API connections were implemented to ensure seamless data flow and real-time tracking. The application emphasizes responsive design and accessibility while leveraging Radix UI for interactive components and crypto-js for secure handling of sensitive information. Despite no data persistence for the competition, the platform delivers a visually appealing and efficient solution for monitoring team progress and results in a competitive and engaging environment.",
-    "iconPath": "/assets/empresas/grupo-kc-logo.jpeg",
-    "macScreenshots": [
-      "/assets/projects/kc/thanos/battle.png"
-    ],
-    "technologies": [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Radix UI",
-      "crypto-js",
-      "clsx",
-      "lucide-react"
-    ]
-  },
-  {
-    projectName: 'Bi',
+    projectName: 'NEXUS / Riesgos Amparados',
     company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Built a dark-theme sales enablement platform and related operational views for agent activation, support workflows, and opportunity management.',
     description:
-      'Bi is a business intelligence platform developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 collaborators. Built with Next.js, React, and Tailwind CSS, Bi integrates seamlessly with Power BI to deliver advanced data visualization capabilities. Users can generate interactive charts using echarts-for-react and export reports in PDF or Excel formats through jspdf and xlsx. The platform emphasizes responsive design and efficient state management, providing a streamlined experience for querying and analyzing critical business data. Authentication and secure access are managed using NextAuth, ensuring data confidentiality and reliability.',
+      'NEXUS is a commercial platform for Grupo KC focused on activating a second source of income for agents through guided operational flows and centralized business tools. The experience spans brand-facing landing screens, login, and internal modules for commercial enablement and emission/service processes.',
+    link: 'https://nexus.grupokc.com.mx/',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    macScreenshots: ['/assets/projects/kc/bi/chart.png'],
+    macScreenshots: ['/assets/projects/kc/current/nexus-panel.png'],
     technologies: [
-      'Next.js',
       'React',
+      'Next.js',
+      'TypeScript',
       'Tailwind CSS',
-      'Power BI',
-      'echarts-for-react',
-      'jspdf',
-      'xlsx',
-      'NextAuth',
+      'Enterprise Dashboard UI',
+      'Authentication Flows',
     ],
   },
   {
-    projectName: 'CRM',
+    projectName: 'Solcrédito Autos',
     company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Delivered a conversion-oriented insurance quotation flow optimized for lead capture and self-service from the public web.',
     description:
-      'The CRM platform is a comprehensive client relationship management system developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 collaborators. Built with React and a custom API, the platform offers features such as lead tracking, client communication, and data management within a streamlined interface. By implementing modular components and efficient state management, the CRM provides a smooth and responsive user experience. It supports role-based access and real-time notifications, making it a robust solution for sales and support teams to enhance customer interactions and improve operational efficiency.',
+      'Solcrédito Autos is a public insurance landing and quotation flow focused on auto policies. The interface combines a marketing-first hero section with a lightweight multi-step quote experience designed to reduce friction and improve acquisition.',
+    link: 'https://www.solcreditoautos.com/',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    macScreenshots: ['/assets/projects/kc/crm/crm-notification.png'],
-    technologies: ['React', 'Custom API'],
+    macScreenshots: ['/assets/projects/kc/current/solcredito-autos.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Lead Generation UX',
+      'Responsive Web Design',
+    ],
   },
   {
-    projectName: 'EoS',
+    projectName: 'Seguros KC',
     company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Built a clearer public-facing product discovery and quotation interface for multiple insurance offerings and agent access points.',
     description:
-      'EoS is an information and resource management application developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 employees. Built using the Ionic Framework and Angular, EoS provides a seamless cross-platform experience on iOS and Android devices. The app grants insurance agents and promoters access to essential data regarding their performance, bonuses, and other key metrics, presented through interactive charts powered by Chart.js. Additionally, EoS features real-time updates via ngx-socket-io, ensuring users are consistently informed with the latest information.',
+      'Seguros KC is a public insurance site that presents multiple policy categories, value propositions, and direct entry points for prospects and agents. It is designed to simplify discovery while supporting a cleaner quoting journey.',
+    link: 'https://www.seguroskc.com/',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    iphoneScreenshots: ['/assets/projects/kc/eos/login.png'],
-    technologies: ['Ionic Framework', 'Angular', 'Chart.js', 'ngx-socket-io'],
+    macScreenshots: ['/assets/projects/kc/current/seguros-kc.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Public Marketing Site',
+      'Component-Based UI',
+    ],
+  },
+  {
+    projectName: 'Grupo KC Corporate Site',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Supported the modernization of Grupo KC’s public digital presence with a more polished hero experience and clearer navigation for corporate visitors.',
+    description:
+      'This corporate website presents Grupo KC’s brand, recruitment messaging, insurance offerings, and institutional information. The focus was on modernizing the visual experience while keeping the site approachable for broad public audiences.',
+    link: 'https://www2.grupokc.com.mx/',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: ['/assets/projects/kc/current/grupo-kc-site.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Marketing Website',
+      'Responsive Layouts',
+    ],
+  },
+  {
+    projectName: 'CRM Comercial',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Built a CRM experience for sales visibility, qualified opportunities, pipeline tracking, and day-to-day task execution.',
+    description:
+      'CRM Comercial centralizes leads, opportunities, conversion metrics, and commercial activities for Grupo KC teams. The platform is designed to help agents and internal teams track pipeline health, prioritize work, and act on qualified opportunities from a unified dashboard.',
+    link: 'https://crm.grupokc.com.mx/auth',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: ['/assets/projects/kc/current/crm-web.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Dashboard UI',
+      'Pipeline Management',
+      'Business Metrics',
+    ],
+  },
+  {
+    projectName: 'CRM Mobile',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Extended the CRM ecosystem into a mobile-first experience tailored for agents working on the move.',
+    description:
+      'CRM Mobile translates Grupo KC’s commercial workflows into a compact mobile interface focused on cartera opportunities, prospecting, indicators, and generated tasks. It prioritizes fast access and operational clarity for field usage.',
+    link: 'https://crm-m.vercel.app/',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    iphoneScreenshots: ['/assets/projects/kc/current/crm-mobile.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Mobile-First UI',
+      'Operational Workflows',
+    ],
+  },
+  {
+    projectName: 'Maximus',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Created a data-heavy performance dashboard for promotories and agents with ranking, goals, growth, and sales mix visibility.',
+    description:
+      'Maximus is an internal performance and analytics platform used to monitor annual goals, sales mix, ranking, and growth across teams and promotories. It turns complex commercial data into accessible visual reporting for decision-making.',
+    link: 'https://maximus.grupokc.com.mx/auth',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: ['/assets/projects/kc/current/maximus-dashboard.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Charts & Reporting',
+      'Business Intelligence UI',
+    ],
   },
   {
     projectName: 'Titan',
     company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Delivered internal modules for indicators, account status, persistence, emission and services, and operational agent support.',
     description:
-      'Titan is a modular platform developed for Grupo KC, a leading insurance agency in Mexico with over 1,200 agents and 166 collaborators. The platform integrates an agent dashboard and a help desk module, offering tools for ticket management, performance tracking, and real-time collaboration. Built with Next.js, React, and TypeScript, Titan features advanced data visualization using ApexCharts, a responsive UI designed with Chakra UI, and efficient file handling with xlsx. The project demonstrates advanced full-stack development competencies, enterprise software architecture, and creation of complex solutions for the financial/insurance sector with TypeScript type safety, Server Components optimization, robust authentication, and WCAG accessibility standards.',
+      'Titan is an internal operational platform that consolidates indicators, account information, persistence metrics, and administrative modules for Grupo KC agents and internal users. It supports detailed data review and day-to-day follow-up across insurance processes.',
+    link: 'https://titan.grupokc.com.mx/auth',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    macScreenshots: ['/assets/projects/kc/titan/home.png'],
+    macScreenshots: ['/assets/projects/kc/current/titan-indicators.png'],
     technologies: [
-      'Next.js',
       'React',
+      'Next.js',
       'TypeScript',
-      'ApexCharts',
-      'Chakra UI',
+      'Internal Tooling',
+      'Tabular Data UI',
+      'Operational Dashboards',
+    ],
+  },
+  {
+    projectName: 'Portal BI',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Built data visualization workflows for commercial analysis with exports, dashboards, and decision-support views for business teams.',
+    description:
+      'Portal BI is a business intelligence interface for Grupo KC that centralizes charts, operational metrics, and commercial insights. It was designed to make reporting easier to consume for internal users and decision-makers.',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: ['/assets/projects/kc/bi/chart.png'],
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Power BI',
+      'Charts & Reports',
       'xlsx',
+    ],
+  },
+  {
+    projectName: 'EoS Mobile',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Extended performance, bonus, and indicator visibility into a mobile experience for agents and promoters.',
+    description:
+      'EoS Mobile is a cross-platform experience that gives agents and promoters access to key information such as performance, bonuses, and operational dashboards from mobile devices.',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    iphoneScreenshots: ['/assets/projects/kc/eos/login.png'],
+    technologies: [
+      'Ionic Framework',
+      'Angular',
+      'Chart.js',
+      'Mobile Dashboards',
     ],
   },
   {
     projectName: 'Card Tu Agente',
     company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Delivered a digital profile and quotation entrypoint for agents with stronger self-presentation and contact conversion paths.',
     description:
-      'Personal Agent Portal is a web application developed with Next.js 15, TypeScript and React 19 that serves as a personalized digital platform for insurance agents. Each agent has their own professional web page with integrated quotation and contact functionalities. Features include digital business cards with agent photos, contact information, social media and professional credentials, responsive design with Tailwind CSS and Shadcn UI components, integrated quotation system for different insurance types, multiple communication channels including WhatsApp, phone, email and social media, and global state management with Zustand for efficient application state handling and agent data persistence.',
-    link: 'https://www.tuagente.com.mx/search',
+      'Card Tu Agente is a personalized digital card and quotation entrypoint for insurance agents, connecting profile information, communication channels, and product access in a responsive format.',
     iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
     iphoneScreenshots: ['/assets/projects/kc/cardAgente/card.png'],
     technologies: [
-      'Next.js 15',
-      'React 19',
+      'Next.js',
       'TypeScript',
       'Tailwind CSS',
-      'Shadcn UI',
-      'Radix UI',
       'Zustand',
-      'React Hook Form',
-      'Zod',
-      'Lucide React',
-      'React Icons',
-      'pnpm'
+      'Responsive UI',
+    ],
+  },
+  {
+    projectName: 'Batalla vs Thanos',
+    company: 'KC',
+    role: 'Frontend Engineer',
+    impact:
+      'Created a gamified internal experience to motivate commercial teams around short-term sales goals and progress visibility.',
+    description:
+      'Batalla vs Thanos is a themed motivational platform used to drive sales engagement through a more playful progress-tracking experience tied to campaign objectives.',
+    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
+    macScreenshots: ['/assets/projects/kc/thanos/battle.png'],
+    technologies: [
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'Gamified UI',
+      'Campaign Tracking',
     ],
   },
   {
@@ -257,24 +416,11 @@ const projectsData: ProjectType[] = [
     ],
   },
   {
-    projectName: 'Maximus',
-    company: 'KC',
-    description:
-      'Maximus is a data dashboard developed for Grupo KC, a leading insurance agency in Mexico, with the purpose of tracking and analyzing agent performance across various regions. Built with Next.js, React, and TypeScript, Maximus provides comprehensive insights into key performance metrics and yearly goals. It incorporates interactive charts and visualizations using react-chartjs-2 and ApexCharts, enabling data-driven decision-making. The platform supports secure data export to Excel, role-based access control, and real-time updates, making it an indispensable tool for regional managers and promoters to monitor targets, optimize performance, and achieve strategic objectives.',
-    iconPath: '/assets/empresas/grupo-kc-logo.jpeg',
-    macScreenshots: ['/assets/projects/kc/maximus/dashboard.png'],
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'react-chartjs-2',
-      'ApexCharts',
-      'xlsx',
-    ],
-  },
-  {
     projectName: 'Volaris Analytics',
     company: 'Lumston',
+    role: 'Senior Frontend Engineer',
+    impact:
+      'Improved real-time dashboard usability through stronger role management, authentication flows, and data visualization UX.',
     description:
       'Business Intelligence platform developed for Volaris providing real-time data analysis and interactive dashboard management. Integrates Power BI for advanced visualizations, authentication system with AWS Cognito and Azure AD, granular role management, and dashboard categorization by business areas. The application offers a modern user experience with dark/light mode, real-time notifications, and responsive design.',
     iconPath: '/assets/empresas/lumston_logo.jpeg',
@@ -294,12 +440,15 @@ const projectsData: ProjectType[] = [
       'Zod',
       'i18next',
       'Vitest',
-      'React Testing Library'
+      'React Testing Library',
     ],
   },
   {
     projectName: 'Acolyte Health',
     company: 'Lumston',
+    role: 'Senior Frontend Engineer',
+    impact:
+      'Delivered product-facing features in a complex SaaS environment combining personalization, media workflows, and multi-tenant UX.',
     description:
       'Advanced SaaS platform for interactive video marketing that enables companies to create, manage, and distribute personalized video campaigns with digital avatars and interactive content. Features include video campaign management, digital avatar integration with D-ID, interactive surveys, landing page builder, and advanced video studio with Remotion. The platform supports real-time chat capabilities, multi-tenant architecture, and provides immersive experiences for marketing, training, and corporate communication.',
     iconPath: '/assets/empresas/lumston_logo.jpeg',
@@ -321,9 +470,9 @@ const projectsData: ProjectType[] = [
       'React Konva',
       'Jest',
       'Styled Components',
-      'Emotion'
+      'Emotion',
     ],
-  }
+  },
 ];
 
 export default projectsData;

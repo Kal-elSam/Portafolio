@@ -8,8 +8,8 @@ function Index() {
   return (
     <>
       <Head
-        title="Sam Gomez · Front-End Developer"
-        description="An online portfolio featuring a showcase of my projects and some thoughts as a Front-End Developer."
+        title="Sam Gomez · Software Engineer"
+        description="Portfolio of Samuel Gomez Serrano, a Software Engineer focused on frontend architecture, AI systems, and scalable SaaS product engineering."
         ogImage={`${getBaseUrl()}apps/devSam/public/super.ico`}
         overrideTitle
       />

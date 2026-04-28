@@ -24,10 +24,9 @@ function DetailOriented() {
   return (
     <header className={clsx('mb-8')}>
       <SectionTitle
-title="Meticulous Attention to Detail."
-caption="Detail-Oriented"
-description="I have a sharp eye for coding efficiency and frontend consistency, recognizing their essential role in enhancing user experience. My meticulous approach ensures that every element is precisely positioned and functions flawlessly."
-
+        title="Execution With Product Context."
+        caption="End-to-End Delivery"
+        description="I work beyond UI implementation, aligning product requirements, frontend architecture, API contracts, and real-time workflows to ship reliable features with measurable impact."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

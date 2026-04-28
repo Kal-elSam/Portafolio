@@ -24,8 +24,8 @@ function FeaturedCardSection() {
               <SparklesIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Clean & Intuitive Code"
-          desc="I deliver clean, modern code designed to elevate user experiences seamlessly."
+          title="Scalable Frontend Architecture"
+          desc="I design modular React and Next.js systems that speed up delivery and stay maintainable as products grow."
         />
         <FeaturedCard
           icon={
@@ -38,8 +38,8 @@ function FeaturedCardSection() {
               <HeartIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Detail Oriented"
-          desc="I prioritize efficiency and precision in front-end design, ensuring seamless interactions and polished aesthetics."
+          title="Product-Minded Execution"
+          desc="I connect UX, engineering, and business goals to ship interfaces that improve operations and user outcomes."
         />
         <FeaturedCard
           icon={
@@ -52,8 +52,8 @@ function FeaturedCardSection() {
               <CodeIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Pretty & Optimized"
-          desc="I craft optimized code that merges high performance with refined elegance."
+          title="AI Workflows & Performance"
+          desc="I build fast interfaces and AI-assisted workflows that automate real processes and improve conversion."
         />
       </div>
     </div>
@@ -77,7 +77,7 @@ function IndexContents() {
       <div className={clsx('hidden', 'lg:-mt-16 lg:mb-24 lg:block')}>
         <FeaturedCardSection />
       </div>
-      <div className={clsx('-mt-12 mb-12', 'md:mt-0 md:mb-24')}>
+      <div className={clsx('-mt-12 mb-12', 'md:mb-24 md:mt-0')}>
         <QuoteSection />
       </div>
       <section className={clsx('mb-12', 'lg:mb-24')}>

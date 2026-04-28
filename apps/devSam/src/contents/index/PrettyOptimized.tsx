@@ -24,10 +24,9 @@ function PrettyOptimized() {
   return (
     <header className={clsx('mb-8')}>
       <SectionTitle
-title="Clear and Optimized Code"
-caption="Neat & Efficient"
-description="Clean code isn't just my goal—it's my standard. I optimize every line to boost efficiency while upholding the highest levels of readability and functionality. My approach ensures that elegance and performance work in harmony."
-
+        title="Optimization With Business Impact."
+        caption="Performance & AI Workflows"
+        description="From Core Web Vitals improvements to AI-powered automation, I focus on systems that reduce friction, accelerate delivery, and create measurable operational gains."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

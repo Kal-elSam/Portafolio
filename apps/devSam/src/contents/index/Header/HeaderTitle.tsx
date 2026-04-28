@@ -90,11 +90,10 @@ function HeaderTitle() {
           >
             Software Engineer
           </strong>{' '}
-          focused on building scalable,{' '}
+          focused on frontend architecture, AI-driven systems, and{' '}
           <span className={clsx('block')}>
-          maintainable software solutions.
-            <br />
-            Passionate learner, always seeking new challenges and innovative solutions.
+            end-to-end product execution for scalable SaaS platforms.
+            <br />I build reliable products with measurable business impact.
           </span>
         </m.h1>
       </span>

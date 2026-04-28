@@ -3,6 +3,29 @@ import Image from 'next/image';
 
 import SectionContent from '@/components/sections/SectionContent';
 
+const companies = [
+  {
+    src: '/assets/empresas/kairo-systems.png',
+    alt: 'Kairo Systems Logo',
+  },
+  {
+    src: '/assets/empresas/logo-lemu-2021.webp',
+    alt: 'Lemu Logo 2021',
+  },
+  {
+    src: '/assets/empresas/grupo-kc-logo.jpeg',
+    alt: 'Grupo KC Logo',
+  },
+  {
+    src: '/assets/empresas/ensamble-logo.png',
+    alt: 'Ensamble Logo',
+  },
+  {
+    src: '/assets/empresas/lumston_logo.jpeg',
+    alt: 'Lumston Logo',
+  },
+];
+
 function CollaborativeCompaniesBanner(): JSX.Element {
   return (
     <SectionContent>
@@ -20,46 +43,20 @@ function CollaborativeCompaniesBanner(): JSX.Element {
 
         {/* Logos */}
         <div className="flex flex-wrap justify-center gap-8">
-          <div className="relative h-32 w-32 rounded-md bg-white p-4 shadow-lg dark:bg-slate-800">
-            <Image
-              src="/assets/empresas/kairo-systems.png"
-              alt="Kairo Systems Logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-          <div className="relative h-32 w-32 rounded-md bg-white p-4 shadow-lg dark:bg-slate-800">
-            <Image
-              src="/assets/empresas/logo-lemu-2021.webp"
-              alt="Lemu Logo 2021"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-          <div className="relative h-32 w-32 rounded-md bg-white p-4 shadow-lg dark:bg-slate-800">
-            <Image
-              src="/assets/empresas/grupo-kc-logo.jpeg"
-              alt="Grupo KC Logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-          <div className="relative h-32 w-32 rounded-md bg-white p-4 shadow-lg dark:bg-slate-800">
-            <Image
-              src="/assets/empresas/ensamble-logo.png"
-              alt="Ensamble Logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-          <div className="relative h-32 w-32 rounded-md bg-white p-4 shadow-lg dark:bg-slate-800">
-            <Image
-              src="/assets/empresas/lumston_logo.jpeg"
-              alt="Lumston Logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          {companies.map((company) => (
+            <div
+              key={company.src}
+              className="relative h-32 w-32 rounded-md bg-white shadow-lg dark:bg-slate-800"
+            >
+              <Image
+                src={company.src}
+                alt={company.alt}
+                fill
+                sizes="128px"
+                className="object-contain p-4"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </SectionContent>

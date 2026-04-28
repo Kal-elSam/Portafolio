@@ -1,36 +1,24 @@
-import React, { KeyboardEvent } from 'react';
-import Lottie, { Options } from 'react-lottie';
+import Lottie from 'lottie-react';
+
+import type { KeyboardEvent } from 'react';
 
 type Props = {
-  animationPath: string;
+  animationPath: unknown;
 };
 
 function GreetingLottie({ animationPath }: Props) {
-  const defaultOptions: Options = {
-    loop: true,
-    autoplay: true,
-    animationData: animationPath,
-  };
-
-  const handleClick = () => {
-    // Handler para el evento de clic
-  };
-
-  const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter') {
-      // Handler para el evento de tecla Enter
-    }
-  };
-
   return (
     <div
       role="button"
       tabIndex={0}
-      onClick={handleClick}
-      onKeyPress={handleKeyPress}
-      aria-label="Play animation" // Descripción textual del control
+      onKeyPress={(event: KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Enter') {
+          event.currentTarget.click();
+        }
+      }}
+      aria-label="Play animation"
     >
-      <Lottie options={defaultOptions} />
+      <Lottie animationData={animationPath} autoplay loop />
     </div>
   );
 }

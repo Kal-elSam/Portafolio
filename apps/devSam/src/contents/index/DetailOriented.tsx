@@ -1,6 +1,6 @@
 import clsx from 'clsx';
+import Lottie from 'lottie-react';
 import { useEffect, useState } from 'react';
-import Lottie from 'react-lottie';
 
 import SectionTitle from '@/components/sections/SectionTitle';
 
@@ -13,8 +13,8 @@ function DetailOriented() {
         const response = await fetch('/lottie/coding.json'); // Ruta relativa a la carpeta public
         const jsonData = await response.json();
         setAnimationData(jsonData);
-      } catch (error) {
-        console.error('Failed to fetch animation data:', error);
+      } catch {
+        setAnimationData(null);
       }
     };
 
@@ -31,11 +31,9 @@ function DetailOriented() {
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>
           <Lottie
-            options={{
-              loop: true,
-              autoplay: true,
-              animationData,
-            }}
+            animationData={animationData}
+            autoplay
+            loop
             style={{ width: '100%', height: 'auto' }}
           />
         </div>

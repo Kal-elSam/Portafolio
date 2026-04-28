@@ -5,7 +5,9 @@ import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/Icons';
 import CleanIntuitive from '@/contents/index/CleanIntuitive';
 import DetailOriented from '@/contents/index/DetailOriented';
 import FeaturedCard from '@/contents/index/FeaturedCard';
+import FeaturedCaseStudies from '@/contents/index/FeaturedCaseStudies';
 import Header from '@/contents/index/Header';
+import ImpactMetrics from '@/contents/index/ImpactMetrics';
 import PrettyOptimized from '@/contents/index/PrettyOptimized';
 import Quote from '@/contents/index/Quote';
 
@@ -74,7 +76,13 @@ function IndexContents() {
   return (
     <>
       <Header />
-      <div className={clsx('hidden', 'lg:-mt-16 lg:mb-24 lg:block')}>
+      <div className={clsx('-mt-10 mb-16', 'lg:-mt-20 lg:mb-24')}>
+        <ImpactMetrics />
+      </div>
+      <section className={clsx('mb-16', 'lg:mb-28')}>
+        <FeaturedCaseStudies />
+      </section>
+      <div className={clsx('hidden', 'lg:mb-24 lg:block')}>
         <FeaturedCardSection />
       </div>
       <div className={clsx('-mt-12 mb-12', 'md:mb-24 md:mt-0')}>

@@ -197,7 +197,6 @@ function ProjectCard({
                     ? 'rounded-[2rem]'
                     : 'rounded-2xl shadow-2xl shadow-cyan-950/30'
                 )}
-                priority
               />
             </div>
           ) : (

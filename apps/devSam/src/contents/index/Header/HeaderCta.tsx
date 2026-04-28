@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { m, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 
-import { DocumentIcon } from '@/components/Icons';
+import { ChevronRightIcon, DocumentIcon } from '@/components/Icons';
 
 const animation = {
   hide: {
@@ -24,9 +24,21 @@ function ButtonContactMe() {
   return (
     <Link
       href="/work/contact"
-      className={clsx('button button--solid min-w-[128px]', 'md:button--big')}
+      className={clsx('button button--outline min-w-[112px]', 'md:button--big')}
     >
-      Get in Touch
+      Contact
+    </Link>
+  );
+}
+
+function ButtonWork() {
+  return (
+    <Link
+      href="/projects"
+      className={clsx('button button--solid min-w-[148px]', 'md:button--big')}
+    >
+      View Work
+      <ChevronRightIcon className={clsx('h-4 w-4')} />
     </Link>
   );
 }
@@ -49,15 +61,15 @@ function AvailableForHire() {
   return (
     <div
       className={clsx(
-        'button button--ghost text-accent-500 pointer-events-none gap-2.5 px-2.5',
+        'button button--soft pointer-events-none gap-2.5 px-3',
         'md:button--big md:px-2.5',
-        'dark:text-accent-400'
+        'shadow-accent-600/10 shadow-sm'
       )}
     >
       <span className={clsx('relative flex h-2 w-2')}>
         <span
           className={clsx(
-            'bg-accent-600 absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full opacity-75',
+            'bg-accent-600 absolute -left-1 -top-1 inline-flex h-4 w-4 animate-ping rounded-full opacity-75',
             'dark:bg-accent-300'
           )}
         />
@@ -104,12 +116,19 @@ function HeaderCta({
   }
 
   return (
-    <m.div className={clsx('flex gap-2')} initial="hide" animate="show">
+    <m.div
+      className={clsx('flex flex-wrap gap-2')}
+      initial="hide"
+      animate="show"
+    >
       <m.div
         className={clsx('relative z-20')}
         variants={animation}
         transition={{ delay: 0.4 }}
       >
+        <ButtonWork />
+      </m.div>
+      <m.div variants={animation} transition={{ delay: 0.45 }}>
         <ButtonContactMe />
       </m.div>
       {isFree ? (
@@ -125,7 +144,7 @@ function HeaderCta({
             <AvailableForHire />
           </m.div>
           <m.div
-            className={clsx('absolute top-0 left-0')}
+            className={clsx('absolute left-0 top-0')}
             initial={{ x: -48, opacity: 0, pointerEvents: 'none' }}
             animate={{ x: 0, opacity: 1, pointerEvents: 'auto' }}
             transition={{ delay: isFreeAnimationDuration + 1.6, duration: 0.4 }}

@@ -2,9 +2,11 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import {
+  DocumentIcon,
   ExternalLink,
   GitHubIcon,
   LinkedInIcon,
+  MailIcon,
   // TwitterIcon,
 } from '@/components/Icons';
 
@@ -18,7 +20,7 @@ function LastUpdate() {
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
     >
-      <span>see the recent update on GitHub</span>
+      <span>See the latest updates on GitHub</span>
     </a>
   );
 }
@@ -75,18 +77,18 @@ interface FooterGroupProps {
 
 function FooterGroup({ title, links }: FooterGroupProps) {
   return (
-    <div className={clsx('flex-1')}>
+    <div className={clsx('min-w-[9rem] flex-1')}>
       <div
         className={clsx(
-          'mb-2 px-2 text-[13px] text-slate-600',
-          'dark:text-slate-400'
+          'mb-3 text-xs font-black uppercase tracking-[0.2em] text-slate-500',
+          'dark:text-slate-500'
         )}
       >
         {title}
       </div>
-      <ul className={clsx('flex flex-col')}>
+      <ul className={clsx('flex flex-col gap-2')}>
         {links.map(({ title: linkTitle, href, label, isInternal }) => (
-          <li key={href}>
+          <li key={`${linkTitle}-${href}`}>
             <FooterLink
               title={linkTitle}
               href={href}
@@ -102,28 +104,63 @@ function FooterGroup({ title, links }: FooterGroupProps) {
 
 function FooterDescription() {
   return (
-    <div className={clsx('max-w-[348px]')}>
-      <div
+    <div className={clsx('max-w-xl')}>
+      <p
         className={clsx(
-          'mb-3 text-[13px] text-slate-600',
+          'text-accent-600 mb-3 text-xs font-black uppercase tracking-[0.22em]',
+          'dark:text-accent-400'
+        )}
+      >
+        Available for product-minded teams
+      </p>
+      <h2
+        className={clsx(
+          'max-w-lg text-3xl font-black leading-tight text-slate-950',
+          'md:text-4xl dark:text-white'
+        )}
+      >
+        Let&apos;s build sharp frontend systems with measurable impact.
+      </h2>
+      <p
+        className={clsx(
+          'mt-4 max-w-lg text-sm leading-6 text-slate-600',
           'dark:text-slate-400'
         )}
       >
-        About Me
-      </div>
-      <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        I&apos;m Sam, a <strong>front-end developer</strong> perpetual learner and tech curious
-constantly seeking challenges.
+        I&apos;m Sam Gomez, a Software Engineer focused on frontend
+        architecture, AI workflows, SaaS dashboards, and end-to-end product
+        execution.
       </p>
-      <ul className={clsx('-ml-2 flex gap-1')}>
+      <div className={clsx('mt-6 flex flex-wrap gap-2')}>
+        <a
+          href="mailto:samgomezs7@hotmail.com"
+          className={clsx('button button--solid')}
+        >
+          <MailIcon className={clsx('h-4 w-4')} />
+          Email Me
+        </a>
+        <a
+          href="/assets/docs/SamuelGomezDevResume.pdf"
+          download="SamuelGomezDevResume.pdf"
+          className={clsx('button button--outline')}
+        >
+          <DocumentIcon className={clsx('h-4 w-4')} />
+          Resume
+        </a>
+      </div>
+      <ul className={clsx('mt-6 flex gap-2')}>
         <li>
           <a
             href="https://www.linkedin.com/in/samuel-gomez-serrano/"
             target="_blank"
             rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
+            className={clsx(
+              'flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition',
+              'hover:border-accent-300 hover:text-accent-600',
+              'dark:hover:border-accent-500 dark:hover:text-accent-400 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300'
+            )}
             aria-label="My Linkedin profile"
-            title="My Lin profile"
+            title="My LinkedIn profile"
           >
             <LinkedInIcon className={clsx('h-5 w-5')} />
           </a>
@@ -133,7 +170,11 @@ constantly seeking challenges.
             href="https://github.com/Kal-elSam"
             target="_blank"
             rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
+            className={clsx(
+              'flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition',
+              'hover:border-accent-300 hover:text-accent-600',
+              'dark:hover:border-accent-500 dark:hover:text-accent-400 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300'
+            )}
             aria-label="My GitHub profile"
             title="My GitHub profile"
           >
@@ -149,86 +190,72 @@ function Footer() {
   return (
     <footer
       className={clsx(
-        'background-grid background-grid--fade-in border-divider-light mt-24 pt-16 text-sm text-slate-900',
+        'background-grid background-grid--fade-in border-divider-light mt-24 pt-10 text-sm text-slate-900',
         'dark:border-divider-dark dark:text-slate-200'
       )}
     >
       <div className={clsx('content-wrapper')}>
-        <div className={clsx('py-10 font-semibold')}>
-          <div className={clsx('flex flex-col-reverse gap-16', 'lg:flex-row')}>
-            <div className={clsx('flex-1')}>
+        <div className={clsx('py-12 font-semibold', 'lg:py-16')}>
+          <div
+            className={clsx(
+              'grid gap-10 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-2xl shadow-slate-950/[0.04] backdrop-blur',
+              'dark:border-slate-800 dark:bg-slate-950/55 dark:shadow-black/20',
+              'lg:grid-cols-[1.35fr_1fr] lg:p-8'
+            )}
+          >
+            <div>
               <FooterDescription />
             </div>
             <div
               className={clsx(
-                '-mx-2 flex flex-1 flex-col gap-8',
-                'sm:flex-row sm:gap-16 lg:mx-0'
+                'grid gap-8 border-t border-slate-200 pt-8',
+                'dark:border-slate-800',
+                'sm:grid-cols-2 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0'
               )}
             >
-              <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="Work"
-                  links={[
-                    { title: 'Contact', href: '/work/contact' },
-                    { title: 'Experience', href: '/work/experience' },
-                    // {
-                    //   title: 'Services',
-                    //   href: '/work/services',
-                    //   label: 'soon',
-                    // },
-                    {
-                      title: 'Skills and Tools',
-                      href: '/work/skills-and-tools',
-                    },
-                    // { title: 'Studio', href: '/work/studio' },
-                  ]}
-                />
-                {/* <FooterGroup
-                  title="Learn"
-                  links={[
-                    // {
-                    //   title: 'Docs',
-                    //   href: '/docs',
-                    // },
-                    // {
-                    //   title: 'Personal Blog',
-                    //   href: '/blog',
-                    // },
-                    {
-                      title: 'T.I.L',
-                      href: '/today-i-learned',
-                      label: 'new',
-                    },
-                  ]}
-                /> */}
-              </div>
-              <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="This Site"
-                  links={[
-                    // {
-                    //   title: 'Design Concept',
-                    //   href: 'https://www.figma.com/community/file/1176392613303840973',
-                    //   isInternal: false,
-                    // },
-                    {
-                      title: 'Source Code',
-                      href: 'https://github.com/Kal-elSam',
-                      isInternal: false,
-                    },
-                    {
-                      title: 'Credits',
-                      href: '/credits',
-                    },
-                  ]}
-                />
-              </div>
+              <FooterGroup
+                title="Explore"
+                links={[
+                  { title: 'Projects', href: '/projects' },
+                  { title: 'Experience', href: '/work/experience' },
+                  {
+                    title: 'Skills and Tools',
+                    href: '/work/skills-and-tools',
+                  },
+                  { title: 'Contact', href: '/work/contact' },
+                ]}
+              />
+              <FooterGroup
+                title="Connect"
+                links={[
+                  {
+                    title: 'LinkedIn',
+                    href: 'https://www.linkedin.com/in/samuel-gomez-serrano/',
+                    isInternal: false,
+                  },
+                  {
+                    title: 'GitHub',
+                    href: 'https://github.com/Kal-elSam',
+                    isInternal: false,
+                  },
+                  {
+                    title: 'Source Code',
+                    href: 'https://github.com/Kal-elSam',
+                    isInternal: false,
+                  },
+                  {
+                    title: 'Credits',
+                    href: '/credits',
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>
         <div
           className={clsx(
-            'border-divider-light flex justify-between border-t py-6 text-xs',
+            'border-divider-light flex flex-col gap-3 border-t py-6 text-xs',
+            'sm:flex-row sm:items-center sm:justify-between',
             'dark:border-divider-dark'
           )}
         >

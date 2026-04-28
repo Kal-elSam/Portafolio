@@ -149,7 +149,6 @@ function EmojiReaction({
               width={48}
               height={48}
               unoptimized
-              priority
             />
           </m.div>
         ))}
@@ -162,7 +161,6 @@ function EmojiReaction({
             width={48}
             height={48}
             unoptimized
-            priority
           />
         </m.div>
       </m.button>

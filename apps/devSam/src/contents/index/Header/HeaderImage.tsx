@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import Image from 'next/image';
 
 import HeaderImageAnimation from './HeaderImageAnimation';
 
@@ -12,8 +12,9 @@ function HeaderImage() {
     <div className={clsx('relative h-[590px] w-[703px]')}>
       <div
         className={clsx(
-          'from-accent-400/20 via-accent-400/0 absolute top-0 right-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t',
-          'dark:from-accent-600/10 dark:via-accent-600/0','flex justify-center items-center' 
+          'from-accent-400/20 via-accent-400/0 absolute right-0 top-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t',
+          'dark:from-accent-600/10 dark:via-accent-600/0',
+          'flex items-center justify-center'
         )}
       >
         <div className={clsx('right-90 bottom-100')}>
@@ -46,18 +47,16 @@ function HeaderImage() {
             initial={{ opacity: 0 }}
             animate={controlsHeaderImage}
           >
-            <Image
+            <img
               alt="Sam Gomez"
               src="/assets/images/sam.png"
               width={1057}
               height={783}
               className={clsx(
-                'hidden max-w-none',
+                'hidden h-auto max-w-none',
                 'lg:block',
                 'dark:brightness-[.82]'
               )}
-              quality={100}
-              priority
             />
           </m.div>
         </div>

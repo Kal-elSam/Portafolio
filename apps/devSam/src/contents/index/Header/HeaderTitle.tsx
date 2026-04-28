@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import Image from 'next/image';
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -41,20 +41,19 @@ function HeaderTitle() {
             duration: 0.7,
           }}
         >
-          <Image
-            className={clsx('w-7 md:w-10')}
+          <img
+            className={clsx('h-auto w-7 md:w-10')}
             alt="Love-you Gesture"
             src="/assets/emojis/love-you-gesture.png"
             width={48}
             height={48}
-            onLoadingComplete={() => {
+            onLoad={() => {
               controls.start({
                 opacity: 1,
                 y: 0,
                 rotate: 0,
               });
             }}
-            priority
           />
         </m.div>
       </m.div>

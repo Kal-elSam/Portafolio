@@ -2,7 +2,7 @@ import {
   buildMockWorkflowDemo,
   isLiveAiConfigured,
 } from '@/lib/ai/mock-workflow';
-import { runLiveWorkflowDemo } from '@/lib/ai/providers';
+import { runLiveWorkflowDemo, getLastLiveFailureReason } from '@/lib/ai/providers';
 
 import type {
   WorkflowDemoCapabilities,
@@ -24,6 +24,12 @@ export async function executeWorkflowDemo(input: {
   if (useLiveAi && isLiveAiConfigured()) {
     const liveResult = await runLiveWorkflowDemo(scenarioId, userPrompt);
     if (liveResult) return liveResult;
+
+    return {
+      ...buildMockWorkflowDemo(scenarioId, userPrompt),
+      liveFallback: true,
+      liveFallbackReason: getLastLiveFailureReason() ?? 'provider_error',
+    };
   }
 
   return buildMockWorkflowDemo(scenarioId, userPrompt);

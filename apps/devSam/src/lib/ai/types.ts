@@ -21,9 +21,18 @@ export interface WorkflowStep {
   tool?: string;
 }
 
+export type LiveFallbackReason =
+  | 'quota_exceeded'
+  | 'provider_error'
+  | 'invalid_response';
+
 export interface WorkflowDemoResult {
   mode: WorkflowDemoMode;
   provider?: AiProviderId;
+  /** True when live AI was requested but providers failed — mock was used instead. */
+  liveFallback?: boolean;
+  /** Why live mode fell back to mock (safe to expose to client). */
+  liveFallbackReason?: LiveFallbackReason;
   scenarioId: WorkflowScenarioId;
   userInput: string;
   steps: WorkflowStep[];

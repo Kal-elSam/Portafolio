@@ -136,8 +136,12 @@
     "hash": "832869987dfbc0cabdb83f7771f12ef9"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/AiWorkflowSimulator.tsx": {
-    "mtime": 1780677298.9939442,
-    "hash": "70d0ee174e84bacc1e80a2b488584349"
+    "mtime": 1780678498.0086334,
+    "hash": "5a33752b2cf2458443208465d9673c8e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/WorkflowPipeline.tsx": {
+    "mtime": 1780679125.678181,
+    "hash": "1ff039e6f47fc2ba5c65d57aa0e15c8a"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Quote.tsx": {
     "mtime": 1780676696.712472,
@@ -588,16 +592,16 @@
     "hash": "e66fdf3ae58d3c1831c9b852eb50637e"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/providers.ts": {
-    "mtime": 1780677314.539358,
-    "hash": "506da18a18349ac1e4cee294ccf4ec3e"
+    "mtime": 1780678900.7502046,
+    "hash": "82daf4ea588b3b88741846c76de7d4da"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/types.ts": {
-    "mtime": 1780677256.406165,
-    "hash": "0cd31d30f596ca177bedb805cb801f7f"
+    "mtime": 1780678884.5101502,
+    "hash": "b8d6961368555c207626e6bf94d0585d"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/workflow-demo.ts": {
-    "mtime": 1780677269.7545614,
-    "hash": "0c57d3b24c1b214696f96564f483a53c"
+    "mtime": 1780678895.5204523,
+    "hash": "94dc3906c52ef593f65b3defe78d4294"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/mock-workflow.ts": {
     "mtime": 1780677264.7909698,
@@ -832,7 +836,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1780677518.327954,
+    "mtime": 1780678008.7998679,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {

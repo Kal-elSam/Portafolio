@@ -4,6 +4,7 @@ import { getScenarioById } from '@/contents/index/aiWorkflowScenarios';
 
 import type {
   AiProviderId,
+  LiveFallbackReason,
   WorkflowDemoResult,
   WorkflowScenarioId,
   WorkflowStep,
@@ -21,6 +22,26 @@ const workflowResponseSchema = z.object({
   steps: z.array(workflowStepSchema).min(3).max(6),
   outcome: z.string(),
 });
+
+let lastLiveFailureReason: LiveFallbackReason | undefined;
+
+export function getLastLiveFailureReason(): LiveFallbackReason | undefined {
+  return lastLiveFailureReason;
+}
+
+export function resetLiveFailureReason(): void {
+  lastLiveFailureReason = undefined;
+}
+
+function recordProviderFailure(status?: number): void {
+  if (status === 429) {
+    lastLiveFailureReason = 'quota_exceeded';
+    return;
+  }
+  if (lastLiveFailureReason !== 'quota_exceeded') {
+    lastLiveFailureReason = 'provider_error';
+  }
+}
 
 export interface AiWorkflowProvider {
   id: AiProviderId;
@@ -82,8 +103,80 @@ function parseProviderJson(
       outcome: parsed.outcome,
     };
   } catch {
+    lastLiveFailureReason = 'invalid_response';
     return null;
   }
+}
+
+async function tryGeminiModel(
+  model: string,
+  apiKey: string,
+  prompt: string,
+  scenarioId: WorkflowScenarioId,
+  userPrompt: string
+): Promise<WorkflowDemoResult | null> {
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.4,
+          maxOutputTokens: 1024,
+          responseMimeType: 'application/json',
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    recordProviderFailure(response.status);
+    return null;
+  }
+
+  const data = (await response.json()) as {
+    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+  };
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) {
+    lastLiveFailureReason = 'invalid_response';
+    return null;
+  }
+
+  const parsed = parseProviderJson(text, scenarioId, userPrompt, 'gemini');
+  if (!parsed) lastLiveFailureReason = 'invalid_response';
+  return parsed;
+}
+
+async function tryGeminiModelsSequentially(
+  models: string[],
+  apiKey: string,
+  prompt: string,
+  scenarioId: WorkflowScenarioId,
+  userPrompt: string,
+  index = 0
+): Promise<WorkflowDemoResult | null> {
+  if (index >= models.length) return null;
+
+  const result = await tryGeminiModel(
+    models[index],
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt
+  );
+  if (result) return result;
+
+  return tryGeminiModelsSequentially(
+    models,
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt,
+    index + 1
+  );
 }
 
 async function callGemini(
@@ -94,27 +187,19 @@ async function callGemini(
   if (!apiKey) return null;
 
   const prompt = buildSystemPrompt(scenarioId, userPrompt);
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.4, maxOutputTokens: 1024 },
-      }),
-    }
+  const models = [
+    'gemini-2.5-flash',
+    'gemini-2.0-flash-lite',
+    'gemini-2.0-flash',
+  ];
+
+  return tryGeminiModelsSequentially(
+    models,
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt
   );
-
-  if (!response.ok) return null;
-
-  const data = (await response.json()) as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-  };
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) return null;
-
-  return parseProviderJson(text, scenarioId, userPrompt, 'gemini');
 }
 
 async function callGroq(
@@ -142,15 +227,23 @@ async function callGroq(
     }
   );
 
-  if (!response.ok) return null;
+  if (!response.ok) {
+    recordProviderFailure(response.status);
+    return null;
+  }
 
   const data = (await response.json()) as {
     choices?: Array<{ message?: { content?: string } }>;
   };
   const text = data.choices?.[0]?.message?.content;
-  if (!text) return null;
+  if (!text) {
+    lastLiveFailureReason = 'invalid_response';
+    return null;
+  }
 
-  return parseProviderJson(text, scenarioId, userPrompt, 'groq');
+  const parsed = parseProviderJson(text, scenarioId, userPrompt, 'groq');
+  if (!parsed) lastLiveFailureReason = 'invalid_response';
+  return parsed;
 }
 
 async function callOpenRouter(
@@ -180,15 +273,23 @@ async function callOpenRouter(
     }
   );
 
-  if (!response.ok) return null;
+  if (!response.ok) {
+    recordProviderFailure(response.status);
+    return null;
+  }
 
   const data = (await response.json()) as {
     choices?: Array<{ message?: { content?: string } }>;
   };
   const text = data.choices?.[0]?.message?.content;
-  if (!text) return null;
+  if (!text) {
+    lastLiveFailureReason = 'invalid_response';
+    return null;
+  }
 
-  return parseProviderJson(text, scenarioId, userPrompt, 'openrouter');
+  const parsed = parseProviderJson(text, scenarioId, userPrompt, 'openrouter');
+  if (!parsed) lastLiveFailureReason = 'invalid_response';
+  return parsed;
 }
 
 export const aiProviders: AiWorkflowProvider[] = [
@@ -238,5 +339,6 @@ export async function runLiveWorkflowDemo(
   scenarioId: WorkflowScenarioId,
   userPrompt: string
 ): Promise<WorkflowDemoResult | null> {
+  resetLiveFailureReason();
   return tryProviderAtIndex(0, scenarioId, userPrompt);
 }

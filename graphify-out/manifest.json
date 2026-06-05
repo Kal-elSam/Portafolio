@@ -1,0 +1,1390 @@
+{
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/eslint-config-typescript/index.js": {
+    "mtime": 1780674969.0016456,
+    "hash": "69099bd33bf0a45c38e7690a47f6c3e8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/eslint-config-next-typescript/index.js": {
+    "mtime": 1780674969.0014913,
+    "hash": "03ec99071124bfa89868fb4589c7c283"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/rehype-plugins/tsup.config.js": {
+    "mtime": 1780674969.0021484,
+    "hash": "08a35d6bea5a48406cd51e5bfc08f4a3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/rehype-plugins/src/withCodeAttributes.ts": {
+    "mtime": 1780674969.0019636,
+    "hash": "889a55eab99d7ba9e46e065978a96352"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/rehype-plugins/src/withInlineHighlights.ts": {
+    "mtime": 1780674969.002023,
+    "hash": "9c1bd002496d9b0824735f48382bec8a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/rehype-plugins/src/index.ts": {
+    "mtime": 1780674969.0019135,
+    "hash": "62c5d45892e811d280141f316f3f7f93"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/tsup.config.js": {
+    "mtime": 1780674969.002727,
+    "hash": "08a35d6bea5a48406cd51e5bfc08f4a3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/src/withFrontMatter.ts": {
+    "mtime": 1780674969.0024838,
+    "hash": "1158e9ea1ebfbed4ad5b54470255c6bb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/src/utils.ts": {
+    "mtime": 1780674969.002434,
+    "hash": "6fa5e603c34df34d325d905041b51f3e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/src/withLayout.ts": {
+    "mtime": 1780674969.0025537,
+    "hash": "81c07db8fa8e99a7da2e3971e91579df"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/src/withStrict.ts": {
+    "mtime": 1780674969.0026143,
+    "hash": "d9a7a9f1339bd4559f6d27b186d07a34"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/packages/remark-plugins/src/index.ts": {
+    "mtime": 1780674969.002371,
+    "hash": "c2464b44b0e75f558d724ffd6dbb8294"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/tailwind.config.js": {
+    "mtime": 1780674969.0012562,
+    "hash": "5b1c6ede96a9df36304dfb85368457ce"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/next.config.mjs": {
+    "mtime": 1780674968.646686,
+    "hash": "76400b78ea291512cf5ac2bed3c3d765"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/next-sitemap.config.js": {
+    "mtime": 1780674968.6466413,
+    "hash": "9d9ffbd900bbb8487c32522122d50a9d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/next-env.d.ts": {
+    "mtime": 1780674968.6465898,
+    "hash": "3cf36e94213e85dc306ec5f3f3760ecc"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/postcss.config.js": {
+    "mtime": 1780674968.6467745,
+    "hash": "50c3c57b0cc109c3e4bc0cbd999749bc"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/404.tsx": {
+    "mtime": 1780674968.9955127,
+    "hash": "3cd4e00fe261bad3b3ac9f1d8ade455f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/500.tsx": {
+    "mtime": 1780674968.9955628,
+    "hash": "150048a63638ae2d13fed94b3cf58115"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/projects/index.tsx": {
+    "mtime": 1780674968.9973037,
+    "hash": "46a6d4f235b81bce43d1e8216bdbd86b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/projects/HeaderImage.tsx": {
+    "mtime": 1780674968.9972138,
+    "hash": "d9b865649823801d4f9ac45535df48da"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/projects/proyects.ts": {
+    "mtime": 1780674968.9973814,
+    "hash": "8eec78379d081056d2dc33fbe638cd52"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/blog/index.tsx": {
+    "mtime": 1780674968.9960542,
+    "hash": "0e18667a37a08f259501357da1d62ea8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/blog/HeaderImage.tsx": {
+    "mtime": 1780674968.9959393,
+    "hash": "023ee1a5ae33c543ef050132b3ac5917"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/blog/PostPreview.tsx": {
+    "mtime": 1780674968.996006,
+    "hash": "5526b9b2cadea24af29b614cef766057"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/index.tsx": {
+    "mtime": 1780674968.9958534,
+    "hash": "ea540be581b9e94804d12964e010d283"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/HeaderImage.tsx": {
+    "mtime": 1780674968.9958081,
+    "hash": "e5dcbdf8d95be646eff5d9e3a9012557"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/index.tsx": {
+    "mtime": 1780677499.8898125,
+    "hash": "c91b5a79b4279d636e37d861277d84c4"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/ImpactMetrics.tsx": {
+    "mtime": 1780675830.559059,
+    "hash": "c040d51a149f498f54b30428cb7345b0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/CleanIntuitive.tsx": {
+    "mtime": 1780676818.136526,
+    "hash": "2b8f340b08effc683e44cd043fe833f0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/ProductDeliveryPanel.tsx": {
+    "mtime": 1780676812.4541333,
+    "hash": "f5c6f814866d216a685f297b15d442e1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/aiWorkflowScenarios.ts": {
+    "mtime": 1780677257.6961381,
+    "hash": "c5a8bc98e4f980f0f77a09816291beeb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/FeaturedCard.tsx": {
+    "mtime": 1780674968.9964106,
+    "hash": "2c4df4a6008b842ba05122ff01929648"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/PrettyOptimized.tsx": {
+    "mtime": 1780676697.4205883,
+    "hash": "832869987dfbc0cabdb83f7771f12ef9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/AiWorkflowSimulator.tsx": {
+    "mtime": 1780677298.9939442,
+    "hash": "70d0ee174e84bacc1e80a2b488584349"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Quote.tsx": {
+    "mtime": 1780676696.712472,
+    "hash": "fc88f4cdfbf989b90e2a39f39101db68"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/FeaturedCaseStudies.tsx": {
+    "mtime": 1780676697.787948,
+    "hash": "7b40e3c1929c9f3abe44662629a2e00f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/roleProfiles.ts": {
+    "mtime": 1780676700.3433654,
+    "hash": "451785db185f9282efcb01355494cdd1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/RoleImpactSection.tsx": {
+    "mtime": 1780675825.8166347,
+    "hash": "b82064804f40bfd55c4f405cb5efd562"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/DetailOriented.tsx": {
+    "mtime": 1780676697.2336743,
+    "hash": "1c42a2e487a6664a9a1e938acc03adad"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Cards/TodoItem.tsx": {
+    "mtime": 1780674968.996191,
+    "hash": "de44eb0911e78d5dd0070bbc18c247c3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/index.tsx": {
+    "mtime": 1780676263.7911708,
+    "hash": "c8af00f89764d07b8e89f5c17c6b5f31"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderImageAnimation.tsx": {
+    "mtime": 1780676211.4027085,
+    "hash": "a851d809cd54e2a84d6b6db1f0f74611"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderImage.tsx": {
+    "mtime": 1780676505.743445,
+    "hash": "267a0c8f3a629f94540cd18ece96deeb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderTechStack.tsx": {
+    "mtime": 1780676696.8081841,
+    "hash": "d504c3a1c9b214a9ae9ec2a8d8a901ba"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderCta.tsx": {
+    "mtime": 1780676214.8633354,
+    "hash": "ab77cae3d256b3f0a93678153295df8e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderTitle.tsx": {
+    "mtime": 1780676211.821376,
+    "hash": "a8ee8a6dbc2fd370c3bc8aa96d082948"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/PageWithMDX.tsx": {
+    "mtime": 1780674968.9950395,
+    "hash": "b95a174d1757232fce3726404261bc03"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Page.tsx": {
+    "mtime": 1780674968.99497,
+    "hash": "0381973e98f6881997533d1ab1a1d80c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Post/index.tsx": {
+    "mtime": 1780674968.995233,
+    "hash": "1e2ef39ca93ba9631ac7bfc4400edd53"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Post/PostFooter.tsx": {
+    "mtime": 1780674968.9951284,
+    "hash": "48b0b4de727d71ee49a90615fad7b8dd"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Post/PostMeta.tsx": {
+    "mtime": 1780674968.9951844,
+    "hash": "d92a21e2ab85e1068c36c57bda85eb14"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Project/index.tsx": {
+    "mtime": 1780674968.9954228,
+    "hash": "c35355630c0370075b2b938e5968a8be"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Project/ProjectMeta.tsx": {
+    "mtime": 1780674968.9953692,
+    "hash": "92f1ba70680579dd4eb7868f0f0e9624"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents-layouts/Project/ProjectFooter.tsx": {
+    "mtime": 1780674968.9953184,
+    "hash": "94106ccdff1444d761e40277a9cd83f5"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/types/index.ts": {
+    "mtime": 1780674969.0010467,
+    "hash": "01470f0eb273ca5b9af74e713ae20d34"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/constants/app.ts": {
+    "mtime": 1780674968.994865,
+    "hash": "31062379e7ebcf1dc034561af40b2579"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/providers/index.tsx": {
+    "mtime": 1780674969.0006166,
+    "hash": "e7205d57a87989a37c0df4db3812f2fa"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/providers/GlobalStateProvider.tsx": {
+    "mtime": 1780674969.0005696,
+    "hash": "d566801a2630d2c2fd5497cd753a7b21"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/providers/FramerMotionProvider.tsx": {
+    "mtime": 1780674969.0005212,
+    "hash": "24327346bdd1af1a3b9b798ae330c2f0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/providers/FocusModeProvider.tsx": {
+    "mtime": 1780674969.0004754,
+    "hash": "e882e1465d01ee702f63a7cc75fd4819"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/providers/ColorAccentProvider.tsx": {
+    "mtime": 1780674969.000427,
+    "hash": "7e92784cbee5cdbd65d12913d90cdbf2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/utils/prisma.ts": {
+    "mtime": 1780674969.0012038,
+    "hash": "299d174a5d14ea248e081c426bbbd7b8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/utils/fetcher.ts": {
+    "mtime": 1780674969.0011628,
+    "hash": "72917ff12c491c066887bd5702be4765"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/utils/dayjs.ts": {
+    "mtime": 1780674969.0011156,
+    "hash": "50b82e387bb5bc98a9d8d43c6f43a801"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Toaster.tsx": {
+    "mtime": 1780674968.9912226,
+    "hash": "2fe4c24c66fb1d530b342238ddbbc92d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/QuickAccess.tsx": {
+    "mtime": 1780674968.9905477,
+    "hash": "ba22de7c77054af2949800cfcb41e996"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/PageHeader.tsx": {
+    "mtime": 1780674968.9904017,
+    "hash": "1c52671e00e7caafc67d9de0e1ed53f3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Footer.tsx": {
+    "mtime": 1780675837.1079001,
+    "hash": "8e2b388cfda8b81ed495bed81f8938f5"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Activity.tsx": {
+    "mtime": 1780674968.9883602,
+    "hash": "ee69d4e8227dc9616863793bcbafaf9f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Reactions.tsx": {
+    "mtime": 1780674968.9906569,
+    "hash": "db595fcac08fbbb57a7a68be90f17c3b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Kbd.tsx": {
+    "mtime": 1780674968.9899254,
+    "hash": "2cc5b64c1cd04287ff9ad28002dd29ef"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Logo.tsx": {
+    "mtime": 1780674968.9900758,
+    "hash": "6ff0eed66a900522a126f5eadadc69d0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/ShareButton.tsx": {
+    "mtime": 1780674968.9908803,
+    "hash": "b323d0c3c250f45895ed59b20b0655e3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Icons.tsx": {
+    "mtime": 1780675865.6871943,
+    "hash": "1216f8a5d92fad5b6d0b59a20596906a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/NewPosts.tsx": {
+    "mtime": 1780674968.9903123,
+    "hash": "500569f692cfa092e8331567d1211d47"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/InsightButton.tsx": {
+    "mtime": 1780674968.9897444,
+    "hash": "edc5cde2934fc791371fb8c12159434e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/IconsFile.tsx": {
+    "mtime": 1780675865.6021147,
+    "hash": "0c729b0ab5235376d18eb19d61f45f20"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Portal.tsx": {
+    "mtime": 1780674968.990467,
+    "hash": "b4de256d69c47b6d17ef6e31db427288"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/TipShortcuts.tsx": {
+    "mtime": 1780674968.9911003,
+    "hash": "62696f9815e05f5064fed3fb6def4ea6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/CountUp.tsx": {
+    "mtime": 1780674968.9885037,
+    "hash": "f74f8d00ed3395b44e8a4e644138e401"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/EmojiReaction.tsx": {
+    "mtime": 1780674968.9889169,
+    "hash": "1205780c9c30a702870fedd058ac342e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/ActionCenter.tsx": {
+    "mtime": 1780674968.988278,
+    "hash": "7e194ad92e3ad4fa1e9a103f018ded0c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/CvDownloadMenu.tsx": {
+    "mtime": 1780676212.7100081,
+    "hash": "f0dc0e06074f4e5d7f9fab8b620ee932"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Toast.tsx": {
+    "mtime": 1780674968.9911609,
+    "hash": "ac1d39c15a541246a0188bf29c77d4ff"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Navigation.tsx": {
+    "mtime": 1780674968.9902115,
+    "hash": "485a2d7c2c1a2731b4a16104c6c85530"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Shortcuts.tsx": {
+    "mtime": 1780674968.9909523,
+    "hash": "97109a0354f3d45df4a59902ca26e7f3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/DisplayLottie.tsx": {
+    "mtime": 1780674968.9887586,
+    "hash": "0af4fcf353cce32d05adffb9a3112e5d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/TableOfContents.tsx": {
+    "mtime": 1780674968.9910262,
+    "hash": "3adaecde9dba402f778ebc55cbc3db65"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Link.tsx": {
+    "mtime": 1780674968.9921837,
+    "hash": "38c358157949b8b7f34d9e7d26b2726a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/TIL.tsx": {
+    "mtime": 1780674968.99231,
+    "hash": "54242507a7979a14ab970bd472758223"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Code.tsx": {
+    "mtime": 1780674968.9917905,
+    "hash": "a427f91b30aedd2f9d4587e3f9dc1283"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/CodeGroup.tsx": {
+    "mtime": 1780674968.9918497,
+    "hash": "2a5c7d41ad2c64bd5439941195e2d269"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Stack.tsx": {
+    "mtime": 1780674968.9922445,
+    "hash": "e2829731412c8dc0f37d2d6304d8b351"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/InlineHighlight.tsx": {
+    "mtime": 1780674968.992059,
+    "hash": "3af79aaed67f023b8a19c5afccf02465"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/ImageSensitive.tsx": {
+    "mtime": 1780674968.9919827,
+    "hash": "b1a74ddf624ceca15014b3c5322dd5e6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Image.tsx": {
+    "mtime": 1780674968.9919288,
+    "hash": "9dd96b5bd8e3ab235495de942a8b9326"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Callout.tsx": {
+    "mtime": 1780674968.991738,
+    "hash": "fa18dbf42e3f18572a612b699bc95cd4"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/Labels.tsx": {
+    "mtime": 1780674968.9921308,
+    "hash": "5efb6f09f21b02ecd948311e062e9780"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/AccentDemo.tsx": {
+    "mtime": 1780674968.9916854,
+    "hash": "e9589fbc8f7bf5d93571b273c5c332fe"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/Pre.tsx": {
+    "mtime": 1780674968.992569,
+    "hash": "eca912ae6ef307a5f3ed4cfe32bda357"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/index.tsx": {
+    "mtime": 1780674968.9927695,
+    "hash": "dd9f46a85e13b69e5f1306c8553e6f59"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/Link.tsx": {
+    "mtime": 1780674968.9925067,
+    "hash": "767e549efdd9e4a6a911d52d859ced05"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/Heading.tsx": {
+    "mtime": 1780674968.9923995,
+    "hash": "6d2694946d1456863a8b73e911f23f6b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/Hr.tsx": {
+    "mtime": 1780674968.9924493,
+    "hash": "edfd42065229ed85e32ea26cb2d78c1a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/mdx/custom-components/Table.tsx": {
+    "mtime": 1780674968.9926467,
+    "hash": "2969f91216fe45a8c747439f9c72fb16"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/sections/SectionContent.tsx": {
+    "mtime": 1780674968.9936726,
+    "hash": "249faca68c686e555348c36d0291698d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/sections/SectionTitle.tsx": {
+    "mtime": 1780674968.9937222,
+    "hash": "c8cc490ea4fa42f78bd49b2080326ad6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/sections/SectionButton.tsx": {
+    "mtime": 1780674968.993588,
+    "hash": "dfef3e14c490a21ca6f0ffe9710fb20c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectWireframe.tsx": {
+    "mtime": 1780674968.9945495,
+    "hash": "f27cfa0e082a3837fafab0ddaf92221d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/react-flip-numbers.d.ts": {
+    "mtime": 1780674968.9947736,
+    "hash": "3f52d42d3225836f61d9d86415383950"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CompanyWindow.tsx": {
+    "mtime": 1780674968.9939246,
+    "hash": "7e0d29ca0825dedb2281b2a2fc174ffe"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectCounter.tsx": {
+    "mtime": 1780674968.9944973,
+    "hash": "1f5ace1be58e86b69ebc287696625d8f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectCard.tsx": {
+    "mtime": 1780674968.9944286,
+    "hash": "7f46aaf4252dc987ff96ba12b17b3abb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/Npm.tsx": {
+    "mtime": 1780674968.994078,
+    "hash": "3adb5dafc3591076fa4a5e82833be822"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/GitHub.tsx": {
+    "mtime": 1780674968.9940212,
+    "hash": "af84a30ceda0d3e649627fb103d5ffeb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/WireframeSection.tsx": {
+    "mtime": 1780674968.9947035,
+    "hash": "bc1f486c6a0652e6d0c699a2ff410965"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/Skeletons.tsx": {
+    "mtime": 1780674968.9946127,
+    "hash": "61616dafd9b6723bda7bb1d1bfab7a42"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/AppWindow.tsx": {
+    "mtime": 1780674968.9938178,
+    "hash": "e5bddb92d21ec9a8cb8b648547ecda03"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CompanyLogosBanner.tsx": {
+    "mtime": 1780674968.993878,
+    "hash": "5d9a10b1b4553bd41cafe40c5202f86a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/meta/Head.tsx": {
+    "mtime": 1780674968.992873,
+    "hash": "db70db99b2a01ea52f4326a3df0eb257"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/meta/OgImages.tsx": {
+    "mtime": 1780674968.9929852,
+    "hash": "bd3a2b87911916277db79c41b85dd20b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavLinkDropdown.tsx": {
+    "mtime": 1780674968.9933398,
+    "hash": "a18945aeddc8d1a0d82bc65f5f1665d8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/SkipNavigation.tsx": {
+    "mtime": 1780674968.9934933,
+    "hash": "8f3b4a037edc7e3f7bd1c77f791e869e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavIcon.tsx": {
+    "mtime": 1780674968.9931405,
+    "hash": "9d32b1811cedee41654ce87916daf55b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavLinkExpanded.tsx": {
+    "mtime": 1780674968.9933918,
+    "hash": "326765faf248b7307a138e3b37ebab8c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavLink.tsx": {
+    "mtime": 1780674968.9932756,
+    "hash": "6ebebb21ba395d50d867eca2e5dc7873"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavLogo.tsx": {
+    "mtime": 1780674968.993442,
+    "hash": "d2c4ef7ea83daed2f57303163a9e2ce6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/navigations/NavIconQuickAccess.tsx": {
+    "mtime": 1780674968.9932191,
+    "hash": "27bca16e8b9baae0bbdf3899331b1fe8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/layouts/WithNavigationFooter.tsx": {
+    "mtime": 1780674968.9913805,
+    "hash": "3dd65b3e72ab4e9b6765a2dc2857da5d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/layouts/WithTableOfContents.tsx": {
+    "mtime": 1780674968.9915004,
+    "hash": "043e6323af4fc740285b941147f32285"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/layouts/WithReactions.tsx": {
+    "mtime": 1780674968.9914355,
+    "hash": "fbaaa8a4702357c5d294e0b64149632f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/layouts/Root.tsx": {
+    "mtime": 1780674968.9913223,
+    "hash": "142398f23588fbaa62a14f62ead75097"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/layouts/WithTableOfContentsMock.tsx": {
+    "mtime": 1780674968.991562,
+    "hash": "b15945ccd6712670c6796b9d79e4a218"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useScrollSpy.ts": {
+    "mtime": 1780674968.9982285,
+    "hash": "41b7c8bab9a0a4c76f64de36133d399e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useGlobal.ts": {
+    "mtime": 1780674968.9980385,
+    "hash": "b9ba732dd2c9f7785806f37af58dfec1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useCurrentUrl.ts": {
+    "mtime": 1780674968.9979534,
+    "hash": "4c02b2d26ccf468b043b45ad2e35231b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useOnScroll.ts": {
+    "mtime": 1780674968.9981775,
+    "hash": "26a5e4a4d688ad1a235246e3427d97c2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useInsight.ts": {
+    "mtime": 1780674968.9980848,
+    "hash": "ab740bc6a87927e6007f55d172f12770"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useContentActivity.ts": {
+    "mtime": 1780674968.9978657,
+    "hash": "7fc07a145e6c7e11e9e2f791df92caf9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useNewPosts.ts": {
+    "mtime": 1780674968.9981349,
+    "hash": "8468d278800523b15f2d5eaa77cc6b2d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useTheme.ts": {
+    "mtime": 1780674968.9983163,
+    "hash": "e58a4c949bd70a20f43238313c9ff542"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useContentMeta.ts": {
+    "mtime": 1780674968.997912,
+    "hash": "734d538504298f8032240bd700ec9732"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useShortcut.ts": {
+    "mtime": 1780674968.998274,
+    "hash": "60251f1c40f189112709e59806a001b5"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/hooks/useFocusMode.ts": {
+    "mtime": 1780674968.997996,
+    "hash": "a8d120133c5b8c2f3ace6ce02ee21d87"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/meta.ts": {
+    "mtime": 1780674968.998408,
+    "hash": "c05501d0156df049935f14d3e6a0caaa"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/posts.ts": {
+    "mtime": 1780674968.9984603,
+    "hash": "e66fdf3ae58d3c1831c9b852eb50637e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/providers.ts": {
+    "mtime": 1780677314.539358,
+    "hash": "506da18a18349ac1e4cee294ccf4ec3e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/types.ts": {
+    "mtime": 1780677256.406165,
+    "hash": "0cd31d30f596ca177bedb805cb801f7f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/workflow-demo.ts": {
+    "mtime": 1780677269.7545614,
+    "hash": "0c57d3b24c1b214696f96564f483a53c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/mock-workflow.ts": {
+    "mtime": 1780677264.7909698,
+    "hash": "7f195f76baf1abd132e5c48bc2120b41"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/projects.tsx": {
+    "mtime": 1780674969.0000632,
+    "hash": "89a4ccac4135e76ce39857ba8ee54d39"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/index.tsx": {
+    "mtime": 1780674969.000015,
+    "hash": "6e9526ddefaea2ad5f47a2a42013b6d7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/404.tsx": {
+    "mtime": 1780674968.9985492,
+    "hash": "16edb4e78caef5ebf5d74449bc001ca6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/500.tsx": {
+    "mtime": 1780674968.9985983,
+    "hash": "1833455bbbc32084fe7c2f7bca8f7cc0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/_document.tsx": {
+    "mtime": 1780674968.998693,
+    "hash": "5fdc4351c0e081f46ef542cf67774589"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog.tsx": {
+    "mtime": 1780674968.9993708,
+    "hash": "df3b3d8877b661d909e30df317fa96dd"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/today-i-learned.tsx": {
+    "mtime": 1780674969.0001194,
+    "hash": "afb5500d8b8e72420f8ca33048156ded"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/_app.tsx": {
+    "mtime": 1780674968.9986472,
+    "hash": "536a2d243ed39b0b8d59b9243e7605a9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/og-post.tsx": {
+    "mtime": 1780674968.999106,
+    "hash": "91d6d8af2c33b97e7ed2674221e6e5b7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/og-page.tsx": {
+    "mtime": 1780674968.9990618,
+    "hash": "e6c6bec73b3b397c4d7e0eb16e7186b0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/activity/index.ts": {
+    "mtime": 1780674968.9988043,
+    "hash": "a6ef16ac1c06d4bf45f277f79b97552e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/reactions/[slug].ts": {
+    "mtime": 1780674968.9991887,
+    "hash": "1b45cd1faef5a1ec95f355488dc10ce8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/content/latest.ts": {
+    "mtime": 1780674968.9990163,
+    "hash": "daacfb804e94e8b221a19a2dd183900d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/content/index.ts": {
+    "mtime": 1780674968.99897,
+    "hash": "a6f7223f7cd38bde76ee271874a31cb8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/content/[slug].ts": {
+    "mtime": 1780674968.9988947,
+    "hash": "f3ac213562522c038e49a6c2409a732e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/ai/workflow-demo.ts": {
+    "mtime": 1780677318.365793,
+    "hash": "9f742702034faf77eedb7782024e9b66"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/views/[slug].ts": {
+    "mtime": 1780674968.999326,
+    "hash": "a0b35cbb16d1348b1e47c271ed152856"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/api/shares/[slug].ts": {
+    "mtime": 1780674968.9992588,
+    "hash": "3bcb5dee020427802434c00e330b0179"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/mdx.tsx": {
+    "mtime": 1780674968.9975803,
+    "hash": "d510616afb0329b0aa26cbdd09c46b9c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/date.ts": {
+    "mtime": 1780674968.997531,
+    "hash": "1000ad0aead91acf384a66d04f12c2ae"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/api.ts": {
+    "mtime": 1780674968.9974809,
+    "hash": "5472ba6577a20cb0f1fbaf71f81ee756"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/url.ts": {
+    "mtime": 1780674968.9977915,
+    "hash": "cda1373411fb263ac45b1a0aabcee148"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/page.ts": {
+    "mtime": 1780674968.9976294,
+    "hash": "516e902bd3fe67df315ccc33a23b3081"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/server.ts": {
+    "mtime": 1780674968.9977465,
+    "hash": "9b09ab1808bd76913ccb4151d12571fc"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/helpers/post.ts": {
+    "mtime": 1780674968.9976826,
+    "hash": "9ec0833d22f3f41378dd431684748802"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/AGENT.md": {
+    "mtime": 1780675234.3798127,
+    "hash": "97b53f9986b46de89a25ce7406003037"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/README.md": {
+    "mtime": 1780674968.6463253,
+    "hash": "ebfe44a4d43e635b4af6deeca5398d21"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/CONTRIBUTING.md": {
+    "mtime": 1780674968.6462743,
+    "hash": "0f61a5a3bcb35c8abbd95d600cb84aa7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/AGENTS.md": {
+    "mtime": 1780675537.9853103,
+    "hash": "0b071df01ba2aee82ae1c3835e5def4b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/CLAUDE.md": {
+    "mtime": 1780675537.9853103,
+    "hash": "0b071df01ba2aee82ae1c3835e5def4b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/pnpm-workspace.yaml": {
+    "mtime": 1780674969.00361,
+    "hash": "f5f68f0530f1523041e8467c1c46178d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/architecture.md": {
+    "mtime": 1780675238.7290254,
+    "hash": "8d2028c13aeb70b8c4bf07f122091278"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/api.md": {
+    "mtime": 1780677284.083008,
+    "hash": "d3697e7c7af8ffa8dbf710770211b7c2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/conventions.md": {
+    "mtime": 1780675241.0987184,
+    "hash": "a68d605f177930f6989f489046e48686"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/git-workflow.md": {
+    "mtime": 1780675244.4384978,
+    "hash": "c76dc8403fc608b8753433154a79a4ff"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/test-driven-development.md": {
+    "mtime": 1780675248.1943455,
+    "hash": "3c0b0cf414e50d210de11f817314e2d9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/testing.md": {
+    "mtime": 1780675242.9682105,
+    "hash": "058e4eb42db013d555c1b648fa00ea8e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/spec-driven-development.md": {
+    "mtime": 1780675247.1024408,
+    "hash": "24717e53adb7677d283f9ad37c854277"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/harness.md": {
+    "mtime": 1780675538.965025,
+    "hash": "34851aaeb5b4307a96b471709b428a7d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/agent-workflow.md": {
+    "mtime": 1780675548.1508627,
+    "hash": "266b7fd26b3f981b414741ad8437cd40"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/ui.md": {
+    "mtime": 1780675253.353768,
+    "hash": "cf626ce922c95227b959ea40b199dbe2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/portfolio-role-positioning.spec.md": {
+    "mtime": 1780675820.079431,
+    "hash": "15055cf868e1907d428a41c4e6e73b73"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/ai-workflow-simulator.spec.md": {
+    "mtime": 1780677255.8835518,
+    "hash": "442153a57723d313595dae841655b340"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/playbooks/debug.md": {
+    "mtime": 1780675531.562649,
+    "hash": "2522a47ff47288bc99f5723899cb3f33"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/playbooks/init-feature.md": {
+    "mtime": 1780675531.3094914,
+    "hash": "72641d3ba88c8084756ae69d8218841b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/playbooks/init-harness.md": {
+    "mtime": 1780675531.8723693,
+    "hash": "b1b31fefd28cbf77b734d5069a5d1485"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/playbooks/checkpoint.md": {
+    "mtime": 1780675530.636634,
+    "hash": "79f4ec224f80de01d3785c6041a8919b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/playbooks/review.md": {
+    "mtime": 1780675530.9008677,
+    "hash": "15d794449c2d99ee9f6a2eff58cfb2b9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/ui-design.md": {
+    "mtime": 1780675263.87776,
+    "hash": "4ab8a445a9691e5270624b892f59c82b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/architecture.md": {
+    "mtime": 1780675258.522705,
+    "hash": "3fc28885f3df0d2dd985bade0e16d7df"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/git-workflow.md": {
+    "mtime": 1780675260.6387794,
+    "hash": "5c1e96cf210793bcf8948a2d116fb910"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/api-design.md": {
+    "mtime": 1780675265.2174447,
+    "hash": "8cc87013db67ab23475291461016c9d1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/testing.md": {
+    "mtime": 1780675259.7879314,
+    "hash": "0ff3e619451d9c4935f74799fa0103ab"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/code-review.md": {
+    "mtime": 1780675262.722774,
+    "hash": "48e83775a1fe9704ba0a821f3503a769"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/skills/debugging.md": {
+    "mtime": 1780675261.6583006,
+    "hash": "3da4a1547f4c6935901981e86f2e2335"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/README.md": {
+    "mtime": 1780674968.646544,
+    "hash": "92ac11c9d84d1e8a1480f26df9155d8a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/AGENTS.md": {
+    "mtime": 1780675533.1266174,
+    "hash": "93101c8aedbb74f311c057451ce76ccd"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
+    "mtime": 1780677518.327954,
+    "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {
+    "mtime": 1780674968.9957469,
+    "hash": "e25f9f0eaeac6dd6934166e4dfdeab84"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/credits.mdx": {
+    "mtime": 1780674968.9998763,
+    "hash": "7d72eb431e744946fd3e8c06d5a220a7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/docs/tailwindcss-accent.mdx": {
+    "mtime": 1780674968.9999676,
+    "hash": "57547351843c1e8e28ab4601a5ea641f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog/fitur-multiple-reactions-di-nextjs.mdx": {
+    "mtime": 1780674968.999481,
+    "hash": "95fc3f861a22ec2073a8dbca7bd0e29b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog/the-2022-retrospective.mdx": {
+    "mtime": 1780674968.9998283,
+    "hash": "0072973e09e9c1db2318a98270cb3234"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog/tentang-nextjs-tailwind-css-dan-framer-motion.mdx": {
+    "mtime": 1780674968.999776,
+    "hash": "4e92585343e0a993fffc0785e17f5603"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog/id-tailwindcss-best-practices.mdx": {
+    "mtime": 1780674968.9995775,
+    "hash": "45848f8705eaa80990b45b55668787ea"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/blog/tailwindcss-best-practices.mdx": {
+    "mtime": 1780674968.9996781,
+    "hash": "6b30a8b0580f323ec21ad6eab3b0716e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/studio.mdx": {
+    "mtime": 1780676981.397042,
+    "hash": "77ff71d4bc88bfc9302acf5c4232b0ce"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/contact.mdx": {
+    "mtime": 1780676978.9989705,
+    "hash": "6fbb653010b6debc04c51b77b002f85d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/skills-and-tools.mdx": {
+    "mtime": 1780676935.4930375,
+    "hash": "75eedf6563d220e0a91ceba3f23e8d4c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/experience.mdx": {
+    "mtime": 1780676938.0229025,
+    "hash": "8483354771fec1432d18ce69fb6447cd"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomezDevResume.pdf": {
+    "mtime": 1780674968.6472628,
+    "hash": "cdf5b46a1a89df36ff70e33f584ffb66"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-SolutionsEngineer.pdf": {
+    "mtime": 1780675839.2627356,
+    "hash": "61b3394a7c1e5f8c827da27b6aeb8b91"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-TechnicalLead.pdf": {
+    "mtime": 1780675839.2604513,
+    "hash": "7d9d2f01d647a389ddd6d0a1fdca4d0b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-SoftwareEngineer.pdf": {
+    "mtime": 1780675839.2581425,
+    "hash": "280647359b726996729a8428f2fd4ee6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/9055802_bxl_flutter_icon.svg": {
+    "mtime": 1780674968.6469457,
+    "hash": "73fb419bc8f5feaab31385d36e8bd091"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/mac.png": {
+    "mtime": 1780674968.6646304,
+    "hash": "1dd87b0462e5e679569debd7ec23b779"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/flechas.png": {
+    "mtime": 1780674968.6519692,
+    "hash": "2bd96e1b547e388cda03676e49f8f35b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/iphone.png": {
+    "mtime": 1780674968.6632845,
+    "hash": "0d06645ded681445796395c0a6d0774c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/me.png": {
+    "mtime": 1780674968.6572275,
+    "hash": "6083a3a79b66c23f133a9a46c137dd07"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/og-image.png": {
+    "mtime": 1780674968.6576595,
+    "hash": "e66ee57b238964380f7f7e77cb86fa55"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/current-workspace.jpg": {
+    "mtime": 1780674968.6569757,
+    "hash": "203267f083a986adbf27c7e98cc517b3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/pngwing.com.png": {
+    "mtime": 1780674968.6594408,
+    "hash": "c7abb49cf8d747cfbb177d72b60258ea"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/sam.png": {
+    "mtime": 1780674968.6609592,
+    "hash": "924e33b515dc68a4ef57905f39736411"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/images/blog/the-2022-retrospective/rontgen.jpg": {
+    "mtime": 1780674968.653459,
+    "hash": "623f81b6620229b837b689a177a30a52"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kairo-systems-landing.png": {
+    "mtime": 1780674968.6738658,
+    "hash": "31a6b600a909a9aba3ccaa9a8542e10d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/Admin Dashboard/dashboard.png": {
+    "mtime": 1780674968.8362603,
+    "hash": "f5468da09687af0701a588b8327c89b5"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/Admin Dashboard/login.png": {
+    "mtime": 1780674968.8409705,
+    "hash": "45de3157aade083bca612bbb91867171"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/Admin Dashboard/form.png": {
+    "mtime": 1780674968.8404043,
+    "hash": "1bb36d6b7cd1720c925c0eacd97059c9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/Admin Dashboard/table.png": {
+    "mtime": 1780674968.8441246,
+    "hash": "6bdd9bbbe8c28010201b1ff43ba9937d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/4.png": {
+    "mtime": 1780674968.8570995,
+    "hash": "30c6eba95cab0fb1a738e9d634b388bc"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/5.png": {
+    "mtime": 1780674968.8623388,
+    "hash": "6eb505f2f034090a4334f2be4347d82f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/6.png": {
+    "mtime": 1780674968.8666706,
+    "hash": "41edb6591fd278aeb684df1adaebb7b2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/2.png": {
+    "mtime": 1780674968.8548093,
+    "hash": "a22c3fca337df98bb2aa591aa06c5d83"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/3.png": {
+    "mtime": 1780674968.85518,
+    "hash": "966d50957885458b77c0654b2b9aa752"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cinemapedia/1.png": {
+    "mtime": 1780674968.850371,
+    "hash": "367d41c26e6f652fcf9d3a78cb600128"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/cva/home.png": {
+    "mtime": 1780674968.8818078,
+    "hash": "43da1e57548eff027dec248a43258612"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/users-search.png": {
+    "mtime": 1780674968.9778178,
+    "hash": "d2f019e73ada98d28e994155792847d9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/mobile4.png": {
+    "mtime": 1780674968.9613025,
+    "hash": "466ae2512df92096ff66757da0489a14"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/mobile2.png": {
+    "mtime": 1780674968.9099483,
+    "hash": "7db5aa3edee0691afec76c51189df8e6"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/home.png": {
+    "mtime": 1780674968.8878539,
+    "hash": "fd563b7be62cbbeecef88ba4a1ba7aee"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/mobile3.png": {
+    "mtime": 1780674968.9164379,
+    "hash": "5c5ecbed0afacd58ae8cda2a401c5523"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/mobile1.png": {
+    "mtime": 1780674968.8895319,
+    "hash": "7c33bdff549093a169f96d66f33e2f0d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/users.png": {
+    "mtime": 1780674968.9797688,
+    "hash": "344e3fdb0b48b7d47b913eb2231adeaf"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/repo-search.png": {
+    "mtime": 1780674968.9687793,
+    "hash": "f9070549fc9be59067a9dd8236acfb99"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/personal/github-search/repo.png": {
+    "mtime": 1780674968.9710622,
+    "hash": "54ca5dda2dfd0b180bad3ea494b287bb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-notification2.png": {
+    "mtime": 1780674968.684717,
+    "hash": "5f3036592c5518140100c1a904028159"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-ratios.png": {
+    "mtime": 1780674968.6856675,
+    "hash": "a10412dc0a53a268d8939d3441577e5b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-home.png": {
+    "mtime": 1780674968.6795807,
+    "hash": "4f075f40a284f622b315981327d9dcce"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-login.png": {
+    "mtime": 1780674968.6822073,
+    "hash": "1c08cf85691f6c1bf6a07b4212ff0405"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-notification.png": {
+    "mtime": 1780674968.682674,
+    "hash": "1ddf67d0d4ae17ca85db4a460fba5537"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-cartera.png": {
+    "mtime": 1780674968.6789784,
+    "hash": "0c452cc1dbba267478e949e695189ad7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/crm/crm-tickets.png": {
+    "mtime": 1780674968.6863203,
+    "hash": "43ea2b3404588810196bb20ba6004f26"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/crm-mobile.png": {
+    "mtime": 1780674968.6868353,
+    "hash": "b6e455f7dc042a086ed76bb3d6f0c243"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/nexus-tickets.png": {
+    "mtime": 1780674968.694203,
+    "hash": "3c109b034ae4811d655d2aba4a8daaf7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/maximus-dashboard.png": {
+    "mtime": 1780674968.6908808,
+    "hash": "da20b5f208bcfa0f55daf76848c47949"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/nexus-panel.png": {
+    "mtime": 1780674968.69381,
+    "hash": "220b4e6f3bdb665d1a1bd1bf9e4cd847"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/titan-indicators.png": {
+    "mtime": 1780674968.7001374,
+    "hash": "266b6abb98d84661eeb32bae223c299e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/solcredito-autos.png": {
+    "mtime": 1780674968.6993585,
+    "hash": "716a29be809760359834bfff4c3d8304"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/seguros-kc.png": {
+    "mtime": 1780674968.6970427,
+    "hash": "97eed2e9f26bbdbf1e83b5f8a7cccb1e"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/crm-web.png": {
+    "mtime": 1780674968.6871476,
+    "hash": "205b51ff0ecfbe19cc141940f8792f49"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/nexus-login.png": {
+    "mtime": 1780674968.6931188,
+    "hash": "a585559a40ee8df5f2130f7c979fca04"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/ra-home.png": {
+    "mtime": 1780674968.6947505,
+    "hash": "4f9a32b357f712a94149b3efa3a3da2f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/grupo-kc-site.png": {
+    "mtime": 1780674968.6898613,
+    "hash": "e160bbc279613372e28df64f36825a2a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/current/titan-login.png": {
+    "mtime": 1780674968.7004607,
+    "hash": "c055892280dffc5fa2f1b4a9009a5237"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/thanos/battle.png": {
+    "mtime": 1780674968.7459102,
+    "hash": "7da499e270e0fe4d38bd3ddaf19049cb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/bi/mesa.png": {
+    "mtime": 1780674968.6764452,
+    "hash": "82634c7d8f7235e08366472e7c20746b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/bi/login.png": {
+    "mtime": 1780674968.6760302,
+    "hash": "396f0bda4ef3cee94c95ac7f32e85291"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/bi/h01.png": {
+    "mtime": 1780674968.6757958,
+    "hash": "d29d9f6398216b1f83e10bc241a33331"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/bi/chart.png": {
+    "mtime": 1780674968.6744719,
+    "hash": "6ed199719d424b245e297ee2b08505e9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/titan/login.png": {
+    "mtime": 1780674968.7537174,
+    "hash": "c1c857fdc1f15bdba6ceef759809c973"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/titan/tickets.png": {
+    "mtime": 1780674968.757349,
+    "hash": "1b15ce25cc6e06c71cb0459376cdbfce"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/titan/home.png": {
+    "mtime": 1780674968.7509851,
+    "hash": "5ea496b48370f87c785d9581b01468b1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/titan/new.png": {
+    "mtime": 1780674968.7555285,
+    "hash": "029e6c43850f166cc155b124444abfb7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/titan/chat.png": {
+    "mtime": 1780674968.7478142,
+    "hash": "da4ce32fc91bc4013208eb09d20eb3b3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/dashboard.png": {
+    "mtime": 1780674968.7135646,
+    "hash": "5a209444122d14cebd63d49c0ab3dbe8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/login.png": {
+    "mtime": 1780674968.7226841,
+    "hash": "24eb87ec8731d42e5463675885128d88"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/registro.png": {
+    "mtime": 1780674968.7250652,
+    "hash": "43940dc80d95d5c4988c14ce98fcca2b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/home.png": {
+    "mtime": 1780674968.7140977,
+    "hash": "3cafc999f6e94bf8200def704c3f527c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/chart.png": {
+    "mtime": 1780674968.712656,
+    "hash": "88c52b4afae40ddce6f76813ef811bfc"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/landing.png": {
+    "mtime": 1780674968.7217185,
+    "hash": "45350a499494d4bf7e2f700daaca3dec"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/importar.png": {
+    "mtime": 1780674968.717442,
+    "hash": "04a1619b7ed0a4d582d37d1e3a2852f5"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/home3.png": {
+    "mtime": 1780674968.7161188,
+    "hash": "c3857cc6d4b8a2bfe2b333e386bde84a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/home2.png": {
+    "mtime": 1780674968.7154338,
+    "hash": "8f06d5466e8f547664361589b93c366b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/home1.png": {
+    "mtime": 1780674968.7148824,
+    "hash": "eb5d43247c4c2c7bd91fb3a7b101a1ed"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/registro1.png": {
+    "mtime": 1780674968.72574,
+    "hash": "82d80fb07582d862e2725fde1ea3341c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/home4.png": {
+    "mtime": 1780674968.716796,
+    "hash": "351431cec8c18e9693a3c75532b4e81c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/maximus/modal.png": {
+    "mtime": 1780674968.7244809,
+    "hash": "793592ef09538b2bbceb840208b3357a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/cardAgente/card.png": {
+    "mtime": 1780674968.6783519,
+    "hash": "5421ef73f08aa953b9c595840b80cc08"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/dashboard.png": {
+    "mtime": 1780674968.7077289,
+    "hash": "a7a06ed535611d4fa5b5ffb1bf8d41c7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/login.png": {
+    "mtime": 1780674968.7112532,
+    "hash": "ce9098cc65192e02a09e8962b1ed2d68"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/dash2.png": {
+    "mtime": 1780674968.704677,
+    "hash": "d60aea4103e7144841fbf30dd0b98100"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/dash3.png": {
+    "mtime": 1780674968.7064517,
+    "hash": "6c0d02675bcc455ab71c74d2ffd08c36"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/home.png": {
+    "mtime": 1780674968.7093685,
+    "hash": "83ec6094ce21128bcbae926c773c93ed"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/bonos.png": {
+    "mtime": 1780674968.7035904,
+    "hash": "1a4ba274430d49d06c86817424fe1b73"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/kc/eos/home2.png": {
+    "mtime": 1780674968.7099822,
+    "hash": "b282a957400e0338a8ab70ee69ca2ba4"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/segunet/bitacora.png": {
+    "mtime": 1780674968.6700423,
+    "hash": "460414742bbd939487cac25e40c3c6eb"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/segunet/login.png": {
+    "mtime": 1780674968.6710496,
+    "hash": "a8523985aa5435982aeaf08aee9462a7"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/segunet/home.png": {
+    "mtime": 1780674968.6707141,
+    "hash": "8dc6c8e01d5ccd84be5e496e6a618e1d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/segunet/new.png": {
+    "mtime": 1780674968.6712766,
+    "hash": "b20ce9940dfc69f630e1c691038b0545"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/categoria.jpeg": {
+    "mtime": 1780674968.6679304,
+    "hash": "52aa8bc5efa892ec0957c41f8560ca8d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/inicio.jpeg": {
+    "mtime": 1780674968.6693535,
+    "hash": "eb660ffe6b35ea3a096fd800c3afee0b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/home.jpeg": {
+    "mtime": 1780674968.6683946,
+    "hash": "28316bb2385184bf991f4bd0ca160ea2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/home2.jpeg": {
+    "mtime": 1780674968.6688037,
+    "hash": "3642b279165af61112ad2abe120eb255"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/mapa.jpeg": {
+    "mtime": 1780674968.6697078,
+    "hash": "eeae6373d9b0a903dc409f337b51bd7f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/medica/home3.jpeg": {
+    "mtime": 1780674968.6690812,
+    "hash": "c1677729a27dee2eeedc6ba3eda7c402"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/tabla2.png": {
+    "mtime": 1780674968.6672747,
+    "hash": "862c9ed0ff9873f854188e0f950a771c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/tabla1.png": {
+    "mtime": 1780674968.6669407,
+    "hash": "c7c914c5ba04364478dafbcc81830802"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/soporte.png": {
+    "mtime": 1780674968.666711,
+    "hash": "4653b9e4b94de953cbd1f5ee71155a54"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/home.png": {
+    "mtime": 1780674968.6665668,
+    "hash": "7c36855a50e133b5a1a359cdb7f795f3"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/cards2.png": {
+    "mtime": 1780674968.6662004,
+    "hash": "1fdfe5d07b4141e2f7c871b3df619014"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/cards.png": {
+    "mtime": 1780674968.6659684,
+    "hash": "45c4b2f2403ff3cd500c6afd93da5d6d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/confirmacion.png": {
+    "mtime": 1780674968.6664279,
+    "hash": "89640a3aae9032a6a3232dad44839926"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/covid/admin.png": {
+    "mtime": 1780674968.6649084,
+    "hash": "d13c333f0612317c660c07a74bf02875"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/vacuna/login.png": {
+    "mtime": 1780674968.672732,
+    "hash": "9d8825ac42e8481c5e2ddcd27f0ebc8c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/vacuna/home1.png": {
+    "mtime": 1780674968.6725187,
+    "hash": "26e88ba534fdacf93c97f68d96cfc2b2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/ensamble/vacuna/modal.png": {
+    "mtime": 1780674968.6731036,
+    "hash": "87a905591adec5ebd77dd346abbbe24b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lumston/acolyte/acolytelog.png": {
+    "mtime": 1780674968.760732,
+    "hash": "f6b4eb5a54716f96ac8df1492867b5c9"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lumston/volaris/volarislog.png": {
+    "mtime": 1780674968.8217735,
+    "hash": "2ba677244e4293c3bfd3a0b133ca8395"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lemu/4.png": {
+    "mtime": 1780674968.7586558,
+    "hash": "077fabe243c29eaa56dc338ab983f4b2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lemu/2.png": {
+    "mtime": 1780674968.7583442,
+    "hash": "5afe155776b5abfaf078bcbd156fb569"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lemu/3.png": {
+    "mtime": 1780674968.7584639,
+    "hash": "29293ef591a0f1a4ed15e06d41fb0ff2"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/projects/lemu/1.png": {
+    "mtime": 1780674968.7577167,
+    "hash": "f37fbfcc342c77afb944ef3b9c15b262"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/empresas/grupo-kc-logo.jpeg": {
+    "mtime": 1780674968.6495261,
+    "hash": "157dc74aa4a57e0acefe1af5ec711b1d"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/empresas/ensamble-logo.png": {
+    "mtime": 1780674968.6494083,
+    "hash": "bc2d86002279dec87c4a3b580440a85a"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/empresas/kairo-systems.png": {
+    "mtime": 1780674968.6513536,
+    "hash": "8fa464c0f7caf0f520bce40184769033"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/empresas/logo-lemu-2021.webp": {
+    "mtime": 1780674968.6515899,
+    "hash": "0e4ff2bb0666d455a0a99a53cfc547e0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/empresas/lumston_logo.jpeg": {
+    "mtime": 1780674968.6516612,
+    "hash": "e7e38dca1c62de6cb22f877864d3df6c"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/face-with-monocle-animated.png": {
+    "mtime": 1780674968.6490695,
+    "hash": "02a879faed5b385b1a4bdf2a6f4e51c8"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/love-you-gesture.png": {
+    "mtime": 1780674968.649199,
+    "hash": "5dec5bc98805f6ce3c8ba5ae18a3623f"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/astonished-face.png": {
+    "mtime": 1780674968.6482074,
+    "hash": "16d333cc12c552c40e2384436f5007ba"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/clapping-hands-animated.png": {
+    "mtime": 1780674968.6484933,
+    "hash": "708766c2547d3a58c59ef48c76f34bd4"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/star-struck.png": {
+    "mtime": 1780674968.6493065,
+    "hash": "cefb91eef4a7dd5a9c828960da3cd91b"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/astonished-face-animated.png": {
+    "mtime": 1780674968.6481001,
+    "hash": "4f0995770cab7e6b8e5b954bd1bb9289"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/nerd-face.png": {
+    "mtime": 1780674968.6492507,
+    "hash": "fb00fd3213ac48e360adf91122bba2c1"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/face-with-monocle.png": {
+    "mtime": 1780674968.6491528,
+    "hash": "f1b2cf7c42b8e7099d50b06291dc65f0"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/emojis/clapping-hands.png": {
+    "mtime": 1780674968.6485596,
+    "hash": "3f067be42ff32b0b658a282db608f65f"
+  }
+}

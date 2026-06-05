@@ -21,6 +21,8 @@
 | `/api/shares/[slug]` | GET/POST | Contador de shares |
 | `/api/reactions/[slug]` | GET/POST | Reactions por slug |
 | `/api/activity` | GET | Actividad reciente |
+| `/api/ai/workflow-demo` | GET | Comprueba si live AI está disponible (sin exponer keys) |
+| `/api/ai/workflow-demo` | POST | Simula workflow IA (mock o live con fallback) |
 | `/api/og-page` | GET | OG image para páginas |
 | `/api/og-post` | GET | OG image para posts |
 
@@ -46,6 +48,9 @@
 | `NEXT_PUBLIC_VERCEL_URL` | URL base en Vercel |
 | `ANALYZE` | Bundle analyzer |
 | `NODE_ENV` | Entorno Node |
+| `GEMINI_API_KEY` | Live AI demo — primary provider (Gemini free tier) |
+| `GROQ_API_KEY` | Live AI demo — fallback provider |
+| `OPENROUTER_API_KEY` | Live AI demo — optional fallback (`:free` models) |
 
 Ver `.env.example` para placeholders.
 

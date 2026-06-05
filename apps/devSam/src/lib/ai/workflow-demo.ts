@@ -2,7 +2,7 @@ import {
   buildMockWorkflowDemo,
   isLiveAiConfigured,
 } from '@/lib/ai/mock-workflow';
-import { runLiveWorkflowDemo, getLastLiveFailureReason } from '@/lib/ai/providers';
+import { getLastLiveFailureReason,runLiveWorkflowDemo } from '@/lib/ai/providers';
 
 import type {
   WorkflowDemoCapabilities,

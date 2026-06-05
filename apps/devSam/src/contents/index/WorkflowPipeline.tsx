@@ -37,23 +37,35 @@ function getNodeState(
   return 'pending';
 }
 
+function getModeBadgeClass(result: WorkflowDemoResult): string {
+  if (result.mode === 'live') {
+    return 'bg-accent-600 text-white';
+  }
+  if (result.liveFallback) {
+    return 'bg-amber-200 text-amber-900 dark:bg-amber-900/50 dark:text-amber-200';
+  }
+  return 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300';
+}
+
+function getModeBadgeLabel(result: WorkflowDemoResult): string {
+  if (result.mode === 'live') {
+    return `Live · ${result.provider ?? 'AI'}`;
+  }
+  if (result.liveFallback) {
+    return 'Mock · fallback';
+  }
+  return 'Mock';
+}
+
 function ModeBadge({ result }: { result: WorkflowDemoResult }) {
   return (
     <span
       className={clsx(
         'rounded-full px-2 py-0.5 text-[0.6rem] font-black uppercase tracking-wide',
-        result.mode === 'live'
-          ? 'bg-accent-600 text-white'
-          : result.liveFallback
-            ? 'bg-amber-200 text-amber-900 dark:bg-amber-900/50 dark:text-amber-200'
-            : 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
+        getModeBadgeClass(result)
       )}
     >
-      {result.mode === 'live'
-        ? `Live · ${result.provider ?? 'AI'}`
-        : result.liveFallback
-          ? 'Mock · fallback'
-          : 'Mock'}
+      {getModeBadgeLabel(result)}
     </span>
   );
 }

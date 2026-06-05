@@ -75,8 +75,8 @@ function HeaderTitle() {
         </m.span>
         <m.h1
           className={clsx(
-            'block text-base text-slate-600',
-            'md:text-xl',
+            'block text-base leading-relaxed text-slate-600',
+            'md:text-lg md:leading-8',
             'dark:text-slate-400'
           )}
           initial={animation.hide}
@@ -89,10 +89,11 @@ function HeaderTitle() {
           >
             Software Engineer
           </strong>{' '}
-          focused on frontend architecture, AI-driven systems, and{' '}
+          focused on product engineering, frontend architecture, and AI
+          systems.
           <span className={clsx('block')}>
-            end-to-end product execution for scalable SaaS platforms.
-            <br />I build reliable products with measurable business impact.
+            I design and ship scalable platforms with measurable business
+            impact — from architecture to integration.
           </span>
         </m.h1>
       </span>

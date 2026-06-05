@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
+import CvDownloadMenu from '@/components/CvDownloadMenu';
 import {
-  DocumentIcon,
   ExternalLink,
   GitHubIcon,
   LinkedInIcon,
@@ -127,9 +127,9 @@ function FooterDescription() {
           'dark:text-slate-400'
         )}
       >
-        I&apos;m Sam Gomez, a Software Engineer focused on frontend
-        architecture, AI workflows, SaaS dashboards, and end-to-end product
-        execution.
+        I&apos;m Sam Gomez, a Software Engineer focused on product
+        engineering, frontend architecture, and AI systems — shipping scalable
+        platforms with measurable business impact.
       </p>
       <div className={clsx('mt-6 flex flex-wrap gap-2')}>
         <a
@@ -139,14 +139,7 @@ function FooterDescription() {
           <MailIcon className={clsx('h-4 w-4')} />
           Email Me
         </a>
-        <a
-          href="/assets/docs/SamuelGomezDevResume.pdf"
-          download="SamuelGomezDevResume.pdf"
-          className={clsx('button button--outline')}
-        >
-          <DocumentIcon className={clsx('h-4 w-4')} />
-          Resume
-        </a>
+        <CvDownloadMenu variant="outline" />
       </div>
       <ul className={clsx('mt-6 flex gap-2')}>
         <li>

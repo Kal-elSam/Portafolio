@@ -3,19 +3,19 @@ import clsx from 'clsx';
 const metrics = [
   {
     value: '6+',
-    label: 'years shipping frontend and full-stack products',
-  },
-  {
-    value: '24',
-    label: 'portfolio projects across SaaS, dashboards, AI, and mobile',
-  },
-  {
-    value: '5',
-    label: 'companies served across startup and enterprise environments',
+    label: 'years shipping product systems end-to-end',
   },
   {
     value: '30%',
-    label: 'reported performance improvement from frontend architecture work',
+    label: 'performance gains from frontend architecture work',
+  },
+  {
+    value: '24',
+    label: 'projects spanning SaaS, dashboards, and AI integrations',
+  },
+  {
+    value: '5',
+    label: 'companies served — product delivery from startup to enterprise',
   },
 ];
 

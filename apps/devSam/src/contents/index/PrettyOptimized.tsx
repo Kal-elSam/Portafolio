@@ -26,7 +26,7 @@ function PrettyOptimized() {
       <SectionTitle
         title="Optimization With Business Impact."
         caption="Performance & AI Workflows"
-        description="From Core Web Vitals improvements to AI-powered automation, I focus on systems that reduce friction, accelerate delivery, and create measurable operational gains."
+        description="From performance and reliability work to AI-powered automation, I optimize systems that reduce operational friction and improve business outcomes."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

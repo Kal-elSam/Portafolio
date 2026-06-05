@@ -1,0 +1,19 @@
+---
+description: Pipeline de git y commits.
+alwaysApply: true
+---
+
+# Git Rule
+
+Antes de commit:
+
+1. Diff review
+2. Secrets check
+3. `pnpm lint`
+4. `pnpm format`
+5. `cd apps/devSam && pnpm lint:types`
+6. Tests (cuando estén configurados — ver `docs/ai/testing.md`)
+7. `pnpm build`
+8. Conventional commit
+
+Nunca commitear `.env`, secrets, logs temporales o cambios no relacionados.

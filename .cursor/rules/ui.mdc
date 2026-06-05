@@ -1,0 +1,13 @@
+---
+description: Reglas de UI y sistema de diseño.
+globs: "**/*.tsx,**/*.jsx,**/components/**,**/pages/**,**/app/**,**/views/**"
+alwaysApply: false
+---
+
+# UI Rule
+
+Leer `docs/ai/ui.md` antes de crear o modificar UI.
+No colores hardcodeados.
+Usar componentes base en `apps/devSam/src/components/`.
+Mobile-first.
+Accesibilidad obligatoria.

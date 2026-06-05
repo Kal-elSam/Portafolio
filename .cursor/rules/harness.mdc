@@ -1,0 +1,14 @@
+---
+description: Harness obligatorio para ejecución agéntica controlada.
+alwaysApply: true
+---
+
+# Harness Rule
+
+Todo cambio sigue:
+
+Requirement → Spec → Plan → Tests → Implementation → Validation → Review → Human Approval.
+
+Prohibido saltar tests en bugs.
+Prohibido implementar feature significativa sin spec.
+Prohibido cerrar tarea con pipeline fallido.

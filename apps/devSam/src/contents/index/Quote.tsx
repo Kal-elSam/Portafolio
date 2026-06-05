@@ -20,7 +20,7 @@ function Quote() {
       />
       <span className={clsx('flex flex-col')}>
         <span className={clsx('leading-[1.15]')}>
-          <em>Clean Code</em>{' '}
+          <em>Reliable products</em>{' '}
         </span>
         <span
           className={clsx('flex items-center gap-2 leading-[1.15]', 'lg:gap-4')}
@@ -33,22 +33,23 @@ function Quote() {
             )}
           />
           <span>
+            from{' '}
             <strong
               className={clsx(
                 'font-extrabold text-slate-600',
                 'dark:text-slate-300'
               )}
             >
-              inside
+              architecture
             </strong>{' '}
-            and{' '}
+            to{' '}
             <strong
               className={clsx(
                 'font-extrabold text-slate-600',
                 'dark:text-slate-300'
               )}
             >
-              out{' '}
+              integration
             </strong>
           </span>
           <span
@@ -60,7 +61,7 @@ function Quote() {
           />
         </span>
         <span className={clsx('leading-[1.15]')}>
-          is {' '}
+          create{' '}
           <strong
             className={clsx(
               'relative font-extrabold text-slate-600',
@@ -74,7 +75,7 @@ function Quote() {
                 'dark:bg-slate-800'
               )}
             />
-            essential.
+            measurable impact.
           </strong>
         </span>
       </span>

@@ -65,7 +65,7 @@ function HeaderTechStack() {
   return (
     <section
       className={clsx(
-        'max-w-3xl rounded-3xl border border-slate-200/80 bg-white/70 p-4 shadow-xl shadow-slate-950/[0.03] backdrop-blur',
+        'w-full rounded-3xl border border-slate-200/80 bg-white/70 p-4 shadow-xl shadow-slate-950/[0.03] backdrop-blur',
         'dark:border-slate-800 dark:bg-slate-950/35 dark:shadow-black/20',
         'md:p-5'
       )}
@@ -103,7 +103,8 @@ function HeaderTechStack() {
             'dark:text-slate-400'
           )}
         >
-          Frontend-heavy systems with AI and production delivery in mind.
+          Full-stack product systems — UI, APIs, AI workflows, and production
+          delivery.
         </p>
       </m.div>
 

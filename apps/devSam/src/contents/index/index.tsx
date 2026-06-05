@@ -10,6 +10,7 @@ import Header from '@/contents/index/Header';
 import ImpactMetrics from '@/contents/index/ImpactMetrics';
 import PrettyOptimized from '@/contents/index/PrettyOptimized';
 import Quote from '@/contents/index/Quote';
+import RoleImpactSection from '@/contents/index/RoleImpactSection';
 
 function FeaturedCardSection() {
   return (
@@ -26,8 +27,8 @@ function FeaturedCardSection() {
               <SparklesIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Scalable Frontend Architecture"
-          desc="I design modular React and Next.js systems that speed up delivery and stay maintainable as products grow."
+          title="Product Engineering"
+          desc="I ship SaaS platforms, dashboards, and AI products end-to-end — from requirements to production with measurable outcomes."
         />
         <FeaturedCard
           icon={
@@ -40,8 +41,8 @@ function FeaturedCardSection() {
               <HeartIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Product-Minded Execution"
-          desc="I connect UX, engineering, and business goals to ship interfaces that improve operations and user outcomes."
+          title="Architecture & Delivery"
+          desc="I design modular systems, API contracts, and engineering standards that keep teams fast as products scale."
         />
         <FeaturedCard
           icon={
@@ -54,8 +55,8 @@ function FeaturedCardSection() {
               <CodeIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="AI Workflows & Performance"
-          desc="I build fast interfaces and AI-assisted workflows that automate real processes and improve conversion."
+          title="AI & Integrations"
+          desc="I connect LLM workflows, messaging APIs, CRM handoffs, and data pipelines into systems teams can run in production."
         />
       </div>
     </div>
@@ -76,15 +77,18 @@ function IndexContents() {
   return (
     <>
       <Header />
-      <div className={clsx('-mt-10 mb-16', 'lg:-mt-20 lg:mb-24')}>
+      <div className={clsx('mb-12', 'md:mb-16', 'lg:mb-24')}>
         <ImpactMetrics />
       </div>
       <section className={clsx('mb-16', 'lg:mb-28')}>
+        <RoleImpactSection />
+      </section>
+      <section className={clsx('mb-16', 'lg:mb-28')}>
         <FeaturedCaseStudies />
       </section>
-      <div className={clsx('hidden', 'lg:mb-24 lg:block')}>
+      <section className={clsx('mb-16', 'md:mb-20', 'lg:mb-24')}>
         <FeaturedCardSection />
-      </div>
+      </section>
       <div className={clsx('-mt-12 mb-12', 'md:mb-24 md:mt-0')}>
         <QuoteSection />
       </div>

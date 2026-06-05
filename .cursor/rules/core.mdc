@@ -1,0 +1,20 @@
+---
+description: Regla central del proyecto. Aplica siempre.
+alwaysApply: true
+---
+
+# Core Agent Rule
+
+La fuente universal es `AGENTS.md`.
+La fuente técnica vive en `docs/ai/`.
+Los procedimientos viven en `docs/skills/`.
+
+Antes de generar código:
+
+1. Leer `AGENTS.md`.
+2. Leer el documento relevante en `docs/ai/`.
+3. Seguir el harness definido en `docs/ai/harness.md`.
+4. Usar SDD para cambios significativos.
+5. Usar TDD para cambios de comportamiento.
+
+No declarar listo si el pipeline falla.

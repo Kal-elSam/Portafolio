@@ -14,11 +14,15 @@ import { m } from 'framer-motion';
 //   },
 // };
 
+type HeaderImageAnimationSize = 'compact' | 'hero';
+
 interface HeaderImageAnimationProps {
+  size?: HeaderImageAnimationSize;
   onAnimationComplete?: () => void;
 }
 
 function HeaderImageAnimation({
+  size = 'hero',
   onAnimationComplete = () => {},
 }: HeaderImageAnimationProps) {
   return (
@@ -32,8 +36,11 @@ function HeaderImageAnimation({
       strokeLinecap="round"
       strokeLinejoin="round"
       className={clsx(
-        'stroke-accent-500 h-[526px] w-[457px] opacity-60',
-        'dark:opacity-40'
+        'stroke-accent-500 h-auto w-full opacity-60',
+        'dark:opacity-40',
+        size === 'compact' &&
+          'max-w-[260px] sm:max-w-[300px] md:max-w-[340px]',
+        size === 'hero' && 'max-w-none'
       )}
       onAnimationComplete={onAnimationComplete}
     >

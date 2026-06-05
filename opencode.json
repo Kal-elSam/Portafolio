@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "docs/ai/architecture.md",
+    "docs/ai/conventions.md",
+    "docs/ai/testing.md",
+    "docs/ai/git-workflow.md",
+    "docs/ai/harness.md",
+    "docs/ai/spec-driven-development.md",
+    "docs/ai/test-driven-development.md",
+    "docs/ai/agent-workflow.md",
+    "docs/ai/ui.md",
+    "docs/ai/api.md",
+    "docs/ai/playbooks/*.md",
+    "apps/*/AGENTS.md"
+  ]
+}

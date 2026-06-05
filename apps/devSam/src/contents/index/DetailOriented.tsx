@@ -26,7 +26,7 @@ function DetailOriented() {
       <SectionTitle
         title="Execution With Product Context."
         caption="End-to-End Delivery"
-        description="I work beyond UI implementation, aligning product requirements, frontend architecture, API contracts, and real-time workflows to ship reliable features with measurable impact."
+        description="I align product requirements, system design, API contracts, and cross-team delivery to ship features that hold up in production — not just in prototypes."
       />
       {animationData && (
         <div className={clsx('w-1/2', 'mx-auto', 'mt-4')}>

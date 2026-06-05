@@ -25,10 +25,17 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Agent tool compatibility symlinks created locally
+CLAUDE.md
+.claude/CLAUDE.md
+.windsurfrules
+.agent/AGENTS.md
 
 # turbo
 .turbo

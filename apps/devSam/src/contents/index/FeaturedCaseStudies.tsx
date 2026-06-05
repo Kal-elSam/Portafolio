@@ -4,7 +4,25 @@ import Link from 'next/link';
 
 import { ChevronRightIcon, ExternalLink } from '@/components/Icons';
 
-const cases = [
+interface CaseImpactProof {
+  product: string;
+  architecture: string;
+  integration: string;
+}
+
+interface FeaturedCase {
+  title: string;
+  company: string;
+  eyebrow: string;
+  image: string;
+  result: string;
+  description: string;
+  tags: string[];
+  href: string;
+  impactProof: CaseImpactProof;
+}
+
+const cases: FeaturedCase[] = [
   {
     title: 'AI Lead Qualification Platform',
     company: 'Kairo Systems',
@@ -15,6 +33,11 @@ const cases = [
       'AI workflows for lead qualification, scheduling, WhatsApp automation, and internal product operations.',
     tags: ['Next.js', 'LLM workflows', 'WhatsApp API'],
     href: 'https://www.kairosystems.dev/',
+    impactProof: {
+      product: 'Lead qualification and scheduling with measurable response gains',
+      architecture: 'Modular Next.js workflows with LLM orchestration layers',
+      integration: 'WhatsApp API, CRM handoffs, and internal ops tooling',
+    },
   },
   {
     title: 'NEXUS / Riesgos Amparados',
@@ -26,6 +49,11 @@ const cases = [
       'Commercial tooling for agent activation, support workflows, opportunity visibility, and operational execution.',
     tags: ['React', 'TypeScript', 'Dashboard UX'],
     href: 'https://nexus.grupokc.com.mx/',
+    impactProof: {
+      product: 'Agent activation and opportunity visibility for sales teams',
+      architecture: 'Typed React dashboard with scalable module boundaries',
+      integration: 'Enterprise data flows and support workflow connectors',
+    },
   },
   {
     title: 'Solcredito Autos',
@@ -37,7 +65,18 @@ const cases = [
       'Public insurance landing and quotation experience optimized for prospect capture and self-service.',
     tags: ['Next.js', 'Responsive UI', 'Lead Gen'],
     href: 'https://www.solcreditoautos.com/',
+    impactProof: {
+      product: 'Conversion-oriented quote flow for insurance acquisition',
+      architecture: 'Marketing-first Next.js layout with lightweight step flow',
+      integration: 'Lead capture pipelines and policy quotation handoffs',
+    },
   },
+];
+
+const impactLabels: Array<{ key: keyof CaseImpactProof; label: string }> = [
+  { key: 'product', label: 'Product' },
+  { key: 'architecture', label: 'Architecture' },
+  { key: 'integration', label: 'Integration' },
 ];
 
 function FeaturedCaseStudies() {
@@ -64,8 +103,8 @@ function FeaturedCaseStudies() {
               'md:text-4xl dark:text-white'
             )}
           >
-            Product work with real screens, business context, and shipped
-            impact.
+            Product, architecture, and integration work with real screens and
+            shipped impact.
           </h2>
         </div>
         <Link
@@ -155,12 +194,34 @@ function FeaturedCaseStudies() {
               </p>
               <p
                 className={clsx(
-                  'min-h-[5rem] text-sm leading-6 text-slate-600',
+                  'text-sm leading-6 text-slate-600',
                   'dark:text-slate-400'
                 )}
               >
                 {item.description}
               </p>
+              <dl className={clsx('mt-4 space-y-2 border-t border-slate-200 pt-4', 'dark:border-slate-800')}>
+                {impactLabels.map(({ key, label }) => (
+                  <div key={key}>
+                    <dt
+                      className={clsx(
+                        'text-[0.65rem] font-black uppercase tracking-[0.16em] text-slate-500',
+                        'dark:text-slate-500'
+                      )}
+                    >
+                      {label}
+                    </dt>
+                    <dd
+                      className={clsx(
+                        'mt-0.5 text-xs leading-5 text-slate-600',
+                        'dark:text-slate-400'
+                      )}
+                    >
+                      {item.impactProof[key]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
               <div className={clsx('mt-auto flex flex-wrap gap-2 pt-5')}>
                 {item.tags.map((tag) => (
                   <span

@@ -15,7 +15,7 @@ type PipelineNodeState = 'pending' | 'active' | 'completed';
 function getFallbackMessage(reason?: LiveFallbackReason): string {
   switch (reason) {
     case 'quota_exceeded':
-      return 'Gemini free-tier quota is exhausted. The demo continued in mock mode.';
+      return 'Gemini quota is exhausted and Groq fallback was unavailable. The demo continued in mock mode.';
     case 'invalid_response':
       return 'Live AI returned an unexpected format. The demo continued in mock mode.';
     case 'provider_error':

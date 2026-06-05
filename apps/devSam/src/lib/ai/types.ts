@@ -41,4 +41,6 @@ export interface WorkflowDemoResult {
 
 export interface WorkflowDemoCapabilities {
   liveAiAvailable: boolean;
+  /** Configured providers in fallback order (Gemini → Groq → OpenRouter). */
+  providers: AiProviderId[];
 }

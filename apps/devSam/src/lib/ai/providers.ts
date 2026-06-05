@@ -202,14 +202,13 @@ async function callGemini(
   );
 }
 
-async function callGroq(
+async function tryGroqModel(
+  model: string,
+  apiKey: string,
+  prompt: string,
   scenarioId: WorkflowScenarioId,
   userPrompt: string
 ): Promise<WorkflowDemoResult | null> {
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) return null;
-
-  const prompt = buildSystemPrompt(scenarioId, userPrompt);
   const response = await fetch(
     'https://api.groq.com/openai/v1/chat/completions',
     {
@@ -219,10 +218,18 @@ async function callGroq(
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        messages: [{ role: 'user', content: prompt }],
+        model,
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are a workflow simulator. Respond with valid JSON only, no markdown.',
+          },
+          { role: 'user', content: prompt },
+        ],
         temperature: 0.4,
         max_tokens: 1024,
+        response_format: { type: 'json_object' },
       }),
     }
   );
@@ -244,6 +251,54 @@ async function callGroq(
   const parsed = parseProviderJson(text, scenarioId, userPrompt, 'groq');
   if (!parsed) lastLiveFailureReason = 'invalid_response';
   return parsed;
+}
+
+async function tryGroqModelsSequentially(
+  models: string[],
+  apiKey: string,
+  prompt: string,
+  scenarioId: WorkflowScenarioId,
+  userPrompt: string,
+  index = 0
+): Promise<WorkflowDemoResult | null> {
+  if (index >= models.length) return null;
+
+  const result = await tryGroqModel(
+    models[index],
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt
+  );
+  if (result) return result;
+
+  return tryGroqModelsSequentially(
+    models,
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt,
+    index + 1
+  );
+}
+
+async function callGroq(
+  scenarioId: WorkflowScenarioId,
+  userPrompt: string
+): Promise<WorkflowDemoResult | null> {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) return null;
+
+  const prompt = buildSystemPrompt(scenarioId, userPrompt);
+  const models = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'];
+
+  return tryGroqModelsSequentially(
+    models,
+    apiKey,
+    prompt,
+    scenarioId,
+    userPrompt
+  );
 }
 
 async function callOpenRouter(
@@ -310,6 +365,11 @@ export const aiProviders: AiWorkflowProvider[] = [
   },
 ];
 
+/** Live provider chain: Gemini → Groq → OpenRouter. */
+export const LIVE_PROVIDER_CHAIN: AiProviderId[] = aiProviders.map(
+  (provider) => provider.id
+);
+
 async function tryProviderAtIndex(
   index: number,
   scenarioId: WorkflowScenarioId,
@@ -321,17 +381,20 @@ async function tryProviderAtIndex(
 
   const provider = aiProviders[index];
 
-  if (provider.isConfigured()) {
-    try {
-      const result = await provider.generateWorkflow(scenarioId, userPrompt);
-      if (result) {
-        return result;
-      }
-    } catch {
-      // Try next provider in chain.
-    }
+  if (!provider.isConfigured()) {
+    return tryProviderAtIndex(index + 1, scenarioId, userPrompt);
   }
 
+  try {
+    const result = await provider.generateWorkflow(scenarioId, userPrompt);
+    if (result) {
+      return result;
+    }
+  } catch {
+    recordProviderFailure();
+  }
+
+  // Gemini failed → Groq → OpenRouter → mock (handled by caller).
   return tryProviderAtIndex(index + 1, scenarioId, userPrompt);
 }
 

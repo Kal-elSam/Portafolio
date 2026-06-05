@@ -140,8 +140,8 @@
     "hash": "5a33752b2cf2458443208465d9673c8e"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/WorkflowPipeline.tsx": {
-    "mtime": 1780679125.678181,
-    "hash": "1ff039e6f47fc2ba5c65d57aa0e15c8a"
+    "mtime": 1780679658.2247286,
+    "hash": "47125280f3357f7189783426764f6f41"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Quote.tsx": {
     "mtime": 1780676696.712472,
@@ -592,16 +592,16 @@
     "hash": "e66fdf3ae58d3c1831c9b852eb50637e"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/providers.ts": {
-    "mtime": 1780678900.7502046,
-    "hash": "82daf4ea588b3b88741846c76de7d4da"
+    "mtime": 1780679645.3942769,
+    "hash": "a9f814ab0fb4f8dd4c394921e05fc95a"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/types.ts": {
-    "mtime": 1780678884.5101502,
-    "hash": "b8d6961368555c207626e6bf94d0585d"
+    "mtime": 1780679653.1595066,
+    "hash": "fa53042148dbca86d8df6bd4ea319c1f"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/workflow-demo.ts": {
-    "mtime": 1780678895.5204523,
-    "hash": "94dc3906c52ef593f65b3defe78d4294"
+    "mtime": 1780679653.0032094,
+    "hash": "fee4d42f7ec47b42e059e566baadea28"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/lib/ai/mock-workflow.ts": {
     "mtime": 1780677264.7909698,
@@ -736,8 +736,8 @@
     "hash": "8d2028c13aeb70b8c4bf07f122091278"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/api.md": {
-    "mtime": 1780677284.083008,
-    "hash": "d3697e7c7af8ffa8dbf710770211b7c2"
+    "mtime": 1780679658.4668288,
+    "hash": "467804953801552bd606e9e5ae970ddb"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/conventions.md": {
     "mtime": 1780675241.0987184,
@@ -836,7 +836,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1780678008.7998679,
+    "mtime": 1780679688.7214503,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {

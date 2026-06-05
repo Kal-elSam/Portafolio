@@ -2,7 +2,12 @@ import {
   buildMockWorkflowDemo,
   isLiveAiConfigured,
 } from '@/lib/ai/mock-workflow';
-import { getLastLiveFailureReason,runLiveWorkflowDemo } from '@/lib/ai/providers';
+import {
+  aiProviders,
+  getLastLiveFailureReason,
+  LIVE_PROVIDER_CHAIN,
+  runLiveWorkflowDemo,
+} from '@/lib/ai/providers';
 
 import type {
   WorkflowDemoCapabilities,
@@ -11,7 +16,13 @@ import type {
 } from '@/lib/ai/types';
 
 export function getWorkflowDemoCapabilities(): WorkflowDemoCapabilities {
-  return { liveAiAvailable: isLiveAiConfigured() };
+  return {
+    liveAiAvailable: isLiveAiConfigured(),
+    providers: LIVE_PROVIDER_CHAIN.filter((id) => {
+      const provider = aiProviders.find((item) => item.id === id);
+      return provider?.isConfigured() ?? false;
+    }),
+  };
 }
 
 export async function executeWorkflowDemo(input: {

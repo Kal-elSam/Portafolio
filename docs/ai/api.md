@@ -48,8 +48,8 @@
 | `NEXT_PUBLIC_VERCEL_URL` | URL base en Vercel |
 | `ANALYZE` | Bundle analyzer |
 | `NODE_ENV` | Entorno Node |
-| `GEMINI_API_KEY` | Live AI demo — primary provider (Gemini free tier) |
-| `GROQ_API_KEY` | Live AI demo — fallback provider |
+| `GEMINI_API_KEY` | Live AI demo — primary provider (Gemini) |
+| `GROQ_API_KEY` | Live AI demo — fallback when Gemini fails (429, errors, invalid JSON) |
 | `OPENROUTER_API_KEY` | Live AI demo — optional fallback (`:free` models) |
 
 Ver `.env.example` para placeholders.

@@ -148,8 +148,8 @@
     "hash": "fc88f4cdfbf989b90e2a39f39101db68"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/FeaturedCaseStudies.tsx": {
-    "mtime": 1785944871.3824368,
-    "hash": "b6999642e45179db001c39d71fae10f6"
+    "mtime": 1785946066.4303205,
+    "hash": "5b388f3691aaf75e63cfd608108ed66a"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/roleProfiles.ts": {
     "mtime": 1785944947.8436127,
@@ -280,8 +280,8 @@
     "hash": "1c52671e00e7caafc67d9de0e1ed53f3"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Footer.tsx": {
-    "mtime": 1785945751.9961035,
-    "hash": "902ee87e445246a4c1eaef5b37a31ce3"
+    "mtime": 1785946057.0209224,
+    "hash": "81560709935855f9b788298edfad415e"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Activity.tsx": {
     "mtime": 1785943881.9175546,
@@ -348,8 +348,8 @@
     "hash": "ac1d39c15a541246a0188bf29c77d4ff"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Navigation.tsx": {
-    "mtime": 1785945751.97249,
-    "hash": "834a190f9855b3cddfe043274007263d"
+    "mtime": 1785946055.1239085,
+    "hash": "e505dcd877a1b11e1ecfe74dcd5d268f"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Shortcuts.tsx": {
     "mtime": 1785943881.9211853,
@@ -780,8 +780,8 @@
     "hash": "463a6d8264af8f66cd49035053a019e0"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/portfolio-product-engineer-v2.spec.md": {
-    "mtime": 1785945828.2459571,
-    "hash": "6a010e33f66249744798e6f155ffff62"
+    "mtime": 1785946082.9004157,
+    "hash": "197ff941bb2d970f49709ab8c2992b0d"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/ai-workflow-simulator.spec.md": {
     "mtime": 1785944447.524565,
@@ -844,7 +844,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1785945780.802281,
+    "mtime": 1785946122.7044137,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {
@@ -879,6 +879,10 @@
     "mtime": 1785944447.5217922,
     "hash": "6b30a8b0580f323ec21ad6eab3b0716e"
   },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/how-i-built-ari.mdx": {
+    "mtime": 1785946089.354381,
+    "hash": "c287c4b70f0e0b1d67deed5bb06d41d9"
+  },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/studio.mdx": {
     "mtime": 1785943881.9462755,
     "hash": "77ff71d4bc88bfc9302acf5c4232b0ce"
@@ -887,9 +891,17 @@
     "mtime": 1785943881.9456236,
     "hash": "6fbb653010b6debc04c51b77b002f85d"
   },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/engineering-principles.mdx": {
+    "mtime": 1785946044.386131,
+    "hash": "2e19aa17ed4ab69835c4d2a2ed7381e0"
+  },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/skills-and-tools.mdx": {
     "mtime": 1785944851.5938127,
     "hash": "92dc764d63ac453055c116e1412ae959"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/system-design.mdx": {
+    "mtime": 1785946089.380338,
+    "hash": "383f51fa3ae67e830bf70b3ad38f8e84"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/experience.mdx": {
     "mtime": 1785944838.4286294,

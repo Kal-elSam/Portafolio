@@ -1,0 +1,117 @@
+---
+title: How I Built ARI
+description: Architecture case study of ARI — an AI business assistant connecting WhatsApp, LLMs, and calendar booking.
+caption: Architecture
+layout: PageWithMDX
+---
+
+import ArchitectureDiagram from '@/components/wireframes/ArchitectureDiagram';
+
+**ARI** is the AI business assistant inside [Kairo Systems](https://www.kairosystems.dev/) — a founder-led SaaS platform for local businesses in Mexico. This case study covers the problem, architecture decisions, tradeoffs, and lessons from building it end-to-end.
+
+<div className="mt-4 flex flex-wrap gap-3">
+  <a
+    href="https://www.kairosystems.dev/"
+    target="_blank"
+    rel="noreferrer nofollow"
+    className="button button--solid"
+  >
+    View live product
+  </a>
+  <a href="/work/system-design" className="button button--outline">
+    System Design notes
+  </a>
+</div>
+
+## Problem
+
+Local businesses lose leads when nobody answers WhatsApp after hours. Manual qualification is slow, inconsistent, and hard to connect to a real calendar. Existing chatbots either dump a scripted FAQ or hand everything to a human with no context.
+
+ARI needed to:
+
+1. Qualify inbound WhatsApp conversations with natural language.
+2. Book appointments against a real Google Calendar via OAuth.
+3. Give operators a dashboard to monitor conversations and intervene.
+4. Stay production-ready — auth, retries, observability, and deployable infrastructure.
+
+## Architecture
+
+<ArchitectureDiagram
+  layers={[
+    {
+      id: 'channel',
+      label: 'WhatsApp Cloud API',
+      detail:
+        'Inbound customer messages and outbound replies for local businesses.',
+      items: ['Webhooks', 'Message templates', 'Media'],
+    },
+    {
+      id: 'api',
+      label: 'Node.js / Express API',
+      detail:
+        'Service layer for conversations, booking, auth, and external integrations.',
+      items: ['REST', 'OAuth', 'Webhooks'],
+    },
+    {
+      id: 'llm',
+      label: 'LLM orchestration',
+      detail:
+        'Prompted workflows with function calling to decide next actions.',
+      items: ['Groq', 'Gemini', 'Function calling'],
+    },
+    {
+      id: 'booking',
+      label: 'Google Calendar OAuth',
+      detail:
+        'Availability checks and confirmed appointments from natural-language intent.',
+      items: ['OAuth', 'Events API'],
+    },
+    {
+      id: 'data',
+      label: 'PostgreSQL',
+      detail:
+        'Conversations, leads, bookings, and operational state for the dashboard.',
+    },
+    {
+      id: 'ui',
+      label: 'Next.js dashboard',
+      detail:
+        'Operator UI for monitoring, intervention, and day-to-day business ops.',
+      items: ['React', 'TypeScript', 'TailwindCSS'],
+    },
+  ]}
+/>
+
+The flow is intentional: channel → API → LLM decisions → real-world tools → persistent state → operator visibility. LLMs never write directly to Calendar or WhatsApp; the service layer owns side effects.
+
+## Tradeoffs
+
+- **Managed LLMs over self-hosted models** — faster to ship and iterate on prompts; less control over latency and cost at scale.
+- **WhatsApp Cloud API over a generic chat widget** — matches how Mexican SMBs already talk to customers; more webhook and template complexity.
+- **Monolithic API first** — one Express service instead of microservices, so a solo founder can ship and debug without distributed overhead.
+- **Operator dashboard early** — some automation opacity is inevitable; a human override path was non-negotiable for trust.
+
+## Challenges
+
+- Connecting natural-language intent to **idempotent** booking operations without double-booking.
+- Keeping WhatsApp conversation state consistent across async webhooks and retries.
+- Separating prompt experimentation from production side effects (function calling must be gated by the service layer).
+- Owning the full stack alone: product, architecture, frontend, backend, AI, and deploy.
+
+## Lessons learned
+
+- Treat the LLM as a **decision engine**, not a system of record.
+- Spec the conversation states before writing prompts — otherwise every edge case becomes a prompt patch.
+- OAuth and calendar constraints force honesty about what "AI booking" can and cannot do.
+- The same SDD/TDD discipline governed by [Kairo Runtime](/work/kairo-runtime) kept this codebase from drifting as the product expanded into MAYA.
+
+## Stack
+
+Next.js · React · TypeScript · Node.js · Express · PostgreSQL · TailwindCSS · Groq · Gemini · WhatsApp Cloud API · Google Calendar API · Cloudinary · Sentry · Docker · Railway · Vercel
+
+## Future improvements
+
+- Stronger conversation state machine with explicit transitions and audit logs.
+- Multi-tenant isolation and role-based operator access.
+- Evaluation harness for prompt regressions (golden conversations).
+- Deeper CRM handoffs beyond the current operational dashboard.

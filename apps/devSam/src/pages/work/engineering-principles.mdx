@@ -1,0 +1,55 @@
+---
+title: Engineering Principles
+description: How I design and ship software — architecture, quality, delivery, and AI-assisted engineering with ownership.
+caption: Engineering
+layout: PageWithMDX
+---
+
+These are the principles I actually apply when building products like [ARI](/work/how-i-built-ari), enterprise SaaS at Ensamble, and the governance workflow behind [Kairo Runtime](/work/kairo-runtime).
+
+## SOLID
+
+- **Single responsibility** — UI components do not own booking side effects; services do.
+- **Open/closed** — new LLM tools extend the orchestration registry without rewriting the WhatsApp webhook path.
+- **Dependency inversion** — dashboards depend on API contracts, not provider SDKs.
+
+## Clean Architecture
+
+Keep dependencies pointing inward: domain rules (booking, qualification) stay free of framework details. Next.js, Express, Groq/Gemini, and WhatsApp adapters sit at the edges. That separation is what made expanding ARI into MAYA feasible without rewriting the core.
+
+## Domain-driven thinking
+
+Name things after the business: Conversation, Lead, Booking, Content Job — not after tables or LLM responses. When the domain language is clear, prompts, APIs, and UI labels stay aligned.
+
+## API-first
+
+Contracts before screens. Shared error shapes, auth boundaries, and webhook verification come before polish. At Ensamble this reduced inconsistency across internal platforms; at Kairo it keeps the dashboard and automations honest.
+
+## Performance
+
+Optimize from measurement: rendering cost, bundle size, Core Web Vitals. On Ensamble platforms, modular architecture, lazy loading, and memoization contributed to ~30% performance gains documented in my CV. No premature micro-optimizations for vanity scores.
+
+## Accessibility
+
+Keyboard paths, focus states, semantic structure, and contrast are part of shipping — not a late audit. Contract work at Lumston reinforced accessibility and responsiveness as delivery quality, not optional extras.
+
+## Testing
+
+Behavior changes need failing tests first when a suite exists. Until a suite is fully wired, smoke scripts, typechecks, and production observability (Sentry) still gate releases. For agentic work, [Kairo Runtime](/work/kairo-runtime) encodes SDD/TDD as governance so "we will test later" is not the default.
+
+## Observability
+
+Sentry in production, structured logs around webhooks and booking writes, and an operator dashboard for human-visible failures. AI systems fail quietly if you only watch the happy path.
+
+## CI/CD
+
+GitHub Actions, Docker where needed, Vercel/Railway deploys. Releases for `@kal-elsam/kairo-runtime` use automated publish with npm provenance — the same "ship with evidence" mindset I want in product work.
+
+## AI Engineering
+
+- Daily AI-assisted development (Claude Code, GPT, Gemini, Groq) for exploration, implementation, tests, docs, and reviews.
+- **Full ownership of production decisions** — tools accelerate, they do not replace judgment.
+- Function calling and prompt engineering live behind service boundaries.
+- Prefer systems (orchestration, state, observability) over one-off chat demos.
+
+See also: [System Design](/work/system-design) · [How I Built ARI](/work/how-i-built-ari)

@@ -1,7 +1,7 @@
 # Spec: Portfolio v2 — Software/Product Engineer + AI Positioning
 
-> Estado: Fase 1, Fase 1.5 y Fase 2 implementadas y validadas (pipeline verde + verificación en navegador real). Fase 3-5 pendientes.
-> Fecha: 2026-08-05 (CV único consolidado + Kairo Runtime verificado contra npm/GitHub y publicado en el portafolio con framing honesto)
+> Estado: Fase 1, 1.5, 2 y 3 implementadas y validadas. Fase 4–5 pendientes.
+> Fecha: 2026-08-05 (Architecture case study ARI + System Design + Engineering Principles)
 > Reemplaza / extiende: `docs/ai/specs/portfolio-role-positioning.spec.md` (superseded parcialmente: un solo CV en vez de 3)
 
 ## Objetivo
@@ -60,11 +60,16 @@ Define el **backlog completo priorizado en fases**. Cada fase se implementa y va
 - Blog técnico sobre diseño del runtime — pertenece a Fase 5 (requiere contenido real del dueño, no generado en su nombre).
 - Actualización del CV único para mencionar Kairo Runtime — no se tocó el CV en esta fase; es una decisión pendiente y separada del dueño sobre el documento que se envía a reclutadores.
 
-### Fase 3 — Architecture Case Studies + System Design
+### Fase 3 — Architecture Case Studies + System Design (implementado 2026-08-05)
 
-- Página de case study "How I built ARI" con secciones: Problem, Architecture, Tradeoffs, Challenges, Lessons learned, Diagram, Stack, Future improvements.
-- Sección/página "System Design" con temas: Appointment booking architecture, AI orchestration, Frontend architecture, API architecture, Authentication flow, Event-driven workflows, Database design (diagramas Mermaid donde aplique).
-- Sección "Engineering Principles" (SOLID, Clean Architecture, DDD, API-first, Performance, Accessibility, Testing, Observability, CI/CD, AI Engineering).
+**Implementado:**
+
+- `apps/devSam/src/pages/work/how-i-built-ari.mdx` — case study completo: Problem, Architecture (diagrama JSX), Tradeoffs, Challenges, Lessons learned, Stack, Future improvements. Contenido alineado al CV (WhatsApp, Google Calendar OAuth, Groq/Gemini, Next.js, Express, PostgreSQL). Sin métricas inventadas. Relación con Kairo Runtime = disciplina SDD/TDD, no dependencia de runtime.
+- `apps/devSam/src/pages/work/system-design.mdx` — los 7 temas pedidos: Appointment booking, AI orchestration, Frontend architecture, API architecture, Authentication flow, Event-driven workflows, Database design. Diagramas con `ArchitectureDiagram` (sin Mermaid).
+- `apps/devSam/src/pages/work/engineering-principles.mdx` — SOLID, Clean Architecture, DDD, API-first, Performance, Accessibility, Testing, Observability, CI/CD, AI Engineering. El ~30% de performance se atribuye explícitamente a Ensamble (fuente: CV), no a Kairo.
+- Navegación (`Navigation.tsx` workLinks) y `Footer.tsx` actualizados. CTA "Architecture case study" en la tarjeta ARI/MAYA de `FeaturedCaseStudies`. Soften del impactProof que aún decía "measurable response gains" (resto de la métrica no respaldada eliminada en Fase 1.5).
+
+**Fuera de alcance explícito:** Mermaid runtime (ADR no pedido; se reutiliza JSX). Case studies adicionales (MAYA, NEXUS) — se pueden añadir después sin bloquear el criterio de aceptación ("al menos 1").
 
 ### Fase 4 — Estructura de carrera y stack visual
 

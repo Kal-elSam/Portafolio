@@ -1,0 +1,123 @@
+---
+title: System Design
+description: System design notes from shipping AI SaaS and enterprise platforms — booking, orchestration, APIs, and data.
+caption: Engineering
+layout: PageWithMDX
+---
+
+import ArchitectureDiagram from '@/components/wireframes/ArchitectureDiagram';
+
+Notes from systems I have designed and shipped — especially [ARI](/work/how-i-built-ari) inside Kairo Systems, and enterprise SaaS work at Ensamble. Each topic is a practical slice, not a textbook abstract.
+
+## Appointment booking architecture
+
+Goal: turn natural-language scheduling intent into a **confirmed calendar event** without double-booking.
+
+<ArchitectureDiagram
+  layers={[
+    {
+      id: 'intent',
+      label: 'Conversation intent',
+      detail:
+        'LLM extracts date, time preference, service, and contact context.',
+    },
+    {
+      id: 'availability',
+      label: 'Availability check',
+      detail:
+        'Service layer queries Google Calendar through OAuth-scoped access.',
+    },
+    {
+      id: 'confirm',
+      label: 'Confirm + write',
+      detail:
+        'Idempotent create/update of the event; reply to WhatsApp with confirmation.',
+    },
+    {
+      id: 'ops',
+      label: 'Operator visibility',
+      detail:
+        'Dashboard shows bookings and failed attempts for human intervention.',
+    },
+  ]}
+/>
+
+Key rules: the LLM proposes; the API commits. Retries must be idempotent. Timezone and business hours live in the service layer, not in the prompt.
+
+## AI orchestration
+
+LLM workflows in ARI use function calling to choose tools — qualify lead, check calendar, send reply — while the Express service owns authentication, rate limits, and side effects.
+
+- Prompts are versioned with the feature that needs them.
+- Tool schemas are typed and validated before execution.
+- Failures degrade to a safe WhatsApp reply + operator flag, not a silent drop.
+
+## Frontend architecture
+
+Dashboards and SaaS UIs follow modular, feature-oriented boundaries:
+
+- **Feature folders** — booking, conversations, content (MAYA) stay isolatable.
+- **Service clients** — UI talks to typed API clients, not raw `fetch` sprinkled in components.
+- **Performance defaults** — lazy routes, memoization where measured, Core Web Vitals awareness from Ensamble work (~30% gains documented on that platform).
+
+## API architecture
+
+REST-first Express APIs with clear contracts:
+
+- Resource-oriented routes for conversations, bookings, and content jobs.
+- Auth middleware separate from business handlers.
+- Webhook endpoints isolated (WhatsApp, Meta) with signature verification and replay-safe handling.
+- Shared error shapes for the Next.js dashboard.
+
+## Authentication flow
+
+<ArchitectureDiagram
+  layers={[
+    {
+      id: 'user',
+      label: 'Operator / business owner',
+      detail: 'Signs into the Next.js dashboard for day-to-day operations.',
+    },
+    {
+      id: 'session',
+      label: 'App session',
+      detail: 'Authenticated session to the Express API for product actions.',
+    },
+    {
+      id: 'oauth',
+      label: 'Google Calendar OAuth',
+      detail: 'Separate OAuth grant scoped to calendar read/write for booking.',
+    },
+    {
+      id: 'channel',
+      label: 'WhatsApp / Meta tokens',
+      detail:
+        'Cloud API credentials for messaging and publishing, stored server-side.',
+    },
+  ]}
+/>
+
+Product auth and third-party OAuth are never mixed in one cookie. Tokens stay server-side; the browser only holds the app session.
+
+## Event-driven workflows
+
+WhatsApp and Meta deliver async webhooks. The system treats them as events:
+
+1. Verify signature and enqueue / process.
+2. Load conversation state from PostgreSQL.
+3. Run orchestration step.
+4. Persist new state + emit outbound message.
+5. Surface failures in the operator dashboard.
+
+State-machine thinking keeps asynchronous chats consistent — the same principle applied when expanding ARI into broader automation.
+
+## Database design
+
+PostgreSQL holds durable product state:
+
+- **Conversations / messages** — channel thread identity and history needed for context.
+- **Leads** — qualification status and handoff fields.
+- **Bookings** — calendar event ids, status, and idempotency keys.
+- **Content jobs (MAYA)** — generation, preview, schedule, and publish status.
+
+Prefer explicit status columns and timestamps over implicit prompt memory. The LLM is not the database.

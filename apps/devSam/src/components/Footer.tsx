@@ -210,6 +210,12 @@ function Footer() {
                 title="Explore"
                 links={[
                   { title: 'Kairo Runtime', href: '/work/kairo-runtime' },
+                  { title: 'How I Built ARI', href: '/work/how-i-built-ari' },
+                  { title: 'System Design', href: '/work/system-design' },
+                  {
+                    title: 'Engineering Principles',
+                    href: '/work/engineering-principles',
+                  },
                   { title: 'Projects', href: '/projects' },
                   { title: 'Experience', href: '/work/experience' },
                   {

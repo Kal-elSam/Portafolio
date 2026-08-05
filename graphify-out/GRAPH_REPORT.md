@@ -1,16 +1,16 @@
 # Graph Report - Portafolio  (2026-08-05)
 
 ## Corpus Check
-- 223 files · ~1,479,618 words
+- 226 files · ~1,481,419 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1088 nodes · 1087 edges · 149 communities (104 shown, 45 thin omitted)
+- 1116 nodes · 1112 edges · 153 communities (108 shown, 45 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e09767e0`
+- Built from commit: `d065edd6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -118,18 +118,22 @@
 - [[_COMMUNITY_Community 100|Community 100]]
 - [[_COMMUNITY_Community 101|Community 101]]
 - [[_COMMUNITY_Community 102|Community 102]]
+- [[_COMMUNITY_Community 103|Community 103]]
+- [[_COMMUNITY_Community 104|Community 104]]
 - [[_COMMUNITY_Community 105|Community 105]]
 - [[_COMMUNITY_Community 106|Community 106]]
-- [[_COMMUNITY_Community 107|Community 107]]
-- [[_COMMUNITY_Community 108|Community 108]]
 - [[_COMMUNITY_Community 109|Community 109]]
+- [[_COMMUNITY_Community 110|Community 110]]
 - [[_COMMUNITY_Community 111|Community 111]]
-- [[_COMMUNITY_Community 114|Community 114]]
+- [[_COMMUNITY_Community 112|Community 112]]
+- [[_COMMUNITY_Community 113|Community 113]]
 - [[_COMMUNITY_Community 115|Community 115]]
-- [[_COMMUNITY_Community 116|Community 116]]
-- [[_COMMUNITY_Community 117|Community 117]]
 - [[_COMMUNITY_Community 118|Community 118]]
+- [[_COMMUNITY_Community 119|Community 119]]
 - [[_COMMUNITY_Community 120|Community 120]]
+- [[_COMMUNITY_Community 121|Community 121]]
+- [[_COMMUNITY_Community 122|Community 122]]
+- [[_COMMUNITY_Community 124|Community 124]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `AGENTS.md` - 14 edges
@@ -137,9 +141,9 @@
 3. `Spec: Portfolio Role Positioning` - 11 edges
 4. `Spec: Portfolio v2 — Software/Product Engineer + AI Positioning` - 11 edges
 5. `ChevronRightIcon()` - 10 edges
-6. `getSessionId()` - 9 edges
-7. `Sam Gomez Portfolio` - 9 edges
-8. `Alcance (qué cubre esta spec)` - 9 edges
+6. `Alcance (qué cubre esta spec)` - 10 edges
+7. `getSessionId()` - 9 edges
+8. `Sam Gomez Portfolio` - 9 edges
 9. `Arquitectura del proyecto` - 8 edges
 10. `Capa de APIs` - 8 edges
 
@@ -152,38 +156,38 @@
   apps/devSam/src/components/Shortcuts.tsx → apps/devSam/src/hooks/useShortcut.ts
 - `buildSystemPrompt()` --calls--> `getScenarioById()`  [EXTRACTED]
   apps/devSam/src/lib/ai/providers.ts → apps/devSam/src/contents/index/aiWorkflowScenarios.ts
-- `ProjectLayout()` --calls--> `getPageOgImageUrl()`  [EXTRACTED]
-  apps/devSam/src/contents-layouts/Project/index.tsx → apps/devSam/src/helpers/page.ts
+- `buildMockWorkflowDemo()` --calls--> `getScenarioById()`  [EXTRACTED]
+  apps/devSam/src/lib/ai/mock-workflow.ts → apps/devSam/src/contents/index/aiWorkflowScenarios.ts
 
-## Communities (149 total, 45 thin omitted)
+## Communities (153 total, 45 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.05
-Nodes (30): TodoItemProps, TodoItemState, ActionCenterButtonProps, animation, { focusMode, setFocusMode }, { theme, setTheme }, FooterLinkProps, CalendarIcon() (+22 more)
+Nodes (28): TodoItemProps, TodoItemState, ActionCenterButtonProps, animation, { focusMode, setFocusMode }, { theme, setTheme }, CalendarIcon(), CodeIcon() (+20 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
 Nodes (28): caption, config, description, get(), PlusJakartaSans400, PlusJakartaSans800, { searchParams }, title (+20 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.06
-Nodes (23): animation, buttonClass, CvDownloadItem, CvDownloadItemProps, CvDownloadMenuProps, ChevronRightIcon(), DocumentIcon(), animation (+15 more)
+Cohesion: 0.08
+Nodes (27): FooterLinkProps, HashtagIcon(), MailIcon(), CssIcon(), FileIcon(), HtmlIcon(), JavaScriptIcon(), NpmFileIcon() (+19 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.09
-Nodes (25): HashtagIcon(), CssIcon(), FileIcon(), HtmlIcon(), JavaScriptIcon(), NpmFileIcon(), ReactIcon(), TailwindIcon() (+17 more)
+Cohesion: 0.06
+Nodes (23): animation, buttonClass, CvDownloadItem, CvDownloadItemProps, CvDownloadMenuProps, ChevronRightIcon(), DocumentIcon(), animation (+15 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
 Nodes (20): handler(), handler(), handler(), handler(), getSessionId(), getAllContentMeta(), getContentActivity(), getContentMeta() (+12 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.11
-Nodes (10): plugins, addContent(), addImport(), getFrontMatter(), getTableOfContents(), parse(), ParserWithJSX, BaseFrontMatter (+2 more)
+Cohesion: 0.08
+Nodes (24): Alcance condicional (una vez resuelto el punto anterior), Alcance (qué cubre esta spec), Capas afectadas, Componentes nuevos previstos, Contexto, Criterios de aceptación (por fase; ver plan de implementación), Diseño técnico, Estados y errores (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.08
-Nodes (23): Alcance condicional (una vez resuelto el punto anterior), Alcance (qué cubre esta spec), Capas afectadas, Componentes nuevos previstos, Contexto, Criterios de aceptación (por fase; ver plan de implementación), Diseño técnico, Estados y errores (+15 more)
+Cohesion: 0.11
+Nodes (10): plugins, addContent(), addImport(), getFrontMatter(), getTableOfContents(), parse(), ParserWithJSX, BaseFrontMatter (+2 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.09
@@ -194,32 +198,32 @@ Cohesion: 0.1
 Nodes (12): focusToast, Shortcuts(), useFocusMode(), useGlobal(), useShortcut(), useTheme(), NavIconQuickAccess(), FocusModeProvider() (+4 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.11
-Nodes (15): AiProviderId, LiveFallbackReason, WorkflowDemoMode, WorkflowStep, WorkflowStepPhase, activeIndex, getModeBadgeClass(), ModeBadge() (+7 more)
+Cohesion: 0.1
+Nodes (20): code:html (<button), code:tsx (<div className={dark ? 'text-white' : 'text-black'}>), code:html (<!-- Some elements within the project. -->), code:tsx (function Button({ children }) {), code:tsx (function Button({ children }) {), code:css (.button {), code:tsx (function Button({ children }) {), code:html (<button) (+12 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.1
 Nodes (20): code:html (<button), code:tsx (<div className={dark ? 'text-white' : 'text-black'}>), code:html (<!-- Some elements within the project. -->), code:tsx (function Button({ children }) {), code:tsx (function Button({ children }) {), code:css (.button {), code:tsx (function Button({ children }) {), code:html (<button) (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.1
-Nodes (20): code:html (<button), code:tsx (<div className={dark ? 'text-white' : 'text-black'}>), code:html (<!-- Some elements within the project. -->), code:tsx (function Button({ children }) {), code:tsx (function Button({ children }) {), code:css (.button {), code:tsx (function Button({ children }) {), code:html (<button) (+12 more)
-
-### Community 12 - "Community 12"
 Cohesion: 0.14
 Nodes (10): image, PageProps, image, PageWithMDXProps, getPageOgImageUrl(), getBaseUrl(), getParams(), useCurrentUrl() (+2 more)
 
-### Community 13 - "Community 13"
+### Community 12 - "Community 12"
 Cohesion: 0.11
 Nodes (16): AGENTS.md, code:txt (Requirement), code:txt (docs/ai/specs/<feature-name>.spec.md), code:bash (# Install), Comandos esenciales, Compatibilidad por herramienta, Fuente de verdad, graphify (opcional) (+8 more)
 
-### Community 14 - "Community 14"
+### Community 13 - "Community 13"
 Cohesion: 0.11
 Nodes (17): ADR-001 — Stack inicial detectado, ADR-002 — Alias `@/*`, Arquitectura del proyecto, Capas, code:txt (.), Consecuencias, Consecuencias, Contexto (+9 more)
 
-### Community 15 - "Community 15"
+### Community 14 - "Community 14"
 Cohesion: 0.11
 Nodes (17): Alcance, Casos de error, code:ts (interface WorkflowDemoCapabilities {), code:ts (interface WorkflowDemoRequest {), code:ts (type WorkflowStepPhase = 'analyzing' | 'routing' | 'executin), Contexto, Contratos de API, Criterios de aceptación (+9 more)
+
+### Community 15 - "Community 15"
+Cohesion: 0.26
+Nodes (16): AiWorkflowProvider, buildSystemPrompt(), callGemini(), callGroq(), callOpenRouter(), parseProviderJson(), recordProviderFailure(), resetLiveFailureReason() (+8 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.12
@@ -246,28 +250,28 @@ Cohesion: 0.15
 Nodes (12): companies, [currentCompany, setCurrentCompany], [currentProjectIndex, setCurrentProjectIndex], filteredProjects, handleKeyDown(), handleNextProject, handlePreviousProject, scrollCompanies (+4 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.3
-Nodes (14): AiWorkflowProvider, buildSystemPrompt(), callGemini(), callGroq(), callOpenRouter(), parseProviderJson(), recordProviderFailure(), tryGeminiModel() (+6 more)
+Cohesion: 0.14
+Nodes (10): activeIndex, getModeBadgeClass(), ModeBadge(), phaseLabels, phaseStyles, PipelineNodeProps, PipelineNodeState, state (+2 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.24
-Nodes (12): isLiveAiConfigured(), aiProviders, getLastLiveFailureReason(), LIVE_PROVIDER_CHAIN, resetLiveFailureReason(), runLiveWorkflowDemo(), WorkflowDemoCapabilities, WorkflowDemoResult (+4 more)
-
-### Community 24 - "Community 24"
 Cohesion: 0.14
 Nodes (13): code:bash (# Requiere confirmación explícita antes de instalar), code:json ("test": "vitest run",), code:bash (# Requiere confirmación explícita antes de instalar), code:txt (apps/devSam/), E2E (Playwright), Estado actual, Estrategia de testing, Estructura propuesta (+5 more)
 
-### Community 25 - "Community 25"
+### Community 24 - "Community 24"
 Cohesion: 0.14
 Nodes (13): Alcance, Assets públicos, Casos de error, code:ts (interface RoleProfile {), Contexto, Contratos de datos, Criterios de aceptación, Estados de UI (+5 more)
 
-### Community 26 - "Community 26"
+### Community 25 - "Community 25"
 Cohesion: 0.15
 Nodes (7): BrowserTabProps, CompanyTabProps, GithubWireframeProps, NpmWireframeProps, SkeletonMd(), SkeletonProps, SkeletonSm()
 
+### Community 26 - "Community 26"
+Cohesion: 0.29
+Nodes (10): buildMockWorkflowDemo(), isLiveAiConfigured(), aiProviders, getLastLiveFailureReason(), LIVE_PROVIDER_CHAIN, WorkflowDemoResult, executeWorkflowDemo(), getWorkflowDemoCapabilities() (+2 more)
+
 ### Community 27 - "Community 27"
-Cohesion: 0.2
-Nodes (7): buildMockWorkflowDemo(), outcomeByScenario, stepBuilders, WorkflowScenarioId, AiWorkflowScenario, aiWorkflowScenarios, getScenarioById()
+Cohesion: 0.18
+Nodes (7): outcomeByScenario, stepBuilders, WorkflowScenarioId, WorkflowStep, AiWorkflowScenario, aiWorkflowScenarios, getScenarioById()
 
 ### Community 28 - "Community 28"
 Cohesion: 0.17
@@ -290,20 +294,20 @@ Cohesion: 0.18
 Nodes (10): Cobertura mínima, code:txt (1. Identificar comportamiento esperado), code:txt (apps/devSam/__tests__/factories/), Estado del proyecto, Factories, Por tipo de tarea, Proceso, Prohibiciones (+2 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.2
-Nodes (9): code:txt (docs/ai/specs/<feature-name>.spec.md), code:md (# Spec: [Nombre]), code:block3, code:block4, Cuándo crear una spec, Plantilla, Reglas, Spec-Driven Development (+1 more)
+Cohesion: 0.18
+Nodes (10): Accessibility, AI Engineering, API-first, CI/CD, Clean Architecture, Domain-driven thinking, Observability, Performance (+2 more)
 
 ### Community 34 - "Community 34"
 Cohesion: 0.2
-Nodes (9): Agentic Engineering Harness, code:txt (Input → Spec → Plan → Tests → Implementation → Validation → ), Estados del harness, Límites del agente, Métricas recomendadas, Modelo operativo, Objetivo, Reglas de transición (+1 more)
+Nodes (9): code:txt (docs/ai/specs/<feature-name>.spec.md), code:md (# Spec: [Nombre]), code:block3, code:block4, Cuándo crear una spec, Plantilla, Reglas, Spec-Driven Development (+1 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.2
-Nodes (9): Founder & Software Engineer, Founder & Software Engineer (AI Systems), Frontend Engineer, Product Owner & Mobile Engineer, Project Engineer, Senior Software Engineer, Senior Software Engineer (Architecture Lead), Software Engineer (+1 more)
+Nodes (9): Agentic Engineering Harness, code:txt (Input → Spec → Plan → Tests → Implementation → Validation → ), Estados del harness, Límites del agente, Métricas recomendadas, Modelo operativo, Objetivo, Reglas de transición (+1 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.22
-Nodes (6): ActivityItemProps, { count }, animation, { data }, NewPostsProps, relativeTime()
+Cohesion: 0.2
+Nodes (9): Founder & Software Engineer, Founder & Software Engineer (AI Systems), Frontend Engineer, Product Owner & Mobile Engineer, Project Engineer, Senior Software Engineer, Senior Software Engineer (Architecture Lead), Software Engineer (+1 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.25
@@ -311,49 +315,61 @@ Nodes (7): AnimationValue, emojiMotion, EmojiReactionProps, getRandomAnimationVa
 
 ### Community 38 - "Community 38"
 Cohesion: 0.22
-Nodes (8): Abstracción detectada, APIs externas, Capa de APIs, Endpoints internos, Lógica de negocio, Reglas, Tipos, Variables de entorno
+Nodes (6): ActivityItemProps, { count }, animation, { data }, NewPostsProps, relativeTime()
 
 ### Community 39 - "Community 39"
 Cohesion: 0.22
-Nodes (8): code:txt (@/*  →  apps/devSam/src/*), code:txt (apps/devSam/src/), Convenciones de código, ESLint y formato, Estructura de módulo recomendada, Imports, Nombrado, Reglas
+Nodes (8): Abstracción detectada, APIs externas, Capa de APIs, Endpoints internos, Lógica de negocio, Reglas, Tipos, Variables de entorno
 
 ### Community 40 - "Community 40"
 Cohesion: 0.22
-Nodes (8): Componentes base, Espaciado y layout, Librerías UI, MDX, Paleta, Reglas, Sistema de diseño, Tipografía
+Nodes (8): code:txt (@/*  →  apps/devSam/src/*), code:txt (apps/devSam/src/), Convenciones de código, ESLint y formato, Estructura de módulo recomendada, Imports, Nombrado, Reglas
 
 ### Community 41 - "Community 41"
 Cohesion: 0.22
-Nodes (8): Computer, Conferencing Devices, Display, Others, Peripherals, Primary, Secondary, Support Device
+Nodes (8): Componentes base, Espaciado y layout, Librerías UI, MDX, Paleta, Reglas, Sistema de diseño, Tipografía
 
 ### Community 42 - "Community 42"
+Cohesion: 0.22
+Nodes (8): Computer, Conferencing Devices, Display, Others, Peripherals, Primary, Secondary, Support Device
+
+### Community 43 - "Community 43"
 Cohesion: 0.25
 Nodes (4): [image, setImage], ImageProps, ImageSensitiveProps, [isShown, setShown]
 
-### Community 43 - "Community 43"
+### Community 44 - "Community 44"
 Cohesion: 0.29
 Nodes (5): getPostSlugs(), getSortedPosts(), postsDirectory, allPostsData, BlogProps
 
-### Community 44 - "Community 44"
+### Community 45 - "Community 45"
 Cohesion: 0.25
 Nodes (7): Checklist, code:txt (Diff: [N archivos]), Cuándo usar, Fuente de verdad, Git Workflow Skill, Output esperado, Procedimiento
 
-### Community 45 - "Community 45"
+### Community 46 - "Community 46"
 Cohesion: 0.25
 Nodes (7): apps/devSam, code:bash (pnpm install), code:bash (pnpm --filter sam.dev dev), Local Development, Notes, Purpose, Stack
 
-### Community 46 - "Community 46"
+### Community 47 - "Community 47"
 Cohesion: 0.25
 Nodes (7): AGENTS.md — apps/devSam, code:bash (# Dev), Comandos de esta app, Estructura clave, Fuente de verdad, Reglas locales, Scope
 
-### Community 47 - "Community 47"
+### Community 48 - "Community 48"
+Cohesion: 0.25
+Nodes (7): Architecture, Challenges, Future improvements, Lessons learned, Problem, Stack, Tradeoffs
+
+### Community 49 - "Community 49"
+Cohesion: 0.25
+Nodes (7): AI orchestration, API architecture, Appointment booking architecture, Authentication flow, Database design, Event-driven workflows, Frontend architecture
+
+### Community 50 - "Community 50"
 Cohesion: 0.25
 Nodes (7): Architecture, Built with this discipline, code:bash (npx @kal-elsam/kairo-runtime), Core Principles, Stack, Try it, Why I built it
 
-### Community 48 - "Community 48"
+### Community 51 - "Community 51"
 Cohesion: 0.33
 Nodes (5): [activePhaseId, setActivePhaseId], DeliveryPhase, DeliveryPhaseId, deliveryPhases, ProductDeliveryPanelProps
 
-### Community 49 - "Community 49"
+### Community 52 - "Community 52"
 Cohesion: 0.29
 Nodes (5): controls, CounterProps, { currentSection }, {
     isLoading,
@@ -370,107 +386,111 @@ Nodes (5): controls, CounterProps, { currentSection }, {
     addReaction,
   }, { pathname }
 
-### Community 50 - "Community 50"
+### Community 53 - "Community 53"
 Cohesion: 0.29
 Nodes (4): { currentVisibles }, isScrolled, TableOfContentsLinkProps, TableOfContentsProps
 
-### Community 51 - "Community 51"
+### Community 54 - "Community 54"
 Cohesion: 0.38
 Nodes (4): postReaction(), postShare(), postView(), INITIAL_VALUE
 
-### Community 52 - "Community 52"
+### Community 55 - "Community 55"
 Cohesion: 0.29
 Nodes (6): Checklist, Cuándo usar, Fuente de verdad, Output esperado, Procedimiento, UI Design Skill
 
-### Community 53 - "Community 53"
+### Community 56 - "Community 56"
 Cohesion: 0.29
 Nodes (6): Architecture Skill, Checklist, Cuándo usar, Fuente de verdad, Output esperado, Procedimiento
 
-### Community 54 - "Community 54"
+### Community 57 - "Community 57"
 Cohesion: 0.29
 Nodes (6): API Design Skill, Checklist, Cuándo usar, Fuente de verdad, Output esperado, Procedimiento
 
-### Community 55 - "Community 55"
+### Community 58 - "Community 58"
 Cohesion: 0.29
 Nodes (6): Checklist, Cuándo usar, Fuente de verdad, Output esperado, Procedimiento, Testing Skill
 
-### Community 56 - "Community 56"
+### Community 59 - "Community 59"
 Cohesion: 0.29
 Nodes (6): Checklist, Code Review Skill, Cuándo usar, Fuente de verdad, Output esperado, Procedimiento
 
-### Community 57 - "Community 57"
+### Community 60 - "Community 60"
 Cohesion: 0.29
 Nodes (6): Checklist, Cuándo usar, Debugging Skill, Fuente de verdad, Output esperado, Procedimiento
 
-### Community 58 - "Community 58"
+### Community 61 - "Community 61"
 Cohesion: 0.29
 Nodes (6): Content Creation, Personal Website, Proyek Freelance Pertama, Sembuh dari Kecelakaan, Set Up Workspace, What's Next for 2023
 
-### Community 59 - "Community 59"
+### Community 62 - "Community 62"
 Cohesion: 0.33
 Nodes (5): BlogContentsProps, { data }, postsPreview, preview, TPostPreview
 
-### Community 60 - "Community 60"
+### Community 63 - "Community 63"
+Cohesion: 0.33
+Nodes (5): AiProviderId, LiveFallbackReason, WorkflowDemoCapabilities, WorkflowDemoMode, WorkflowStepPhase
+
+### Community 64 - "Community 64"
 Cohesion: 0.33
 Nodes (3): CodeFooterProps, codeRef, [isCopied, setCopied]
 
-### Community 61 - "Community 61"
+### Community 65 - "Community 65"
 Cohesion: 0.33
 Nodes (3): [currentImageIndex, setCurrentImageIndex], [selectedProject, setSelectedProject], swiperSettings
 
-### Community 62 - "Community 62"
+### Community 66 - "Community 66"
 Cohesion: 0.4
 Nodes (4): colors, {
   default: flattenColorPalette,
 }, defaultTheme, svgToDataUri
 
-### Community 64 - "Community 64"
+### Community 68 - "Community 68"
 Cohesion: 0.4
 Nodes (4): code:txt (Diff: [N archivos]), Flujo, Output, Playbook: checkpoint
 
-### Community 65 - "Community 65"
+### Community 69 - "Community 69"
 Cohesion: 0.5
 Nodes (3): nextConfig, withBundleAnalyzer, withMDX
 
-### Community 67 - "Community 67"
+### Community 71 - "Community 71"
 Cohesion: 0.5
 Nodes (3): HeaderImageProps, HeaderImageSize, PORTRAIT_ANCHOR
 
-### Community 69 - "Community 69"
+### Community 73 - "Community 73"
 Cohesion: 0.5
 Nodes (3): animation, closeButtonRef, { isQuickAccessOpen, setQuickAccessOpen }
 
-### Community 75 - "Community 75"
+### Community 79 - "Community 79"
 Cohesion: 0.5
 Nodes (3): Playbook: review, Revisar, Severidad
 
-### Community 76 - "Community 76"
+### Community 80 - "Community 80"
 Cohesion: 0.5
 Nodes (3): Contributors, Special Thanks 🙌, Sponsors
 
-### Community 77 - "Community 77"
+### Community 81 - "Community 81"
 Cohesion: 0.5
 Nodes (3): Contact, How I Can Help, Social Media
 
 ## Knowledge Gaps
-- **553 isolated node(s):** `BaseFrontMatter`, `PostFrontMatter`, `ProjectFrontMatter`, `ParserWithJSX`, `svgToDataUri` (+548 more)
+- **578 isolated node(s):** `BaseFrontMatter`, `PostFrontMatter`, `ProjectFrontMatter`, `ParserWithJSX`, `svgToDataUri` (+573 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **45 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ChevronRightIcon()` connect `Community 2` to `Community 0`, `Community 1`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `ExternalLink()` connect `Community 0` to `Community 3`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `HashtagIcon()` connect `Community 3` to `Community 0`?**
+- **Why does `ChevronRightIcon()` connect `Community 3` to `Community 0`, `Community 1`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `ExternalLink()` connect `Community 0` to `Community 2`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `HashtagIcon()` connect `Community 2` to `Community 0`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `BaseFrontMatter`, `PostFrontMatter`, `ProjectFrontMatter` to the rest of the system?**
-  _553 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _578 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._

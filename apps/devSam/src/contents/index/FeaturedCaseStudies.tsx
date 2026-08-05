@@ -19,6 +19,7 @@ interface FeaturedCase {
   description: string;
   tags: string[];
   href: string;
+  caseStudyHref?: string;
   impactProof: CaseImpactProof;
 }
 
@@ -33,11 +34,12 @@ const cases: FeaturedCase[] = [
       'ARI automates lead qualification, WhatsApp conversations, and calendar booking. MAYA generates and publishes AI-driven social content.',
     tags: ['Next.js', 'LLM workflows', 'WhatsApp API'],
     href: 'https://www.kairosystems.dev/',
+    caseStudyHref: '/work/how-i-built-ari',
     impactProof: {
       product:
-        'Lead qualification and scheduling with measurable response gains',
+        'Lead qualification, WhatsApp conversations, and calendar booking',
       architecture: 'Modular Next.js workflows with LLM orchestration layers',
-      integration: 'WhatsApp API, CRM handoffs, and internal ops tooling',
+      integration: 'WhatsApp API, Google Calendar OAuth, and ops dashboard',
     },
   },
   {
@@ -241,6 +243,18 @@ function FeaturedCaseStudies() {
                   </span>
                 ))}
               </div>
+              {item.caseStudyHref ? (
+                <Link
+                  href={item.caseStudyHref}
+                  className={clsx(
+                    'text-accent-600 hover:text-accent-700 mt-4 inline-flex items-center gap-2 text-sm font-black transition',
+                    'dark:text-accent-400 dark:hover:text-accent-300'
+                  )}
+                >
+                  Architecture case study
+                  <ChevronRightIcon className={clsx('h-4 w-4')} />
+                </Link>
+              ) : null}
             </div>
           </article>
         ))}

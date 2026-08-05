@@ -161,7 +161,7 @@ function ProjectCard({
                   'dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200'
                 )}
               >
-                View Project
+                View Live Product
                 <ExternalLink
                   className="h-4 w-4"
                   aria-label={`External link to ${projectName}`}

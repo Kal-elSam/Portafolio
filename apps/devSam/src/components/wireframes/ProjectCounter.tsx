@@ -48,8 +48,8 @@ const ProjectCounter: React.FC = () => {
           color: 'inherit', // También hereda
         }}
       />
-      <div className="text-lg font-semibold ml-4 text-slate-800 dark:text-slate-100">
-        Completed Projects
+      <div className="ml-4 text-lg font-semibold text-slate-800 dark:text-slate-100">
+        Products Shipped
       </div>
     </div>
   );

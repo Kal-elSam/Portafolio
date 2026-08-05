@@ -9,9 +9,9 @@ function Projects() {
   return (
     <Page
       frontMatter={{
-        title: 'Projects',
+        title: 'Featured Products',
         description:
-          'Curated portfolio of SaaS products, frontend systems, enterprise dashboards, and AI workflow platforms.',
+          'Curated case studies of SaaS products, frontend systems, enterprise dashboards, and AI workflow platforms.',
       }}
       headerImage={<HeaderImage />}
     >

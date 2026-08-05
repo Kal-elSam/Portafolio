@@ -34,7 +34,8 @@ const cases: FeaturedCase[] = [
     tags: ['Next.js', 'LLM workflows', 'WhatsApp API'],
     href: 'https://www.kairosystems.dev/',
     impactProof: {
-      product: 'Lead qualification and scheduling with measurable response gains',
+      product:
+        'Lead qualification and scheduling with measurable response gains',
       architecture: 'Modular Next.js workflows with LLM orchestration layers',
       integration: 'WhatsApp API, CRM handoffs, and internal ops tooling',
     },
@@ -114,7 +115,7 @@ function FeaturedCaseStudies() {
             'dark:text-accent-400 dark:hover:text-accent-300'
           )}
         >
-          View all projects
+          View all case studies
           <ChevronRightIcon className={clsx('h-4 w-4')} />
         </Link>
       </div>
@@ -200,7 +201,12 @@ function FeaturedCaseStudies() {
               >
                 {item.description}
               </p>
-              <dl className={clsx('mt-4 space-y-2 border-t border-slate-200 pt-4', 'dark:border-slate-800')}>
+              <dl
+                className={clsx(
+                  'mt-4 space-y-2 border-t border-slate-200 pt-4',
+                  'dark:border-slate-800'
+                )}
+              >
                 {impactLabels.map(({ key, label }) => (
                   <div key={key}>
                     <dt

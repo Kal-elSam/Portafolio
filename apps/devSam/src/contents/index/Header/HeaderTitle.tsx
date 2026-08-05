@@ -89,11 +89,11 @@ function HeaderTitle() {
           >
             Software Engineer
           </strong>{' '}
-          focused on product engineering, frontend architecture, and AI
-          systems.
+          building AI-powered products, scalable SaaS platforms, and modern web
+          applications.
           <span className={clsx('block')}>
-            I design and ship scalable platforms with measurable business
-            impact — from architecture to integration.
+            I design and build production-ready software that combines frontend
+            architecture, backend services, APIs, and AI workflows.
           </span>
         </m.h1>
       </span>

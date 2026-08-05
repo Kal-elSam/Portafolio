@@ -5,6 +5,10 @@ caption: Skills
 layout: PageWithMDX
 ---
 
+import StackByCategory, {
+  defaultStackCategories,
+} from '@/components/wireframes/StackByCategory';
+
 As a **Software Engineer** with 6+ years of experience, I specialize in **product engineering**, **frontend architecture**, and **AI systems** — turning business requirements into reliable platforms with strong UX, maintainable code, and measurable outcomes.
 
 ---
@@ -58,28 +62,7 @@ Leveraging **Flutter** and product ownership experience, I have also delivered c
 
 ## Stack by Category
 
-The tools I reach for most often, grouped by where they sit in a product — not a proficiency scorecard.
-
-**Frontend**
-React · Next.js · TypeScript · Tailwind CSS · Zustand · Redux Toolkit
-
-**Backend**
-Node.js · Express · GraphQL
-
-**Database**
-PostgreSQL · MongoDB · MySQL · Firebase
-
-**AI**
-LLM Function Calling · Prompt Engineering · Workflow Orchestration · Gemini · Groq · Claude Code · GPT
-
-**Cloud & Deployment**
-Vercel · Railway · Docker · Docker Compose · GitHub Actions · Sentry · Cloudinary · AWS · GCP
-
-**Mobile**
-Flutter · React Native
-
-**Tooling**
-Git · Figma · Jest · Playwright · Postman
+<StackByCategory categories={defaultStackCategories} />
 
 ---
 

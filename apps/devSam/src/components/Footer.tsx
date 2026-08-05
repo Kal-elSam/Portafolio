@@ -209,6 +209,7 @@ function Footer() {
               <FooterGroup
                 title="Explore"
                 links={[
+                  { title: 'Hire Me', href: '/hire-me' },
                   { title: 'Kairo Runtime', href: '/work/kairo-runtime' },
                   { title: 'How I Built ARI', href: '/work/how-i-built-ari' },
                   { title: 'System Design', href: '/work/system-design' },

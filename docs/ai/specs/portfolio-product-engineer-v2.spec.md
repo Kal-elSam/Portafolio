@@ -1,7 +1,7 @@
 # Spec: Portfolio v2 — Software/Product Engineer + AI Positioning
 
-> Estado: Fase 1, 1.5, 2 y 3 implementadas y validadas. Fase 4–5 pendientes.
-> Fecha: 2026-08-05 (Architecture case study ARI + System Design + Engineering Principles)
+> Estado: Fase 1–4 implementadas y validadas. Fase 5 pendiente (requiere insumos del dueño).
+> Fecha: 2026-08-05 (Career timeline + StackByCategory + /hire-me)
 > Reemplaza / extiende: `docs/ai/specs/portfolio-role-positioning.spec.md` (superseded parcialmente: un solo CV en vez de 3)
 
 ## Objetivo
@@ -71,11 +71,16 @@ Define el **backlog completo priorizado en fases**. Cada fase se implementa y va
 
 **Fuera de alcance explícito:** Mermaid runtime (ADR no pedido; se reutiliza JSX). Case studies adicionales (MAYA, NEXUS) — se pueden añadir después sin bloquear el criterio de aceptación ("al menos 1").
 
-### Fase 4 — Estructura de carrera y stack visual
+### Fase 4 — Estructura de carrera y stack visual (implementado 2026-08-05)
 
-- Timeline visual reemplazando/complementando `work/experience.mdx` (Kairo → Lumston → Ensamble → Lemu → KC, con flechas/orden cronológico).
-- Stack visual agrupado por categoría (Frontend/Backend/Database/Cloud/AI/Deployment) como componente, reemplazando enumeraciones planas.
-- Página `/hire-me`: resume por rol (ya existen 3 PDFs), LinkedIn, GitHub, Calendly (si existe), email, ubicación, disponibilidad remoto/relocation, visa, idiomas, timezone — consolidando lo que ya vive disperso en `work/contact.mdx`.
+**Implementado:**
+
+- `CareerTimeline` + `contents/work/careerTimeline.ts` — timeline visual newest-first (Kairo → Lumston → Ensamble → Lemu → KC → Miga), integrado al inicio de `work/experience.mdx` sin reemplazar el detalle por rol.
+- `StackByCategory` con `defaultStackCategories` — componente reutilizable de chips por categoría; `work/skills-and-tools.mdx` lo usa en lugar del listado markdown plano.
+- `/hire-me` (`pages/hire-me.tsx` + `HireMePanel`) — CV único, email, teléfono, location, timezone (`America/Mexico_City`), remote/relocation, visa US B1/B2, idiomas del CV, tres lentes de impacto, LinkedIn/GitHub/Kairo/npm. **Sin Calendly** (no existe link público; se declara explícitamente).
+- Nav Work, Footer Explore, badge "AVAILABLE FOR HIRE" del hero → `/hire-me`. Contact MDX enlaza a Hire Me.
+
+**Ajuste vs spec original:** "resume por rol (3 PDFs)" quedó superseded por Fase 1.5 (un solo CV). `/hire-me` descarga `SamuelGomez-CV.pdf`.
 
 ### Fase 5 — Contenido pesado (requiere insumos del dueño del portafolio)
 

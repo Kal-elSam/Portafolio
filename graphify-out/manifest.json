@@ -107,6 +107,10 @@
     "mtime": 1785943881.933648,
     "hash": "e5dcbdf8d95be646eff5d9e3a9012557"
   },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/work/careerTimeline.ts": {
+    "mtime": 1785946470.1982565,
+    "hash": "112d4a48f5bc8a9e72b430355c2f8f1d"
+  },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/index.tsx": {
     "mtime": 1785945489.0729356,
     "hash": "e43ca668b20b6578ab9524743e2c167e"
@@ -188,8 +192,8 @@
     "hash": "d504c3a1c9b214a9ae9ec2a8d8a901ba"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderCta.tsx": {
-    "mtime": 1785943881.93552,
-    "hash": "ab77cae3d256b3f0a93678153295df8e"
+    "mtime": 1785946524.8784094,
+    "hash": "63faa1efd1d706baeab61ac58684e463"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/Header/HeaderTitle.tsx": {
     "mtime": 1785944403.1422079,
@@ -280,8 +284,8 @@
     "hash": "1c52671e00e7caafc67d9de0e1ed53f3"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Footer.tsx": {
-    "mtime": 1785946057.0209224,
-    "hash": "81560709935855f9b788298edfad415e"
+    "mtime": 1785946513.632239,
+    "hash": "0e7d992dd4e023f4b3fb3ff9e7b5d682"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Activity.tsx": {
     "mtime": 1785943881.9175546,
@@ -348,8 +352,8 @@
     "hash": "ac1d39c15a541246a0188bf29c77d4ff"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Navigation.tsx": {
-    "mtime": 1785946055.1239085,
-    "hash": "e505dcd877a1b11e1ecfe74dcd5d268f"
+    "mtime": 1785946511.558881,
+    "hash": "a3894c2051d8575aeaad4556397518fe"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Shortcuts.tsx": {
     "mtime": 1785943881.9211853,
@@ -443,6 +447,10 @@
     "mtime": 1785944447.5180204,
     "hash": "dfef3e14c490a21ca6f0ffe9710fb20c"
   },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CareerTimeline.tsx": {
+    "mtime": 1785946548.1607876,
+    "hash": "c5930912be74c57fd57ebafba6bfc313"
+  },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectWireframe.tsx": {
     "mtime": 1785944447.5187743,
     "hash": "f27cfa0e082a3837fafab0ddaf92221d"
@@ -454,6 +462,10 @@
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CompanyWindow.tsx": {
     "mtime": 1785944447.518389,
     "hash": "7e0d29ca0825dedb2281b2a2fc174ffe"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/StackByCategory.tsx": {
+    "mtime": 1785946446.8240588,
+    "hash": "2bac264cabfc9972fd94c1f23c6d6bcb"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectCounter.tsx": {
     "mtime": 1785944402.9206436,
@@ -486,6 +498,10 @@
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/AppWindow.tsx": {
     "mtime": 1785943881.929813,
     "hash": "e5bddb92d21ec9a8cb8b648547ecda03"
+  },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/HireMePanel.tsx": {
+    "mtime": 1785946548.2009594,
+    "hash": "413715c2d51b45b2636c7a4d15e631ab"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CompanyLogosBanner.tsx": {
     "mtime": 1785943881.9299166,
@@ -643,6 +659,10 @@
     "mtime": 1785943881.9452257,
     "hash": "afb5500d8b8e72420f8ca33048156ded"
   },
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/hire-me.tsx": {
+    "mtime": 1785946448.3193874,
+    "hash": "ce11d4e7d84c0f2216506824ca0aee86"
+  },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/_app.tsx": {
     "mtime": 1785943881.9417355,
     "hash": "536a2d243ed39b0b8d59b9243e7605a9"
@@ -780,8 +800,8 @@
     "hash": "463a6d8264af8f66cd49035053a019e0"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/portfolio-product-engineer-v2.spec.md": {
-    "mtime": 1785946082.9004157,
-    "hash": "197ff941bb2d970f49709ab8c2992b0d"
+    "mtime": 1785946538.992505,
+    "hash": "438157ba253bf4db186c791e9bcaf4e2"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/ai-workflow-simulator.spec.md": {
     "mtime": 1785944447.524565,
@@ -844,7 +864,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1785946122.7044137,
+    "mtime": 1785946582.7036116,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {
@@ -888,24 +908,24 @@
     "hash": "77ff71d4bc88bfc9302acf5c4232b0ce"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/contact.mdx": {
-    "mtime": 1785943881.9456236,
-    "hash": "6fbb653010b6debc04c51b77b002f85d"
+    "mtime": 1785946537.1322317,
+    "hash": "3f1469fdb28ec9d07ed630389a5cdb22"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/engineering-principles.mdx": {
     "mtime": 1785946044.386131,
     "hash": "2e19aa17ed4ab69835c4d2a2ed7381e0"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/skills-and-tools.mdx": {
-    "mtime": 1785944851.5938127,
-    "hash": "92dc764d63ac453055c116e1412ae959"
+    "mtime": 1785946497.130065,
+    "hash": "49c169717fde545c15cf5e9ce1caceea"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/system-design.mdx": {
     "mtime": 1785946089.380338,
     "hash": "383f51fa3ae67e830bf70b3ad38f8e84"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/experience.mdx": {
-    "mtime": 1785944838.4286294,
-    "hash": "f98e18ff6038b189095f2a070d9b1f6b"
+    "mtime": 1785946487.9013336,
+    "hash": "ca8b8dc8cc49f2866928380a666deb73"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/kairo-runtime.mdx": {
     "mtime": 1785945751.9579303,

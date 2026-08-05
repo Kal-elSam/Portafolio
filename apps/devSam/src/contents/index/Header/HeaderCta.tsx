@@ -45,12 +45,14 @@ function ButtonWork() {
 
 function AvailableForHire() {
   return (
-    <div
+    <Link
+      href="/hire-me"
       className={clsx(
-        'button button--soft pointer-events-none gap-2.5 px-3',
+        'button button--soft gap-2.5 px-3',
         'md:button--big md:px-2.5',
         'shadow-accent-600/10 shadow-sm'
       )}
+      aria-label="Hire me — availability and CV"
     >
       <span className={clsx('relative flex h-2 w-2')}>
         <span
@@ -67,7 +69,7 @@ function AvailableForHire() {
         />
       </span>
       AVAILABLE FOR HIRE
-    </div>
+    </Link>
   );
 }
 

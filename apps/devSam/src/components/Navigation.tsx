@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { GitHubIcon, HackerIcon,LinkedInIcon } from '@/components/Icons';
+import { GitHubIcon, HackerIcon, LinkedInIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
@@ -11,6 +11,7 @@ import NavLogo from '@/components/navigations/NavLogo';
 import useOnScroll from '@/hooks/useOnScroll';
 
 const workLinks = [
+  { title: 'Kairo Runtime', href: '/work/kairo-runtime' },
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
   { title: 'Experience', href: '/work/experience' },
   // { title: 'Studio', href: '/work/studio' },
@@ -22,7 +23,7 @@ function Navbar() {
 
   return (
     <header
-      className={clsx('fixed top-0 right-0 left-0 z-[1000]', 'fm:absolute')}
+      className={clsx('fixed left-0 right-0 top-0 z-[1000]', 'fm:absolute')}
     >
       <div
         className={clsx(

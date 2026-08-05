@@ -127,9 +127,9 @@ function FooterDescription() {
           'dark:text-slate-400'
         )}
       >
-        I&apos;m Sam Gomez, a Software Engineer focused on product
-        engineering, frontend architecture, and AI systems — shipping scalable
-        platforms with measurable business impact.
+        I&apos;m Sam Gomez, a Software Engineer focused on product engineering,
+        frontend architecture, and AI systems — shipping scalable platforms with
+        measurable business impact.
       </p>
       <div className={clsx('mt-6 flex flex-wrap gap-2')}>
         <a
@@ -209,6 +209,7 @@ function Footer() {
               <FooterGroup
                 title="Explore"
                 links={[
+                  { title: 'Kairo Runtime', href: '/work/kairo-runtime' },
                   { title: 'Projects', href: '/projects' },
                   { title: 'Experience', href: '/work/experience' },
                   {
@@ -232,8 +233,8 @@ function Footer() {
                     isInternal: false,
                   },
                   {
-                    title: 'Source Code',
-                    href: 'https://github.com/Kal-elSam',
+                    title: 'Kairo Runtime on npm',
+                    href: 'https://www.npmjs.com/package/@kal-elsam/kairo-runtime',
                     isInternal: false,
                   },
                   {

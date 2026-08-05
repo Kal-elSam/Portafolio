@@ -1,0 +1,110 @@
+---
+title: Kairo Runtime
+description: A published local agent operating system governing spec-driven and test-driven workflows across AI coding agents.
+caption: Open Source
+layout: PageWithMDX
+---
+
+import ArchitectureDiagram from '@/components/wireframes/ArchitectureDiagram';
+
+**Kairo Runtime** (`@kal-elsam/kairo-runtime`) is a local agent operating
+system — not an installer that dumps templates. It detects the AI coding
+agents you already use, writes managed and reversible sections into their
+configs, and keeps that ecosystem healthy with status checks, sync, doctor
+diagnostics, and rollback.
+
+<div className="mt-4 flex flex-wrap gap-3">
+  <a
+    href="https://www.npmjs.com/package/@kal-elsam/kairo-runtime"
+    target="_blank"
+    rel="noreferrer nofollow"
+    className="button button--solid"
+  >
+    View on npm
+  </a>
+  <a
+    href="https://github.com/Kal-elSam/harness"
+    target="_blank"
+    rel="noreferrer nofollow"
+    className="button button--outline"
+  >
+    View on GitHub
+  </a>
+</div>
+
+## Why I built it
+
+Every project I run with AI coding agents (Cursor, Codex, Claude, Gemini,
+Copilot) needs the same governance: consistent `AGENTS.md` rules, spec-driven
+development (SDD) before significant changes, test-driven development (TDD)
+for behavior changes, and a way to verify nothing drifted between agents or
+machines. Rebuilding that setup by hand for every repo doesn't scale, and
+copy-pasted config drifts the moment one project changes.
+
+Kairo Runtime abstracts that governance into a reusable, installable runtime
+— one CLI (`kairo`) that detects your agents, applies the same discipline
+everywhere, and reports on its own health.
+
+## Core Principles
+
+- **Agent-agnostic** — works across Cursor, Codex, Claude, Gemini, and Copilot instead of locking into one vendor.
+- **Non-destructive** — writes managed, clearly-bounded sections into existing configs; every change is reversible (`--dry-run`, rollback).
+- **SDD + TDD by default** — spec-driven development and test-driven workflows are built into the governance model, not bolted on.
+- **Terminal-first** — a full Ink/React control center (Overview, Governance, Activity, Orchestration, Usage, Settings) instead of a one-shot script.
+- **Honest usage data** — the Usage panel only reports measured token/budget data; it never invents totals or savings.
+- **Continuous health** — `status`, `sync`, `doctor`, and opt-in `monitor` keep the setup from silently drifting.
+
+## Architecture
+
+<ArchitectureDiagram
+  layers={[
+    {
+      id: 'cli',
+      label: 'kairo CLI',
+      detail: 'Terminal entry point — setup, status, sync, doctor, monitor.',
+    },
+    {
+      id: 'detect',
+      label: 'Agent detection',
+      detail: 'Scans the machine for the AI coding agents already in use.',
+      items: ['Cursor', 'Codex', 'Claude', 'Gemini', 'Copilot'],
+    },
+    {
+      id: 'write',
+      label: 'Managed config sections',
+      detail: 'Writes bounded, reversible sections into each agent config.',
+      items: ['AGENTS.md', '.cursor/rules', '.codex/skills', 'CLAUDE.md'],
+    },
+    {
+      id: 'control-plane',
+      label: '~/.harness control plane',
+      detail:
+        'Local state, governance store, and alert history shared across projects.',
+    },
+    {
+      id: 'loop',
+      label: 'Continuous governance loop',
+      detail: 'status → sync → doctor → monitor keeps every project aligned.',
+    },
+  ]}
+/>
+
+## Built with this discipline
+
+This portfolio and [Kairo Systems](/projects) (ARI and MAYA) are both built
+using the same SDD/TDD workflow that Kairo Runtime governs — every
+significant change follows Requirement → Spec → Plan → Tests → Implementation
+→ Validation → Review → Human approval before it ships. The runtime doesn't
+power ARI or MAYA at execution time; it powers **how I build them**.
+
+## Stack
+
+Node.js (ESM, `>=20.12`) · TypeScript · Ink + React (terminal UI) · `@clack/prompts` · published via GitHub Actions with npm provenance/attestations.
+
+## Try it
+
+```bash
+npx @kal-elsam/kairo-runtime
+# preview only, writes nothing
+npx @kal-elsam/kairo-runtime --dry-run
+```

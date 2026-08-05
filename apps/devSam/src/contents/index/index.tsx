@@ -5,6 +5,7 @@ import CleanIntuitive from '@/contents/index/CleanIntuitive';
 import FeaturedCaseStudies from '@/contents/index/FeaturedCaseStudies';
 import Header from '@/contents/index/Header';
 import ImpactMetrics from '@/contents/index/ImpactMetrics';
+import OpenSourceRuntime from '@/contents/index/OpenSourceRuntime';
 import RoleImpactSection from '@/contents/index/RoleImpactSection';
 
 function IndexContents() {
@@ -14,6 +15,9 @@ function IndexContents() {
       <div className={clsx('mb-12', 'md:mb-16', 'lg:mb-24')}>
         <ImpactMetrics />
       </div>
+      <section className={clsx('mb-16', 'lg:mb-28')}>
+        <OpenSourceRuntime />
+      </section>
       <section className={clsx('mb-16', 'lg:mb-28')}>
         <RoleImpactSection />
       </section>

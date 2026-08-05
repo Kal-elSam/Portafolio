@@ -1,7 +1,7 @@
 # Spec: Portfolio v2 — Software/Product Engineer + AI Positioning
 
-> Estado: Fase 1 y Fase 1.5 implementadas; Fase 2 (Kairo Runtime) **pendiente de decisión del dueño** antes de codificar (ver sección "Kairo Runtime — riesgo de honestidad")
-> Fecha: 2026-08-05 (actualizado el mismo día tras consolidar CV único y recibir propuesta de pivote a Kairo Runtime)
+> Estado: Fase 1, Fase 1.5 y Fase 2 implementadas y validadas (pipeline verde + verificación en navegador real). Fase 3-5 pendientes.
+> Fecha: 2026-08-05 (CV único consolidado + Kairo Runtime verificado contra npm/GitHub y publicado en el portafolio con framing honesto)
 > Reemplaza / extiende: `docs/ai/specs/portfolio-role-positioning.spec.md` (superseded parcialmente: un solo CV en vez de 3)
 
 ## Objetivo
@@ -34,27 +34,31 @@ Define el **backlog completo priorizado en fases**. Cada fase se implementa y va
 - `work/experience.mdx`, `work/skills-and-tools.mdx`, y la entrada de Kairo en `contents/projects/proyects.ts` / `FeaturedCaseStudies.tsx` se alinearon palabra por palabra con los títulos, fechas y stack del CV único (ej. "Software Engineer / Frontend Lead" en Ensamble, no "Senior"/"Architecture Lead"; "Frontend Engineer" en KC, no "Software Engineer"; se agregó el eje "AI-Assisted Engineering" — Claude Code, GPT, Gemini, Groq — que el CV nuevo hace explícito).
 - **Hallazgo de auditoría:** se encontró y eliminó una métrica no respaldada por ningún CV (`~50% faster response time`, `~25% lead-to-booking conversion` para Kairo) que había sido introducida en una sesión anterior sin fuente verificable. Regla aplicada: ninguna métrica se publica sin poder señalar de dónde sale (CV, medición real, o admitir que es cualitativa).
 
-### Fase 2 — Kairo Systems / Kairo Runtime como caso de estudio central
+### Fase 2 — Kairo Runtime como activo open-source central (implementado 2026-08-05)
 
-> **Pendiente de decisión del dueño.** El 2026-08-05 se propuso un pivote de narrativa: en vez de que ARI/MAYA (productos) sean el centro, **Kairo Runtime** (un runtime open-source reutilizable que supuestamente los sustenta) pasaría a ser el activo principal del portafolio, con página `/kairo-runtime`, `/playground`, sección Open Source con GitHub stars/npm downloads, y blog técnico sobre diseño de runtimes.
+**Verificación previa (bloqueante resuelta):** se auditó `@kal-elsam/kairo-runtime` contra el registry de npm y la API de GitHub antes de escribir copy. Hallazgos reales:
 
-#### Riesgo de honestidad — bloqueante antes de codificar
+- Paquete publicado y activo: `@kal-elsam/kairo-runtime`, v0.11.0, releases automatizados vía GitHub Actions con npm provenance/attestations.
+- Repo público `github.com/Kal-elSam/harness`, actualizado el mismo día, 10 issues abiertos (uso real), **0 stars, 0 forks**, **sin archivo `LICENSE`** (license: `UNLICENSED` en package.json) → técnicamente no es "open source" en sentido OSI todavía, aunque el código es público. Pendiente para el dueño (fuera de este repo): agregar licencia MIT/Apache si quiere reclamar "open source" con propiedad.
+- Descargas npm reales y con tracción: ~3,986/mes (verificado vía `api.npmjs.org/downloads`).
+- **Corrección de framing importante:** el producto real es un _"local agent operating system" / governance harness_ para agentes de codificación (Cursor, Codex, Claude, Gemini, Copilot) — detecta agentes, escribe secciones de config gestionadas y reversibles, aplica gobierno SDD/TDD, con una TUI en Ink/React. **No es** un SDK de agentes de IA con providers (OpenAI/Anthropic/Gemini/Groq) orientado a construir productos como ARI/MAYA — esa descripción del pitch original no correspondía al producto publicado.
+- **Relación real con Kairo Systems:** Kairo Runtime no es una dependencia que ARI/MAYA importen. La conexión honesta y aprobada por el dueño es "Kairo Runtime gobierna cómo construyo software (esta misma disciplina SDD/TDD se usó para construir ARI y MAYA)", no "ARI/MAYA corren sobre el runtime". Confirmado con el dueño vía `AskQuestion` (opción `honest_dev_tooling`).
+- Métricas mostradas: solo npm downloads (vía badge dinámico de shields.io, siempre live, nunca hardcodeado). Se decidió explícitamente **no mostrar GitHub stars** (están en 0) hasta que crezcan (opción `downloads_only` del dueño).
 
-- **Kairo Runtime no aparece en el CV único ni en ningún archivo del repo.** No hay evidencia de que exista como paquete publicado, repositorio público, o código extraíble hoy.
-- Publicar en el portafolio afirmaciones como "open-source runtime", "GitHub stars", "npm downloads", "changelog", "benchmarks" o un `/playground` funcional **sin que el paquete exista y esté publicado** sería fabricar contenido verificable por cualquier reclutador (buscarán el repo/npm y no encontrarán nada) — esto viola la regla del proyecto "no declarar éxito parcial como éxito total" y es un riesgo reputacional mayor que el problema que se busca resolver.
-- Antes de implementar cualquier pieza de esta fase que implique métricas u open-source reales, se requiere confirmación explícita del dueño sobre:
-  1. ¿Existe código real de "Kairo Runtime" hoy (aunque sea privado dentro de Kairo Systems) que se pueda extraer a un paquete independiente?
-  2. ¿Hay compromiso y fecha realista de publicarlo en GitHub/npm antes de que el portafolio lo presente como tal?
-  3. Mientras no esté publicado: ¿se prefiere una narrativa honesta "in progress / extrayendo el runtime que sustenta ARI y MAYA" (sin stats falsas), o se pospone esta fase hasta que el paquete exista?
-  4. ¿El CV único debe actualizarse también para mencionar Kairo Runtime, o el runtime vive solo en el portafolio mientras el CV mantiene el framing actual (Kairo Systems como producto)?
+**Implementado:**
 
-#### Alcance condicional (una vez resuelto el punto anterior)
+- `apps/devSam/src/components/wireframes/ArchitectureDiagram.tsx`: diagrama de arquitectura reutilizable en JSX puro (sin Mermaid, sin dependencias nuevas), accesible (`role="img"` + `aria-label` con el flujo en texto).
+- `apps/devSam/src/contents/index/OpenSourceRuntime.tsx`: nueva sección "Open Source — Kairo Runtime" en el home, insertada entre `ImpactMetrics` y `RoleImpactSection` (posición prominente, acorde a la jerarquía "Kairo Runtime primero" propuesta por el dueño). Incluye badges live de npm (versión + descargas/mes), principios reales del CLI, y CTAs a npm/GitHub/página dedicada.
+- `apps/devSam/src/pages/work/kairo-runtime.mdx`: página dedicada (`/work/kairo-runtime`) con Why I built it, Core Principles, Architecture (diagrama real: CLI → detección de agentes → escritura de config gestionada → control plane `~/.harness` → loop de gobernanza continua), sección "Built with this discipline" conectando honestamente con Kairo Systems, stack real, e instrucciones de instalación reales (`npx @kal-elsam/kairo-runtime`).
+- Navegación: `Navigation.tsx` (`workLinks`) y `Footer.tsx` (grupos "Explore" y "Connect") actualizados con enlaces a la página dedicada y a npm.
+- Validado con browser real (`cursor-ide-browser`): home y `/work/kairo-runtime` renderizan correctamente, badges de npm cargan en vivo, diagrama de arquitectura se ve como se diseñó.
 
-- Landing dedicada (`/kairo-runtime` o dentro de `work/`) con: Why I built it, Core Principles, Architecture (diagrama JSX/SVG propio, sin Mermaid — decisión ya tomada por el dueño), stack.
-- Sección "Built with Kairo Runtime" listando ARI y MAYA como demostraciones de uso (patrón Next.js → ejemplos, no al revés).
-- Sección Open Source: solo con datos reales (GitHub, npm) una vez publicado; nunca con placeholders o números inventados.
-- `/playground` interactivo: solo si hay tiempo/alcance para una demo real (registrar una Tool, ejecutar un Agent) — no un mockup que aparente funcionalidad inexistente.
-- Blog técnico sobre diseño del runtime: contenido real del dueño, no generado en su nombre.
+**Explícitamente fuera de esta fase (no implementado, por falta de base real o de tiempo):**
+
+- `/playground` interactivo — no se construyó; haría falta una demo real (registrar una Tool, ejecutar un Agent) y no hay tiempo/alcance definido para eso en esta iteración. No se hizo un mockup que aparente funcionalidad inexistente.
+- GitHub stars / contributors / changelog / roadmap público — no se muestran hasta que haya tracción real que valga la pena destacar.
+- Blog técnico sobre diseño del runtime — pertenece a Fase 5 (requiere contenido real del dueño, no generado en su nombre).
+- Actualización del CV único para mencionar Kairo Runtime — no se tocó el CV en esta fase; es una decisión pendiente y separada del dueño sobre el documento que se envía a reclutadores.
 
 ### Fase 3 — Architecture Case Studies + System Design
 

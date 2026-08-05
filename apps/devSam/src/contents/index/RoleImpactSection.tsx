@@ -78,16 +78,6 @@ function RoleImpactSection() {
                 </li>
               ))}
             </ul>
-            <a
-              href={role.cvHref}
-              download={role.cvHref.split('/').pop()}
-              className={clsx(
-                'text-accent-600 hover:text-accent-700 mt-5 inline-flex items-center gap-2 text-sm font-black transition',
-                'dark:text-accent-400 dark:hover:text-accent-300'
-              )}
-            >
-              Download {role.title} CV
-            </a>
           </article>
         ))}
       </div>

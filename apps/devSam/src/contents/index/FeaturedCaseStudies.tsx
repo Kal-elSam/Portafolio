@@ -24,13 +24,13 @@ interface FeaturedCase {
 
 const cases: FeaturedCase[] = [
   {
-    title: 'AI Lead Qualification Platform',
+    title: 'ARI & MAYA — AI Business Platform',
     company: 'Kairo Systems',
     eyebrow: 'AI Product Engineering',
     image: '/assets/projects/kairo-systems-landing.png',
-    result: '~50% faster response time',
+    result: 'AI-native SaaS platform',
     description:
-      'AI workflows for lead qualification, scheduling, WhatsApp automation, and internal product operations.',
+      'ARI automates lead qualification, WhatsApp conversations, and calendar booking. MAYA generates and publishes AI-driven social content.',
     tags: ['Next.js', 'LLM workflows', 'WhatsApp API'],
     href: 'https://www.kairosystems.dev/',
     impactProof: {

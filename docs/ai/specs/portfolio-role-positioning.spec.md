@@ -1,6 +1,6 @@
 # Spec: Portfolio Role Positioning
 
-> Estado: implementado  
+> Estado: **superseded parcialmente** (2026-08-05) — el modelo de "3 CVs por rol" fue reemplazado por **un solo CV** (`SamuelGomez-CV.pdf`), ver `docs/ai/specs/portfolio-product-engineer-v2.spec.md` (Fase 1.5). La sección "Three ways I create impact" (`roleProfiles`) se conserva como narrativa de posicionamiento, pero ya no controla descargas de CV distintas.
 > Fecha: 2026-06-05
 
 ## Objetivo
@@ -54,10 +54,10 @@ interface RoleProfile {
 
 ### Assets públicos
 
-| Rol | Archivo |
-| --- | --- |
-| Software Engineer | `/assets/docs/SamuelGomez-SoftwareEngineer.pdf` |
-| Technical Lead | `/assets/docs/SamuelGomez-TechnicalLead.pdf` |
+| Rol                | Archivo                                          |
+| ------------------ | ------------------------------------------------ |
+| Software Engineer  | `/assets/docs/SamuelGomez-SoftwareEngineer.pdf`  |
+| Technical Lead     | `/assets/docs/SamuelGomez-TechnicalLead.pdf`     |
 | Solutions Engineer | `/assets/docs/SamuelGomez-SolutionsEngineer.pdf` |
 
 ## Estados de UI

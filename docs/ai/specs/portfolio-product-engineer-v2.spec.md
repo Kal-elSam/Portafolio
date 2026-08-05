@@ -1,8 +1,8 @@
 # Spec: Portfolio v2 — Software/Product Engineer + AI Positioning
 
-> Estado: propuesto (pendiente de aprobación humana por fase)
-> Fecha: 2026-08-05
-> Reemplaza / extiende: `docs/ai/specs/portfolio-role-positioning.spec.md` (sigue vigente, no se contradice)
+> Estado: Fase 1 y Fase 1.5 implementadas; Fase 2 (Kairo Runtime) **pendiente de decisión del dueño** antes de codificar (ver sección "Kairo Runtime — riesgo de honestidad")
+> Fecha: 2026-08-05 (actualizado el mismo día tras consolidar CV único y recibir propuesta de pivote a Kairo Runtime)
+> Reemplaza / extiende: `docs/ai/specs/portfolio-role-positioning.spec.md` (superseded parcialmente: un solo CV en vez de 3)
 
 ## Objetivo
 
@@ -26,11 +26,35 @@ Define el **backlog completo priorizado en fases**. Cada fase se implementa y va
 - Revisar copy del Hero contra la propuesta del usuario y ajustar si hace falta (ya está cerca; validar que en <5s comunique software + IA + producto + arquitectura).
 - Eliminar/ocultar proyectos tipo ejercicio si existieran en `proyects.ts` (auditoría: no se detectaron Todo/Weather app hoy; confirmar con dueño).
 
-### Fase 2 — Kairo Systems como caso de estudio central
+### Fase 1.5 — CV único (implementado 2026-08-05)
 
-- Nueva página `apps/devSam/src/pages/work/kairo-systems.mdx` (o ruta dedicada) tipo landing: Founder/Software Engineer, productos ARI y MAYA con sus bullets, diagrama de arquitectura (Mermaid o componente visual), stack.
-- Componente reutilizable de diagrama de arquitectura (texto/flow, sin nuevas dependencias pesadas salvo aprobación).
-- Enlace destacado desde Home (`FeaturedCaseStudies` ya cubre Kairo; se añade CTA a la página dedicada).
+- Se reemplazaron los 3 CVs por rol (`SamuelGomez-SoftwareEngineer.pdf`, `-TechnicalLead.pdf`, `-SolutionsEngineer.pdf`) y el resume legado (`SamuelGomezDevResume.pdf`) por **un solo CV canónico**: `apps/devSam/public/assets/docs/SamuelGomez-CV.pdf`, fuente de verdad = CV provisto por el dueño (`Software Engineer | Product Engineer | AI Systems`).
+- `CvDownloadMenu` dejó de ser un dropdown por rol (Headless UI Menu) y ahora es un botón único de descarga (`roleProfiles.CV_HREF`).
+- `RoleImpactSection` ("Three ways I create impact") se conserva como narrativa de 3 lentes, pero ya sin link de descarga por tarjeta.
+- `work/experience.mdx`, `work/skills-and-tools.mdx`, y la entrada de Kairo en `contents/projects/proyects.ts` / `FeaturedCaseStudies.tsx` se alinearon palabra por palabra con los títulos, fechas y stack del CV único (ej. "Software Engineer / Frontend Lead" en Ensamble, no "Senior"/"Architecture Lead"; "Frontend Engineer" en KC, no "Software Engineer"; se agregó el eje "AI-Assisted Engineering" — Claude Code, GPT, Gemini, Groq — que el CV nuevo hace explícito).
+- **Hallazgo de auditoría:** se encontró y eliminó una métrica no respaldada por ningún CV (`~50% faster response time`, `~25% lead-to-booking conversion` para Kairo) que había sido introducida en una sesión anterior sin fuente verificable. Regla aplicada: ninguna métrica se publica sin poder señalar de dónde sale (CV, medición real, o admitir que es cualitativa).
+
+### Fase 2 — Kairo Systems / Kairo Runtime como caso de estudio central
+
+> **Pendiente de decisión del dueño.** El 2026-08-05 se propuso un pivote de narrativa: en vez de que ARI/MAYA (productos) sean el centro, **Kairo Runtime** (un runtime open-source reutilizable que supuestamente los sustenta) pasaría a ser el activo principal del portafolio, con página `/kairo-runtime`, `/playground`, sección Open Source con GitHub stars/npm downloads, y blog técnico sobre diseño de runtimes.
+
+#### Riesgo de honestidad — bloqueante antes de codificar
+
+- **Kairo Runtime no aparece en el CV único ni en ningún archivo del repo.** No hay evidencia de que exista como paquete publicado, repositorio público, o código extraíble hoy.
+- Publicar en el portafolio afirmaciones como "open-source runtime", "GitHub stars", "npm downloads", "changelog", "benchmarks" o un `/playground` funcional **sin que el paquete exista y esté publicado** sería fabricar contenido verificable por cualquier reclutador (buscarán el repo/npm y no encontrarán nada) — esto viola la regla del proyecto "no declarar éxito parcial como éxito total" y es un riesgo reputacional mayor que el problema que se busca resolver.
+- Antes de implementar cualquier pieza de esta fase que implique métricas u open-source reales, se requiere confirmación explícita del dueño sobre:
+  1. ¿Existe código real de "Kairo Runtime" hoy (aunque sea privado dentro de Kairo Systems) que se pueda extraer a un paquete independiente?
+  2. ¿Hay compromiso y fecha realista de publicarlo en GitHub/npm antes de que el portafolio lo presente como tal?
+  3. Mientras no esté publicado: ¿se prefiere una narrativa honesta "in progress / extrayendo el runtime que sustenta ARI y MAYA" (sin stats falsas), o se pospone esta fase hasta que el paquete exista?
+  4. ¿El CV único debe actualizarse también para mencionar Kairo Runtime, o el runtime vive solo en el portafolio mientras el CV mantiene el framing actual (Kairo Systems como producto)?
+
+#### Alcance condicional (una vez resuelto el punto anterior)
+
+- Landing dedicada (`/kairo-runtime` o dentro de `work/`) con: Why I built it, Core Principles, Architecture (diagrama JSX/SVG propio, sin Mermaid — decisión ya tomada por el dueño), stack.
+- Sección "Built with Kairo Runtime" listando ARI y MAYA como demostraciones de uso (patrón Next.js → ejemplos, no al revés).
+- Sección Open Source: solo con datos reales (GitHub, npm) una vez publicado; nunca con placeholders o números inventados.
+- `/playground` interactivo: solo si hay tiempo/alcance para una demo real (registrar una Tool, ejecutar un Agent) — no un mockup que aparente funcionalidad inexistente.
+- Blog técnico sobre diseño del runtime: contenido real del dueño, no generado en su nombre.
 
 ### Fase 3 — Architecture Case Studies + System Design
 
@@ -58,6 +82,7 @@ Define el **backlog completo priorizado en fases**. Cada fase se implementa y va
 - Cambios de CI/CD, deploy, base de datos o `.env`.
 - Reemplazar los 3 CVs por rol ya implementados; esta spec los conserva y los expone también en `/hire-me`.
 - Escribir contenido de blog o grabar videos en nombre del usuario sin su revisión/aprobación de contenido real.
+- Publicar métricas, badges (GitHub stars, npm downloads), changelogs, benchmarks o demos interactivas (`/playground`) para software que no existe o no está publicado. Cualquier dato cuantitativo debe poder rastrearse a: el CV vigente, una medición real, o marcarse explícitamente como roadmap/visión.
 
 ## Criterios de aceptación (por fase; ver plan de implementación)
 

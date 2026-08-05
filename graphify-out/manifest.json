@@ -84,8 +84,8 @@
     "hash": "d9b865649823801d4f9ac45535df48da"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/projects/proyects.ts": {
-    "mtime": 1785943881.9374037,
-    "hash": "8eec78379d081056d2dc33fbe638cd52"
+    "mtime": 1785944863.238949,
+    "hash": "d0dbb263409cf54fa77facdf5d02daa7"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/blog/index.tsx": {
     "mtime": 1785943881.9340436,
@@ -148,16 +148,16 @@
     "hash": "fc88f4cdfbf989b90e2a39f39101db68"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/FeaturedCaseStudies.tsx": {
-    "mtime": 1785944403.1019557,
-    "hash": "21af2ea8a5e3c48a1270e48438c94516"
+    "mtime": 1785944871.3824368,
+    "hash": "b6999642e45179db001c39d71fae10f6"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/roleProfiles.ts": {
-    "mtime": 1785944447.5211618,
-    "hash": "451785db185f9282efcb01355494cdd1"
+    "mtime": 1785944947.8436127,
+    "hash": "2ef8533179daeafa9665c717e40d8cd9"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/RoleImpactSection.tsx": {
-    "mtime": 1785943881.93678,
-    "hash": "b82064804f40bfd55c4f405cb5efd562"
+    "mtime": 1785944790.6614995,
+    "hash": "b08ae8e8b9d0ffd9807cd01f547df9ec"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/DetailOriented.tsx": {
     "mtime": 1785943881.9349089,
@@ -336,8 +336,8 @@
     "hash": "7e194ad92e3ad4fa1e9a103f018ded0c"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/CvDownloadMenu.tsx": {
-    "mtime": 1785944447.5149548,
-    "hash": "f0dc0e06074f4e5d7f9fab8b620ee932"
+    "mtime": 1785944947.7847123,
+    "hash": "29eaf0f2b52029f94c2bc6d22fd1ccef"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Toast.tsx": {
     "mtime": 1785943881.9218938,
@@ -768,12 +768,12 @@
     "hash": "cf626ce922c95227b959ea40b199dbe2"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/portfolio-role-positioning.spec.md": {
-    "mtime": 1785944447.5247548,
-    "hash": "15055cf868e1907d428a41c4e6e73b73"
+    "mtime": 1785945069.5788007,
+    "hash": "463a6d8264af8f66cd49035053a019e0"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/portfolio-product-engineer-v2.spec.md": {
-    "mtime": 1785944404.1394823,
-    "hash": "a222f8cf6c2b2aa0e4cb8c20d1764ae4"
+    "mtime": 1785945063.4619603,
+    "hash": "3f3309920b05637a0bc8c313ad9f10e2"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/docs/ai/specs/ai-workflow-simulator.spec.md": {
     "mtime": 1785944447.524565,
@@ -836,7 +836,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1785944501.4341004,
+    "mtime": 1785944966.2982948,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {
@@ -880,28 +880,16 @@
     "hash": "6fbb653010b6debc04c51b77b002f85d"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/skills-and-tools.mdx": {
-    "mtime": 1785944262.4421108,
-    "hash": "1a25282e326563c364c1900d29e400d2"
+    "mtime": 1785944851.5938127,
+    "hash": "92dc764d63ac453055c116e1412ae959"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/work/experience.mdx": {
-    "mtime": 1785943881.9458585,
-    "hash": "8483354771fec1432d18ce69fb6447cd"
+    "mtime": 1785944838.4286294,
+    "hash": "f98e18ff6038b189095f2a070d9b1f6b"
   },
-  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomezDevResume.pdf": {
-    "mtime": 1785943881.690225,
-    "hash": "cdf5b46a1a89df36ff70e33f584ffb66"
-  },
-  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-SolutionsEngineer.pdf": {
-    "mtime": 1785943881.6884823,
-    "hash": "61b3394a7c1e5f8c827da27b6aeb8b91"
-  },
-  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-TechnicalLead.pdf": {
-    "mtime": 1785943881.6893005,
-    "hash": "7d9d2f01d647a389ddd6d0a1fdca4d0b"
-  },
-  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-SoftwareEngineer.pdf": {
-    "mtime": 1785943881.6879494,
-    "hash": "280647359b726996729a8428f2fd4ee6"
+  "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/docs/SamuelGomez-CV.pdf": {
+    "mtime": 1785944772.3355987,
+    "hash": "ee0e008139269de71293cc8c71c20421"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/assets/9055802_bxl_flutter_icon.svg": {
     "mtime": 1785943881.6871665,

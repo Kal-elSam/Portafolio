@@ -13,24 +13,31 @@ type ProjectType = {
 
 const projectsData: ProjectType[] = [
   {
-    projectName: 'AI Lead Qualification Platform',
+    projectName: 'ARI & MAYA — AI Business Platform',
     company: 'Kairo Systems',
-    role: 'Founder · Software Engineer · AI Systems',
+    role: 'Founder · Software Engineer',
     impact:
-      'Built AI-powered workflows for lead qualification and scheduling, reducing response time by ~50% and improving lead-to-booking conversion by ~25%.',
+      'Designed and built an AI-native SaaS platform from the ground up — ARI (AI business assistant) and MAYA (AI content engine) — covering customer communication, appointment booking, content generation, and operational dashboards.',
     description:
-      'Kairo Systems is my AI-driven product company focused on automating customer communication and operational workflows. I designed and implemented a full platform that connects LLM workflows with WhatsApp, Meta, and Google Calendar, using state-machine orchestration to keep asynchronous conversations consistent. The system includes internal dashboards, scheduling flows, and deployment infrastructure built for real production usage.',
+      'Kairo Systems is my founder-led AI SaaS company for local businesses in Mexico. ARI connects LLM-powered conversations with WhatsApp automation and Google Calendar OAuth to handle lead qualification and real booking operations. MAYA is an AI-powered social content engine for generating, previewing, scheduling, and publishing branded Instagram/Facebook content through the Meta Graph API. I own the full stack — architecture, frontend, backend, AI workflows, and production infrastructure — and apply AI-assisted engineering (Claude Code, GPT, Gemini) throughout the development lifecycle.',
     link: 'https://www.kairosystems.dev/',
     iconPath: '/assets/empresas/kairo-systems.png',
     technologies: [
       'Next.js',
+      'React',
       'TypeScript',
       'Node.js',
+      'Express',
       'PostgreSQL',
-      'LLM Function Calling',
-      'WhatsApp API',
-      'Meta API',
+      'TailwindCSS',
+      'Groq',
+      'Gemini',
+      'WhatsApp Cloud API',
       'Google Calendar API',
+      'Meta Graph API',
+      'Cloudinary',
+      'Sentry',
+      'Docker',
       'Vercel',
       'Railway',
     ],

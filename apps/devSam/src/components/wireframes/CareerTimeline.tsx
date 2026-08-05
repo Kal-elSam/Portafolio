@@ -25,13 +25,13 @@ function CareerTimeline({ items }: CareerTimelineProps) {
           key={item.id}
           className={clsx('relative flex gap-4 pb-8', 'last:pb-0')}
         >
-          <div className={clsx('flex w-4 shrink-0 flex-col items-center')}>
+          <div className={clsx('flex w-3 shrink-0 flex-col items-center')}>
             <span
               className={clsx(
-                'mt-1.5 h-3 w-3 rounded-full border-2',
+                'mt-2 h-2.5 w-2.5 rounded-full',
                 item.isCurrent
-                  ? 'border-accent-500 bg-accent-500'
-                  : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-950'
+                  ? 'bg-accent-500'
+                  : 'bg-slate-300 dark:bg-slate-600'
               )}
               aria-hidden="true"
             />
@@ -45,15 +45,10 @@ function CareerTimeline({ items }: CareerTimelineProps) {
               />
             ) : null}
           </div>
-          <article
-            className={clsx(
-              'min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg shadow-slate-950/[0.03]',
-              'dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20'
-            )}
-          >
+          <article className={clsx('min-w-0 flex-1 pt-0.5')}>
             <div
               className={clsx(
-                'flex flex-wrap items-baseline justify-between gap-2'
+                'flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1'
               )}
             >
               <h3
@@ -66,7 +61,7 @@ function CareerTimeline({ items }: CareerTimelineProps) {
               </h3>
               <p
                 className={clsx(
-                  'text-xs font-bold uppercase tracking-[0.14em] text-slate-500',
+                  'font-mono text-xs text-slate-500',
                   'dark:text-slate-500'
                 )}
               >
@@ -75,19 +70,15 @@ function CareerTimeline({ items }: CareerTimelineProps) {
             </div>
             <p
               className={clsx(
-                'mt-1 text-sm font-semibold text-slate-700',
+                'mt-0.5 text-sm font-semibold text-slate-700',
                 'dark:text-slate-300'
               )}
             >
               {item.role}
-            </p>
-            <p
-              className={clsx(
-                'mt-0.5 text-xs text-slate-500',
-                'dark:text-slate-500'
-              )}
-            >
-              {item.location}
+              <span className={clsx('font-normal text-slate-500')}>
+                {' '}
+                · {item.location}
+              </span>
             </p>
             <p
               className={clsx(

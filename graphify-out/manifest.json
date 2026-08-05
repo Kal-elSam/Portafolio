@@ -160,12 +160,12 @@
     "hash": "2ef8533179daeafa9665c717e40d8cd9"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/OpenSourceRuntime.tsx": {
-    "mtime": 1785945751.8899212,
-    "hash": "21ef8ef6a38f5f3f61ced3817aaefa59"
+    "mtime": 1785947203.5726495,
+    "hash": "aad43d9b0bf050056464d2d3b94d2936"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/RoleImpactSection.tsx": {
-    "mtime": 1785944790.6614995,
-    "hash": "b08ae8e8b9d0ffd9807cd01f547df9ec"
+    "mtime": 1785947223.5018914,
+    "hash": "0a07e7523397bbf8fd8b8ae16ab3b002"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/index/DetailOriented.tsx": {
     "mtime": 1785943881.9349089,
@@ -284,8 +284,8 @@
     "hash": "1c52671e00e7caafc67d9de0e1ed53f3"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Footer.tsx": {
-    "mtime": 1785946513.632239,
-    "hash": "0e7d992dd4e023f4b3fb3ff9e7b5d682"
+    "mtime": 1785947205.8931773,
+    "hash": "354c4d00a82d3d6e974ba43cd68f75bf"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/Activity.tsx": {
     "mtime": 1785943881.9175546,
@@ -448,8 +448,8 @@
     "hash": "dfef3e14c490a21ca6f0ffe9710fb20c"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CareerTimeline.tsx": {
-    "mtime": 1785946548.1607876,
-    "hash": "c5930912be74c57fd57ebafba6bfc313"
+    "mtime": 1785947168.4318962,
+    "hash": "4937eb5882685a63343cdb5480287e60"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectWireframe.tsx": {
     "mtime": 1785944447.5187743,
@@ -464,8 +464,8 @@
     "hash": "7e0d29ca0825dedb2281b2a2fc174ffe"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/StackByCategory.tsx": {
-    "mtime": 1785946446.8240588,
-    "hash": "2bac264cabfc9972fd94c1f23c6d6bcb"
+    "mtime": 1785947168.558478,
+    "hash": "3c009a539fec8d1ef659b550c093dd9a"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ProjectCounter.tsx": {
     "mtime": 1785944402.9206436,
@@ -492,16 +492,16 @@
     "hash": "61616dafd9b6723bda7bb1d1bfab7a42"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/ArchitectureDiagram.tsx": {
-    "mtime": 1785945751.8638601,
-    "hash": "f486703d6e8f4ef1ffca3f3173764a62"
+    "mtime": 1785947225.8837953,
+    "hash": "4b05fc02768477f9372defdd5df22ae1"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/AppWindow.tsx": {
     "mtime": 1785943881.929813,
     "hash": "e5bddb92d21ec9a8cb8b648547ecda03"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/HireMePanel.tsx": {
-    "mtime": 1785946548.2009594,
-    "hash": "413715c2d51b45b2636c7a4d15e631ab"
+    "mtime": 1785947225.8384817,
+    "hash": "e688f6c27d5d5f6200aa7ce11d65825c"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/components/wireframes/CompanyLogosBanner.tsx": {
     "mtime": 1785943881.9299166,
@@ -660,8 +660,8 @@
     "hash": "afb5500d8b8e72420f8ca33048156ded"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/hire-me.tsx": {
-    "mtime": 1785946448.3193874,
-    "hash": "ce11d4e7d84c0f2216506824ca0aee86"
+    "mtime": 1785947205.8670757,
+    "hash": "bcbcb8d021c5e80790f08f05eeedba90"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/pages/_app.tsx": {
     "mtime": 1785943881.9417355,
@@ -864,7 +864,7 @@
     "hash": "93101c8aedbb74f311c057451ce76ccd"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/public/robots.txt": {
-    "mtime": 1785946582.7036116,
+    "mtime": 1785947244.7159956,
     "hash": "f3a38ae90cc3d8e8874f645c78cb3027"
   },
   "/Users/kal-el/Desktop/LOCAL/Portafolio/apps/devSam/src/contents/TIL/Contents.mdx": {

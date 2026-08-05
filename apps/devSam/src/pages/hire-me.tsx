@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import HireMePanel from '@/components/wireframes/HireMePanel';
 
 import Page from '@/contents-layouts/Page';
@@ -8,11 +10,13 @@ function HireMe() {
       frontMatter={{
         title: 'Hire Me',
         description:
-          'CV, availability, location, visa, languages, and links for product engineering roles.',
-        caption: 'Work',
+          'Software Engineer · Product Engineer · AI Systems — available for remote roles and relocation.',
+        caption: 'Available',
       }}
     >
-      <HireMePanel />
+      <div className={clsx('content-wrapper pb-16', 'md:pb-24')}>
+        <HireMePanel />
+      </div>
     </Page>
   );
 }

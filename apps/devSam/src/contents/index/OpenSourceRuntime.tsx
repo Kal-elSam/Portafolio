@@ -14,42 +14,44 @@ const principles = [
 function OpenSourceRuntime() {
   return (
     <section className={clsx('content-wrapper')}>
+      <div className={clsx('mb-7 max-w-3xl')}>
+        <p
+          className={clsx(
+            'text-accent-600 text-sm font-black uppercase tracking-[0.24em]',
+            'dark:text-accent-400'
+          )}
+        >
+          Open Source
+        </p>
+        <h2
+          className={clsx(
+            'mt-2 text-3xl font-black tracking-normal text-slate-950',
+            'md:text-4xl dark:text-white'
+          )}
+        >
+          Kairo Runtime
+        </h2>
+        <p
+          className={clsx(
+            'mt-3 max-w-2xl text-sm leading-6 text-slate-600',
+            'md:text-base dark:text-slate-400'
+          )}
+        >
+          A published local agent operating system that governs how I run
+          spec-driven, test-driven engineering workflows across Cursor, Codex,
+          and Claude — including this portfolio repository.
+        </p>
+      </div>
+
       <div
         className={clsx(
-          'overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-950/[0.04]',
-          'dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20',
-          'lg:grid lg:grid-cols-[1.1fr_0.9fr]'
+          'grid gap-10 border-t border-slate-200 pt-8',
+          'dark:border-slate-800',
+          'lg:grid-cols-[1.2fr_0.8fr] lg:gap-14'
         )}
       >
-        <div className={clsx('p-6', 'md:p-8')}>
-          <p
-            className={clsx(
-              'text-accent-600 text-sm font-black uppercase tracking-[0.24em]',
-              'dark:text-accent-400'
-            )}
-          >
-            Open Source
-          </p>
-          <h2
-            className={clsx(
-              'mt-2 text-3xl font-black tracking-normal text-slate-950',
-              'md:text-4xl dark:text-white'
-            )}
-          >
-            Kairo Runtime
-          </h2>
-          <p
-            className={clsx(
-              'mt-3 max-w-xl text-sm leading-6 text-slate-600',
-              'md:text-base dark:text-slate-400'
-            )}
-          >
-            A published local agent operating system that governs how I run
-            spec-driven, test-driven engineering workflows across Cursor, Codex,
-            and Claude — including this portfolio repository.
-          </p>
-
-          <div className={clsx('mt-5 flex flex-wrap items-center gap-3')}>
+        <div>
+          <div className={clsx('mb-5 flex flex-wrap items-center gap-3')}>
             <img
               src="https://img.shields.io/npm/v/%40kal-elsam%2Fkairo-runtime.svg?style=flat-square&color=e11d48"
               alt="npm version for @kal-elsam/kairo-runtime"
@@ -64,7 +66,7 @@ function OpenSourceRuntime() {
 
           <ul
             className={clsx(
-              'mt-5 flex flex-col gap-2.5 text-sm leading-6 text-slate-600',
+              'flex flex-col gap-2.5 text-sm leading-6 text-slate-600',
               'dark:text-slate-400'
             )}
           >
@@ -111,17 +113,10 @@ function OpenSourceRuntime() {
           </div>
         </div>
 
-        <div
-          className={clsx(
-            'flex flex-col justify-center gap-3 border-t border-slate-200 bg-slate-50 p-6',
-            'dark:border-slate-800 dark:bg-slate-900/40',
-            'lg:border-l lg:border-t-0',
-            'md:p-8'
-          )}
-        >
+        <div>
           <p
             className={clsx(
-              'text-xs font-black uppercase tracking-[0.2em] text-slate-500',
+              'text-xs font-bold uppercase tracking-[0.16em] text-slate-500',
               'dark:text-slate-500'
             )}
           >
@@ -129,20 +124,19 @@ function OpenSourceRuntime() {
           </p>
           <pre
             className={clsx(
-              'overflow-x-auto rounded-xl bg-slate-950 p-4 text-xs leading-6 text-slate-200'
+              'mt-3 overflow-x-auto rounded-lg bg-slate-950 px-4 py-3 font-mono text-xs leading-6 text-slate-200'
             )}
           >
             <code>npx @kal-elsam/kairo-runtime</code>
           </pre>
           <p
             className={clsx(
-              'text-xs leading-5 text-slate-500',
+              'mt-3 text-sm leading-6 text-slate-500',
               'dark:text-slate-500'
             )}
           >
-            Built with this same discipline: this portfolio and Kairo Systems
-            (ARI, MAYA) are both shipped using the SDD/TDD workflow Kairo
-            Runtime governs.
+            This portfolio and Kairo Systems (ARI, MAYA) ship with the same
+            SDD/TDD discipline Kairo Runtime governs.
           </p>
         </div>
       </div>

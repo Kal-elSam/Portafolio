@@ -34,15 +34,15 @@ function RoleImpactSection() {
         </p>
       </div>
 
-      <div className={clsx('grid gap-4', 'lg:grid-cols-3')}>
+      <div
+        className={clsx(
+          'grid gap-8 border-t border-slate-200 pt-8',
+          'dark:border-slate-800',
+          'lg:grid-cols-3 lg:gap-10'
+        )}
+      >
         {roleProfiles.map((role) => (
-          <article
-            key={role.id}
-            className={clsx(
-              'flex min-h-full flex-col rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/[0.04]',
-              'dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20'
-            )}
-          >
+          <article key={role.id} className={clsx('flex min-h-full flex-col')}>
             <h3
               className={clsx(
                 'text-xl font-black text-slate-950',

@@ -79,7 +79,7 @@ function StackByCategory({
   intro = 'The tools I reach for most often, grouped by where they sit in a product — not a proficiency scorecard.',
 }: StackByCategoryProps) {
   return (
-    <div className={clsx('space-y-5')}>
+    <div className={clsx('space-y-8')}>
       {intro ? (
         <p
           className={clsx(
@@ -90,39 +90,30 @@ function StackByCategory({
           {intro}
         </p>
       ) : null}
-      <div className={clsx('grid gap-3', 'sm:grid-cols-2')}>
+      <dl className={clsx('space-y-6')}>
         {categories.map((category) => (
-          <article
-            key={category.id}
-            className={clsx(
-              'rounded-2xl border border-slate-200 bg-white p-4 shadow-lg shadow-slate-950/[0.03]',
-              'dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20'
-            )}
-          >
-            <h3
+          <div key={category.id}>
+            <dt
               className={clsx(
-                'text-sm font-black uppercase tracking-[0.16em] text-slate-500',
+                'text-xs font-bold uppercase tracking-[0.16em] text-slate-500',
                 'dark:text-slate-500'
               )}
             >
               {category.label}
-            </h3>
-            <ul className={clsx('mt-3 flex flex-wrap gap-1.5')}>
-              {category.items.map((item) => (
-                <li
-                  key={item}
-                  className={clsx(
-                    'rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-bold text-slate-700',
-                    'dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300'
-                  )}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
+            </dt>
+            <dd className={clsx('mt-2')}>
+              <p
+                className={clsx(
+                  'text-sm leading-7 text-slate-700',
+                  'dark:text-slate-300'
+                )}
+              >
+                {category.items.join(' · ')}
+              </p>
+            </dd>
+          </div>
         ))}
-      </div>
+      </dl>
     </div>
   );
 }

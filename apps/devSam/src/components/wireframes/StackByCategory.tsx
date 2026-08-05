@@ -79,41 +79,45 @@ function StackByCategory({
   intro = 'The tools I reach for most often, grouped by where they sit in a product — not a proficiency scorecard.',
 }: StackByCategoryProps) {
   return (
-    <div className={clsx('space-y-8')}>
+    <div>
       {intro ? (
         <p
           className={clsx(
-            'text-sm leading-6 text-slate-600',
+            'mb-2 text-sm leading-6 text-slate-600',
             'dark:text-slate-400'
           )}
         >
           {intro}
         </p>
       ) : null}
-      <dl className={clsx('space-y-6')}>
-        {categories.map((category) => (
-          <div key={category.id}>
-            <dt
-              className={clsx(
-                'text-xs font-bold uppercase tracking-[0.16em] text-slate-500',
-                'dark:text-slate-500'
-              )}
-            >
-              {category.label}
-            </dt>
-            <dd className={clsx('mt-2')}>
-              <p
-                className={clsx(
-                  'text-sm leading-7 text-slate-700',
-                  'dark:text-slate-300'
-                )}
-              >
-                {category.items.join(' · ')}
-              </p>
-            </dd>
-          </div>
-        ))}
-      </dl>
+
+      <div className={clsx('mdx-table')}>
+        <table>
+          <caption className={clsx('sr-only')}>
+            Technology stack grouped by category
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+              <tr key={category.id}>
+                <td>
+                  <strong
+                    className={clsx('text-slate-900', 'dark:text-slate-100')}
+                  >
+                    {category.label}
+                  </strong>
+                </td>
+                <td>{category.items.join(' · ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

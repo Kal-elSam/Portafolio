@@ -1,0 +1,620 @@
+/* Kairo Runtime: the terminal identity. Mono-heavy, dotted grid, a block
+   cursor, marching traces between what it detects and what it writes. */
+
+/* ---------- hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: min(100svh, 62rem);
+  padding: clamp(5.5rem, 12vh, 8rem) 0 clamp(2rem, 6vh, 4rem);
+  display: grid;
+  align-items: center;
+  background-image: radial-gradient(
+    rgba(232, 237, 229, 0.11) 1px,
+    transparent 1.2px
+  );
+  background-size: 28px 28px;
+  background-position: center top;
+}
+
+/* The grid fades into the field below the hero. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 6vh, 3.5rem) clamp(2rem, 5vw, 5rem);
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.name {
+  margin: clamp(1rem, 2.5vh, 1.75rem) 0 0;
+  font-size: clamp(4.5rem, 19vw, 9rem);
+  white-space: nowrap;
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.38em;
+  height: 0.12em;
+  margin-left: 0.12em;
+  background: var(--accent);
+  vertical-align: baseline;
+}
+
+.heroLine {
+  max-width: 28rem;
+  margin: clamp(1.25rem, 3vh, 2rem) 0 1.25rem;
+  font-size: clamp(1.125rem, 1.7vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+@media (min-width: 1000px) {
+  .name {
+    font-size: min(9.5vw, 10.5rem);
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+}
+
+/* ---------- runtime map ---------- */
+
+.map {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: stretch;
+  gap: 0.75rem;
+  position: relative;
+  margin: 0 1.25rem 1.25rem 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid rgba(232, 237, 229, 0.28);
+  background: var(--panel);
+  /* Two panels stacked behind: the layers under the one on top. */
+  box-shadow: 0.65rem 0.65rem 0 -1px var(--bg),
+    0.65rem 0.65rem 0 0 rgba(232, 237, 229, 0.2), 1.3rem 1.3rem 0 -1px var(--bg),
+    1.3rem 1.3rem 0 0 rgba(232, 237, 229, 0.1);
+}
+
+.plane {
+  display: grid;
+  gap: 0.25rem 1rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px dashed rgba(200, 255, 46, 0.5);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.planeName {
+  color: var(--accent);
+}
+
+.loop {
+  margin: 0.25rem 0 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.mapCol {
+  min-width: 0;
+}
+
+.mapTag {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mapList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mapList li {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(232, 237, 229, 0.3);
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.mapOut li {
+  border-color: rgba(200, 255, 46, 0.45);
+}
+
+.wire {
+  justify-self: center;
+  width: 2px;
+  height: 2rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--accent) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+.core {
+  --edge: var(--accent);
+
+  display: grid;
+  gap: 0.35rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem;
+  background: rgba(200, 255, 46, 0.07);
+  text-align: center;
+}
+
+.coreName {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 500;
+}
+
+.coreSub {
+  color: var(--ink);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.mapNote {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
+  .map {
+    grid-template-columns: max-content 1.5rem minmax(0, 1fr) 1.5rem max-content;
+    align-items: center;
+    gap: 0;
+  }
+
+  .mapNote,
+  .plane,
+  .loop {
+    grid-column: 1 / -1;
+  }
+
+  .plane {
+    grid-template-columns: auto 1fr;
+    margin-top: 1.75rem;
+  }
+
+  .loop {
+    margin-top: 1rem;
+  }
+
+  .mapNote {
+    margin-top: 1.25rem;
+  }
+
+  .mapList {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .mapIn {
+    align-items: flex-end;
+    padding-right: 0.75rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .mapOut {
+    align-items: flex-start;
+    padding-left: 0.75rem;
+    border-left: 1px solid rgba(200, 255, 46, 0.45);
+  }
+
+  .mapCol:last-of-type .mapTag {
+    text-align: left;
+  }
+
+  .mapCol:first-of-type .mapTag {
+    text-align: right;
+  }
+
+  .wire {
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--accent) 0 5px,
+      transparent 5px 10px
+    );
+  }
+}
+
+@keyframes march-x {
+  to {
+    background-position: 20px 0;
+  }
+}
+
+@keyframes march-y {
+  to {
+    background-position: 0 20px;
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wire {
+    animation: march-y 1.4s linear infinite;
+  }
+
+  .cursor {
+    animation: blink 1.1s steps(1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
+  .wire {
+    animation-name: march-x;
+  }
+}
+
+/* ---------- why ---------- */
+
+.statement {
+  max-width: 36em;
+  margin: 0 0 clamp(2rem, 5vh, 3.25rem);
+  font-size: clamp(1.4rem, 2.5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.statement strong {
+  font-weight: 700;
+}
+
+.statement em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.statement code {
+  font-family: var(--mono);
+  font-size: 0.62em;
+  letter-spacing: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- principles ---------- */
+
+.principles {
+  display: grid;
+  gap: 1rem;
+  margin: clamp(1.75rem, 4vh, 2.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.principle {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--panel);
+  transition: border-color 200ms ease, transform 240ms var(--ease);
+}
+
+.principle:hover {
+  --edge: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+.pNo {
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.pName {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.pText {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- layers ---------- */
+
+.layers {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+/* Without scripts the tab list has nothing to do: every layer is its own card. */
+.layers[data-js='0'] .tabs {
+  display: none;
+}
+
+.layers[data-js='0'] .panels {
+  display: grid;
+  gap: 1rem;
+}
+
+.tabs {
+  position: relative;
+  display: grid;
+  align-content: start;
+}
+
+.tabs::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 1.1rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.85rem 0.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.tabNo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  font-size: 0.78rem;
+  transition: background-color 160ms ease, color 160ms ease,
+    border-color 160ms ease;
+}
+
+.tabLabel {
+  min-width: 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+
+.tab[aria-selected='true'] {
+  color: var(--ink);
+}
+
+.tab[aria-selected='true'] .tabNo {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.panels {
+  min-width: 0;
+}
+
+.panel {
+  --edge: var(--accent);
+
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-height: 15rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  background: linear-gradient(
+    160deg,
+    rgba(200, 255, 46, 0.07),
+    rgba(11, 15, 18, 0.9) 55%
+  );
+}
+
+.panelBig {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: -0.1em;
+  color: rgba(200, 255, 46, 0.12);
+  font-size: clamp(6rem, 14vw, 12rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  pointer-events: none;
+}
+
+.panel > :not(.panelBig) {
+  position: relative;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.panelNo {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.panelText {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.1875rem);
+  line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  .layers {
+    grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.4fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+  }
+}
+
+/* ---------- team and discipline ---------- */
+
+.trackWrap {
+  margin-top: clamp(2rem, 5vh, 3.25rem);
+}
+
+.roles {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 5vh, 3rem);
+}
+
+.rolesTag {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.source {
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.discProse {
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+}
+
+/* ---------- try ---------- */
+
+.tryGrid {
+  display: grid;
+  gap: clamp(2rem, 5vh, 3rem);
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+.stackTitle {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stackNote {
+  max-width: var(--measure);
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1000px) {
+  .tryGrid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principle,
+  .tab,
+  .tabNo {
+    transition: none;
+  }
+}

@@ -1,0 +1,233 @@
+/* Career and contact: years as bars on one axis, a real contribution graph,
+   then four large links. */
+
+.root {
+  position: relative;
+}
+
+.career {
+  display: grid;
+  gap: clamp(2rem, 5vh, 3.5rem);
+  padding: clamp(5rem, 12vh, 8rem) var(--pad) clamp(3rem, 8vh, 6rem);
+}
+
+/* ---------- bars ---------- */
+
+.gantt {
+  --who: clamp(11rem, 27vw, 24rem);
+  --gap: clamp(1rem, 3vw, 3rem);
+
+  display: grid;
+  gap: 0.6rem;
+  max-width: 78rem;
+}
+
+.rows {
+  display: grid;
+  gap: clamp(0.55rem, 1.3vh, 0.85rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: var(--who) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap);
+}
+
+.who {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+}
+
+.company {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.65rem;
+}
+
+.role {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+.lane {
+  position: relative;
+  height: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.years {
+  color: var(--ink);
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+
+.axis {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  margin: 0 0 0 calc(var(--who) + var(--gap));
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.6875rem;
+}
+
+/* ---------- contribution graph ---------- */
+
+.graph {
+  margin: 0;
+  max-width: 78rem;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1;
+}
+
+.months span {
+  overflow: visible;
+  white-space: nowrap;
+}
+
+/* One continuous calendar: 53 weeks of 7 days, each cell square. */
+.cells {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  grid-template-rows: repeat(7, auto);
+  gap: clamp(1px, 0.2vw, 3px);
+}
+
+.cell {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(232, 237, 229, 0.1);
+}
+
+.cell[data-level='none'] {
+  background: none;
+}
+
+.cell[data-level='1'] {
+  background: rgba(200, 255, 46, 0.32);
+}
+
+.cell[data-level='2'] {
+  background: rgba(200, 255, 46, 0.55);
+}
+
+.cell[data-level='3'] {
+  background: rgba(200, 255, 46, 0.78);
+}
+
+.cell[data-level='4'] {
+  background: var(--accent);
+}
+
+.graphNote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.graphNote a {
+  text-underline-offset: 0.3em;
+}
+
+.legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+}
+
+.legend .cell {
+  width: 0.7rem;
+  margin: 0;
+}
+
+/* ---------- contact ---------- */
+
+.contact {
+  padding: clamp(3rem, 8vh, 6rem) var(--pad) clamp(5rem, 14vh, 9rem);
+  border-top: 1px solid var(--line);
+}
+
+.contactTitle {
+  margin: 0 0 clamp(1.5rem, 4vh, 2.5rem);
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem clamp(1.25rem, 3.5vw, 3.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.contactLinks a {
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.contactLinks a:hover,
+.contactLinks a:focus-visible {
+  color: var(--accent);
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .axis {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactLinks a {
+    transition: none;
+  }
+}

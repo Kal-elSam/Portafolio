@@ -1,0 +1,358 @@
+/* Prototype-only styles. Themes are plain custom properties on .root. */
+
+.root {
+  position: relative;
+  /* The site root is a flex column of fixed height; never shrink inside it. */
+  flex: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.themeA {
+  --bg: #06080a;
+  --ink: #e8ede5;
+  --muted: #9ea89d;
+  --accent: #c8ff2e;
+  --accent-2: #c8ff2e;
+  --line: #2b352a;
+  --line-strong: #566650;
+  --face-top: #0c110d;
+  --face-a: #090d0a;
+  --face-b: #070a08;
+  --grid: rgba(200, 255, 46, 0.045);
+  --glow-wide: 10px;
+  --glow-tight: 4px;
+  --glow-wide-o: 0.1;
+  --glow-tight-o: 0.28;
+  --display-weight: 600;
+  --headline-size: clamp(2.4rem, 5.4vw, 5.25rem);
+  --headline-track: -0.025em;
+  --font-body: var(--font-proto-display);
+  --headline-shadow: none;
+}
+
+.root ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.root :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.display {
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  font-weight: var(--display-weight);
+  letter-spacing: var(--headline-track);
+}
+
+.data {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.headline {
+  font-size: var(--headline-size);
+  line-height: 1.04;
+  text-wrap: balance;
+  text-shadow: var(--headline-shadow);
+}
+
+/* Fixed backdrop: the drawing field the whole page sits in. */
+.field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 70% at 62% 38%,
+    #000 10%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 62% 38%,
+    #000 10%,
+    transparent 78%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title block, drawing style. */
+.titleBlock {
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--bg) 88%, var(--accent) 4%);
+}
+
+.rule {
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- slab drawing ---------- */
+
+.faceTop {
+  fill: var(--face-top);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.faceSideA {
+  fill: var(--face-a);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.faceSideB {
+  fill: var(--face-b);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.lit {
+  opacity: 1;
+}
+
+/* Glow is two stacked low-opacity strokes, not a filter. */
+.glowWide,
+.glowTight,
+.edge {
+  fill: none;
+  stroke: var(--tone);
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.glowWide {
+  stroke-width: var(--glow-wide);
+  opacity: var(--glow-wide-o);
+}
+
+.glowTight {
+  stroke-width: var(--glow-tight);
+  opacity: var(--glow-tight-o);
+}
+
+.edge {
+  stroke-width: 1.5;
+}
+
+.edgeFront {
+  stroke: var(--tone);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.fill {
+  fill: var(--tone);
+  stroke: none;
+}
+
+.stroke,
+.strokeThick,
+.dim,
+.dimDash {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.stroke {
+  stroke: var(--tone);
+  stroke-width: 1.25;
+}
+
+.strokeThick {
+  stroke: var(--tone);
+  stroke-width: 2.5;
+}
+
+.dim {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.dimDash {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.cell {
+  fill: var(--tone);
+  fill-opacity: 0.2;
+  stroke: var(--tone);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+/* ---------- exploded scene ---------- */
+
+.axis {
+  background-image: linear-gradient(var(--line-strong) 55%, transparent 0);
+  background-size: 1px 8px;
+  background-repeat: repeat-y;
+}
+
+.leader {
+  background: var(--line-strong);
+  height: 1px;
+  position: relative;
+}
+
+.leaderLeft::after,
+.leaderRight::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+}
+
+.leaderLeft::after {
+  right: 0;
+}
+
+.leaderRight::before {
+  left: 0;
+}
+
+.progress {
+  background: var(--accent);
+  transform-origin: 0 50%;
+}
+
+.bracket {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--line-strong);
+  border-style: solid;
+}
+
+/* Small screens: one column, parts stacked along a left axis. */
+@media (max-width: 1023px) {
+  .part::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 2.6rem;
+    width: 2rem;
+    height: 1px;
+    background: var(--line-strong);
+  }
+}
+
+/* ---------- WebGL mode: the canvas takes over once its first frame is drawn ---------- */
+
+.sceneSlab,
+.heroArt > * {
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.leaders {
+  display: none;
+}
+
+.leaderPath {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1;
+  opacity: 0;
+}
+
+.leaderEnd {
+  fill: var(--accent);
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .root[data-scene3d='on'] .sceneSlab,
+  .root[data-scene3d='on'] .heroArt > *,
+  .root[data-scene3d='on'] .field {
+    opacity: 0;
+  }
+
+  .root[data-scene3d='on'] .leaders {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .root[data-scene3d='on'] .axis,
+  .root[data-scene3d='on'] .leader {
+    display: none;
+  }
+
+  .root[data-scene3d='on'] .sceneList {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .root[data-scene3d='on'] .part {
+    display: block;
+    position: static;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .root[data-scene3d='on'] .annot3d {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--annot-w, 260px);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .root[data-scene3d='on'] .annot3d > div,
+  .root[data-scene3d='on'] .annot3d > dl {
+    width: 100%;
+  }
+
+  .root[data-scene3d='on'] .progressWrap {
+    right: auto;
+    left: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .root {
+    --annot-w: 300px;
+  }
+}

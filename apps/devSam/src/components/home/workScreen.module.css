@@ -1,0 +1,392 @@
+/* Shared by the bench and the map: the chamfered edge, the device frames that
+   hold a real screen, and the schematics drawn for projects without one. */
+
+/* ---------- chamfer ---------- */
+
+/* Two corners are cut. clip-path removes the border there, so the cut edges
+   are drawn by the two pseudo-elements. The edge colour is --edge. */
+.cut {
+  --cut: 10px;
+
+  position: relative;
+  border: 1px solid var(--edge, var(--line));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+}
+
+.cut::before,
+.cut::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  width: calc(var(--cut) * 1.4143);
+  height: 2px;
+  background: var(--edge, var(--line));
+  pointer-events: none;
+}
+
+.cut::before {
+  top: calc(var(--cut) / 2 - 1px);
+  right: calc(var(--cut) * -0.2071);
+  transform: rotate(45deg);
+}
+
+.cut::after {
+  bottom: calc(var(--cut) / 2 - 1px);
+  left: calc(var(--cut) * -0.2071);
+  transform: rotate(45deg);
+}
+
+/* clip-path would clip the focus outline of a chamfered link, so its focus
+   indicator is drawn inside the shape. */
+a.cut:focus-visible,
+button.cut:focus-visible {
+  --edge: var(--accent, #c8ff2e);
+
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--accent, #c8ff2e),
+    inset 0 0 0 4px rgba(5, 8, 10, 0.9);
+}
+
+/* ---------- devices ---------- */
+
+/* The box a parent gives is a size container, so a screen can size itself from
+   it: whole, centred, at its real aspect, never past the size of its file. The
+   file's width and height (--nw, --nh) and aspect (--ar) are set per image. */
+.fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  container-type: size;
+}
+
+.device {
+  position: relative;
+  display: block;
+  flex: none;
+  box-sizing: border-box;
+}
+
+/* Web screens: a browser window that takes the aspect of the screen. */
+.browser {
+  --chrome: 20px;
+
+  display: grid;
+  grid-template-rows: var(--chrome) auto;
+  width: min(
+    100cqw,
+    calc((100cqh - var(--chrome) - 4px) * var(--ar) + 2px),
+    calc(var(--nw) * 1px)
+  );
+  overflow: hidden;
+  background: #0d1114;
+  border: 1px solid rgba(232, 237, 229, 0.22);
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  height: var(--chrome);
+  padding: 0 0.5rem;
+  background: #11161a;
+  border-bottom: 1px solid rgba(232, 237, 229, 0.14);
+}
+
+.chrome i {
+  flex: none;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: rgba(232, 237, 229, 0.28);
+}
+
+/* The address bar stays empty: it would only hold an invented address. */
+.chrome b {
+  flex: 1;
+  height: 0.55rem;
+  margin-left: 0.4rem;
+  border-radius: 2px;
+  background: rgba(232, 237, 229, 0.08);
+}
+
+.viewport {
+  position: relative;
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+  aspect-ratio: var(--ar);
+}
+
+.viewport img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Phone screens: a phone frame sized from the screen's own height. Side by
+   side, they share the box width. The bezel adds 14px each way. */
+.phone {
+  --pad: 14px;
+  --ih: min(
+    calc(100cqh - var(--pad)),
+    calc(var(--nh) * 1px),
+    calc(((100cqw - (var(--n) - 1) * 10px) / var(--n) - var(--pad)) / var(--ar))
+  );
+
+  width: calc(var(--ih) * var(--ar) + var(--pad));
+  height: calc(var(--ih) + var(--pad));
+  padding: 5px;
+  background: #1a1f23;
+  border: 2px solid #3a4046;
+  border-radius: 1.1rem;
+}
+
+.phone .viewport {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  background: #000;
+  border-radius: 0.8rem;
+}
+
+/* The camera, as a pill. */
+.phone::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  z-index: 2;
+  width: 22%;
+  height: 0.22rem;
+  border-radius: 99px;
+  background: #3a4046;
+  transform: translateX(-50%);
+}
+
+/* A capture that already holds its own device is shown as it is. */
+.native {
+  --ih: min(
+    100cqh,
+    calc(var(--nh) * 1px),
+    calc(((100cqw - (var(--n) - 1) * 10px) / var(--n)) / var(--ar))
+  );
+
+  width: calc(var(--ih) * var(--ar));
+  height: var(--ih);
+}
+
+.native img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* A line that sweeps the screen once when it is brought up. */
+.sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 28%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(200, 255, 46, 0.2) 92%,
+    rgba(200, 255, 46, 0.7)
+  );
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+[data-active] .sweep::after,
+[data-sweep] .sweep::after {
+  animation: sweep 720ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(380%);
+  }
+}
+
+/* ---------- schematics ---------- */
+
+.diagram {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #070a09;
+  background-image: linear-gradient(
+      rgba(200, 255, 46, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(200, 255, 46, 0.045) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.box {
+  fill: #0a0f0c;
+  stroke: rgba(200, 255, 46, 0.5);
+  stroke-width: 1;
+}
+
+.core {
+  fill: rgba(200, 255, 46, 0.1);
+  stroke: #c8ff2e;
+  stroke-width: 1.4;
+}
+
+.soft {
+  stroke: rgba(232, 237, 229, 0.38);
+  stroke-dasharray: 3 2;
+}
+
+.label {
+  fill: #e8ede5;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-anchor: middle;
+}
+
+.note {
+  fill: #a3ada2;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wire {
+  fill: none;
+  stroke: rgba(200, 255, 46, 0.42);
+  stroke-width: 1;
+}
+
+.pulse {
+  fill: none;
+  stroke: #c8ff2e;
+  stroke-width: 1.6;
+  stroke-dasharray: 2 14;
+  stroke-linecap: round;
+  animation: travel 1.8s linear infinite;
+}
+
+.port {
+  fill: #c8ff2e;
+}
+
+@keyframes travel {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+/* The mini form in the map: the same drawing as a glyph, with no text. */
+.mini {
+  background-image: none;
+  background-color: transparent;
+}
+
+.mini .label,
+.mini .note,
+.mini .pulse {
+  display: none;
+}
+
+.mini .box,
+.mini .core {
+  stroke-width: 2.2;
+}
+
+.mini .wire {
+  stroke: rgba(200, 255, 46, 0.7);
+  stroke-width: 2.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.55;
+  }
+
+  [data-active] .sweep::after,
+  [data-sweep] .sweep::after {
+    animation: none;
+  }
+}
+
+/* ---------- trace a request ---------- */
+
+.box.passed,
+.core.passed {
+  stroke: #c8ff2e;
+  fill: rgba(200, 255, 46, 0.12);
+}
+
+.box.now,
+.core.now {
+  stroke: #eaff9a;
+  stroke-width: 2;
+  fill: rgba(200, 255, 46, 0.3);
+  filter: drop-shadow(0 0 5px rgba(200, 255, 46, 0.9));
+}
+
+.hot {
+  fill: none;
+  stroke: #eaff9a;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(200, 255, 46, 0.9));
+}
+
+/* The wire into the stage the pulse is reaching draws itself over the time of
+   one stage. */
+.hotNow {
+  stroke-dasharray: 1;
+  animation: draw var(--trace-ms, 400ms) linear backwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hotNow {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}

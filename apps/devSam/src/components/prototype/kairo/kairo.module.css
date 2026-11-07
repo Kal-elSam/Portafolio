@@ -1,0 +1,604 @@
+/* /prototype/kairo styles. Near-black field, one acid accent. */
+
+.root {
+  --bg: #06080a;
+  --ink: #e8ede5;
+  --muted: #a3ada2;
+  --dim: #8a948c;
+  --accent: #c8ff2e;
+  --pad: clamp(1.25rem, 5vw, 5rem);
+
+  position: relative;
+  flex: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.root ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.root :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- stage ---------- */
+
+.stage {
+  /* Also defined on .root; the home embeds the stage under its own root, which
+     has no --dim, so the dim captions would otherwise lose their paint. */
+  --dim: #8a948c;
+
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.stage[data-scene='on'] {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.world {
+  position: relative;
+  order: 2;
+  min-height: 62svh;
+  overflow: hidden;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  order: 1;
+  align-self: start;
+  max-width: 38rem;
+  /* The stage is a section below the hero, so it starts clear of the page above. */
+  padding: clamp(4rem, 10vh, 6rem) var(--pad) 0;
+}
+
+/* ---------- scene and static drawing ---------- */
+
+.sceneWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  animation: sceneIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  /* Stacked layout: the canvas fades into the page at its top and bottom
+     edges, so no seam shows against the page background. */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 14%,
+    #000 86%,
+    transparent 100%
+  );
+}
+
+@keyframes sceneIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.staticWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  padding: 0 var(--pad);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stage[data-scene='on'] .staticWrap {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.svgWide {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+}
+
+.svgTall {
+  display: none;
+  width: 100%;
+  max-height: 100%;
+}
+
+/* A soft scrim keeps the copy legible while the scene passes behind it. */
+.scrim {
+  display: none;
+}
+
+/* ---------- labels projected from 3D ---------- */
+
+.labels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: none;
+  pointer-events: none;
+}
+
+.stage[data-scene='on'] .labels {
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.at {
+  position: absolute;
+  display: grid;
+  gap: 0.15rem;
+  width: max-content;
+}
+
+.at[data-at='above-center'] {
+  transform: translate(-50%, -100%);
+  justify-items: center;
+  text-align: center;
+}
+
+.at[data-at='above-end'] {
+  transform: translate(-100%, -100%);
+  justify-items: end;
+  text-align: right;
+}
+
+.at[data-at='below-end'] {
+  transform: translate(-100%, 0);
+  justify-items: end;
+  text-align: right;
+}
+
+.at[data-at='above-start'] {
+  transform: translate(0, -100%);
+  justify-items: start;
+  text-align: left;
+}
+
+.at[data-at='above'] {
+  transform: translate(0, -100%);
+  justify-items: start;
+  text-align: left;
+  pointer-events: auto;
+}
+
+.at[data-at='below'] {
+  transform: translate(0, 0);
+  justify-items: start;
+  text-align: left;
+  pointer-events: auto;
+}
+
+.kairo {
+  font-size: clamp(2.6rem, 4.6vw, 5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-shadow: 0 0 22px var(--bg), 0 0 6px var(--bg);
+}
+
+.role {
+  position: relative;
+  padding: 0.12rem 0.45rem;
+  background: rgba(6, 8, 10, 0.66);
+  border-radius: 2px;
+  font-size: clamp(1rem, 1.35vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-shadow: 0 0 14px var(--bg), 0 1px 2px var(--bg);
+}
+
+/* A short tick from the label down onto its own ring. */
+.role::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1px;
+  height: 0.5rem;
+  background: var(--accent);
+}
+
+.denyName {
+  font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 14px var(--bg), 0 1px 2px var(--bg);
+}
+
+.task {
+  display: grid;
+  gap: 0.1rem;
+  justify-items: center;
+  padding: 0.3rem 0.55rem;
+  background: rgba(6, 8, 10, 0.72);
+  border: 1px solid rgba(200, 255, 46, 0.35);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.taskName {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.taskRole {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+/* Secondary data: only for the conduit that carries the work, or on hover. */
+.detail {
+  display: none;
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--dim);
+  text-shadow: 0 0 12px var(--bg), 0 1px 2px var(--bg);
+}
+
+.at:hover .detail,
+.stage[data-route='a'] .at[data-id='claude'] .detail,
+.stage[data-route='b'] .at[data-id='codex'] .detail {
+  display: block;
+}
+
+.name {
+  font-size: clamp(1.5rem, 2.5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 16px var(--bg), 0 1px 2px var(--bg);
+}
+
+.mono,
+.badge {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px var(--bg), 0 1px 2px var(--bg);
+}
+
+.badge {
+  margin-top: 0.15rem;
+}
+
+/* The note under "Kairo" wraps instead of running over the role labels beside
+   it on narrower screens. */
+.at[data-at='above-center'] .mono {
+  max-width: 9rem;
+  text-wrap: balance;
+}
+
+.labels [data-accent='1'] {
+  color: var(--accent);
+}
+
+.stage[data-route='a'] [data-s='b'],
+.stage[data-route='b'] [data-s='a'],
+.stage[data-cap='sample'] [data-c='illustrative'],
+.stage[data-cap='illustrative'] [data-c='sample'] {
+  display: none;
+}
+
+.caption {
+  position: absolute;
+  right: var(--pad);
+  bottom: 1.25rem;
+  z-index: 2;
+  display: none;
+  margin: 0;
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: var(--dim);
+  text-shadow: 0 0 12px var(--bg);
+}
+
+.stage[data-scene='on'] .caption {
+  display: block;
+}
+
+/* ---------- static drawing paint ---------- */
+
+.svgSteel {
+  stroke: #8a96a2;
+}
+
+.svgAcid {
+  stroke: var(--accent);
+}
+
+.svgDim {
+  stroke: #566069;
+}
+
+.svgAcidFill {
+  fill: var(--accent);
+}
+
+.svgAcidSoft {
+  fill: rgba(200, 255, 46, 0.14);
+}
+
+.svgSteelFill {
+  fill: rgba(154, 166, 178, 0.35);
+}
+
+.svgGlass {
+  fill: rgba(169, 188, 203, 0.05);
+  stroke: rgba(169, 188, 203, 0.18);
+}
+
+.svgChip {
+  fill: rgba(6, 8, 10, 0.9);
+  stroke: rgba(200, 255, 46, 0.4);
+}
+
+.svgPale {
+  stroke: #d3dbe2;
+}
+
+.svgRole {
+  fill: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.svgKairo {
+  fill: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  font-size: 62px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.svgKairoSmall {
+  fill: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.svgName {
+  fill: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.svgMono,
+.svgMonoDim,
+.svgMonoAcid,
+.svgMonoSmall {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 19px;
+  fill: var(--muted);
+}
+
+.svgMonoDim {
+  fill: var(--dim);
+}
+
+.svgMonoAcid {
+  fill: var(--accent);
+}
+
+.svgMonoSmall {
+  font-size: 15px;
+}
+
+/* ---------- copy ---------- */
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+}
+
+.kairoName {
+  margin: 0.75rem 0 0;
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.slogan {
+  max-width: 28rem;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.line {
+  max-width: 28rem;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.25rem;
+  margin-top: 1.75rem;
+}
+
+/* Scoped under .stage: the home sets `.root a { color: inherit }`, which would
+   otherwise win over a lone class and turn the dark label pale on the acid. */
+.stage .cta {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.stage .ghost,
+.stage .repo {
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(232, 237, 229, 0.4);
+  text-underline-offset: 0.3em;
+}
+
+.stage .repo {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.stage .cta:hover,
+.stage .ghost:hover,
+.stage .repo:hover {
+  text-decoration-color: var(--accent);
+}
+
+.stage .cta:hover {
+  color: var(--bg);
+  background: #d7ff63;
+}
+
+/* ---------- wide: the copy sits over the left of the scene ---------- */
+
+@media (min-width: 1100px) {
+  .stage {
+    grid-template-rows: 1fr;
+  }
+
+  .world {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+  }
+
+  /* The stage now sits under other sections, so the canvas fades into the page
+     at its top and bottom edges instead of showing a hard seam. */
+  .sceneWrap {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 9%,
+      #000 91%,
+      transparent 100%
+    );
+  }
+
+  .scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(6, 8, 10, 0.86) 0%,
+      rgba(6, 8, 10, 0.72) 24%,
+      rgba(6, 8, 10, 0.38) 40%,
+      rgba(6, 8, 10, 0) 54%
+    );
+  }
+
+  .labels {
+    z-index: 2;
+  }
+
+  .copy {
+    align-self: center;
+    box-sizing: border-box;
+    max-width: calc(34rem + var(--pad));
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .staticWrap {
+    place-items: center end;
+    padding-left: calc(var(--pad) + 34rem + 2rem);
+  }
+}
+
+/* ---------- narrow: the drawing is portrait and in the flow ---------- */
+
+@media (max-width: 767px) {
+  .stage {
+    min-height: 0;
+  }
+
+  .world {
+    min-height: 0;
+    padding: 2rem 0 3rem;
+  }
+
+  .staticWrap {
+    position: static;
+    padding: 0 var(--pad);
+  }
+
+  .svgWide {
+    display: none;
+  }
+
+  .svgTall {
+    display: block;
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sceneWrap {
+    animation: none;
+  }
+
+  .staticWrap {
+    transition: none;
+  }
+}

@@ -1,0 +1,234 @@
+/* Home page: shared tokens, navigation and section primitives.
+   Near-black field, one acid accent. Scoped to this module. */
+
+.root {
+  --bg: #06080a;
+  --ink: #e8ede5;
+  --muted: #a3ada2;
+  --line: rgba(232, 237, 229, 0.16);
+  --accent: #c8ff2e;
+  --pad: clamp(1.25rem, 5vw, 5rem);
+  /* Right edge reserved for the section navigator on wide screens: screens
+     and panels never run under its ticks. */
+  --gutter: 3.5rem;
+  --display: var(--font-proto-display), system-ui, sans-serif;
+  --mono: var(--font-proto-mono), ui-monospace, monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: relative;
+  flex: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+
+.root ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.root :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.root a {
+  color: inherit;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  padding: 0.55rem 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+/* ---------- navigation ---------- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem var(--pad);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  transition: transform 260ms var(--ease), background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Over the hero the band is transparent; once the page scrolls it is a solid
+   field, and it leaves while reading down. */
+.nav[data-top='1'] {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.nav[data-hidden='1'] {
+  transform: translateY(-100%);
+}
+
+.navName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: opacity 240ms ease;
+}
+
+/* Hidden while the hero's own name is on screen: it stays in the layout and in
+   the tab order, and is shown whenever it has focus. */
+.nav[data-name='0'] .navName {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav[data-name='0'] .navName:focus-visible {
+  opacity: 1;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLinks a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.navLinks a:hover {
+  color: var(--ink);
+}
+
+.navLinks a[data-cv] {
+  color: var(--accent);
+}
+
+/* ---------- section shell ---------- */
+
+.section {
+  position: relative;
+}
+
+.h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.lede {
+  margin: 1rem 0 0;
+  max-width: 30rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.25vw, 1.1875rem);
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  background: var(--accent);
+  color: var(--bg) !important;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.cta:hover {
+  background: #d9ff6a;
+}
+
+.ghost {
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  transition: color 160ms ease;
+}
+
+.ghost:hover {
+  color: var(--accent);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The hero carries the name on narrow screens. */
+@media (max-width: 767px) {
+  .navLinks {
+    gap: 0.875rem;
+  }
+
+  .navLinks a {
+    font-size: 0.8125rem;
+  }
+
+  .navName {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .navLinks a,
+  .navName,
+  .cta,
+  .ghost {
+    transition: none;
+  }
+}

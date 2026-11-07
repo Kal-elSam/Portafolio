@@ -1,0 +1,265 @@
+/* AI in action: a message travels down ARI, then the same idea runs across
+   engineering roles. Default markup is the finished state. */
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 3vh, 2.5rem) clamp(2rem, 6vw, 6rem);
+  min-height: 100svh;
+  padding: clamp(5rem, 11vh, 8rem) var(--pad) clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.copy {
+  align-self: center;
+  min-width: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 3vh, 2.25rem);
+  min-width: 0;
+  align-self: center;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(8rem, 12rem);
+  gap: clamp(1rem, 3vw, 3rem);
+  min-width: 0;
+}
+
+/* ---------- chat ---------- */
+
+.chat {
+  display: grid;
+  align-content: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.line[data-from='ari'] {
+  flex-direction: row-reverse;
+}
+
+.bubble {
+  margin: 0;
+  max-width: 21rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.9rem 0.9rem 0.9rem 0.2rem;
+  background: rgba(232, 237, 229, 0.09);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.line[data-from='ari'] .bubble {
+  border-radius: 0.9rem 0.9rem 0.2rem 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.stageTag {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* ---------- ARI path ---------- */
+
+.path {
+  position: relative;
+  align-self: center;
+  min-width: 0;
+}
+
+.pathRail {
+  position: absolute;
+  top: 1.625rem;
+  bottom: 1.625rem;
+  left: 5px;
+  width: 2px;
+  background: var(--line);
+}
+
+.pathFill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: center top;
+}
+
+.pathPulse {
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px 4px rgba(200, 255, 46, 0.55);
+  opacity: 0;
+}
+
+.hops {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 3.25rem;
+  padding-left: 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.hop::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+/* ---------- role lane ---------- */
+
+.lane {
+  min-width: 0;
+}
+
+.laneCaption {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.laneRail {
+  position: relative;
+}
+
+.laneTrack {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(100% * 3 / 4);
+  height: 2px;
+  background: var(--line);
+}
+
+.laneFill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.roles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.roleDot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.caption {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* ---------- wide: the stage sticks ---------- */
+
+.section[data-motion='on'] {
+  height: 150svh;
+}
+
+.section[data-motion='on'] .stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 1023px) {
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .copy {
+    align-self: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .stage {
+    min-height: 0;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .bubble {
+    max-width: 16rem;
+  }
+
+  .roles {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .role {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .laneTrack {
+    display: none;
+  }
+}

@@ -1,0 +1,295 @@
+/* Bug Hunt shell: the section, the console frame and the static preview.
+   The playable screen has its own stylesheet inside the game chunk. */
+
+.section {
+  --lime: var(--accent, #c8ff2e);
+  --cut: 26px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.9fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  padding: clamp(4rem, 10vh, 7rem) var(--pad, 5vw);
+  border-top: 1px solid var(--line, rgba(232, 237, 229, 0.16));
+}
+
+.head {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--lime);
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.lede {
+  max-width: 26rem;
+  margin: 0;
+  color: var(--muted, #a3ada2);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.nojs {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line, rgba(232, 237, 229, 0.3));
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.875rem;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- console ---------- */
+
+/* A thick plate: lime edge, near-black body, two cut corners. The edge is the
+   outer shape; ::before is the body, inset by the edge width. */
+.console {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  padding: 4px;
+  background: var(--lime);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+}
+
+.console::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(180deg, #121b20, #0a1013);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut) + 3px) 0,
+    100% calc(var(--cut) - 3px),
+    100% 100%,
+    calc(var(--cut) - 3px) 100%,
+    0 calc(100% - var(--cut) + 3px)
+  );
+}
+
+.console > * {
+  position: relative;
+}
+
+.plate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.plate:first-child {
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent 0 10px,
+      rgba(200, 255, 46, 0.1) 10px 20px
+    ),
+    transparent;
+  border-bottom: 1px solid rgba(200, 255, 46, 0.35);
+  padding-right: calc(var(--cut) + 0.5rem);
+}
+
+.plate:last-child {
+  border-top: 1px solid rgba(200, 255, 46, 0.35);
+  padding-left: calc(var(--cut) + 0.5rem);
+  color: var(--muted, #a3ada2);
+}
+
+.badge {
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.lamps {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.lamps i {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: #1b262b;
+  border: 1px solid rgba(200, 255, 46, 0.5);
+}
+
+.lamps i:first-child {
+  background: var(--lime);
+}
+
+.hint {
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+/* Fixed aspect: the console never changes height, before or during play. */
+.bay {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0 clamp(0.6rem, 1.6vw, 1.25rem);
+  overflow: hidden;
+  background: #05080a;
+  border: 1px solid rgba(232, 237, 229, 0.16);
+  box-shadow: inset 0 0 0 4px #05080a, 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.preview {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.9rem;
+  background: radial-gradient(
+      ellipse at center,
+      rgba(5, 8, 10, 0.1),
+      rgba(5, 8, 10, 0.55)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.22) 0 1px,
+      transparent 1px 3px
+    );
+}
+
+.play {
+  --cut: 14px;
+
+  padding: 0.95rem 2.6rem;
+  border: 0;
+  background: var(--lime);
+  color: #06080a;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.play:hover {
+  background: #dcff6e;
+  transform: translateY(-1px);
+}
+
+.play:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.play:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.error {
+  margin: 0;
+  max-width: 22rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(5, 8, 10, 0.85);
+  color: #ff8a8a;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lede {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    --cut: 16px;
+
+    padding-block: 3.5rem;
+  }
+
+  .bay {
+    aspect-ratio: 4 / 3;
+    margin-inline: 0.5rem;
+  }
+
+  .plate {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.6875rem;
+  }
+
+  .plate:first-child {
+    padding-right: calc(var(--cut) + 0.4rem);
+  }
+
+  .plate:last-child {
+    padding-left: calc(var(--cut) + 0.4rem);
+  }
+
+  .play {
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play {
+    transition: none;
+  }
+
+  .play:hover {
+    transform: none;
+  }
+}

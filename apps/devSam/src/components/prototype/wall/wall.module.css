@@ -1,0 +1,585 @@
+/* /prototype/wall styles. The page root also carries map.module.css `root`,
+   which defines the colour variables, font and the project index. */
+
+.root {
+  /* The copy column and the page padding scale with the viewport, so the
+     wall always starts right after the copy: no dead zone at 1920 or 2560. */
+  --wall-pad: clamp(2rem, 4.2vw, 6rem);
+  --copy-w: clamp(18rem, 35vw, 48rem);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.data {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.skip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  padding: 0.55rem 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-300%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+/* ---------- stage: hero and tour ---------- */
+
+.stage {
+  position: relative;
+}
+
+.stage[data-scene='on'] {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.sceneWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sceneWrap[data-ready='1'] {
+  opacity: 1;
+}
+
+/* Atmosphere: a faint cool light behind the wall and a restrained acid haze
+   where the lead screen sits; never behind the copy. */
+.stage[data-scene='on']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      ellipse 40% 55% at 70% 50%,
+      rgba(200, 255, 46, 0.07),
+      rgba(200, 255, 46, 0) 72%
+    ),
+    radial-gradient(
+      ellipse 60% 75% at 66% 52%,
+      rgba(60, 84, 78, 0.18),
+      rgba(60, 84, 78, 0) 72%
+    );
+}
+
+/* Legibility scrim: screens already stay clear of the copy column; this only
+   keeps the glow of the wall off the headline. */
+.scrim {
+  display: none;
+}
+
+.stage[data-scene='on'] .scrim {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 8, 10, 0.92) 0%,
+    rgba(6, 8, 10, 0.7) calc(var(--wall-pad) + var(--copy-w) * 0.7),
+    rgba(6, 8, 10, 0) calc(var(--wall-pad) + var(--copy-w) + 1.5rem)
+  );
+}
+
+.stageInner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, var(--copy-w)) minmax(0, 1fr);
+  gap: 1.5rem;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 3.5rem var(--wall-pad) 2.25rem;
+}
+
+.stage[data-scene='on'] .stageInner {
+  pointer-events: none;
+}
+
+.stage[data-scene='on'] .stageInner a,
+.stage[data-scene='on'] .stageInner button,
+.stage[data-scene='on'] .stageInner h2 {
+  pointer-events: auto;
+}
+
+.copy {
+  display: grid;
+  align-content: start;
+  padding-top: 4rem;
+  min-width: 0;
+}
+
+.stage[data-scene='on'] .copy {
+  align-content: center;
+  padding-top: 0;
+}
+
+.hero,
+.caption {
+  grid-area: 1 / 1;
+  min-width: 0;
+  transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.caption {
+  display: none;
+}
+
+.stage[data-scene='on'] .caption {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+}
+
+.stage[data-scene='on'] .caption[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.stage[data-scene='on'] .hero[data-active='false'] {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+}
+
+.name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.title {
+  margin-top: 0.35rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.headline {
+  margin-top: 1.5rem;
+  font-size: clamp(2.1rem, 3.3vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+.sub {
+  margin-top: 1.25rem;
+  max-width: 40ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 0.6vw + 0.5rem, 1.3rem);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #d9ff6a;
+}
+
+.ghost {
+  color: var(--ink);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+}
+
+.ghost:hover {
+  color: var(--accent);
+}
+
+.areaNav {
+  margin-top: 2.25rem;
+}
+
+.areaNav p {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.areaNav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.areaNav a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.2rem 0;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.areaNav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.hint {
+  display: none;
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.stage[data-scene='on'] .hint {
+  display: block;
+}
+
+/* Tour captions */
+
+.capTitle {
+  font-size: clamp(2.2rem, 3.6vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.capTitle:focus {
+  outline: none;
+}
+
+.capTitle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.capMeta {
+  margin-top: 0.9rem;
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.capSummary {
+  margin-top: 0.75rem;
+  max-width: 36ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.capList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.15rem 1.25rem;
+  margin-top: 1.4rem;
+  font-size: 0.875rem;
+}
+
+.capList a,
+.capList button {
+  display: block;
+  padding: 0.18rem 0;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.capList button {
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.capList a:hover,
+.capList a:focus-visible,
+.capList button:focus-visible {
+  color: var(--accent);
+}
+
+/* Keyboard list of the screens: visible only for the focused link. */
+
+.screenNav {
+  display: none;
+}
+
+.stage[data-scene='on'] .screenNav {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: var(--wall-pad);
+  bottom: 1.25rem;
+}
+
+.screenNav a,
+.screenNav button {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.screenNav a:focus-visible,
+.screenNav button:focus-visible {
+  position: static;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.85rem;
+  clip: auto;
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+/* Tooltip projected over the active screen */
+
+.tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17.5rem;
+  padding: 0.8rem 0.95rem;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms;
+}
+
+.tip[data-open='1'] {
+  opacity: 1;
+}
+
+.tipName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.tipBlurb {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.tipMeta {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+}
+
+/* ---------- static composition (no 3D) ---------- */
+
+.art {
+  min-width: 0;
+  align-self: start;
+}
+
+.stage[data-scene='on'] .art {
+  display: none;
+}
+
+.mosaic {
+  columns: 3;
+  column-gap: 1.1rem;
+  transform: perspective(1600px) rotateY(-7deg) rotateX(1.5deg);
+  transform-origin: 18% 50%;
+}
+
+.tile {
+  break-inside: avoid;
+  margin-bottom: 1.1rem;
+}
+
+.tile a,
+.tileStatic {
+  display: block;
+  text-decoration: none;
+}
+
+.tileImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  border: 1px solid var(--line-strong);
+}
+
+.tile a:hover .tileImage,
+.tile a:focus-visible .tileImage {
+  border-color: var(--accent);
+}
+
+.tileTerminal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 16 / 9;
+  padding: 0.9rem 1rem;
+  background: #0a0e0c;
+  border: 1px solid var(--line-strong);
+}
+
+.tileTerminalTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.tileTerminalLine {
+  color: var(--ink);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+.tileTerminalRepo {
+  color: var(--muted);
+  font-size: 0.6875rem;
+}
+
+.tileCaption {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.tileName {
+  display: block;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.tileMeta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.tile a:hover .tileName {
+  color: var(--accent);
+}
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 899px) {
+  .root {
+    --wall-pad: 1.5rem;
+  }
+
+  .stageInner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2.25rem var(--wall-pad) 1.5rem;
+    gap: 1.75rem;
+  }
+
+  .stage[data-scene='on'] .stageInner {
+    grid-template-rows: auto 1fr;
+    align-content: start;
+  }
+
+  .stage[data-scene='on'] .copy {
+    align-content: start;
+  }
+
+  .stage[data-scene='on'] .scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 8, 10, 0.96) 0%,
+      rgba(6, 8, 10, 0.88) 34%,
+      rgba(6, 8, 10, 0) 58%
+    );
+  }
+
+  .mosaic {
+    columns: 2;
+    transform: none;
+  }
+
+  .capList {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .headline {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    margin-top: 1rem;
+  }
+
+  .sub {
+    font-size: 0.9375rem;
+    margin-top: 0.8rem;
+  }
+
+  .stage[data-scene='on'] .sub,
+  .stage[data-scene='on'] .areaNav,
+  .stage[data-scene='on'] .capSummary {
+    display: none;
+  }
+
+  .capTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .caption,
+  .sceneWrap {
+    transition: none;
+  }
+}

@@ -1,0 +1,88 @@
+/* Section navigator: a thin rail of marks on the right edge. The label shows
+   on hover or focus, so the rail never covers content. Hidden on narrow
+   screens, where the page is a short single column. */
+
+.nav {
+  position: fixed;
+  top: 50%;
+  right: clamp(0.4rem, 1vw, 1rem);
+  z-index: 40;
+  display: none;
+  transform: translateY(-50%);
+}
+
+/* A faint backing keeps the ticks legible over any hero frame or screen. Home
+   sections that carry screens or panels stop at the right gutter, so nothing
+   they show runs under it. */
+.list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  border-radius: 999px;
+  background: rgba(6, 8, 10, 0.66);
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 2.25rem;
+  height: 1.75rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.mark {
+  display: block;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--muted);
+  transition: width 200ms var(--ease), background-color 160ms ease;
+}
+
+.link:hover .mark,
+.link:focus-visible .mark {
+  width: 1.25rem;
+  background: var(--ink);
+}
+
+.link[aria-current='location'] .mark {
+  width: 1.5rem;
+  background: var(--accent);
+}
+
+.label {
+  position: absolute;
+  right: calc(100% - 0.25rem);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.link:hover .label,
+.link:focus-visible .label {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark,
+  .label {
+    transition: none;
+  }
+}

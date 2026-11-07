@@ -1,0 +1,1028 @@
+/* The archive as a system map. One cluster per group on a shared spine, a node
+   per project, traces between the nodes that share a selected technology, and
+   an inspector for the chosen node. Screens shine; schematics stay quiet. The
+   base markup (no JavaScript) is the same clusters as a plain linked list. */
+
+.map {
+  --cut: 10px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* ---------- header ---------- */
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.stat {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- company select ---------- */
+
+/* Closed, each company is an armoured panel with a sealed hatch. The roster is
+   a row of them; the open company's body comes under the row (on a phone, in
+   place under its own panel). */
+.roster {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+
+.co {
+  display: contents;
+}
+
+.coBtn {
+  order: 0;
+  display: block;
+  width: 100%;
+  min-height: 11.5rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.coLift {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: inherit;
+  transform-style: preserve-3d;
+  transition: transform 260ms var(--ease);
+}
+
+.coBtn:hover .coLift,
+.coBtn:focus-visible .coLift {
+  transform: translateZ(22px);
+}
+
+.coPlate {
+  --edge: rgba(200, 255, 46, 0.3);
+  --cut: 14px;
+
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: inherit;
+  padding: 0.95rem 1rem 0.9rem;
+  transform-style: preserve-3d;
+  transition: transform 140ms ease-out;
+}
+
+.coBtn:hover .coPlate,
+.coBtn:focus-visible .coPlate,
+.coBtn[aria-expanded='true'] .coPlate {
+  --edge: var(--accent);
+}
+
+.coBtn[data-lit] .coPlate {
+  --edge: #d8ff6a;
+}
+
+.coBtn[data-dim] .coPlate {
+  --edge: rgba(232, 237, 229, 0.12);
+}
+
+.coBtn[data-dim] .coName,
+.coBtn[data-dim] .coStat {
+  color: var(--muted);
+}
+
+.coBtn[data-sole] .coPlate {
+  --edge: #eaff9a;
+}
+
+.coBtn[data-sole] .coLift {
+  filter: none;
+  transform: translateZ(14px);
+}
+
+.coFront {
+  position: relative;
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+  min-height: 7.4rem;
+  transform: translateZ(26px);
+  transition: opacity 200ms ease;
+}
+
+.coName {
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.coStat,
+.coTechs,
+.coMatch {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.coStat {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.coTechs {
+  color: var(--muted);
+}
+
+.coMatch {
+  color: #eaff9a;
+  text-transform: uppercase;
+}
+
+/* The hatch: two leaves that meet at a seam with a lock. Open, they swing back
+   on their outer hinges and the core behind them lights. */
+.hatch {
+  position: relative;
+  display: block;
+  height: 2.9rem;
+  margin-top: 0.7rem;
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+}
+
+.core {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 255, 46, 0.05),
+    rgba(200, 255, 46, 0.55),
+    rgba(200, 255, 46, 0.05)
+  );
+  border: 1px solid rgba(200, 255, 46, 0.6);
+  opacity: 0;
+  transition: opacity 300ms ease 120ms;
+}
+
+.leaf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0 2px,
+      transparent 2px 9px
+    ),
+    linear-gradient(#1a2412, #0c1208);
+  border: 1px solid rgba(200, 255, 46, 0.45);
+  backface-visibility: hidden;
+  transition: transform 480ms var(--ease);
+}
+
+.leafL {
+  left: 0;
+  transform-origin: 0 50%;
+}
+
+.leafR {
+  right: 0;
+  transform-origin: 100% 50%;
+}
+
+.coBtn[aria-expanded='true'] .leafL {
+  transform: rotateY(82deg);
+}
+
+.coBtn[aria-expanded='true'] .leafR {
+  transform: rotateY(-82deg);
+}
+
+.coBtn[aria-expanded='true'] .core {
+  opacity: 1;
+}
+
+.seam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: -0.8rem 0 0 -0.8rem;
+  color: var(--accent);
+  background: #070a06;
+  border: 1px solid var(--accent);
+  transform: translateZ(6px);
+  transition: opacity 200ms ease;
+}
+
+.coBtn[aria-expanded='true'] .seam {
+  opacity: 0;
+}
+
+.seam svg {
+  width: 0.7rem;
+  height: 0.85rem;
+}
+
+.coAct {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  display: none;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.coBody {
+  order: 1;
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.map[data-ready] .coBody:not([data-open]) {
+  display: none;
+}
+
+.bodyGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.inspector {
+  order: -1;
+}
+
+.canvas {
+  position: relative;
+  min-width: 0;
+  padding: 1rem 1rem 1.2rem 1.7rem;
+  background: linear-gradient(
+    155deg,
+    rgba(14, 22, 10, 0.46),
+    rgba(7, 11, 6, 0.3)
+  );
+  border: 1px solid rgba(200, 255, 46, 0.24);
+  box-shadow: 1px 1px 0 #101a09, 2px 2px 0 #0e1608, 3px 3px 0 #0c1307,
+    4px 4px 0 #0a1006, 5px 5px 0 #080d05, 6px 6px 0 #060a04,
+    12px 18px 28px rgba(0, 0, 0, 0.65);
+}
+
+/* The rail of the plate: a raised, glowing bar the stubs start from. */
+.canvas::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 5px;
+  z-index: 0;
+  width: 3px;
+  background: linear-gradient(#d8ff6a, rgba(200, 255, 46, 0.35));
+  box-shadow: 1px 2px 0 #000, 0 0 8px rgba(200, 255, 46, 0.55);
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* Raised circuitry: a dark edge under the line and a lime glow around it. */
+  filter: drop-shadow(0 2px 0 #000) drop-shadow(0 0 3px rgba(200, 255, 46, 0.5));
+}
+
+.stub {
+  fill: none;
+  stroke: rgba(200, 255, 46, 0.2);
+  stroke-width: 1;
+}
+
+.canvas[data-power] .stub,
+.canvas[data-power] .stubLit {
+  stroke-dasharray: 1;
+  animation: powerUp 620ms ease-out backwards;
+}
+
+@keyframes powerUp {
+  from {
+    stroke-dashoffset: 1;
+    stroke: #eaff9a;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stubLit {
+  fill: none;
+  stroke: #d8ff6a;
+  stroke-width: 2;
+}
+
+.chainGlow {
+  fill: none;
+  stroke: rgba(200, 255, 46, 0.32);
+  stroke-width: 7;
+  stroke-linejoin: round;
+  animation: glow 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  to {
+    stroke: rgba(200, 255, 46, 0.55);
+  }
+}
+
+.chain {
+  fill: none;
+  stroke: #f1ffb0;
+  stroke-width: 2.2;
+  stroke-dasharray: 2 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: travel 1.4s linear infinite;
+}
+
+@keyframes travel {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+.hit {
+  color: var(--accent);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+  gap: 1.15rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A tile is a slab: an extruded chamfered edge behind a face, the screen or
+   device floating above the face, a real shadow below. The li gives the
+   perspective; `lift` raises the chosen tile; `node` takes the pointer tilt.
+   None of these has clip-path or filter, which would flatten the 3D. */
+.nodeItem {
+  position: relative;
+  min-width: 0;
+  perspective: 900px;
+}
+
+.nodeItem:hover,
+.nodeItem:focus-within {
+  z-index: 3;
+}
+
+.lift {
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 320ms var(--ease);
+}
+
+.nodeItem[data-active] .lift {
+  transform: translateZ(26px);
+}
+
+.node {
+  --edge: rgba(232, 237, 229, 0.2);
+  --cut: 10px;
+
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.55rem;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.6rem;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 140ms ease-out;
+}
+
+.edge,
+.face,
+.ext i {
+  position: absolute;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+}
+
+.edge {
+  inset: 0;
+  background: var(--edge);
+  transition: background-color 200ms ease;
+}
+
+.face {
+  inset: 1px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0b110c, #070a08);
+  transform: translateZ(1px);
+}
+
+.nodeItem[data-kind='quiet'] .face {
+  background: linear-gradient(160deg, #09100a, #060806);
+}
+
+.ext {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.ext i {
+  inset: 0;
+  background: #1d2c0d;
+  transform: translate3d(1.6px, 2.2px, -3px);
+}
+
+.ext i:nth-child(2) {
+  background: #172409;
+  transform: translate3d(3.2px, 4.4px, -6px);
+}
+
+.ext i:nth-child(3) {
+  background: #111b07;
+  transform: translate3d(4.8px, 6.6px, -9px);
+}
+
+.ext i:nth-child(4) {
+  background: #0b1205;
+  transform: translate3d(6.4px, 8.8px, -12px);
+}
+
+.shadow {
+  position: absolute;
+  inset: 10% 2% -3%;
+  background: rgba(0, 0, 0, 0.85);
+  filter: blur(11px);
+  transform: translate3d(8px, 14px, -22px);
+  transition: background-color 300ms ease;
+  pointer-events: none;
+}
+
+.nodeItem[data-active] .shadow {
+  background: rgba(200, 255, 46, 0.32);
+}
+
+.glare {
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.16),
+    transparent 38%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.node:hover {
+  --edge: var(--accent);
+}
+
+.nodeItem[data-active] .node {
+  --edge: var(--accent);
+}
+
+.nodeItem[data-hit] .node {
+  --edge: rgba(200, 255, 46, 0.75);
+}
+
+/* The screen or device floats above the face. */
+.float {
+  --float-z: 30px;
+
+  position: relative;
+  display: block;
+  height: 6.8rem;
+  min-width: 0;
+  transform: translateZ(var(--float-z));
+  transition: transform 140ms ease-out;
+  filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.7));
+}
+
+/* A project with no screen has a plate with its kind and its technologies. */
+.plate {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #0f190b, #080c06);
+  border: 1px dashed rgba(200, 255, 46, 0.38);
+}
+
+.mark {
+  color: var(--accent);
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+}
+
+.plateStack {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+}
+
+.label {
+  display: grid;
+  gap: 0.2rem;
+  align-content: start;
+  min-width: 0;
+  transform: translateZ(14px);
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  overflow-wrap: anywhere;
+}
+
+.short {
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.tag {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* A technology is picked: nodes that do not use it keep their text but their
+   picture and weight step back. They are never hidden. */
+.nodeItem[data-dim] .node {
+  --edge: rgba(232, 237, 229, 0.07);
+}
+
+.nodeItem[data-dim] .float {
+  opacity: 0.32;
+  filter: grayscale(1);
+}
+
+.nodeItem[data-dim] .name,
+.nodeItem[data-dim] .short {
+  color: var(--muted);
+}
+
+.nodeItem[data-dim] .name {
+  font-weight: 400;
+}
+
+/* ---------- inspector ---------- */
+
+.inspector {
+  --cut: 14px;
+  --edge: rgba(200, 255, 46, 0.5);
+
+  padding: 1rem;
+  background: #080c0a;
+}
+
+.inBody {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.inBody > * {
+  animation: rise 460ms var(--ease) backwards;
+}
+
+.inBody > :nth-child(3) {
+  animation-delay: 40ms;
+}
+
+.inBody > :nth-child(4) {
+  animation-delay: 80ms;
+}
+
+.inBody > :nth-child(5) {
+  animation-delay: 120ms;
+}
+
+.inBody > :nth-child(6) {
+  animation-delay: 160ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.inFrame {
+  perspective: 900px;
+  --cut: 8px;
+  --edge: rgba(232, 237, 229, 0.2);
+
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  height: 15rem;
+  overflow: hidden;
+  background: #05080a;
+}
+
+.inDevice {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  min-width: 0;
+  transform-style: preserve-3d;
+  transition: transform 140ms ease-out;
+  animation: deviceIn 520ms var(--ease) backwards;
+}
+
+@keyframes deviceIn {
+  from {
+    opacity: 0;
+    transform: translateZ(-80px) rotateY(-18deg) rotateX(6deg);
+  }
+}
+
+.inGlare {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.14),
+    transparent 36%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.inCapRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: -0.4rem;
+}
+
+.inCapRow .inCap {
+  margin: 0;
+}
+
+.trace {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.trace:hover,
+.trace[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.commits {
+  margin: -0.5rem 0 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+}
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lock {
+  width: 0.7rem;
+  height: 0.85rem;
+}
+
+.inCap {
+  margin: 0 0 -0.4rem;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.inName {
+  margin: 0;
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.inMeta {
+  margin: -0.4rem 0 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.chip {
+  min-height: 1.75rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease,
+    color 160ms ease;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Two classes: `.root a { color: inherit }` would beat a single one. */
+.inspector .open {
+  --cut: 8px;
+  --edge: var(--accent);
+
+  justify-self: start;
+  padding: 0.6rem 1rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease,
+    transform 160ms var(--ease);
+}
+
+.inspector .open:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.inspector .open:active {
+  transform: translateY(1px);
+}
+
+/* ---------- narrow: panels stack and open in place ---------- */
+
+@media (max-width: 899px) {
+  .coBtn {
+    min-height: 10.5rem;
+  }
+
+  .coBody {
+    order: 0;
+  }
+
+  .canvas {
+    padding: 0.8rem 0.7rem 1rem 1.3rem;
+    box-shadow: 1px 1px 0 #101a09, 2px 2px 0 #0c1307, 3px 3px 0 #080d05,
+      6px 10px 18px rgba(0, 0, 0, 0.6);
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 0.7rem;
+  }
+
+  .float {
+    height: 5.8rem;
+  }
+
+  .tag {
+    letter-spacing: 0.02em;
+  }
+
+  .inFrame {
+    height: 17rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1099px) {
+  .inBody {
+    grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
+    column-gap: 1.25rem;
+  }
+
+  .inFrame {
+    grid-column: 1;
+    grid-row: 1 / span 6;
+    height: 100%;
+    min-height: 15rem;
+  }
+
+  .inName,
+  .inMeta,
+  .facts,
+  .chips,
+  .inspector .open {
+    grid-column: 2;
+  }
+}
+
+/* ---------- wide: the roster is a row, the body sits under it ---------- */
+
+@media (min-width: 900px) {
+  .roster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .coBody {
+    margin-top: 0.4rem;
+  }
+
+  .canvas {
+    background-image: linear-gradient(
+        rgba(200, 255, 46, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(200, 255, 46, 0.035) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .roster {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .bodyGrid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) 25rem;
+    align-items: start;
+  }
+
+  .inspector {
+    position: sticky;
+    top: 1.25rem;
+    order: 0;
+  }
+
+  .inFrame {
+    height: 16rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chain {
+    animation: none;
+    stroke-dasharray: none;
+  }
+
+  .inBody > * {
+    animation: none;
+  }
+
+  .coLift,
+  .coPlate,
+  .leaf,
+  .core,
+  .seam,
+  .coFront,
+  .node,
+  .lift,
+  .float,
+  .nodeItem,
+  .edge,
+  .glare,
+  .inDevice,
+  .inGlare,
+  .trace,
+  .chip,
+  .groupTab,
+  .inspector .open {
+    transition: none;
+  }
+
+  .inDevice {
+    animation: none;
+  }
+
+  .chainGlow {
+    animation: none;
+  }
+
+  .canvas[data-power] .stub,
+  .canvas[data-power] .stubLit {
+    animation: none;
+    stroke-dasharray: none;
+  }
+
+  .coBtn:hover .coLift,
+  .coBtn:focus-visible .coLift {
+    transform: none;
+  }
+
+  .coBtn[aria-expanded='true'] .leafL,
+  .coBtn[aria-expanded='true'] .leafR {
+    transform: none;
+    opacity: 0;
+  }
+}

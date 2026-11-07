@@ -1,0 +1,705 @@
+/* ARI: the conversation identity. A real product screen, big numerals, one
+   path a message takes, and the gate that keeps the model from side effects. */
+
+/* ---------- hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: min(100svh, 62rem);
+  padding: clamp(5.5rem, 12vh, 8rem) 0 clamp(2rem, 6vh, 4rem);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* A soft lime wash behind the product screen, like light from the phone. */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: -10%;
+  width: 60vw;
+  height: 70%;
+  background: radial-gradient(
+    closest-side,
+    rgba(200, 255, 46, 0.1),
+    rgba(200, 255, 46, 0)
+  );
+  pointer-events: none;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 6vh, 3.5rem) clamp(2rem, 5vw, 5rem);
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+  line-height: 1.5;
+}
+
+.name {
+  margin: clamp(0.75rem, 2vh, 1.25rem) 0 0;
+  font-size: clamp(5rem, 22vw, 13rem);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+}
+
+.nameSr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.heroLine {
+  max-width: 30rem;
+  margin: clamp(1.25rem, 3vh, 2rem) 0 1.25rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+}
+
+.heroLine a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition: color 160ms ease;
+}
+
+.heroLine a:hover {
+  color: var(--accent);
+}
+
+.shot {
+  max-width: 40rem;
+  margin-inline: auto;
+  will-change: transform;
+}
+
+.frame {
+  --edge: rgba(232, 237, 229, 0.28);
+
+  display: block;
+  overflow: hidden;
+  background: #0d1114;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(62vh, 36rem);
+  object-fit: cover;
+  object-position: top;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  height: 1.4rem;
+  padding: 0 0.6rem;
+  background: #11161a;
+  border-bottom: 1px solid rgba(232, 237, 229, 0.14);
+}
+
+.chrome i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: rgba(232, 237, 229, 0.28);
+}
+
+.chrome b {
+  flex: 1;
+  height: 0.55rem;
+  margin-left: 0.4rem;
+  border-radius: 2px;
+  background: rgba(232, 237, 229, 0.08);
+}
+
+@media (min-width: 1000px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  }
+
+  .shot {
+    margin-inline: 0 auto;
+  }
+}
+
+/* ---------- problem ---------- */
+
+.problem {
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+
+.bigLine {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.needsTitle {
+  margin: clamp(2.25rem, 6vh, 3.5rem) 0 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.needs {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.need {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--panel);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+.needNo {
+  color: var(--accent);
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@media (min-width: 900px) {
+  .problem {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .needs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .needs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------- flow ---------- */
+
+.flowWrap {
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+.flow {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.flowTop {
+  display: grid;
+  gap: 1rem;
+}
+
+.gate {
+  order: 2;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px dashed rgba(200, 255, 46, 0.6);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.row {
+  --gap: 2rem;
+
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+}
+
+.node {
+  --edge: var(--line);
+
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 1rem 1.1rem 1.15rem;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  transition: background-color 200ms ease, transform 240ms var(--ease);
+}
+
+.cell {
+  position: relative;
+  display: grid;
+  min-width: 0;
+}
+
+button.node {
+  cursor: pointer;
+}
+
+button.node:hover {
+  --edge: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+.node[aria-pressed='true'] {
+  --edge: var(--accent);
+
+  background: linear-gradient(
+    160deg,
+    rgba(200, 255, 46, 0.12),
+    rgba(11, 15, 18, 0.95) 70%
+  );
+}
+
+.node[data-lit='1'] {
+  --edge: var(--accent);
+}
+
+.nodeNo {
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.nodeShort {
+  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.nodeLabel {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Traces between the nodes of the main path. They are drawn on the node that
+   receives them, so the first node has none. */
+.row > .cell:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: calc(var(--gap) * -1);
+  width: 2px;
+  height: var(--gap);
+  margin-left: -1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--accent) 0 5px,
+    transparent 5px 10px
+  );
+  transform: none;
+}
+
+.state {
+  display: grid;
+  gap: 1rem;
+}
+
+.stateNode {
+  background: transparent;
+}
+
+@media (min-width: 900px) {
+  .flowTop {
+    gap: 1.75rem;
+  }
+
+  .gate {
+    order: 0;
+    margin-left: calc(25% + 0.4rem);
+    text-align: center;
+  }
+
+  .row {
+    --gap: 2.25rem;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .row > .cell:not(:first-child)::before {
+    left: calc(var(--gap) * -1);
+    top: 50%;
+    width: var(--gap);
+    height: 2px;
+    margin: -1px 0 0;
+    background: repeating-linear-gradient(
+      to right,
+      var(--accent) 0 5px,
+      transparent 5px 10px
+    );
+  }
+
+  .state {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-left: calc(50% + var(--gap) / 4);
+  }
+}
+
+@keyframes march-x {
+  to {
+    background-position: 20px 0;
+  }
+}
+
+@keyframes march-y {
+  to {
+    background-position: 0 20px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .row > .cell:not(:first-child)::before {
+    animation: march-y 1.4s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
+  .row > .cell:not(:first-child)::before {
+    animation-name: march-x;
+  }
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.run {
+  --edge: var(--accent);
+
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.run:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.lower {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.detail {
+  --edge: var(--accent);
+
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  min-height: 13rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(
+    160deg,
+    rgba(200, 255, 46, 0.07),
+    rgba(11, 15, 18, 0.9) 55%
+  );
+}
+
+.detailNo {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.detailTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.detailText {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.allDetails {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.itemsLine {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.chat {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.chatCap {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.chatList {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bubble {
+  max-width: 82%;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--line);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.bubble[data-from='customer'] {
+  justify-self: end;
+  border-color: rgba(232, 237, 229, 0.3);
+  background: rgba(232, 237, 229, 0.06);
+}
+
+.bubble[data-from='ari'] {
+  justify-self: start;
+  border-color: rgba(200, 255, 46, 0.5);
+  background: rgba(200, 255, 46, 0.06);
+}
+
+@media (min-width: 900px) {
+  .lower {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+}
+
+.flowNote {
+  margin-top: clamp(1.5rem, 4vh, 2.25rem);
+}
+
+/* ---------- tradeoffs ---------- */
+
+.tradeoffs {
+  display: grid;
+  gap: 1rem;
+  margin: clamp(1.75rem, 4vh, 2.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trade {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--panel);
+}
+
+.tradeTitle {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.9vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.tradeRows {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.tradeRow {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.tradeRow dt {
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tradeRow dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 900px) {
+  .tradeoffs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- challenges and lessons ---------- */
+
+.pairLists {
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  position: relative;
+  max-width: var(--measure);
+  padding-left: 1.4rem;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.list a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition: color 160ms ease;
+}
+
+.list a:hover {
+  color: var(--accent);
+}
+
+/* ---------- stack and next steps ---------- */
+
+.nextGrid {
+  display: grid;
+  gap: clamp(2rem, 5vh, 3rem);
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+}
+
+.subTitle {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.future {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.future li {
+  max-width: var(--measure);
+  padding: 0.85rem 1rem;
+  border: 1px dashed rgba(232, 237, 229, 0.3);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 1000px) {
+  .nextGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node,
+  .run {
+    transition: none;
+  }
+
+  .shot {
+    will-change: auto;
+  }
+}

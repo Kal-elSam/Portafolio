@@ -1,0 +1,742 @@
+/* /prototype/map styles. Dark field, one acid accent, Schibsted Grotesk. */
+
+.root {
+  --bg: #06080a;
+  --ink: #e8ede5;
+  --muted: #a3ada2;
+  --accent: #c8ff2e;
+  --line: #2b352a;
+  --line-strong: #566650;
+  --panel: #0b0f0d;
+
+  position: relative;
+  flex: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-proto-display), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.root ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.root :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.data {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- stage: hero and tour ---------- */
+
+.stage {
+  position: relative;
+}
+
+.stage[data-scene='on'] {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.sceneWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sceneWrap[data-ready='1'] {
+  opacity: 1;
+}
+
+.stageInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, clamp(18rem, 36vw, 31rem)) minmax(0, 1fr);
+  gap: 2rem;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 2.25rem;
+}
+
+.stage[data-scene='on'] .stageInner {
+  pointer-events: none;
+}
+
+.stage[data-scene='on'] .stageInner a,
+.stage[data-scene='on'] .stageInner button {
+  pointer-events: auto;
+}
+
+.copy {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.hero,
+.caption {
+  grid-area: 1 / 1;
+  min-width: 0;
+  transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.caption {
+  display: none;
+}
+
+.stage[data-scene='on'] .caption {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+}
+
+.stage[data-scene='on'] .caption[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.stage[data-scene='on'] .hero[data-active='false'] {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+}
+
+.name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.title {
+  margin-top: 0.35rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.headline {
+  margin-top: 1.5rem;
+  font-size: clamp(2.1rem, 3.3vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+.sub {
+  margin-top: 1.25rem;
+  max-width: 40ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #d9ff6a;
+}
+
+.ghost {
+  color: var(--ink);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+}
+
+.ghost:hover {
+  color: var(--accent);
+}
+
+.areaNav {
+  margin-top: 2.25rem;
+}
+
+.areaNav p {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.areaNav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.areaNav a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.2rem 0;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.areaNav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.hint {
+  display: none;
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.stage[data-scene='on'] .hint {
+  display: block;
+}
+
+/* Tour captions */
+
+.capTitle {
+  font-size: clamp(2.2rem, 3.6vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.capMeta {
+  margin-top: 0.9rem;
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.capSummary {
+  margin-top: 0.75rem;
+  max-width: 36ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.capList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.15rem 1.25rem;
+  margin-top: 1.4rem;
+  font-size: 0.875rem;
+}
+
+.capList a,
+.capList button {
+  display: block;
+  padding: 0.18rem 0;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.capList button {
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.capList a:hover,
+.capList a:focus-visible,
+.capList button:focus-visible {
+  color: var(--accent);
+}
+
+/* Static art column: drawing and legend */
+
+.art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+}
+
+.stage[data-scene='on'] .art {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.poster {
+  width: 100%;
+}
+
+.stage[data-scene='on'] .poster {
+  display: none;
+}
+
+.landscape {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.legend {
+  max-width: 36ch;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.stage[data-scene='on'] .legend {
+  margin-top: 0;
+  transition: opacity 300ms;
+}
+
+.stage[data-scene='on']:not([data-stop='0']) .legend {
+  opacity: 0;
+}
+
+.legend strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Labels projected over the canvas */
+
+.laneLabel,
+.yearLabel,
+.bandLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.laneLabel {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.15rem 0.35rem;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: color 200ms, opacity 200ms;
+}
+
+.laneLabel[data-focus='1'] {
+  color: var(--accent);
+}
+
+.laneLabel[data-dim='1'] {
+  opacity: 0.45;
+}
+
+.laneLabel:hover {
+  color: var(--accent);
+}
+
+.laneShort {
+  display: none;
+}
+
+.laneCount {
+  color: var(--muted);
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.yearLabel,
+.bandLabel {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.yearLabel {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+}
+
+.tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17.5rem;
+  padding: 0.8rem 0.95rem;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms;
+}
+
+.tip[data-open='1'] {
+  opacity: 1;
+}
+
+.tipName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.tipBlurb {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.tipMeta {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+}
+
+/* ---------- static SVG landscape ---------- */
+
+.plate {
+  fill: #0a0e0c;
+  stroke: var(--line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.plateFeatured {
+  fill: #0a0e0c;
+  stroke: var(--accent);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.yearLine,
+.bandLine {
+  stroke: #1f2820;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.svgYear,
+.svgBand,
+.svgCount {
+  fill: var(--muted);
+  font-size: 15px;
+}
+
+.svgYear,
+.svgCount {
+  font-family: var(--font-proto-mono), ui-monospace, monospace;
+}
+
+.svgLane {
+  fill: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.faceTop {
+  fill: #1c2420;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.faceFront {
+  fill: #0e1310;
+  stroke: var(--line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.faceSide {
+  fill: #121814;
+  stroke: var(--line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.faceTopF {
+  fill: var(--accent);
+}
+
+.faceFrontF {
+  fill: #6c8a14;
+}
+
+.faceSideF {
+  fill: #8aae1b;
+}
+
+/* ---------- index ---------- */
+
+.index {
+  position: relative;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 5rem 3rem 6rem;
+}
+
+.indexTitle {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.05;
+}
+
+.indexLead {
+  margin-top: 0.9rem;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.lane {
+  display: grid;
+  grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+  gap: 2rem;
+  margin-top: 3.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+  scroll-margin-top: 1.5rem;
+}
+
+.laneHead {
+  align-self: start;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.laneName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.laneTotal {
+  margin-top: 0.4rem;
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.laneSummary {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.bandTitle {
+  margin-top: 1.4rem;
+  padding-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 15rem) minmax(0, 1fr) minmax(0, 11rem);
+  gap: 0.25rem 1.25rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rowYear {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.rowName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.rowName a {
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.rowName a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.rowBlurb {
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.rowMeta {
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.featuredMark {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 899px) {
+  .stageInner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2.25rem 1.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .stage[data-scene='on'] .stageInner {
+    grid-template-rows: auto 1fr;
+    align-content: start;
+  }
+
+  .stage[data-scene='on'] .copy {
+    align-content: start;
+  }
+
+  .index {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .lane {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .laneHead {
+    position: static;
+  }
+}
+
+@media (max-width: 899px) {
+  .stage[data-scene='on'] .legend {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .stage[data-scene='on'] .legend {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .rowBlurb,
+  .rowMeta {
+    grid-column: 2;
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    margin-top: 1rem;
+  }
+
+  .sub {
+    font-size: 0.9375rem;
+    margin-top: 0.8rem;
+  }
+
+  .stage[data-scene='on'] .sub,
+  .stage[data-scene='on'] .areaNav,
+  .stage[data-scene='on'] .legend {
+    display: none;
+  }
+
+  .capList {
+    font-size: 0.8125rem;
+  }
+
+  .stage[data-scene='on'] .capSummary {
+    display: none;
+  }
+
+  .capTitle {
+    font-size: 2rem;
+  }
+
+  .laneLabel {
+    font-size: 0.75rem;
+  }
+
+  .laneFull,
+  .laneCount {
+    display: none;
+  }
+
+  .laneShort {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .caption,
+  .sceneWrap {
+    transition: none;
+  }
+}

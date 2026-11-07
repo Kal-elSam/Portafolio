@@ -1,0 +1,127 @@
+/* Steps on one trace. Horizontal on wide screens, vertical below. The default
+   state is fully lit (--prog and --on at 1); the scroll scrub drives both. */
+
+.track {
+  --prog: 1;
+  --node: 2.5rem;
+
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--node) / 2 - 1px);
+  width: 2px;
+  background: var(--line);
+  pointer-events: none;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleY(var(--prog));
+  transform-origin: top;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--node) minmax(0, 1fr);
+  column-gap: 1.1rem;
+  row-gap: 0.35rem;
+  align-items: start;
+  align-content: start;
+  min-width: 0;
+}
+
+.node {
+  --on: 1;
+
+  grid-row: 1 / span 3;
+  display: grid;
+  place-items: center;
+  width: var(--node);
+  height: var(--node);
+  border: 1px solid var(--accent);
+  background: color-mix(
+    in srgb,
+    var(--accent) calc(var(--on) * 100%),
+    var(--bg)
+  );
+  color: color-mix(in srgb, var(--bg) calc(var(--on) * 100%), var(--accent));
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.title {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.cmd {
+  justify-self: start;
+  max-width: 100%;
+  padding: 0.15rem 0.45rem;
+  background: rgba(232, 237, 229, 0.08);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.line {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 1100px) {
+  .track {
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    gap: 0 1.5rem;
+  }
+
+  .rail {
+    top: calc(var(--node) / 2 - 1px);
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 2px;
+  }
+
+  .fill {
+    transform: scaleX(var(--prog));
+    transform-origin: left;
+  }
+
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.6rem;
+  }
+
+  .node {
+    grid-row: auto;
+  }
+
+  .title {
+    margin-top: 0.5rem;
+  }
+}
+
+.track[data-compact='1'] .title {
+  font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+}

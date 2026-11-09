@@ -12,7 +12,7 @@ function Index() {
       <Head
         title="Senior Software Engineer | System Architecture & AI Engineering"
         description="Samuel Gomez Serrano. Senior Software Engineer focused on system architecture and AI engineering: enterprise insurance platforms, AI workflows, and Kairo Runtime."
-        ogImage={`${getBaseUrl()}/assets/images/og-image.png`}
+        ogImage={`${getBaseUrl()}/assets/images/og-image-v2.png`}
         overrideTitle
       />
       <HomePage fontClassName={`${displayA.variable} ${monoA.variable}`} />

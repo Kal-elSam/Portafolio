@@ -323,30 +323,27 @@ function Rig({ ready, onLoaded, onFirstFrame, onFail }: RigProps) {
     energy: 0,
   });
 
-  const enter = useCallback(
-    (rt: PieceRT, order: number, late: boolean) => {
-      if (rt.entered) return;
-      const holder = rt;
-      holder.entered = true;
-      const isPlate = rt.def.id === 'plate';
+  const enter = useCallback((rt: PieceRT, order: number, late: boolean) => {
+    if (rt.entered) return;
+    const holder = rt;
+    holder.entered = true;
+    const isPlate = rt.def.id === 'plate';
+    gsap.to(rt.anim, {
+      ent: 1,
+      duration: isPlate ? 1.2 : 1.7,
+      delay: late ? 0.05 : 0.15 + order * 0.05,
+      ease: 'power3.out',
+    });
+    if (rt.def.plot) {
+      // The chart wipes in on the real pixels once its pane has landed.
       gsap.to(rt.anim, {
-        ent: 1,
-        duration: isPlate ? 1.2 : 1.7,
-        delay: late ? 0.05 : 0.15 + order * 0.05,
-        ease: 'power3.out',
+        reveal: 1,
+        duration: 1.2,
+        delay: (late ? 0.05 : 0.15 + order * 0.05) + 1.05,
+        ease: 'power2.inOut',
       });
-      if (rt.def.plot) {
-        // The chart wipes in on the real pixels once its pane has landed.
-        gsap.to(rt.anim, {
-          reveal: 1,
-          duration: 1.2,
-          delay: (late ? 0.05 : 0.15 + order * 0.05) + 1.05,
-          ease: 'power2.inOut',
-        });
-      }
-    },
-    []
-  );
+    }
+  }, []);
 
   const startEntrance = useCallback(
     (late: boolean) => {
@@ -420,8 +417,10 @@ function Rig({ ready, onLoaded, onFirstFrame, onFail }: RigProps) {
     d.px += (layersStore.pointerX - d.px) * k(4);
     d.py += (layersStore.pointerY - d.py) * k(4);
     const speed =
-      Math.hypot(layersStore.pointerX - d.lastX, layersStore.pointerY - d.lastY) /
-      Math.max(dt, 1e-3);
+      Math.hypot(
+        layersStore.pointerX - d.lastX,
+        layersStore.pointerY - d.lastY
+      ) / Math.max(dt, 1e-3);
     d.lastX = layersStore.pointerX;
     d.lastY = layersStore.pointerY;
     const target = Math.min(1, speed * 0.3);
@@ -438,15 +437,16 @@ function Rig({ ready, onLoaded, onFirstFrame, onFail }: RigProps) {
     );
     const aG = easeInOut(aLin);
     const open = 1 - aG;
-    const exit = smooth(0, 1, clamp((d.sp - PHASE.exitStart) / (1 - PHASE.exitStart)));
+    const exit = smooth(
+      0,
+      1,
+      clamp((d.sp - PHASE.exitStart) / (1 - PHASE.exitStart))
+    );
     const fade = 1 - smooth(0.4, 1, exit);
 
     // Group: tilted and right of the copy when open, flat and centred when
     // assembled, then a short rise and recede for the exit.
-    const sOpen = Math.min(
-      (0.55 * visW) / screenW,
-      (0.74 * visH) / screenH
-    );
+    const sOpen = Math.min((0.55 * visW) / screenW, (0.74 * visH) / screenH);
     const sFull = Math.min((0.9 * visW) / screenW, (0.78 * visH) / screenH);
     const s = lerp(sOpen, sFull, aG) * (1 - 0.1 * exit);
     const { group } = world;
@@ -484,9 +484,13 @@ function Rig({ ready, onLoaded, onFirstFrame, onFail }: RigProps) {
       // Entrance: pieces fly in from scattered positions, turning as they land.
       const inEase = inv * inv;
       rt.pos.set(
-        rt.cx + def.drift[0] * o * openBoost + d.px * 0.17 * def.lift * o +
+        rt.cx +
+          def.drift[0] * o * openBoost +
+          d.px * 0.17 * def.lift * o +
           rt.scatter.x * inEase,
-        rt.cy + def.drift[1] * o * openBoost - d.py * 0.1 * def.lift * o +
+        rt.cy +
+          def.drift[1] * o * openBoost -
+          d.py * 0.1 * def.lift * o +
           rt.scatter.y * inEase,
         lift - Z_MID * open + rt.scatter.z * inEase
       );
@@ -550,7 +554,9 @@ function Rig({ ready, onLoaded, onFirstFrame, onFail }: RigProps) {
 
     // Focus glow: faint while open, a little stronger once assembled.
     world.glowMat.uniforms.uStrength.value =
-      (0.04 + 0.07 * aG * (1 - smooth(0.6, 1, exit))) * smooth(0, 1, world.pieces[0].anim.ent) * fade;
+      (0.04 + 0.07 * aG * (1 - smooth(0.6, 1, exit))) *
+      smooth(0, 1, world.pieces[0].anim.ent) *
+      fade;
 
     if (!first.current && world.pieces[0].hasTexture) {
       first.current = true;

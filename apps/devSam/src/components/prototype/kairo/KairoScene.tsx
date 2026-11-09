@@ -1,6 +1,10 @@
 /* eslint-disable react/no-unknown-property, no-param-reassign -- react-three-fiber JSX props and in-place scene mutation */
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Bloom, EffectComposer, ToneMapping } from '@react-three/postprocessing';
+import {
+  Bloom,
+  EffectComposer,
+  ToneMapping,
+} from '@react-three/postprocessing';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
@@ -53,7 +57,9 @@ const CORE = new THREE.Vector3(2.3, 1.15, 2.0);
 const CORE_R = 2.0;
 const CORE_YAW = -0.3;
 const coreEdge = (sign: number, lift = 0) =>
-  new THREE.Vector3(sign * CORE_R, lift, 0).applyAxisAngle(Y_AXIS, CORE_YAW).add(CORE);
+  new THREE.Vector3(sign * CORE_R, lift, 0)
+    .applyAxisAngle(Y_AXIS, CORE_YAW)
+    .add(CORE);
 
 const ROLE_POS = [
   new THREE.Vector3(5.5, 4.45, 0.5),
@@ -206,8 +212,24 @@ const basic = (color: THREE.Color, opacity = 1) =>
   });
 
 const SHAFTS = [
-  { x: -4, z: -9, w: 4.4, tilt: 0.2, amp: 0.045, tint: [0.55, 0.68, 0.8], phase: 0.2 },
-  { x: 6.5, z: -14, w: 5.6, tilt: 0.14, amp: 0.05, tint: [0.5, 0.64, 0.78], phase: 1.7 },
+  {
+    x: -4,
+    z: -9,
+    w: 4.4,
+    tilt: 0.2,
+    amp: 0.045,
+    tint: [0.55, 0.68, 0.8],
+    phase: 0.2,
+  },
+  {
+    x: 6.5,
+    z: -14,
+    w: 5.6,
+    tilt: 0.14,
+    amp: 0.05,
+    tint: [0.5, 0.64, 0.78],
+    phase: 1.7,
+  },
 ] as const;
 
 type Rig = {
@@ -339,7 +361,12 @@ function useRig(): Rig {
         additive
       ),
       stationLens: ROLES.map(() =>
-        shader(GLOW_VERT, GLOW_FRAG, { uColor: { value: ACID.clone() }, uIntensity: { value: 0 } }, additive)
+        shader(
+          GLOW_VERT,
+          GLOW_FRAG,
+          { uColor: { value: ACID.clone() }, uIntensity: { value: 0 } },
+          additive
+        )
       ),
       stationRing: ROLES.map(() => basic(STEEL.clone().multiplyScalar(0.55))),
       ringMats: [0, 1, 2].map(() => basic(STEEL.clone().multiplyScalar(0.6))),
@@ -355,7 +382,10 @@ function useRig(): Rig {
         depthWrite: false,
         toneMapped: false,
       }),
-      crystalEdge: new THREE.LineBasicMaterial({ color: scaledAcid(0.85), toneMapped: false }),
+      crystalEdge: new THREE.LineBasicMaterial({
+        color: scaledAcid(0.85),
+        toneMapped: false,
+      }),
       crystalCore: basic(scaledAcid(0.92)),
       scan: new THREE.MeshBasicMaterial({
         color: scaledAcid(0.8),
@@ -433,34 +463,53 @@ const buildWorld = () => {
   const leftC = coreEdge(-1, -0.95);
   const lanes = [
     new THREE.CatmullRomCurve3(
-      [new THREE.Vector3(-2.6, 5.3, 0.8), new THREE.Vector3(-0.5, 3.6, 1.5), leftA],
+      [
+        new THREE.Vector3(-2.6, 5.3, 0.8),
+        new THREE.Vector3(-0.5, 3.6, 1.5),
+        leftA,
+      ],
       false,
       'centripetal'
     ),
     new THREE.CatmullRomCurve3(
-      [new THREE.Vector3(-1.4, 6.0, -1.6), new THREE.Vector3(0.2, 4.2, 0.3), leftB],
+      [
+        new THREE.Vector3(-1.4, 6.0, -1.6),
+        new THREE.Vector3(0.2, 4.2, 0.3),
+        leftB,
+      ],
       false,
       'centripetal'
     ),
   ];
   // The unlisted agent comes in low on the left, by itself.
   const rogue = new THREE.CatmullRomCurve3(
-    [new THREE.Vector3(-1.9, -0.9, 3.9), new THREE.Vector3(-0.6, -0.5, 3.0), leftC],
+    [
+      new THREE.Vector3(-1.9, -0.9, 3.9),
+      new THREE.Vector3(-0.6, -0.5, 3.0),
+      leftC,
+    ],
     false,
     'centripetal'
   );
   const exit = coreEdge(1, 0);
   const toRole = ROLE_POS.map((p) => {
-    const a = new THREE.Vector3(-1, 0, 0).multiplyScalar(STATION_R + 0.06).add(p);
+    const a = new THREE.Vector3(-1, 0, 0)
+      .multiplyScalar(STATION_R + 0.06)
+      .add(p);
     return bezier(exit, a, 1.1);
   });
   const toProv: THREE.CubicBezierCurve3[] = [];
   ROLE_POS.forEach((p) => {
     const a = new THREE.Vector3(STATION_R + 0.06, 0, 0).add(p);
-    intake.forEach((to) => toProv.push(bezier(a, to.clone().add(new THREE.Vector3(-0.35, 0, 0)), 1.2)));
+    intake.forEach((to) =>
+      toProv.push(
+        bezier(a, to.clone().add(new THREE.Vector3(-0.35, 0, 0)), 1.2)
+      )
+    );
   });
   const lens = curves.map((cv) => cv.getLength());
-  const tube = (cv: THREE.Curve<THREE.Vector3>, r: number) => new THREE.TubeGeometry(cv, 56, r, 6, false);
+  const tube = (cv: THREE.Curve<THREE.Vector3>, r: number) =>
+    new THREE.TubeGeometry(cv, 56, r, 6, false);
   return {
     curves,
     lanes,
@@ -477,22 +526,38 @@ const buildWorld = () => {
     ],
     glass: curves.map((cv, i) =>
       CONDUITS[i].sides
-        ? taperPrism(cv, 80, CONDUITS[i].sides, (t) => radiusAt(CONDUITS[i].r0, t))
+        ? taperPrism(cv, 80, CONDUITS[i].sides, (t) =>
+            radiusAt(CONDUITS[i].r0, t)
+          )
         : taperTube(cv, 80, 56, (t) => radiusAt(CONDUITS[i].r0, t))
     ),
     core: curves.map((cv, i) =>
       CONDUITS[i].sides
-        ? taperPrism(cv, 80, CONDUITS[i].sides, (t) => radiusAt(CONDUITS[i].r0, t) * 0.7)
+        ? taperPrism(
+            cv,
+            80,
+            CONDUITS[i].sides,
+            (t) => radiusAt(CONDUITS[i].r0, t) * 0.7
+          )
         : taperTube(cv, 80, 40, (t) => radiusAt(CONDUITS[i].r0, t) * 0.7)
     ),
     rail: curves.map((cv, i) =>
-      ribbon(cv, 80, (t) => new THREE.Vector3(0, -(radiusAt(CONDUITS[i].r0, t) + 0.5), 0.12), 0.34)
+      ribbon(
+        cv,
+        80,
+        (t) => new THREE.Vector3(0, -(radiusAt(CONDUITS[i].r0, t) + 0.5), 0.12),
+        0.34
+      )
     ),
   };
 };
 
-const metal = <meshStandardMaterial color="#141b21" metalness={0.9} roughness={0.34} />;
-const darkMetal = <meshStandardMaterial color="#232c34" metalness={0.92} roughness={0.3} />;
+const metal = (
+  <meshStandardMaterial color="#141b21" metalness={0.9} roughness={0.34} />
+);
+const darkMetal = (
+  <meshStandardMaterial color="#232c34" metalness={0.92} roughness={0.3} />
+);
 const archMat = <meshBasicMaterial color="#030507" />;
 
 // A calm hall: a few broad, dark masses far back, no thin verticals.
@@ -533,11 +598,17 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
 
   const built = useMemo(buildWorld, []);
   const { curves } = built;
-  const slabGeo = useMemo(() => new RoundedBoxGeometry(0.84, 0.48, 0.12, 3, 0.04), []);
+  const slabGeo = useMemo(
+    () => new RoundedBoxGeometry(0.84, 0.48, 0.12, 3, 0.04),
+    []
+  );
   const stripeGeo = useMemo(() => new THREE.BoxGeometry(0.62, 0.06, 0.14), []);
   const crossGeo = useMemo(() => new THREE.BoxGeometry(0.62, 0.05, 0.14), []);
   const crystalGeo = useMemo(() => new THREE.IcosahedronGeometry(0.62, 0), []);
-  const crystalEdges = useMemo(() => new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(0.64, 0)), []);
+  const crystalEdges = useMemo(
+    () => new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(0.64, 0)),
+    []
+  );
   const glowGeo = useMemo(() => new THREE.SphereGeometry(0.26, 24, 16), []);
   const scanGeo = useMemo(() => new THREE.TorusGeometry(0.9, 0.014, 6, 64), []);
   const ringGeos = useMemo(
@@ -548,7 +619,10 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
     ],
     []
   );
-  const shieldGeo = useMemo(() => new THREE.TorusGeometry(2.42, 0.07, 8, 64, Math.PI * 0.62), []);
+  const shieldGeo = useMemo(
+    () => new THREE.TorusGeometry(2.42, 0.07, 8, 64, Math.PI * 0.62),
+    []
+  );
   const stationGeos = useMemo(
     () => [
       new THREE.TorusGeometry(STATION_R, 0.07, 12, 56),
@@ -558,13 +632,22 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
   );
   const intakeGeos = useMemo(
     () =>
-      CONDUITS.map((c) => new THREE.TorusGeometry(c.r0 * 1.22, 0.09, 12, c.sides ? c.sides : 56)),
+      CONDUITS.map(
+        (c) =>
+          new THREE.TorusGeometry(c.r0 * 1.22, 0.09, 12, c.sides ? c.sides : 56)
+      ),
     []
   );
   const pillarGeo = useMemo(() => new RoundedBoxGeometry(1, 1, 1, 3, 0.09), []);
   const shaftGeo = useMemo(() => new THREE.PlaneGeometry(1, 1), []);
-  const boltGeo = useMemo(() => new THREE.CylinderGeometry(0.07, 0.07, 0.09, 10), []);
-  const plinthGeo = useMemo(() => new THREE.CylinderGeometry(0.85, 1.15, 1, 48), []);
+  const boltGeo = useMemo(
+    () => new THREE.CylinderGeometry(0.07, 0.07, 0.09, 10),
+    []
+  );
+  const plinthGeo = useMemo(
+    () => new THREE.CylinderGeometry(0.85, 1.15, 1, 48),
+    []
+  );
 
   useEffect(
     () => () => {
@@ -651,7 +734,9 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
   // A still renders on demand, so ask for a few frames until the first lands.
   useEffect(() => {
     if (!still) return undefined;
-    const ids = [0, 90, 240, 600].map((ms) => window.setTimeout(invalidate, ms));
+    const ids = [0, 90, 240, 600].map((ms) =>
+      window.setTimeout(invalidate, ms)
+    );
     return () => ids.forEach((id) => window.clearTimeout(id));
   }, [still, invalidate]);
 
@@ -674,7 +759,9 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
   useEffect(() => {
     const cam = camera as THREE.PerspectiveCamera;
     const wide = size.width >= 1100;
-    const copy = wide ? gl.domElement.closest('section')?.querySelector('[data-copy]') : null;
+    const copy = wide
+      ? gl.domElement.closest('section')?.querySelector('[data-copy]')
+      : null;
     const copyFrac = copy ? copy.getBoundingClientRect().right / size.width : 0;
     const copyRight = copyFrac * size.width;
     // Fit the whole system (about 12.8 by 9.4 world units) into the part of the
@@ -684,7 +771,14 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
     const d = size.height / 2 / (Math.tan((FOV * Math.PI) / 360) * pxu);
     const shift = wide ? copyRight / 2 : 0;
     camBase.current = { d, shift };
-    cam.setViewOffset(size.width, size.height, -shift, 0, size.width, size.height);
+    cam.setViewOffset(
+      size.width,
+      size.height,
+      -shift,
+      0,
+      size.width,
+      size.height
+    );
     cam.updateProjectionMatrix();
     invalidate();
     return () => {
@@ -713,18 +807,33 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
 
   // Cable index: lanes 0-1, core-to-role 2-5, role-to-provider 6-13.
   const place = useCallback(
-    (out: THREE.Vector3, tau: number, lane: number, role: number, prov: number) => {
+    (
+      out: THREE.Vector3,
+      tau: number,
+      lane: number,
+      role: number,
+      prov: number
+    ) => {
       if (tau < T_CORE_IN) {
         built.lanes[lane].getPointAt(tau / T_CORE_IN, out);
       } else if (tau < T_CORE_OUT) {
         const k = (tau - T_CORE_IN) / (T_CORE_OUT - T_CORE_IN);
         built.lanes[lane].getPointAt(1, out).lerp(built.exit, k);
       } else if (tau < T_ROLE) {
-        built.toRole[role].getPoint((tau - T_CORE_OUT) / (T_ROLE - T_CORE_OUT), out);
+        built.toRole[role].getPoint(
+          (tau - T_CORE_OUT) / (T_ROLE - T_CORE_OUT),
+          out
+        );
       } else if (tau < T_PROV) {
-        built.toProv[role * 2 + prov].getPoint((tau - T_ROLE) / (T_PROV - T_ROLE), out);
+        built.toProv[role * 2 + prov].getPoint(
+          (tau - T_ROLE) / (T_PROV - T_ROLE),
+          out
+        );
       } else {
-        curves[prov].getPointAt(Math.min(1, ((tau - T_PROV) / (1 - T_PROV)) * 0.62), out);
+        curves[prov].getPointAt(
+          Math.min(1, ((tau - T_PROV) / (1 - T_PROV)) * 0.62),
+          out
+        );
       }
       return out;
     },
@@ -809,16 +918,28 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
         dummy.position.copy(a);
         quat.setFromUnitVectors(xAxis, b.normalize());
         dummy.quaternion.copy(quat);
-        const hide = smoothstep(T_CORE_IN - 0.035, T_CORE_IN, tau) * (1 - smoothstep(T_CORE_OUT, T_CORE_OUT + 0.035, tau));
-        const shrink = 1 - 0.42 * smoothstep(T_CORE_OUT, T_ROLE, tau) - 0.5 * smoothstep(T_PROV, 1, tau);
-        const s = smoothstep(0, 0.04, tau) * (1 - smoothstep(0.93, 1, tau)) * (1 - hide);
+        const hide =
+          smoothstep(T_CORE_IN - 0.035, T_CORE_IN, tau) *
+          (1 - smoothstep(T_CORE_OUT, T_CORE_OUT + 0.035, tau));
+        const shrink =
+          1 -
+          0.42 * smoothstep(T_CORE_OUT, T_ROLE, tau) -
+          0.5 * smoothstep(T_PROV, 1, tau);
+        const s =
+          smoothstep(0, 0.04, tau) *
+          (1 - smoothstep(0.93, 1, tau)) *
+          (1 - hide);
         dummy.scale.setScalar(Math.max(0.0001, s * shrink * 1.15));
         dummy.updateMatrix();
         packets.setMatrixAt(n, dummy.matrix);
         stripes.setMatrixAt(n, dummy.matrix);
 
         if (tau < T_CORE_IN) target[ln] = 1;
-        else if (tau < T_CORE_OUT) pulse = Math.max(pulse, Math.sin(((tau - T_CORE_IN) / (T_CORE_OUT - T_CORE_IN)) * Math.PI));
+        else if (tau < T_CORE_OUT)
+          pulse = Math.max(
+            pulse,
+            Math.sin(((tau - T_CORE_IN) / (T_CORE_OUT - T_CORE_IN)) * Math.PI)
+          );
         else if (tau < T_ROLE) {
           target[2 + role] = 1;
           roleTarget[role] = 1;
@@ -833,14 +954,20 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
           slotBest[sl] = n;
           slotTau[sl] = tau;
           slotRole[sl] = role;
-          slotName[sl] = TASKS[role][Math.floor(hash(n * 1.7 + cyc * 5.1) * 2) % 2];
+          slotName[sl] =
+            TASKS[role][Math.floor(hash(n * 1.7 + cyc * 5.1) * 2) % 2];
         }
       }
       packets.instanceMatrix.needsUpdate = true;
       stripes.instanceMatrix.needsUpdate = true;
     }
     for (let c = 0; c < CABLE_COUNT; c += 1) {
-      st.heat[c] = damp(st.heat[c], target[c], target[c] > st.heat[c] ? 14 : 3.2, dt);
+      st.heat[c] = damp(
+        st.heat[c],
+        target[c],
+        target[c] > st.heat[c] ? 14 : 3.2,
+        dt
+      );
       const m = rig.cable[c];
       m.uniforms.uTime.value = time;
       m.uniforms.uActive.value = st.heat[c];
@@ -869,7 +996,9 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
       rig.crystal.rotation.x = time * 0.22;
       rig.crystal.scale.setScalar(1 + 0.08 * reading);
     }
-    rig.crystalCore.color.copy(ACID).multiplyScalar(0.55 + 0.45 * Math.min(1, reading + 0.2));
+    rig.crystalCore.color
+      .copy(ACID)
+      .multiplyScalar(0.55 + 0.45 * Math.min(1, reading + 0.2));
     if (rig.crystalGlow) rig.crystalGlow.scale.setScalar(0.9 + 0.5 * reading);
     rig.rings.forEach((ring, i) => {
       if (!ring) return;
@@ -890,7 +1019,12 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
 
     // Roles light up as work reaches them.
     ROLES.forEach((_, i) => {
-      st.roleHeat[i] = damp(st.roleHeat[i], roleTarget[i], roleTarget[i] > st.roleHeat[i] ? 14 : 3, dt);
+      st.roleHeat[i] = damp(
+        st.roleHeat[i],
+        roleTarget[i],
+        roleTarget[i] > st.roleHeat[i] ? 14 : 3,
+        dt
+      );
       const hv = st.roleHeat[i];
       rig.stationLens[i].uniforms.uIntensity.value = 0.05 + 0.6 * hv;
       rig.stationRing[i].color
@@ -912,7 +1046,13 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
     cam.updateMatrixWorld();
 
     // Label anchors in canvas pixels, always clear of geometry.
-    const project = (key: keyof typeof k.anchors, x: number, y: number, z: number, alpha = 1) => {
+    const project = (
+      key: keyof typeof k.anchors,
+      x: number,
+      y: number,
+      z: number,
+      alpha = 1
+    ) => {
       tmp.anchor.set(x, y, z).project(cam);
       const target2 = k.anchors[key];
       target2.x = (tmp.anchor.x * 0.5 + 0.5) * size.width;
@@ -969,7 +1109,12 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
     const ic = built.intake[0];
     const ix = built.intake[1];
     project('claude', ic.x - 0.35, ic.y + CONDUITS[0].r0 * 1.2 + 0.4, ic.z);
-    project('codex', ix.x - 0.35, ix.y - CONDUITS[1].r0 * 1.2 - 0.55, ix.z + 0.2);
+    project(
+      'codex',
+      ix.x - 0.35,
+      ix.y - CONDUITS[1].r0 * 1.2 - 0.55,
+      ix.z + 0.2
+    );
     project('deny', CORE.x - 3.1, CORE.y - 1.75, CORE.z + 1.2, gv.label);
     for (let s = 0; s < 3; s += 1) {
       const n = slotBest[s];
@@ -980,7 +1125,8 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
         const tau = slotTau[s];
         const ln = tmp.lane[n];
         place(tmp.a, tau, ln, slotRole[s], 0);
-        const alpha = smoothstep(0.05, 0.09, tau) * (1 - smoothstep(0.13, 0.19, tau));
+        const alpha =
+          smoothstep(0.05, 0.09, tau) * (1 - smoothstep(0.13, 0.19, tau));
         project(key, tmp.a.x, tmp.a.y + 0.55, tmp.a.z, alpha);
         k.tasks[s].name = slotName[s];
         k.tasks[s].role = slotRole[s];
@@ -1015,7 +1161,11 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
       const a = (t / 48) * Math.PI * 2;
       const major = t % 4 === 0;
       const len = major ? 0.22 : 0.09;
-      dummy.position.set(Math.cos(a) * (CORE_R - 0.2 - len / 2), Math.sin(a) * (CORE_R - 0.2 - len / 2), 0);
+      dummy.position.set(
+        Math.cos(a) * (CORE_R - 0.2 - len / 2),
+        Math.sin(a) * (CORE_R - 0.2 - len / 2),
+        0
+      );
       dummy.rotation.set(0, 0, a);
       dummy.scale.set(len, major ? 0.03 : 0.018, 0.02);
       dummy.updateMatrix();
@@ -1029,7 +1179,11 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
     const dummy = new THREE.Object3D();
     for (let t = 0; t < 16; t += 1) {
       const a = (t / 16) * Math.PI * 2;
-      dummy.position.set(Math.cos(a) * (CORE_R + 0.2), Math.sin(a) * (CORE_R + 0.2), 0.12);
+      dummy.position.set(
+        Math.cos(a) * (CORE_R + 0.2),
+        Math.sin(a) * (CORE_R + 0.2),
+        0.12
+      );
       dummy.rotation.set(Math.PI / 2, 0, 0);
       dummy.updateMatrix();
       mesh.setMatrixAt(t, dummy.matrix);
@@ -1038,15 +1192,30 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
   }, []);
 
   const conduitQuat = (i: number) =>
-    new THREE.Quaternion().setFromUnitVectors(Z_AXIS, curves[i].getTangentAt(0));
+    new THREE.Quaternion().setFromUnitVectors(
+      Z_AXIS,
+      curves[i].getTangentAt(0)
+    );
 
   return (
     <>
       <fogExp2 attach="fog" args={[BG, 0.017]} />
       <ambientLight intensity={0.06} />
-      <directionalLight position={[-7, 10, 11]} intensity={0.95} color="#dfe8f2" />
-      <directionalLight position={[12, 5, -8]} intensity={3.0} color="#9fb6cc" />
-      <directionalLight position={[-12, 6, -10]} intensity={1.4} color="#9fb6cc" />
+      <directionalLight
+        position={[-7, 10, 11]}
+        intensity={0.95}
+        color="#dfe8f2"
+      />
+      <directionalLight
+        position={[12, 5, -8]}
+        intensity={3.0}
+        color="#9fb6cc"
+      />
+      <directionalLight
+        position={[-12, 6, -10]}
+        intensity={1.4}
+        color="#9fb6cc"
+      />
       <pointLight
         ref={(l) => {
           rig.coreLight = l;
@@ -1075,7 +1244,11 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
       })}
 
       {/* floor: seams and the light each provider pools */}
-      <mesh position={[0, FLOOR_Y, 0]} rotation={[-Math.PI / 2, 0, 0]} renderOrder={-10}>
+      <mesh
+        position={[0, FLOOR_Y, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        renderOrder={-10}
+      >
         <planeGeometry args={[300, 240]} />
         <primitive object={rig.floor} attach="material" />
       </mesh>
@@ -1100,22 +1273,44 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
 
       {/* the hall: broad dark masses far back */}
       {PILLARS.map(([x, z, w]) => (
-        <mesh key={`${x}-${z}`} geometry={pillarGeo} position={[x, 14, z]} scale={[w, 33, w]}>
+        <mesh
+          key={`${x}-${z}`}
+          geometry={pillarGeo}
+          position={[x, 14, z]}
+          scale={[w, 33, w]}
+        >
           {archMat}
         </mesh>
       ))}
 
       {/* cables: work in, Kairo to each role, each role to each provider */}
       {built.cableGeos.map((geo, i) => (
-        <mesh key={geo.uuid} geometry={geo} material={rig.cable[i]} renderOrder={3} />
+        <mesh
+          key={geo.uuid}
+          geometry={geo}
+          material={rig.cable[i]}
+          renderOrder={3}
+        />
       ))}
 
       {/* the providers: a round tube and a hexagonal prism, tapering to a point */}
       {CONDUITS.map((c, i) => (
         <group key={c.id}>
-          <mesh geometry={built.core[i]} material={rig.core[i]} renderOrder={3} />
-          <mesh geometry={built.glass[i]} material={rig.glass[i]} renderOrder={4} />
-          <mesh geometry={built.rail[i]} material={rig.rail[i]} renderOrder={5} />
+          <mesh
+            geometry={built.core[i]}
+            material={rig.core[i]}
+            renderOrder={3}
+          />
+          <mesh
+            geometry={built.glass[i]}
+            material={rig.glass[i]}
+            renderOrder={4}
+          />
+          <mesh
+            geometry={built.rail[i]}
+            material={rig.rail[i]}
+            renderOrder={5}
+          />
           <mesh
             geometry={intakeGeos[i]}
             position={built.intake[i]}
@@ -1170,14 +1365,34 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
         </mesh>
         <mesh>
           <torusGeometry args={[CORE_R - 0.16, 0.03, 8, 120]} />
-          <meshStandardMaterial color="#8d98a4" metalness={0.95} roughness={0.28} />
+          <meshStandardMaterial
+            color="#8d98a4"
+            metalness={0.95}
+            roughness={0.28}
+          />
         </mesh>
-        <instancedMesh args={[undefined, undefined, 48]} ref={gateTicks} frustumCulled={false}>
+        <instancedMesh
+          args={[undefined, undefined, 48]}
+          ref={gateTicks}
+          frustumCulled={false}
+        >
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="#7d8995" metalness={0.9} roughness={0.35} />
+          <meshStandardMaterial
+            color="#7d8995"
+            metalness={0.9}
+            roughness={0.35}
+          />
         </instancedMesh>
-        <instancedMesh args={[boltGeo, undefined, 16]} ref={gateBolts} frustumCulled={false}>
-          <meshStandardMaterial color="#9aa6b2" metalness={0.95} roughness={0.25} />
+        <instancedMesh
+          args={[boltGeo, undefined, 16]}
+          ref={gateBolts}
+          frustumCulled={false}
+        >
+          <meshStandardMaterial
+            color="#9aa6b2"
+            metalness={0.95}
+            roughness={0.25}
+          />
         </instancedMesh>
         <mesh scale={[CORE_R - 0.15, CORE_R - 0.15, 1]}>
           <planeGeometry args={[2, 2]} />
@@ -1189,7 +1404,12 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
           }}
         >
           <mesh geometry={crystalGeo}>
-            <meshStandardMaterial color="#1b232a" metalness={0.92} roughness={0.22} flatShading />
+            <meshStandardMaterial
+              color="#1b232a"
+              metalness={0.92}
+              roughness={0.22}
+              flatShading
+            />
           </mesh>
           <lineSegments geometry={crystalEdges} material={rig.crystalEdge} />
         </group>
@@ -1220,8 +1440,18 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
       </group>
 
       {/* work items: a pale slab with an acid stripe, bright against the dark machines */}
-      <instancedMesh ref={packetRef} args={[slabGeo, rig.pale, PACKETS]} frustumCulled={false} renderOrder={6} />
-      <instancedMesh ref={stripeRef} args={[stripeGeo, rig.stripe, PACKETS]} frustumCulled={false} renderOrder={7} />
+      <instancedMesh
+        ref={packetRef}
+        args={[slabGeo, rig.pale, PACKETS]}
+        frustumCulled={false}
+        renderOrder={6}
+      />
+      <instancedMesh
+        ref={stripeRef}
+        args={[stripeGeo, rig.stripe, PACKETS]}
+        frustumCulled={false}
+        renderOrder={7}
+      />
 
       {/* the unlisted agent */}
       <group
@@ -1231,8 +1461,18 @@ function World({ still, onFirstFrame, onLost }: WorldProps) {
         visible={false}
       >
         <mesh geometry={slabGeo} material={rig.rogue} />
-        <mesh geometry={crossGeo} material={rig.rogueStripe} position={[0, 0, 0.02]} rotation={[0, 0, 0.62]} />
-        <mesh geometry={crossGeo} material={rig.rogueStripe} position={[0, 0, 0.02]} rotation={[0, 0, -0.62]} />
+        <mesh
+          geometry={crossGeo}
+          material={rig.rogueStripe}
+          position={[0, 0, 0.02]}
+          rotation={[0, 0, 0.62]}
+        />
+        <mesh
+          geometry={crossGeo}
+          material={rig.rogueStripe}
+          position={[0, 0, 0.02]}
+          rotation={[0, 0, -0.62]}
+        />
       </group>
     </>
   );
@@ -1247,7 +1487,12 @@ type KairoSceneProps = {
   onLost: () => void;
 };
 
-export default function KairoScene({ still, onReady, onFail, onLost }: KairoSceneProps) {
+export default function KairoScene({
+  still,
+  onReady,
+  onFail,
+  onLost,
+}: KairoSceneProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [dpr, setDpr] = useState(pickDpr);
   const [visible, setVisible] = useState(true);
@@ -1264,7 +1509,9 @@ export default function KairoScene({ still, onReady, onFail, onLost }: KairoScen
   useEffect(() => {
     const node = wrapRef.current;
     if (!node) return undefined;
-    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    const io = new IntersectionObserver(([entry]) =>
+      setVisible(entry.isIntersecting)
+    );
     io.observe(node);
     return () => io.disconnect();
   }, []);

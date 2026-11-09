@@ -129,26 +129,11 @@ const TIGHT: Bleed = { right: 0.25, top: 0.15, bottom: 0.15 };
 
 /** Set pieces in tour order; the first id is the protagonist. */
 export const SETS: string[][] = [
-  [
-    'maximus',
-    'crm-comercial',
-    'titan',
-    'crm-comercial--cartera',
-    'crm-mobile',
-  ],
+  ['maximus', 'crm-comercial', 'titan', 'crm-comercial--cartera', 'crm-mobile'],
   ['titan--tickets', 'prometeo', 'seguros-kc', 'alianza-red-magisterial'],
-  [
-    'nexus-riesgos-amparados',
-    'nexus-riesgos-amparados--landing',
-    'portal-bi',
-  ],
+  ['nexus-riesgos-amparados', 'nexus-riesgos-amparados--landing', 'portal-bi'],
   ['ari-maya-ai-business-platform', 'kairo-runtime', 'atlas'],
-  [
-    'eos-mobile',
-    'red-medica',
-    'eos-mobile--login',
-    'eos-mobile--home',
-  ],
+  ['eos-mobile', 'red-medica', 'eos-mobile--login', 'eos-mobile--home'],
   ['segunnet', 'volaris-analytics', 'admin-vacunas', 'vacunas'],
   ['dashboard-next14', 'github-search', 'acolyte-health'],
 ];

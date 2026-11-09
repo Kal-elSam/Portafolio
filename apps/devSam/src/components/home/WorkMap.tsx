@@ -634,7 +634,8 @@ export default function WorkMap({
                     <span className={styles.coFront}>
                       <span className={styles.coName}>{name}</span>
                       <span className={`${styles.coStat} ${home.mono}`}>
-                        {items.length} {items.length === 1 ? 'project' : 'projects'}
+                        {items.length}{' '}
+                        {items.length === 1 ? 'project' : 'projects'}
                         {company.commits > 0
                           ? ` · ${company.commits.toLocaleString(
                               'en-US'
